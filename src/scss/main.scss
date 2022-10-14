@@ -1,0 +1,23 @@
+@import './_reset.scss';
+@import 'variables';
+@import 'font';
+@import 'container';
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--activeColor);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--activeColor);
+  }
+}
