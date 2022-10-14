@@ -1,5 +1,5 @@
 import {Header} from '../../components/header'
-// import Footer from '../../components/footer'
+import {Footer} from '../../components/footer'
 // import Loader from '../../components/loader'
 
 import s from './styles.module.scss'
@@ -15,7 +15,7 @@ const DefaultLayout = (props: IProps): JSX.Element => {
       <div className={s.primary__content}>
         {props.children}
       </div>
-      {/*<Footer />*/}
+      <Footer/>
       {/*<Loader/>*/}
     </div>
   )
