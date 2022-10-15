@@ -1,0 +1,21 @@
+.filters {
+  max-width: 312px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  &__btn {
+    border: 1px solid #E54949;
+    border-radius: 16px;
+    outline: none;
+    padding: 16px 24px;
+    color: #E54949;
+
+    &:hover {
+      box-shadow: 2px 4px 4px rgba(229, 73, 73, 0.3);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
