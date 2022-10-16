@@ -1,17 +1,13 @@
-import { Checkbox } from '../ui/Checkbox'
-import { Filter } from '../ui/Filter'
+import { BaseCheckbox } from '../ui/BaseCheckbox'
 import s from './styles.module.scss'
-import { filtersData, needsHelp } from './constants'
+import { filtersData } from '../../mocks/filter'
 import { useState } from 'react'
 
 export const Filters = () => {
-
-  const [help, setHelp] = useState(needsHelp)
   
   const [data, setData] = useState(filtersData)
 
   const reset = () => {
-    setHelp({...help, isChecked: false})
     setData(data.map(item => {
       item.data = item.data.map(el => {
         return {...el, isChecked: false}
@@ -20,10 +16,7 @@ export const Filters = () => {
     }))
   }
 
-  const handleCange = (name: string, value: string) => {
-    if(name === 'help') {
-      setHelp({...help, isChecked: !help.isChecked})
-    } else {
+  const handleChange = (name: string, value: string) => {
       setData(data.map(item => {
         item.data = item.data.map(el => 
           el.name === name && el.value === value 
@@ -32,21 +25,31 @@ export const Filters = () => {
           )
         return item
       }))
-    }
   }
 
   return (
     <div className={s.filters}>
-      <Checkbox {...help} change={handleCange}/>
-      {data.map((item, index) => 
-      <Filter 
-        key={index} 
-        {...item}
-        change={handleCange}
-      />)}
+
+      {data.map((item, index) => (
+        <div className={s.filters__item} key={index}>
+          {item.title && <div className={s.filters__title}> {item.title} </div> }
+          {item.data.map((el, index) => (
+            <BaseCheckbox 
+              key={`${el.name}-${index}`}
+              name={el.name} 
+              content={el.content} 
+              isChecked={el.isChecked}
+              value={el.value} 
+              change={handleChange}
+            />
+          ))}
+        </div>))
+      }
+
       <button className={s.filters__btn} onClick={reset}>
         Сбросить настройки
       </button>
+
     </div>
   )
 }

@@ -1,17 +1,30 @@
+@import '../../scss/variables.scss';
+
 .filters {
-  max-width: 312px;
+  max-width: 244px;
   display: flex;
   flex-direction: column;
   gap: 33px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
   &__btn {
-    border: 1px solid #E54949;
+    border: 1px solid $orange;
     border-radius: 16px;
     outline: none;
     padding: 16px 24px;
-    color: #E54949;
+    color: $orange;
 
     &:hover {
-      box-shadow: 2px 4px 4px rgba(229, 73, 73, 0.3);
+      box-shadow: 2px 4px 4px $orange-shadow;
     }
 
     &:active {

@@ -1,10 +1,14 @@
-export const needsHelp = {
-  name: 'help',
-  content: 'Необходима срочная помощь',
-  isChecked: false
-}
-
 export const filtersData = [
+  {
+    data: [
+      {
+        name: 'help',
+        content: 'Необходима срочная помощь',
+        isChecked: false,
+        value: 'help'
+      }
+    ]
+  },
   {
     title: 'Категория',
     data: [

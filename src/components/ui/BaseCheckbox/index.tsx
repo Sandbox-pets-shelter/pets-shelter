@@ -2,7 +2,7 @@ import s from './styles.module.scss'
 import { ICheckbox } from '../../../types/ui'
 import CheckMark from '../../../img/icons/CheckMark.svg'
 
-export const Checkbox = (props: ICheckbox) => {
+export const BaseCheckbox = (props: ICheckbox) => {
 
   const {name, content, isChecked, value, change} = props
   

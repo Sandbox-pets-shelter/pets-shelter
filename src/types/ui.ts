@@ -11,11 +11,5 @@ export interface ICheckbox {
   content: string,
   isChecked: boolean,
   change?: (name: string, value: string) => void,
-  value?: string
-}
-
-export interface IFilter {
-  title: string,
-  data: ICheckbox[],
-  change: (name: string, value: string) => void
+  value: string
 }
