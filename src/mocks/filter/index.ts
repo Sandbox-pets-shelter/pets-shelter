@@ -3,7 +3,7 @@ export const filtersData = [
     data: [
       {
         name: 'help',
-        content: 'Необходима срочная помощь',
+        content: 'Нужна срочная помощь',
         isChecked: false,
         value: 'help'
       }

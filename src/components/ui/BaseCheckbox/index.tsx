@@ -8,10 +8,8 @@ export const BaseCheckbox = (props: ICheckbox) => {
   
   const currentStyle = `${s.checkbox} ${isChecked && s.checkbox_checked}`
 
-  const itemValue = value || 'help'
-
   const toggleChecked = (name: string, value: string) => {
-    if(change) change(name, itemValue)
+    if(change) change(name, value)
   }
 
   return (
@@ -23,9 +21,9 @@ export const BaseCheckbox = (props: ICheckbox) => {
       <input 
         type='checkbox' 
         name={name} 
-        value={itemValue}
+        value={value}
         className={s.checkbox__input}
-        onChange={() => toggleChecked(name, itemValue)}
+        onChange={() => toggleChecked(name, value)}
         checked={isChecked}
       />
   </label>
