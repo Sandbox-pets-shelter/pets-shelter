@@ -26,6 +26,6 @@ export const BaseCheckbox = (props: ICheckbox) => {
         onChange={() => toggleChecked(name, value)}
         checked={isChecked}
       />
-  </label>
+    </label>
   )
 }
