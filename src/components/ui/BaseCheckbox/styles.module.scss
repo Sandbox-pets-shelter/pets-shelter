@@ -1,0 +1,37 @@
+.checkbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &_checked {
+    font-weight: 600;
+    cursor: pointer;
+    .checkbox__mark {
+      background-color: #6549FB;
+      .checkbox__icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &__mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px 0 0;
+    border-radius: 8px;
+    border: 2px solid #6549FB;
+  }
+
+  &__icon {
+    opacity: 0;
+  }
+}
