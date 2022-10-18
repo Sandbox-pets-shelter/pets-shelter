@@ -1,5 +1,7 @@
+import { Card } from "../../components/card"
+
 export const Pets = () => {
     return (
-        <div>Pets</div>
+        <div><Card/></div>
     )
 }

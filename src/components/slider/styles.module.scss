@@ -1,0 +1,18 @@
+.dot.active {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #846DFC;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(101, 73, 251, 0.2);
+    border-radius: 50%;
+}
+.container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}

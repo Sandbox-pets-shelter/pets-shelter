@@ -1,8 +1,8 @@
 import s from './styles.module.scss'
 import {routeElements} from '../../configs/routeElements'
 import {NavLink} from 'react-router-dom'
-import SearchIcon from '../../img/icons/Search.svg'
-import HeartIcon from '../../img/icons/Heart.svg'
+import SearchIcon from '../../assets/icons/Search.svg'
+import HeartIcon from '../../assets/icons/Heart.svg'
 import {BaseDropdown} from '../ui/BaseDropdown'
 import {useCallback, useState} from 'react'
 

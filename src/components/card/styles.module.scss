@@ -1,0 +1,44 @@
+.card {
+    width: 312px;
+    height: 491px;
+    position: relative;
+    border: 1px solid rgba(153, 153, 153, 0.2);
+    border-radius: 16px;
+    background: #fff;
+    &__section{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    &__title{
+        position: absolute;
+        bottom: 66px;
+        left: 16px;
+        font-weight: 600;
+        font-size: 24px;
+    }
+    &__descr{
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    &__img{
+        // position: absolute;
+        // top: 0;
+        height: 364px;
+        object-fit: cover;
+        // width: 100%;
+        // width: ;
+    }
+    &__like{
+
+    }
+    &__share{
+
+    }
+}
