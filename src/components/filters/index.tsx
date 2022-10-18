@@ -31,8 +31,8 @@ export const Filters = () => {
     <div className={s.filters}>
 
       {data.map((item, index) => (
-        <div className={s.filters__item} key={index}>
-          {item.title && <div className={s.filters__title}> {item.title} </div> }
+        <>
+          {item.title && <div className={s.filters__title} key={index}> {item.title} </div> }
           {item.data.map((el, index) => (
             <BaseCheckbox 
               key={`${el.name}-${index}`}
@@ -43,7 +43,7 @@ export const Filters = () => {
               change={handleChange}
             />
           ))}
-        </div>))
+        </>))
       }
 
       <button className={s.filters__btn} onClick={reset}>

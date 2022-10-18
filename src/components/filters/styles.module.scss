@@ -4,16 +4,11 @@
   max-width: 244px;
   display: flex;
   flex-direction: column;
-  gap: 33px;
-
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-  }
+  gap: 24px;
 
   &__title {
     font-weight: 600;
+    margin: 16px 0 0 0;
   }
 
   &__btn {
