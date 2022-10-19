@@ -2,6 +2,7 @@ import { BaseCheckbox } from '../ui/BaseCheckbox'
 import s from './styles.module.scss'
 import { filtersData } from '../../mocks/filter'
 import { useState } from 'react'
+import { BaseButton } from '../ui/BaseButton'
 
 export const Filters = () => {
   
@@ -27,6 +28,7 @@ export const Filters = () => {
       }))
   }
 
+
   return (
     <div className={s.filters}>
 
@@ -46,9 +48,13 @@ export const Filters = () => {
         </>))
       }
 
-      <button className={s.filters__btn} onClick={reset}>
+      <BaseButton 
+        variant='filled' 
+        color='primary' 
+        click={reset}
+      >
         Сбросить настройки
-      </button>
+      </BaseButton>
 
     </div>
   )

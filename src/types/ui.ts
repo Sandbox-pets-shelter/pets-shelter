@@ -1,5 +1,7 @@
 // TODO: Всё что ниже примеры
 
+import { ReactComponentElement, ReactElement, ReactSVG, ReactSVGElement } from "react"
+
 export interface IBaseDropdown {
   value: string
   label: string
@@ -12,4 +14,14 @@ export interface ICheckbox {
   isChecked: boolean,
   change?: (name: string, value: string) => void,
   value: string
+}
+
+export interface IBaseButton {
+  variant: string,
+  color: string,
+  disabled?: boolean, 
+  children?: any, 
+  click?: () => void,
+  startIcon?: any,
+  endIcon?: any
 }
