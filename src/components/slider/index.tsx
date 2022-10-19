@@ -8,10 +8,19 @@ export const ImageSlider = ({ slides }:any) => {
     }
   return (
     <div>
-        <img src={slides[currIndex].image} alt="cat"></img>
+        <div className={s.hoverCont}>
+          <div onMouseEnter={() => goToSlide(0)}></div>
+          <div onMouseEnter={() => goToSlide(1)}></div>
+          <div onMouseEnter={() => goToSlide(2)}></div>
+        </div>
+        <img src={slides[currIndex].image} alt="cat" className={s.card__img}></img>
         <div className={s.container}>
           {slides.map((slide: any, ind: number) => (
-            <div key={ind} onClick={() => goToSlide(ind)} className={s.dot}></div>
+            <div key={ind}>
+              {currIndex === ind ?
+              <div onClick={() => goToSlide(ind)} className={s.dot_active}></div> :
+              <div onClick={() => goToSlide(ind)} className={s.dot}></div>}
+            </div>
           ))}
         </div>
     </div>

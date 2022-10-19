@@ -7,7 +7,7 @@
     background: #fff;
     &__section{
         display: flex;
-        gap: 20px;
+        gap: 24px;
         flex-wrap: wrap;
     }
     &__title{
@@ -21,6 +21,7 @@
         position: absolute;
         bottom: 16px;
         left: 16px;
+        width: 230px;
         display: -webkit-box;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -30,15 +31,25 @@
     &__img{
         // position: absolute;
         // top: 0;
-        height: 364px;
-        object-fit: cover;
-        // width: 100%;
+        
         // width: ;
-    }
-    &__like{
-
     }
     &__share{
 
+    }
+}
+.icon {
+    &__share {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(101, 73, 251, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 16px;
+        right: 16px;
     }
 }

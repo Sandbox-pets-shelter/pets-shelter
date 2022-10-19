@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.55.0",
     "typescript": "^4.8.4",
+    "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

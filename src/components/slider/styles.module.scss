@@ -1,10 +1,11 @@
-.dot.active {
+.dot_active {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: #846DFC;
 }
 .dot {
+    cursor: pointer;
     width: 8px;
     height: 8px;
     background: rgba(101, 73, 251, 0.2);
@@ -15,4 +16,17 @@
     gap: 8px;
     justify-content: center;
     margin-top: 8px;
+}
+.hoverCont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 364px;
+    width: 100%;
+    position: absolute;
+}
+.card__img {
+    height: 364px;
+        // object-fit: cover;
+        // width: 100%;
+    border-radius: 16px 16px 0px 0px;
 }
