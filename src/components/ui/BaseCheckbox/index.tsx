@@ -1,15 +1,15 @@
 import s from './styles.module.scss'
-import { ICheckbox } from '../../../types/ui'
-import CheckMark from '../../../img/icons/CheckMark.svg'
+import {ICheckbox} from '../../../types/ui'
+import CheckMark from '../../../assets/icons/CheckMark.svg'
 
 export const BaseCheckbox = (props: ICheckbox) => {
 
   const {name, content, isChecked, value, change} = props
-  
+
   const currentStyle = `${s.checkbox} ${isChecked && s.checkbox_checked}`
 
   const toggleChecked = (name: string, value: string) => {
-    if(change) change(name, value)
+    if (change) change(name, value)
   }
 
   return (
@@ -18,9 +18,9 @@ export const BaseCheckbox = (props: ICheckbox) => {
         <img src={CheckMark} alt='checkmark' className={s.checkbox__icon}/>
       </div>
       {content}
-      <input 
-        type='checkbox' 
-        name={name} 
+      <input
+        type='checkbox'
+        name={name}
         value={value}
         className={s.checkbox__input}
         onChange={() => toggleChecked(name, value)}
