@@ -63,7 +63,7 @@
 .right {
   margin-left: 15px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 160px 120px 210px;
   grid-template-rows: 1fr 50px;
   gap: 170px 75px;
   grid-template-areas:
@@ -85,10 +85,18 @@
     font-size: 16px;
     line-height: 20px;
 
+    &__icon {
+      min-width: 24px;
+    }
+
     &_row {
       flex-direction: row;
       align-items: center;
       gap: 32px;
+    }
+
+    & .custom {
+      gap: 0;
     }
   }
 

@@ -54,7 +54,11 @@ export const Footer = () => {
                     {item.title}
                   </h2>
                 }
-                <ul className={`${s.right__links} ${item.modificator ? s.right__links_row : ''}`}>
+                <ul
+                  className={`${s.right__links}
+                  ${item.modificator ? s.right__links_row : ''}
+                  ${item.class === 'contacts' ? 'custom' : ''}`}
+                >
                   {
                     item.subtitleLinks.map((link: any) => (
                       <a

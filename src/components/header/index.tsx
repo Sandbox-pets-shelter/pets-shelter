@@ -30,7 +30,7 @@ export const Header = () => {
         </p>
         <ul className={s.header__list}>
           {
-            routeElements.map((item) => (
+            routeElements.map((item: any) => (
               <li key={item.id}>
                 <NavLink
                   to={item.path}
