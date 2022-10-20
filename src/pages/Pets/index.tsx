@@ -8,7 +8,7 @@ export const Pets = () => {
         <main className={s.main}>
             <Filters />
             <div className={s.main__content}>
-            <div><Card/></div>
+            <Card/>
             </div>
         </main>
     )
