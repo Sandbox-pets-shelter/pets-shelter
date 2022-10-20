@@ -1,5 +1,13 @@
+import { Filters } from '../../components/filters'
+import s from './styles.module.scss'
+
 export const Pets = () => {
     return (
-        <div>Pets</div>
+        <main className={s.main}>
+            <Filters />
+            <div className={s.main__content}>
+                <h2>Cards block</h2>
+            </div>
+        </main>
     )
 }
