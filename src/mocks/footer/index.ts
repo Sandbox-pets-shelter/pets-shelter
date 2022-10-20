@@ -1,11 +1,17 @@
-import Instagram from '../../assets/icons/Instagram.svg'
-import Youtube from '../../assets/icons/Youtube.svg'
-import Twitter from '../../assets/icons/Twitter.svg'
+import Instagram from '../../assets/icons/footer/Instagram.svg'
+import Youtube from '../../assets/icons/footer/Youtube.svg'
+import Twitter from '../../assets/icons/footer/Twitter.svg'
 
-import Mail from '../../assets/icons/Mail.svg'
-import Telegram from '../../assets/icons/Telegram.svg'
-import Facebook from '../../assets/icons/Facebook.svg'
-import Vk from '../../assets/icons/VK.svg'
+import Mail from '../../assets/icons/footer/Mail.svg'
+import Telegram from '../../assets/icons/footer/Telegram.svg'
+import Facebook from '../../assets/icons/footer/Facebook.svg'
+import Vk from '../../assets/icons/footer/VK.svg'
+
+import Mastercard from '../../assets/icons/footer/Mastercard.svg'
+import Visa from '../../assets/icons/footer/Visa.svg'
+import Paypal from '../../assets/icons/footer/Paypal.svg'
+import Webmoney from '../../assets/icons/footer/Webmoney.svg'
+import Yandex from '../../assets/icons/footer/Yandex.svg'
 
 
 export const iconsFooter = [
@@ -29,6 +35,7 @@ export const iconsFooter = [
 export const footerTextRight = [
   {
     id: 1,
+    class: 'main',
     title: 'Главная',
     subtitleLinks: [
       {
@@ -68,7 +75,8 @@ export const footerTextRight = [
   {
     id: 2,
     title: 'Контакты',
-    class: 'row',
+    class: 'contacts',
+    modificator: true,
     subtitleLinks: [
       {
         id: 1,
@@ -91,6 +99,7 @@ export const footerTextRight = [
   {
     id: 3,
     title: 'Сотрудничество',
+    class: 'collab',
     subtitleLinks: [
       {
         id: 1,
@@ -108,21 +117,44 @@ export const footerTextRight = [
   },
   {
     id: 4,
-    // title: 'Сотрудничество',
-    class: 'row',
+    class: 'payment',
+    modificator: true,
     subtitleLinks: [
       {
         id: 1,
-        src: Mail
+        src: Mastercard
       },
       {
         id: 2,
-        src: Telegram
+        src: Visa
       },
       {
         id: 3,
-        src: Facebook
+        src: Paypal
+      },
+      {
+        id: 4,
+        src: Webmoney
+      },
+      {
+        id: 5,
+        src: Yandex
       }
     ]
+  }
+]
+
+export const rulesLinks = [
+  {
+    id: 1,
+    text: '© 2022 helppet. Все права защищены.'
+  },
+  {
+    id: 2,
+    text: 'Политика конфиденциальности'
+  },
+  {
+    id: 3,
+    text: 'Пользовательское соглашение'
   }
 ]

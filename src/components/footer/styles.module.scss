@@ -1,4 +1,4 @@
-.wrapper {
+.content {
   display: flex;
   margin: 0 auto;
   max-width: 1320px;
@@ -60,10 +60,14 @@
 }
 
 .right {
-  max-width: 600px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 50px;
+  gap: 170px 75px;
+  grid-template-areas:
+    "main contacts collab"
+    "main payment payment";
 
   &__title {
     font-weight: 500;
@@ -82,10 +86,45 @@
 
     &_row {
       flex-direction: row;
+      align-items: center;
+      gap: 32px;
     }
   }
 
   &__link {
     cursor: pointer;
+  }
+}
+
+.main {
+  grid-area: main;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.collab {
+  grid-area: collab;
+}
+
+.payment {
+  grid-area: payment;
+}
+
+.rules {
+  padding: 24px 0;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
   }
 }
