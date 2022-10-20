@@ -64,45 +64,65 @@ export const footerTextRight = [
         text: 'Мы в СМИ'
       }
     ]
+  },
+  {
+    id: 2,
+    title: 'Контакты',
+    class: 'row',
+    subtitleLinks: [
+      {
+        id: 1,
+        src: Mail
+      },
+      {
+        id: 2,
+        src: Telegram
+      },
+      {
+        id: 3,
+        src: Facebook
+      },
+      {
+        id: 4,
+        src: Vk
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Сотрудничество',
+    subtitleLinks: [
+      {
+        id: 1,
+        text: 'Волонтерам'
+      },
+      {
+        id: 2,
+        text: 'Ветклиникам'
+      },
+      {
+        id: 3,
+        text: 'Приютам'
+      }
+    ]
+  },
+  {
+    id: 4,
+    // title: 'Сотрудничество',
+    class: 'row',
+    subtitleLinks: [
+      {
+        id: 1,
+        src: Mail
+      },
+      {
+        id: 2,
+        src: Telegram
+      },
+      {
+        id: 3,
+        src: Facebook
+      }
+    ]
   }
-  // {
-  //   id: 2,
-  //   title: 'Контакты',
-  //   subtitleLinks: [
-  //     {
-  //       id: 1,
-  //       src: Mail
-  //     },
-  //     {
-  //       id: 2,
-  //       src: Telegram
-  //     },
-  //     {
-  //       id: 3,
-  //       src: Facebook
-  //     },
-  //     {
-  //       id: 4,
-  //       src: Vk
-  //     }
-  //   ]
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Сотрудничество',
-  //   subtitleLinks: [
-  //     {
-  //       id: 1,
-  //       text: 'Волонтерам'
-  //     },
-  //     {
-  //       id: 2,
-  //       text: 'Ветклиникам'
-  //     },
-  //     {
-  //       id: 3,
-  //       text: 'Приютам'
-  //     }
-  //   ]
-  // }
 ]

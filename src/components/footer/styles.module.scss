@@ -27,7 +27,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 145%;
-    margin-bottom: 68px;
+    margin-bottom: 32px;
+  }
+
+  &__subscribe {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19.5px;
+    margin-bottom: 16px;
   }
 
   &__icons {
@@ -49,5 +56,36 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.right {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 24px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    &_row {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
   }
 }
