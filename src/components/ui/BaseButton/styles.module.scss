@@ -74,6 +74,9 @@
       border-color: $accent;
       background-color: $white;
       color: $accent;
+      .icon {
+        background-color: $grey;
+      }
     }
   }
 
