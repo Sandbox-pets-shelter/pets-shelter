@@ -1,7 +1,7 @@
 import { BaseCheckbox } from '../ui/BaseCheckbox'
 import s from './styles.module.scss'
 import { filtersData } from '../../mocks/filter'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { BaseButton } from '../ui/BaseButton'
 
 export const Filters = () => {
@@ -33,8 +33,8 @@ export const Filters = () => {
     <div className={s.filters}>
 
       {data.map((item, index) => (
-        <>
-          {item.title && <div className={s.filters__title} key={index}> {item.title} </div> }
+        <Fragment key={index}>
+          {item.title && <div className={s.filters__title}> {item.title} </div> }
           {item.data.map((el, index) => (
             <BaseCheckbox 
               key={`${el.name}-${index}`}
@@ -45,7 +45,7 @@ export const Filters = () => {
               change={handleChange}
             />
           ))}
-        </>))
+        </Fragment>))
       }
 
       <BaseButton 
