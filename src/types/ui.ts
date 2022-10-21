@@ -1,7 +1,7 @@
 export interface IBaseDropdown {
   value: string
   label: string
-  selectedItem?: boolean
+  code: string
 }
 
 export interface ICheckbox {
@@ -10,4 +10,19 @@ export interface ICheckbox {
   isChecked: boolean,
   change?: (name: string, value: string) => void,
   value: string
+}
+
+export interface ILink {
+  id: number,
+  text?: string,
+  src?: string
+}
+
+export interface IFooterText {
+  id: number,
+  class: string,
+  title?: string,
+  custom?: boolean,
+  modificator?: boolean,
+  subtitleLinks: Array<ILink>
 }

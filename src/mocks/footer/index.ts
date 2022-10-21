@@ -76,6 +76,7 @@ export const footerTextRight = [
     id: 2,
     title: 'Контакты',
     class: 'contacts',
+    custom: true,
     modificator: true,
     subtitleLinks: [
       {

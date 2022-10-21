@@ -1,5 +1,6 @@
 import s from './styles.module.scss'
 import {footerTextRight, iconsFooter, rulesLinks} from '../../mocks/footer'
+import {IFooterText, ILink} from '../../types/ui'
 
 export const Footer = () => {
   return (
@@ -40,7 +41,7 @@ export const Footer = () => {
         </div>
         <div className={s.right}>
           {
-            footerTextRight.map(item => (
+            footerTextRight.map((item: IFooterText) => (
               <div
                 className={s[item.class]}
                 key={item.id}
@@ -57,10 +58,10 @@ export const Footer = () => {
                 <ul
                   className={`${s.right__links}
                   ${item.modificator ? s.right__links_row : ''}
-                  ${item.class === 'contacts' ? 'custom' : ''}`}
+                  ${item.custom ? s.right__links_row_custom : ''}`}
                 >
                   {
-                    item.subtitleLinks.map((link: any) => (
+                    item.subtitleLinks.map((link: ILink) => (
                       <a
                         key={link.id}
                         className={s.right__link}
@@ -86,7 +87,7 @@ export const Footer = () => {
       <div className={s.rules}>
         <ul className={s.rules__links}>
           {
-            rulesLinks.map((link: any) => (
+            rulesLinks.map((link: ILink) => (
               <li key={link.id} className={s.rules__link}>
                 {
                   link.text
