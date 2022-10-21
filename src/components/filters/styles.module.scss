@@ -11,19 +11,4 @@
     margin: 16px 0 0 0;
   }
 
-  &__btn {
-    border: 1px solid $orange;
-    border-radius: 16px;
-    outline: none;
-    padding: 16px 24px;
-    color: $orange;
-
-    &:hover {
-      box-shadow: 2px 4px 4px $orange-shadow;
-    }
-
-    &:active {
-      box-shadow: none;
-    }
-  }
 }
