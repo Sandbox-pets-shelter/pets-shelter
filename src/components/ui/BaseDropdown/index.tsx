@@ -1,7 +1,14 @@
 import s from './styles.module.scss'
 import {useState} from 'react'
+import {IBaseDropdown} from '../../../types/ui'
 
-export const BaseDropdown = (props: any) => {
+interface IProps {
+  languages: IBaseDropdown[]
+  selectedItem: IBaseDropdown | null
+  onChange: (item: IBaseDropdown) => void
+}
+
+export const BaseDropdown = (props: IProps) => {
 
   const {languages, selectedItem, onChange} = props
 
@@ -26,9 +33,9 @@ export const BaseDropdown = (props: any) => {
       </p>
       <ul className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
         {
-          languages.map((item: any) => (
+          languages.map((item: IBaseDropdown) => (
             <li
-              className={`${s.dropdown__item} ${item.label === selectedItem ? s.dropdown__selected : ''}`}
+              className={`${s.dropdown__item} ${item.label === selectedItem?.label ? s.dropdown__selected : ''}`}
               key={item.value}
               onClick={() => handleItemClick(item)}
             >

@@ -1,8 +1,11 @@
 .primary {
   display: flex;
   flex-direction: column;
+  max-width: 1320px;
   min-height: 100vh;
+  margin: 0 auto;
   padding: 0 16px;
+
   &__content {
     flex: 1 1 auto;
     padding: 16px 0;

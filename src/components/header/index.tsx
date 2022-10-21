@@ -1,10 +1,11 @@
 import s from './styles.module.scss'
 import {routeElements} from '../../configs/routeElements'
 import {NavLink} from 'react-router-dom'
-import SearchIcon from '../../img/icons/Search.svg'
-import HeartIcon from '../../img/icons/Heart.svg'
+import SearchIcon from '../../assets/icons/footer/Search.svg'
+import HeartIcon from '../../assets/icons/footer/Heart.svg'
 import {BaseDropdown} from '../ui/BaseDropdown'
 import {useCallback, useState} from 'react'
+import {IBaseDropdown} from '../../types/ui'
 
 const languages = [
   {value: '0', label: 'Ру', code: 'ru-RU'},
@@ -15,9 +16,9 @@ export const Header = () => {
 
   const lang = languages.find(item => item.code === navigator.language)
 
-  const [selectedItem, setSelectedItem] = useState(lang?.label)
+  const [selectedItem, setSelectedItem] = useState<IBaseDropdown | null>(null)
 
-  const dropdown = useCallback((item: any) => {
+  const dropdown = useCallback((item: IBaseDropdown) => {
     setSelectedItem(item)
     console.log('dropdown', item)
   }, [])
@@ -30,7 +31,7 @@ export const Header = () => {
         </p>
         <ul className={s.header__list}>
           {
-            routeElements.map((item) => (
+            routeElements.map(item => (
               <li key={item.id}>
                 <NavLink
                   to={item.path}
