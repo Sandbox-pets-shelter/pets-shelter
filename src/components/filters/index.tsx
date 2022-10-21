@@ -1,7 +1,7 @@
 import { BaseCheckbox } from '../ui/BaseCheckbox'
 import s from './styles.module.scss'
 import { filtersData } from '../../mocks/filter'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
 export const Filters = () => {
   
