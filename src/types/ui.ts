@@ -26,3 +26,13 @@ export interface IFooterText {
   modificator?: boolean,
   subtitleLinks: Array<ILink>
 }
+
+export interface IBaseButton {
+  variant: string,
+  color: string,
+  disabled?: boolean,
+  children?: any,
+  click?: () => void,
+  startIcon: string,
+  endIcon: string
+}
