@@ -33,6 +33,6 @@ export interface IBaseButton {
   disabled?: boolean,
   children?: any,
   click?: () => void,
-  startIcon: string,
-  endIcon: string
+  startIcon?: string,
+  endIcon?: string
 }
