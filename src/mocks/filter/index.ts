@@ -1,5 +1,6 @@
 export const filtersData = [
   {
+    id: 1,
     data: [
       {
         name: 'help',
@@ -10,6 +11,7 @@ export const filtersData = [
     ]
   },
   {
+    id: 2,
     title: 'Категория',
     data: [
       {
@@ -33,6 +35,7 @@ export const filtersData = [
     ]
   },
   {
+    id: 3,
     title: 'Характер',
     data: [
       {
@@ -50,6 +53,7 @@ export const filtersData = [
     ]
   },
   {
+    id: 4,
     title: 'Ветеринарные данные',
     data: [
       {
@@ -79,6 +83,7 @@ export const filtersData = [
     ]
   },
   {
+    id: 5,
     title: 'Тип шерсти',
     data: [
       {
