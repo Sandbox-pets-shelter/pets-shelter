@@ -2,26 +2,28 @@ import s from './styles.module.scss'
 import {footerTextRight, iconsFooter, rulesLinks} from '../../mocks/footer'
 import {IFooterText, ILink} from '../../types/ui'
 
+import {useTranslation} from 'react-i18next'
+
+
 export const Footer = () => {
+
+  const {t} = useTranslation()
+
   return (
     <div>
       <div className={s.content}>
         <div className={s.left}>
           <p className={s.left__undertitle}>
-            Социальный проект
+            {t('footer.under_title')}
           </p>
           <p className={s.left__title}>
-            HelpPet
+            {t('title')}
           </p>
           <p className={s.left__subtitle}>
-            (Тут о надо написать о проекте, кто его создал и почему). Для добрых дел время всегда найдётся. Это доказал
-            человек, ездивший в Питер по своим делам. Как-то проходя один из дворов, он обнаружил там хорошую
-            молоденькую
-            кошечку, совсем ещё подростка. Он приманил её и забрал с собой в столицу. В дороге человек и кошка почти
-            подружились и узнали друг друга получше.
+            {t('footer.subtitle')}
           </p>
           <p className={s.left__subscribe}>
-            Подписывайтесь на нас
+            {t('footer.subscribe')}
           </p>
           <div className={s.left__icons}>
             {
@@ -33,6 +35,7 @@ export const Footer = () => {
                   <img
                     className={s.left__icon}
                     src={icon.src}
+                    alt='icon'
                   />
                 </div>
               ))

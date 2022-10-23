@@ -13,22 +13,24 @@ import Paypal from '../../assets/icons/footer/Paypal.svg'
 import Webmoney from '../../assets/icons/footer/Webmoney.svg'
 import Yandex from '../../assets/icons/footer/Yandex.svg'
 
+import i18n from '../../i18n'
+
 
 export const iconsFooter = [
   {
     id: 1,
     src: Instagram,
-    alt: 'instagram icon'
+    alt: i18n.t('alt.instagram')
   },
   {
     id: 2,
     src: Youtube,
-    alt: 'youtube icon'
+    alt: i18n.t('alt.youtube')
   },
   {
     id: 3,
     src: Twitter,
-    alt: 'twitter icon'
+    alt: i18n.t('alt.twitter')
   }
 ]
 
@@ -36,45 +38,45 @@ export const footerTextRight = [
   {
     id: 1,
     class: 'main',
-    title: 'Главная',
+    title: i18n.t('footer.text_right.main'),
     subtitleLinks: [
       {
         id: 1,
-        text: 'Помочь нам'
+        text: i18n.t('footer.text_right.help_us')
       },
       {
         id: 2,
-        text: 'Питомцы'
+        text: i18n.t('footer.text_right.pets')
       },
       {
         id: 3,
-        text: 'История спасения'
+        text: i18n.t('footer.text_right.history')
       },
       {
         id: 4,
-        text: 'О проекте'
+        text: i18n.t('footer.text_right.about')
       },
       {
         id: 5,
-        text: 'Отчёты'
+        text: i18n.t('footer.text_right.reports')
       },
       {
         id: 6,
-        text: 'Реквезиты'
+        text: i18n.t('footer.text_right.requisites')
       },
       {
         id: 7,
-        text: 'Вакансии'
+        text: i18n.t('footer.text_right.vacancy')
       },
       {
         id: 8,
-        text: 'Мы в СМИ'
+        text: i18n.t('footer.text_right.mass_media')
       }
     ]
   },
   {
     id: 2,
-    title: 'Контакты',
+    title: i18n.t('footer.text_right.contacts'),
     class: 'contacts',
     custom: true,
     modificator: true,
@@ -99,20 +101,20 @@ export const footerTextRight = [
   },
   {
     id: 3,
-    title: 'Сотрудничество',
+    title: i18n.t('footer.text_right.cooperation'),
     class: 'collab',
     subtitleLinks: [
       {
         id: 1,
-        text: 'Волонтерам'
+        text: i18n.t('footer.text_right.volunteers')
       },
       {
         id: 2,
-        text: 'Ветклиникам'
+        text: i18n.t('footer.text_right.clinics')
       },
       {
         id: 3,
-        text: 'Приютам'
+        text: i18n.t('footer.text_right.shelters')
       }
     ]
   },
@@ -148,14 +150,14 @@ export const footerTextRight = [
 export const rulesLinks = [
   {
     id: 1,
-    text: '© 2022 helppet. Все права защищены.'
+    text: i18n.t('footer.links.rules')
   },
   {
     id: 2,
-    text: 'Политика конфиденциальности'
+    text: i18n.t('footer.links.privacy')
   },
   {
     id: 3,
-    text: 'Пользовательское соглашение'
+    text: i18n.t('footer.links.agreement')
   }
 ]
