@@ -4,7 +4,6 @@ import {IFooterText, ILink} from '../../types/ui'
 
 import {useTranslation} from 'react-i18next'
 
-
 export const Footer = () => {
 
   const {t} = useTranslation()
