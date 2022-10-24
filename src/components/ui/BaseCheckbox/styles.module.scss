@@ -1,15 +1,33 @@
+@import '../../../scss/variables.scss';
+
 .checkbox {
   width: 100%;
   display: flex;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    .checkbox__mark {
+      .icon {
+        background-color: $primary;
+      }
+    }
+  }
 
   &_checked {
-    cursor: pointer;
     .checkbox__mark {
-      background-color: #6549FB;
-      .checkbox__icon {
-        opacity: 1;
+      background-color: $primary-dark;
+      border: 2px solid $primary-dark;
+      .icon {
+        background-color: $white;
+      }
+    }
+    &:hover {
+      .checkbox__mark {
+        .icon {
+          background-color: $white;
+        }
       }
     }
   }
@@ -28,10 +46,19 @@
     height: 24px;
     margin: 0 16px 0 0;
     border-radius: 8px;
-    border: 2px solid #6549FB;
+    border: 2px solid $primary;
   }
 
-  &__icon {
-    opacity: 0;
-  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  mask-image: url('../../../assets/icons/CheckMark.svg'); 
+  -webkit-mask-image: url('../../../assets/icons/CheckMark.svg');
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  background-color: $white;
 }

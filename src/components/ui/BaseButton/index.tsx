@@ -17,8 +17,8 @@ export const BaseButton = (props: IBaseButton) => {
     >
       {startIcon && <div
         style={{
-          mask: `url(${startIcon})`, 
-          WebkitMask: `url(${startIcon})`,
+          maskImage: `url(${startIcon})`, 
+          WebkitMaskImage: `url(${startIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
@@ -30,8 +30,8 @@ export const BaseButton = (props: IBaseButton) => {
       {children}
       {endIcon && <div
         style={{
-          mask: `url(${endIcon})`, 
-          WebkitMask: `url(${endIcon})`,
+          maskImage: `url(${endIcon})`, 
+          WebkitMaskImage: `url(${endIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
