@@ -28,10 +28,8 @@ export const Filters = () => {
       }))
   }
 
-
   return (
     <div className={s.filters}>
-
       {data.map(item => (
         <Fragment key={item.id}>
           {item.title && <div className={s.filters__title}> {item.title} </div> }

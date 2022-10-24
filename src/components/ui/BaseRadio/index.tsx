@@ -1,11 +1,11 @@
 import s from './styles.module.scss'
-import {ICheckbox} from '../../../types/ui'
+import {IRadio} from '../../../types/ui'
 
-export const BaseCheckbox = (props: ICheckbox) => {
+export const BaseRadio = (props: IRadio) => {
 
   const {name, content, isChecked, value, change} = props
 
-  const currentStyle = `${s.checkbox} ${isChecked && s.checkbox_checked}`
+  const currentStyle = `${s.radio} ${isChecked && s.radio_checked}`
 
   const toggleChecked = (name: string, value: string) => {
     if (change) change(name, value)
@@ -13,15 +13,15 @@ export const BaseCheckbox = (props: ICheckbox) => {
 
   return (
     <label className={currentStyle}>
-      <div className={s.checkbox__mark}>
-        <div className={s.icon}></div>
+      <div className={s.radio__mark}>
+        <div className={s.radio__point}></div>
       </div>
       {content}
       <input
-        type='checkbox'
+        type='radio'
         name={name}
         value={value}
-        className={s.checkbox__input}
+        className={s.radio__input}
         onChange={() => toggleChecked(name, value)}
         checked={isChecked}
       />

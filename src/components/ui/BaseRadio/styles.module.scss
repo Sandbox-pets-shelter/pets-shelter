@@ -1,0 +1,59 @@
+@import '../../../scss/variables.scss';
+
+.radio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    .radio__mark {
+      .radio__point {
+        background-color: $primary;
+      }
+    }
+  }
+
+  &_checked {
+    .radio__mark {
+      background-color: $primary-dark;
+      border: 2px solid $primary-dark;
+      .radio__point {
+        background-color: $white;
+      }
+    }
+    &:hover {
+      .radio__mark {
+        .radio__point {
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &__mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px 0 0;
+    border-radius: 50%;
+    border: 2px solid $primary;
+  }
+
+  &__point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $white;
+  }
+
+}
