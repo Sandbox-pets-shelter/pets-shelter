@@ -7,6 +7,8 @@ import {BrowserRouter} from 'react-router-dom'
 
 import './scss/main.scss'
 
+import './i18n'
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
