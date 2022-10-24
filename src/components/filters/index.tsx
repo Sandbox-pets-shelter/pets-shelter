@@ -28,7 +28,6 @@ export const Filters = () => {
       }))
   }
 
-
   return (
     <div className={s.filters}>
 

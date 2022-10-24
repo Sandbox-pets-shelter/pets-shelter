@@ -36,3 +36,9 @@ export interface IBaseButton {
   startIcon?: string,
   endIcon?: string
 }
+
+export interface IRadio {
+  name: string,
+  isChecked: boolean,
+  onChange?: (name: string, value: boolean) => void 
+}
