@@ -1,0 +1,25 @@
+.Home{
+    height: 625px;
+    left: 300px;
+    border: 1px solid #EBEBEB;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    text-align: center;
+}
+.Home__img{
+    margin: 76px 535px 23px 534px;
+}
+.Home h2{
+    padding: 0;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #333333;
+}
+.Home p{
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+.Home__icon{
+    text-align: center;
+}
