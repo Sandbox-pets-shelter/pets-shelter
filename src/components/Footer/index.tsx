@@ -1,10 +1,11 @@
-import s from './styles.module.scss'
+import {useTranslation} from 'react-i18next'
+
 import {footerTextRight, iconsFooter, rulesLinks} from '../../mocks/footer'
 import {IFooterText, ILink} from '../../types/ui'
 
-import {useTranslation} from 'react-i18next'
+import s from './styles.module.scss'
 
-export const Footer = () => {
+const Footer = () => {
 
   const {t} = useTranslation()
 
@@ -102,3 +103,5 @@ export const Footer = () => {
     </div>
   )
 }
+
+export default Footer

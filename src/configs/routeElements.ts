@@ -1,5 +1,5 @@
 import { appRoutes } from './appRoutes'
-import { withLayout } from '../components/HOC/withLayout'
+import { withLayout } from '../HOC/withLayout'
 import { Home } from '../pages/Home'
 import { About } from '../pages/About'
 import { History } from '../pages/History'

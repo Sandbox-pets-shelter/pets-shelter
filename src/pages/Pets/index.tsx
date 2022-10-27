@@ -1,4 +1,5 @@
-import { Filters } from '../../components/filters'
+import { Filters } from '../../components/index'
+
 import s from './styles.module.scss'
 
 export const Pets = () => {
