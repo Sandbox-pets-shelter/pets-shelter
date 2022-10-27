@@ -4,41 +4,41 @@ import s from './styles.module.scss'
 
 const BaseButton = (props: IBaseButton) => {
 
-  const {variant, color, disabled, children, click, startIcon, endIcon} = props
+  const { variant, color, disabled, children, click, startIcon, endIcon } = props
 
   const btnType = `btn_${variant}-${color}`
 
   const currentStyle = `${s.btn} ${s[btnType]}`
 
   return (
-    <button 
+    <button
       className={currentStyle}
       disabled={disabled}
       onClick={click}
     >
       {startIcon && <div
         style={{
-          mask: `url(${startIcon})`, 
+          mask: `url(${startIcon})`,
           WebkitMask: `url(${startIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
           WebkitMaskPosition: 'center'
         }}
-        className={s.icon} 
+        className={s.icon}
       >
       </div>}
       {children}
       {endIcon && <div
         style={{
-          mask: `url(${endIcon})`, 
+          mask: `url(${endIcon})`,
           WebkitMask: `url(${endIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
           WebkitMaskPosition: 'center'
         }}
-        className={s.icon} 
+        className={s.icon}
       >
       </div>}
     </button>

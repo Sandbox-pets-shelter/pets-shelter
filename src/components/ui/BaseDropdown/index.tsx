@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import {IBaseDropdown} from '../../../types/ui'
+import { useState } from 'react'
+import { IBaseDropdown } from '../../../types/ui'
 
 import s from './styles.module.scss'
 
@@ -11,9 +11,9 @@ interface IProps {
 
 const BaseDropdown = (props: IProps) => {
 
-  const {languages, selectedItem, onChange} = props
+  const { languages, selectedItem, onChange } = props
 
-  const [isOpen, setOpen] = useState(false)
+  const [ isOpen, setOpen ] = useState(false)
 
   const toggleDropdown = () => {
     setOpen(!isOpen)

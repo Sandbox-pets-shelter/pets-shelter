@@ -1,6 +1,6 @@
-import {ComponentType} from 'react'
-import {useLocation} from 'react-router'
-import {appRoutes} from '../configs/appRoutes'
+import { ComponentType } from 'react'
+import { useLocation } from 'react-router'
+import { appRoutes } from '../configs/appRoutes'
 import DefaultLayout from '../layouts/defaultLayout'
 
 export function withLayout (WrappedComponent: ComponentType<any>): ComponentType<any> {

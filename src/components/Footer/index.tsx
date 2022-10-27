@@ -1,13 +1,13 @@
-import {useTranslation} from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
-import {footerTextRight, iconsFooter, rulesLinks} from '../../mocks/footer'
-import {IFooterText, ILink} from '../../types/ui'
+import { footerTextRight, iconsFooter, rulesLinks } from '../../mocks/footer'
+import { IFooterText, ILink } from '../../types/ui'
 
 import s from './styles.module.scss'
 
 const Footer = () => {
 
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div>

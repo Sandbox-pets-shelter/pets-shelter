@@ -6,12 +6,12 @@ import s from './styles.module.scss'
 
 const Filters = () => {
   
-  const [data, setData] = useState(filtersData)
+  const [ data, setData ] = useState(filtersData)
 
   const reset = () => {
     setData(data.map(item => {
       item.data = item.data.map(el => {
-        return {...el, isChecked: false}
+        return { ...el, isChecked: false }
       })
       return item
     }))
@@ -21,7 +21,7 @@ const Filters = () => {
       setData(data.map(item => {
         item.data = item.data.map(el => 
           el.name === name && el.value === value 
-            ? {...el, isChecked: !el.isChecked} 
+            ? { ...el, isChecked: !el.isChecked }
             : el
           )
         return item

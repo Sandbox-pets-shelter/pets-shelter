@@ -1,5 +1,5 @@
-import {Header} from '../../components/index'
-import {Footer} from '../../components/index'
+import { Header } from '../../components/index'
+import { Footer } from '../../components/index'
 // import Loader from '../../components/loader'
 
 import s from './styles.module.scss'
