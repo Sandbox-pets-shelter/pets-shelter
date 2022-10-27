@@ -1,7 +1,8 @@
-import s from './styles.module.scss'
 import { IBaseButton } from '../../../types/ui'
 
-export const BaseButton = (props: IBaseButton) => {
+import s from './styles.module.scss'
+
+const BaseButton = (props: IBaseButton) => {
 
   const {variant, color, disabled, children, click, startIcon, endIcon} = props
 
@@ -43,6 +44,8 @@ export const BaseButton = (props: IBaseButton) => {
     </button>
   )
 }
+
+export default BaseButton
 
 // how to use this component
 // if you want to use this component, you have to pass two required props

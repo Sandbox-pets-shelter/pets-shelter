@@ -1,18 +1,20 @@
-import s from './styles.module.scss'
-import {routeElements} from '../../configs/routeElements'
+import {useCallback, useState} from 'react'
 import {NavLink} from 'react-router-dom'
+
+import {routeElements} from '../../configs/routeElements'
+import {BaseDropdown} from '..'
+import {IBaseDropdown} from '../../types/ui'
 import SearchIcon from '../../assets/icons/footer/Search.svg'
 import HeartIcon from '../../assets/icons/footer/Heart.svg'
-import {BaseDropdown} from '../ui/BaseDropdown'
-import {useCallback, useState} from 'react'
-import {IBaseDropdown} from '../../types/ui'
+
+import s from './styles.module.scss'
 
 const languages = [
   {value: '0', label: 'Ру', code: 'ru-RU'},
   {value: '1', label: 'Кз', code: 'kk-KZ'}
 ]
 
-export const Header = () => {
+const Header = () => {
 
   const lang = languages.find(item => item.code === navigator.language)
 
@@ -61,3 +63,5 @@ export const Header = () => {
     </div>
   )
 }
+
+export default Header

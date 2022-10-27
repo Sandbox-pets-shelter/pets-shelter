@@ -1,6 +1,7 @@
-import s from './styles.module.scss'
 import {useState} from 'react'
 import {IBaseDropdown} from '../../../types/ui'
+
+import s from './styles.module.scss'
 
 interface IProps {
   languages: IBaseDropdown[]
@@ -8,7 +9,7 @@ interface IProps {
   onChange: (item: IBaseDropdown) => void
 }
 
-export const BaseDropdown = (props: IProps) => {
+const BaseDropdown = (props: IProps) => {
 
   const {languages, selectedItem, onChange} = props
 
@@ -47,3 +48,5 @@ export const BaseDropdown = (props: IProps) => {
     </div>
   )
 }
+
+export default BaseDropdown

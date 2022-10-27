@@ -1,8 +1,9 @@
-import s from './styles.module.scss'
 import {ICheckbox} from '../../../types/ui'
 import CheckMark from '../../../assets/icons/CheckMark.svg'
 
-export const BaseCheckbox = (props: ICheckbox) => {
+import s from './styles.module.scss'
+
+const BaseCheckbox = (props: ICheckbox) => {
 
   const {name, content, isChecked, value, change} = props
 
@@ -29,3 +30,5 @@ export const BaseCheckbox = (props: ICheckbox) => {
     </label>
   )
 }
+
+export default BaseCheckbox

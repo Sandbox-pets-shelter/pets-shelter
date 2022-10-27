@@ -1,10 +1,10 @@
-import { BaseCheckbox } from '../ui/BaseCheckbox'
-import s from './styles.module.scss'
-import { filtersData } from '../../mocks/filter'
 import { Fragment, useState } from 'react'
-import { BaseButton } from '../ui/BaseButton'
+import { filtersData } from '../../mocks/filter'
+import { BaseCheckbox, BaseButton } from '..'
 
-export const Filters = () => {
+import s from './styles.module.scss'
+
+const Filters = () => {
   
   const [data, setData] = useState(filtersData)
 
@@ -59,3 +59,5 @@ export const Filters = () => {
     </div>
   )
 }
+
+export default Filters
