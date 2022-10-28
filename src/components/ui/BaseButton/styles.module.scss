@@ -12,15 +12,20 @@
   &_filled-primary {
     background-color: $primary;
     color: $white;
+    transition: all $transition;
+
     .icon {
       background-color: $white;
     }
+
     &:hover {
       background-color: $primary-dark;
     }
+
     &:active {
       background-color: $primary;
     }
+
     &:disabled {
       background-color: $grey;
     }
@@ -29,24 +34,30 @@
   &_filled-accent {
     background-color: $accent;
     color: $white;
+
     .icon {
       background-color: $white;
     }
+
     &:hover {
       background-color: $white;
       color: $accent;
       box-shadow: 0 0 4px 2px $grey;
+
       .icon {
         background-color: $accent;
       }
     }
+
     &:active {
       box-shadow: 0 0 2px 1px $grey;
     }
+
     &:disabled {
       background-color: $grey;
       color: $white;
       box-shadow: none;
+
       .icon {
         background-color: $grey;
       }
@@ -57,23 +68,29 @@
     background-color: $white;
     color: $primary;
     border: 1px solid $primary;
+
     .icon {
       background-color: $primary;
     }
+
     &:hover {
       background-color: $primary;
       color: $white;
+
       .icon {
         background-color: $white;
       }
     }
+
     &:active {
       background-color: $primary-dark;
     }
+
     &:disabled {
       border-color: $accent;
       background-color: $white;
       color: $accent;
+
       .icon {
         background-color: $grey;
       }
@@ -84,19 +101,24 @@
     background-color: $white;
     border: 1px solid $accent;
     color: $accent;
+
     .icon {
       background-color: $accent;
     }
+
     &:hover {
       background-color: $accent-light;
     }
+
     &:active {
       background-color: $white;
     }
+
     &:disabled {
       border-color: $grey;
       background-color: $grey-light;
       color: $grey;
+
       .icon {
         background-color: $grey;
       }
