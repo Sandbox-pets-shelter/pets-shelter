@@ -1,6 +1,6 @@
 @import '../../scss/variables.scss';
 
-.cooperation{
+.cooperation {
     border: 1px solid $separator;
     backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -9,11 +9,11 @@
     justify-content: center;
     align-items: center;
 
-    &__img{
+    &__img {
         margin: 76px auto 48px;
     }
 
-    &__title{
+    &__title {
         padding: 0;
         font-weight: 600;
         font-size: 32px;
@@ -21,7 +21,7 @@
         color: $text;
     }
 
-    &__subtitle{
+    &__subtitle {
         font-size: 16px;
         font-weight: 400;
         line-height: 23px;
@@ -30,7 +30,7 @@
         text-indent: 30px;
     }
 
-    &__button{
+    &__button {
         display: flex;
         justify-content: center;
         margin-bottom: 76px;
