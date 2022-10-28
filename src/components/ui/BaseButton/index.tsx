@@ -1,48 +1,51 @@
-import s from './styles.module.scss'
 import { IBaseButton } from '../../../types/ui'
 
-export const BaseButton = (props: IBaseButton) => {
+import s from './styles.module.scss'
 
-  const {variant, color, disabled, children, click, startIcon, endIcon} = props
+const BaseButton = (props: IBaseButton) => {
+
+  const { variant, color, disabled, children, click, startIcon, endIcon } = props
 
   const btnType = `btn_${variant}-${color}`
 
   const currentStyle = `${s.btn} ${s[btnType]}`
 
   return (
-    <button 
+    <button
       className={currentStyle}
       disabled={disabled}
       onClick={click}
     >
       {startIcon && <div
         style={{
-          mask: `url(${startIcon})`, 
+          mask: `url(${startIcon})`,
           WebkitMask: `url(${startIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
           WebkitMaskPosition: 'center'
         }}
-        className={s.icon} 
+        className={s.icon}
       >
       </div>}
       {children}
       {endIcon && <div
         style={{
-          mask: `url(${endIcon})`, 
+          mask: `url(${endIcon})`,
           WebkitMask: `url(${endIcon})`,
           maskRepeat: 'no-repeat',
           WebkitMaskRepeat: 'no-repeat',
           maskPosition: 'center',
           WebkitMaskPosition: 'center'
         }}
-        className={s.icon} 
+        className={s.icon}
       >
       </div>}
     </button>
   )
 }
+
+export default BaseButton
 
 // how to use this component
 // if you want to use this component, you have to pass two required props
