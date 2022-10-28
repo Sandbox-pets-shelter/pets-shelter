@@ -1,25 +1,29 @@
-.Home{
+@import '../../scss/variables.scss';
+
+.home{
     height: 625px;
     left: 300px;
-    border: 1px solid #EBEBEB;
+    border: 1px solid $separator;
     backdrop-filter: blur(10px);
     border-radius: 16px;
     text-align: center;
 }
-.Home__img{
-    margin: 76px 535px 23px 534px;
+.home__img{
+    margin: 76px 0 48px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.Home h2{
+.home__item1{
     padding: 0;
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
     color: #333333;
 }
-.Home p{
+.home__item2{
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 32px;
 }
-.Home__icon{
+.home__button{
     text-align: center;
 }
