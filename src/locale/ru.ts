@@ -31,6 +31,10 @@ export const ru = {
       instagram: 'instagram icon',
       youtube: 'youtube icon',
       twitter: 'twitter icon'
+    },
+    cooperation: {
+      title: 'Сотрудничая с нами вы спасаете Жизни!',
+      subtitle: 'Если вы являетесь неравнодушным человеком, у которого есть предложения по сотрудничеству с приютами, напишите нам!'
     }
   }
 }
