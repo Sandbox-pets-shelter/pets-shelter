@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
 import { BaseButton } from '../../components/index'
-import people from '../../assets/icons/home/people-cat.png'
+import cooperation from '../../assets/icons/home/cooperation-image.svg'
 
 import s from './styles.module.scss'
 
@@ -13,11 +13,11 @@ export const Home = () => {
     console.log(1)
   }
   return (
-    <div className={s.home}>
-      <img className={s.home__img} src={people} alt="Люди и кот"/>
-      <p className={s.home__title}>{t('cooperation.title')}</p>
-      <p className={s.home__subtitle}>{t('cooperation.subtitle')}</p>
-      <div className={s.home__button}>
+    <div className={s.cooperation}>
+      <img className={s.cooperation__img} src={cooperation} alt="Сотрудничество"/>
+      <p className={s.cooperation__title}>{t('cooperation.title')}</p>
+      <p className={s.cooperation__subtitle}>{t('cooperation.subtitle')}</p>
+      <div className={s.cooperation__button}>
         <BaseButton
           variant='filled'
           color='primary'
