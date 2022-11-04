@@ -1,0 +1,38 @@
+@import '../../../assets/scss/variables';
+
+.sponsors {
+   margin-top: 112px;
+   margin-bottom: 88px;
+
+&__title {
+    margin-left: 390px;
+    margin-right: 310px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: $text;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 120%;
+    max-width: 500px;
+} 
+
+&__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+&__container__img {
+    border: 1px solid $separator;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    margin-bottom: 24px;
+    height: 170px;
+    width: 405px;
+    background-color: $white;
+} 
+} 
