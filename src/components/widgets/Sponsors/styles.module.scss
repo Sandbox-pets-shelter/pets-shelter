@@ -1,12 +1,11 @@
 @import '../../../assets/scss/variables';
 
 .sponsors {
-   margin-top: 112px;
-   margin-bottom: 88px;
+   margin: 112px 0 72px 0;
 
 &__title {
-    margin-left: 390px;
-    margin-right: 310px;
+    display: block;
+    margin: auto;
     margin-bottom: 24px;
     text-align: center;
     color: $text;
@@ -19,6 +18,9 @@
 
 &__container {
     display: flex;
+    flex-wrap: wrap;
+    max-height: auto;
+    max-width: auto;
     justify-content: space-between;
 }
 
@@ -26,8 +28,6 @@
     border: 1px solid $separator;
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    display: inline-flex;
-    justify-content: center;
     align-items: center;
     padding: 35px;
     margin-bottom: 24px;

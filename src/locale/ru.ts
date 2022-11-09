@@ -9,7 +9,6 @@ export const ru = {
         main: 'Главная',
         contacts: 'Контакты',
         cooperation: 'Сотрудничество',
-        sponsors: 'Спонсоры и партнеры',
         help_us: 'Помочь нам',
         pets: 'Питомцы',
         history: 'История спасения',
