@@ -11,31 +11,31 @@ export const iconsSponsors = [
     {
       id: 1,
       src: Forbes,
-      alt: i18n.t('alt.forbes')
+      alt: i18n.t('forbes')
     },
     {
       id: 2,
       src: Khabar,
-      alt: i18n.t('alt.khabar')
+      alt: i18n.t('khabar')
     },
     {
       id: 3,
       src: KazPravda,
-      alt: i18n.t('alt.kazPravda')
+      alt: i18n.t('kazPravda')
     },
     {
       id: 4,
       src: Qazaqstan,
-      alt: i18n.t('alt.qazaqstan')
+      alt: i18n.t('qazaqstan')
     },
     {
       id: 5,
       src: Siemens,
-      alt: i18n.t('alt.siemens')
+      alt: i18n.t('siemens')
     },
     {
       id: 6,
       src: KazMunayGas,
-      alt: i18n.t('alt.kazMunayGas')
+      alt: i18n.t('kazMunayGas')
     }
   ]

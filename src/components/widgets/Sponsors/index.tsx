@@ -20,7 +20,7 @@ const Sponsors = () => {
               <img
                 className={s.sponsors__container__img}
                 src={icon.src}
-                alt='img'
+                alt={icon.alt}
               />
             </div>
           ))

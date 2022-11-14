@@ -5,22 +5,19 @@
 
 &__title {
     display: block;
-    margin: auto;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
     text-align: center;
     color: $text;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 120%;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
     max-width: 500px;
 } 
 
 &__container {
     display: flex;
     flex-wrap: wrap;
-    max-height: auto;
-    max-width: auto;
     justify-content: space-between;
 }
 
@@ -28,7 +25,9 @@
     border: 1px solid $separator;
     backdrop-filter: blur(10px);
     border-radius: 16px;
+    display: flex;
     align-items: center;
+    justify-content: center;
     padding: 35px;
     margin-bottom: 24px;
     height: 170px;
