@@ -1,27 +1,29 @@
 @import '../../../assets/scss/variables';
 
 .sponsors {
-   margin: 112px 0 72px 0;
+  margin: 112px 0 72px 0;
 
-&__title {
-    display: block;
+  &__title {
+    font-family: 'Nunito', sans-serif;
     margin: 0 auto 24px;
     text-align: center;
     color: $text;
-    font-family: 'Nunito';
     font-weight: 600;
     font-size: 32px;
     line-height: 44px;
-    max-width: 500px;
-} 
+  }
 
-&__container {
+  &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
 
-&__container__img {
+    &__item {
+      cursor: pointer;
+    }
+  }
+
+  &__container__img {
     border: 1px solid $separator;
     backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -33,5 +35,5 @@
     height: 170px;
     width: 405px;
     background-color: $white;
-} 
+  }
 } 

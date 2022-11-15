@@ -15,7 +15,7 @@ const Sponsors = () => {
           iconsSponsors.map(icon => (
             <div
               key={icon.id}
-              className={s.sponsors__container}
+              className={s.sponsors__container__item}
             >
               <img
                 className={s.sponsors__container__img}
@@ -24,8 +24,8 @@ const Sponsors = () => {
               />
             </div>
           ))
-        }     
-     </div>
+        }
+      </div>
     </div>
   )
 }
