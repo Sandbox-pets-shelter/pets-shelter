@@ -10,7 +10,7 @@ const Cooperation = () => {
   const { t } = useTranslation()
 
   const reset = () => {
-    console.log(reset)
+    console.log('reset')
   }
   return (
     <div className={s.cooperation}>
