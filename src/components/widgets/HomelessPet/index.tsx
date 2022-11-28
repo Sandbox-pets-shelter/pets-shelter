@@ -10,7 +10,7 @@ const HomelessPet = () => {
   const { t } = useTranslation()
 
   const reset = () => {
-    console.log(1)
+    console.log(reset)
   }
   return (
     <div className={s.homelesspet}>
@@ -22,7 +22,7 @@ const HomelessPet = () => {
           variant='filled'
           color='primary'
           click={reset}>
-          Попросить поддержку
+          {t('homelesspet.btn')}
         </BaseButton>
       </div>
     </div>
