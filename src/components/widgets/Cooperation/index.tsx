@@ -10,7 +10,7 @@ const Cooperation = () => {
   const { t } = useTranslation()
 
   const reset = () => {
-    console.log(1)
+    console.log('reset')
   }
   return (
     <div className={s.cooperation}>
@@ -22,7 +22,7 @@ const Cooperation = () => {
           variant='filled'
           color='primary'
           click={reset}>
-          Начать сотрудничать
+          {t('cooperation.btn')}
         </BaseButton>
       </div>
     </div>
