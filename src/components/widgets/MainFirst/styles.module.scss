@@ -1,0 +1,101 @@
+@import '../../../assets/scss/variables';
+
+.mainfirst {
+    color: $text;
+
+    &__first {
+        display: flex;
+        justify-content: space-between;
+
+        &__container {
+            flex-direction: column;
+
+            &__title {
+                font-family: 'Nunito';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 130%;
+                width: 727px;
+                margin: 265px 0 20px 0;
+            }
+
+            &__content {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 145%;
+                width: 536px;
+                margin-bottom: 32px;
+            }
+
+            &__arrow {
+                position: absolute;
+                text-decoration: none;
+                padding-left: 619px;
+                padding-top: 180px;
+            }
+        }
+
+        &__img {
+            width: 536px;
+            height: 808px;
+        }
+    }
+
+    &__urgenthelp {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $separator;
+        backdrop-filter: blur(10px);
+        background-color: $white;
+        border-radius: 16px;
+        margin-bottom: 112px;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            margin: 75px 28px 0 40px;
+
+            &__subtitle {
+                width: 496px;
+                font-family: 'Nunito';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 32px;
+                line-height: 44px;
+            }
+
+            &__content {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 145%;
+                width: 463px;
+                margin-top: 16px;
+            }
+        }
+        
+        &__btn {
+            margin: auto;
+            position: relative;
+
+            &__plus__red {
+                display: none;
+                right: 562px;
+                top: 134px;
+                position: absolute;
+            }
+
+            :hover ~ &__plus__red {
+                display: block;
+            }
+        }
+
+        &__img {
+            border-radius: 20px;
+        }
+    }
+}
