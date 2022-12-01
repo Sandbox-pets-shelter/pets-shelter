@@ -1,0 +1,144 @@
+.content {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: 76px 0 24px 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.left {
+  &__undertitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 32px;
+  }
+
+  &__subtitle {
+    max-width: 510px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 145%;
+    margin-bottom: 32px;
+  }
+
+  &__subscribe {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19.5px;
+    margin-bottom: 16px;
+  }
+
+  &__icons {
+    display: flex;
+    width: 152px;
+    justify-content: space-between;
+  }
+
+  &__social {
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #A392FD;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.right {
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 160px 120px 210px;
+  grid-template-rows: 1fr 50px;
+  gap: 170px 75px;
+  grid-template-areas:
+    "main contacts collab"
+    "main payment payment";
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 24px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    &__icon {
+      min-width: 24px;
+    }
+
+    &_row {
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+
+      &_custom {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
+
+.custom {
+  gap: 0;
+}
+
+.main {
+  grid-area: main;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.collab {
+  grid-area: collab;
+}
+
+.payment {
+  grid-area: payment;
+}
+
+.rules {
+  padding: 24px 0;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+}

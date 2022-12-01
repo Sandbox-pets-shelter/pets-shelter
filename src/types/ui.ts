@@ -1,9 +1,7 @@
-// TODO: Всё что ниже примеры
-
 export interface IBaseDropdown {
   value: string
   label: string
-  selectedItem?: boolean
+  code: string
 }
 
 export interface ICheckbox {
@@ -12,4 +10,29 @@ export interface ICheckbox {
   isChecked: boolean,
   change?: (name: string, value: string) => void,
   value: string
+}
+
+export interface ILink {
+  id: number,
+  text?: string,
+  src?: string
+}
+
+export interface IFooterText {
+  id: number,
+  class: string,
+  title?: string,
+  custom?: boolean,
+  modificator?: boolean,
+  subtitleLinks: Array<ILink>
+}
+
+export interface IBaseButton {
+  variant: string,
+  color: string,
+  disabled?: boolean,
+  children?: any,
+  click?: () => void,
+  startIcon?: string,
+  endIcon?: string
 }

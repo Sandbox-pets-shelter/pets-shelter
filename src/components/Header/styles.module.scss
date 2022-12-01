@@ -1,0 +1,42 @@
+@import '../../assets/scss/variables.scss';
+
+.wrapper {
+  width: 100%;
+  border-bottom: 1px solid $separator;
+}
+
+.header {
+  max-height: 32px;
+  max-width: 1320px;
+  margin: 52px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    color: #6549FB;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__panel {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+  }
+}
+
+.active {
+  color: $activeColor;
+}
