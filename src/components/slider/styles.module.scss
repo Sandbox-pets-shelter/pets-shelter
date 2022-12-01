@@ -1,8 +1,9 @@
+@import '../../scss/variables.scss';
 .dot_active {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #846DFC;
+    background: $activeColor;
 }
 .dot {
     cursor: pointer;

@@ -1,5 +1,6 @@
 @import '../../scss/variables.scss';
 .card {
+    cursor: pointer;
     width: 312px;
     height: 491px;
     position: relative;
@@ -13,25 +14,30 @@
     }
     &__info{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-left: 16px;
-        margin-top: 16px;
+        grid-template-areas:
+            "a b"
+            "a b";
+        padding-left: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
     &__title{
+        grid-area: a;
         color: #333333;
-        font-family: 'Gilroy';
+        font-family: 'Nunito', sans-serif;
         font-weight: 600;
         font-size: 24px;
-        line-height: 29px;
     }
     &__descr{
+        grid-area: a;
+        margin-top: 35px;
         color: #606060;
         width: 211px;
-        font-family: 'Montserrat';
         font-weight: 500;
         font-size: 16px;
-        line-height: 145%;
-        margin-top: 4px;
+    }
+    &__like{
+        grid-area: b;
     }
 }
 .icon {

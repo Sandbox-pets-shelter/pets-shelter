@@ -26,11 +26,9 @@ export const Card = () => {
             <div key={img.key} className={s.card}>
                 <ImageSlider slides={img.src}/>
                 <div className={s.card__info}>
-                  <div>
-                    <div className={s.card__title}>{img.name}, {img.age}</div>
-                    <div className={s.card__descr}>{img.descr}</div>
-                  </div>
-                  <Like like={img.liked} handleClicked={handleClicked} elem={img}/>
+                  <div className={s.card__title}>{img.name}, {img.age}</div>
+                  <div className={s.card__descr}>{img.descr}</div>
+                  <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img}/>
                 </div>
                 <div className={s.icon__share} onClick={handleShareButton}><img src={ShareIcon} alt="share" className={s.card__share}/></div>
             </div>
