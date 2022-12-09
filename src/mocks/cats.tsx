@@ -178,5 +178,149 @@ export let cats = [
                 image: require('../assets/images/cat3.jpg')
             }
         ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
+    },
+    {
+        key: 10,
+        name: 'Кнопик',
+        age: '2 мес',
+        descr: 'Котя - оптимист придаст жизни позитива!',
+        liked: true,
+        src: [
+            {
+                image: require('../assets/images/cat1.jpg')
+            },
+            {
+                image: require('../assets/images/cat2.jpg')
+            },
+            {
+                image: require('../assets/images/cat3.jpg')
+            }
+        ]
     }
 ]
