@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import style from './styles.module.scss'
 
 export const ImageSlider = ({ slides }:any) => {
-    const [currIndex, setCurrIndex] = useState(0)
+    const [ currIndex, setCurrIndex ] = useState(0)
     const goToSlide = (ind: any) => {
       setCurrIndex(ind)
     }

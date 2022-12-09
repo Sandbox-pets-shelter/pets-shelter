@@ -1,4 +1,5 @@
 import React from 'react'
+// import ReactPaginate from 'react-paginate'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { routeElements } from './configs/routeElements'

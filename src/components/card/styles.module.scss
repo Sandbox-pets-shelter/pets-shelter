@@ -58,3 +58,18 @@
         background: $activeColor;
     }
 }
+.paginate {
+    &__button {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button__prev {
+        margin: 30px;
+
+    }
+    &__button__next {
+        margin-top: 30px;
+    }
+}
+
