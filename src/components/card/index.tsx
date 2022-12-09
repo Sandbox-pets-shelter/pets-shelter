@@ -1,5 +1,5 @@
 import s from './styles.module.scss'
-import ShareIcon from '../../assets/icons/Share.svg'
+import ShareIcon from '../../assets/icons/Share'
 import { useState, useEffect } from 'react'
 import { ImageSlider } from '../slider'
 import { handleShareButton } from '../sharebtn'
@@ -31,7 +31,7 @@ export const Card = () => {
                 <div className={s.card__descr}>{img.descr}</div>
                 <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img}/>
               </div>
-              <div className={s.icon__share} onClick={handleShareButton}><img src={ShareIcon} alt="share" className={s.card__share}/></div>
+              <div className={s.icon__share} onClick={handleShareButton}><ShareIcon className={s.card__share}/></div>
           </div>
         </Link>
       ))}

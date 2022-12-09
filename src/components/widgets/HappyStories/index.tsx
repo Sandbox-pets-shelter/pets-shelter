@@ -40,7 +40,7 @@ const HappyStories = () => {
                       <a className={s.happystories__container__img__title__btn}href="#">{item.link}
                       <img className={s.happystories__container__img__btn__arr}src={arrow} alt="Стрелка"/></a>
                       </div>
-              </div> 
+              </div>
             </div>
           ))
         }
