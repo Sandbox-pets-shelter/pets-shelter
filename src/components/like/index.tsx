@@ -1,7 +1,7 @@
 import HeartIcon from '../../assets/icons/Heart'
 import style from './styles.module.scss'
 
-export const Like = ({like, handleClicked, elem}:any) => {
+export const Like = ({ like, handleClicked, elem }:any) => {
 
   return (
     <div>
