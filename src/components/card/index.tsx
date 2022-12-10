@@ -30,6 +30,8 @@ export const Card = () => {
   const numberOfdataVistited = page * dataPerPage
   const totalPages = Math.ceil(data.length / dataPerPage)
   const changePage = ({ selected }: any) => {
+    console.log(selected)
+    
     setPage(selected)
   }
   const displayData = data
