@@ -4,6 +4,7 @@ import { Home } from '../pages/Home'
 import { About } from '../pages/About'
 import { History } from '../pages/History'
 import { Pets } from '../pages/Pets'
+import { Cat } from '../pages/Pets/Cat'
 
 export const routeElements = [
     {
@@ -29,5 +30,10 @@ export const routeElements = [
         name: 'О проекте',
         path: appRoutes.aboutProject,
         component: withLayout(About)
+    },
+    {
+        id: 5,
+        path: appRoutes.concreteCat,
+        component: withLayout(Cat)
     }
 ]

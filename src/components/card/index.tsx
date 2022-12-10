@@ -1,5 +1,5 @@
 import s from './styles.module.scss'
-import ShareIcon from '../../assets/icons/Share.svg'
+import ShareIcon from '../../assets/icons/Share'
 import arrowleft from '../../assets/icons/arrowleft.svg'
 import arrowright from '../../assets/icons/arrowright.svg'
 import { useState, useEffect } from 'react'
@@ -10,12 +10,12 @@ import { cats } from '../../mocks/cats'
 import { BaseButton } from '../index'
 import { useTranslation } from 'react-i18next'
 import ReactPaginate from 'react-paginate'
-
+import { Link } from 'react-router-dom'
 
 export const Card = () => {
   const [ data, setData ] = useState(cats)
 
-  const handleClicked = ({ key } :any) => {
+  const handleClicked = ( { key } :any ) => {
     const likedItem = data.map((item:any)=>{
       if(item.key === key){
         return { ...item, liked: !item.liked }
@@ -38,15 +38,17 @@ export const Card = () => {
         numberOfdataVistited + dataPerPage
       ).map((img) => {
         return (
-          <div key={img.key} className={s.card}>
+          <Link key={img.key} to={`${img.key}`}>
+            <div className={s.card}>
                 <ImageSlider slides={img.src}/>
                 <div className={s.card__info}>
                   <div className={s.card__title}>{img.name}, {img.age}</div>
                   <div className={s.card__descr}>{img.descr}</div>
                   <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img}/>
                 </div>
-                <div className={s.icon__share} onClick={handleShareButton}><img src={ShareIcon} alt='share' className={s.card__share}/></div>
+                <div className={s.icon__share} onClick={handleShareButton}><ShareIcon className={s.card__share}/></div>
             </div>
+          </Link>
         )
       })
 

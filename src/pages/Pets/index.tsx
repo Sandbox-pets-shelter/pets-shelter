@@ -6,6 +6,7 @@ import { Card } from '../../components/card'
 
 
 export const Pets = () => {
+
     return (
         <main className={s.main}>
             <Filters />
