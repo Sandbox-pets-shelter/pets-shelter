@@ -21,6 +21,12 @@ export let stories = [
             },
             {
                 image: require('../../assets/icons/happystories/catblackwhite.jpg')
+            },
+            {
+                image: require('../../assets/icons/happystories/catred.jpg')
+            },
+            {
+                image: require('../../assets/icons/happystories/catblackwhite.jpg')
             }
         ]
     },

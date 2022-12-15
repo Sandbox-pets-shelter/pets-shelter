@@ -31,8 +31,6 @@
     color: $text;
     padding-left: 67px;
     padding-top: 37px;
-    // margin-top: 37px;
-    // margin-left: 67px;
   }
 
   &__title {
@@ -97,6 +95,15 @@
         display: inline-block;
         margin: 0 14px 0 14px;
       }
+      &__share:hover {
+        cursor: pointer;
+      }
+      &__share:hover &__share__img{
+        path {
+          fill: #6549FB;
+          stroke: #6549FB;
+        }
+      }
     }
 
 
@@ -112,13 +119,10 @@
     bottom: 435px;
     right: 18px;
   }
-  
+
   &__arrow__increase:hover {
     background: $activeColor;
   }
-    // &__info {
-    //   margin-top: 24px;
-    // }
 
     &__title {
       font-family: 'Nunito';
