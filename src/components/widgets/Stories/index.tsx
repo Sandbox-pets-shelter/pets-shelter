@@ -6,6 +6,7 @@ import { handleShareButton } from '../../sharebtn'
 import IncreaseIcon from '../../../assets/icons/Increase'
 import EyeIcon from '../../../assets/icons/Eye'
 import ShareIcon from '../../../assets/icons/Share'
+// import arrow from '../../../assets/icons/needhelp/arrow.svg'
 
 import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg'
 
@@ -15,6 +16,7 @@ import styles from './styles.module.scss'
 const Stories = () => {
 
   const { t } = useTranslation()
+
   let storiesCards = stories.map(item => {
     return (
       <div key={item.key} className={s.stories__subcontainer}>
@@ -41,6 +43,7 @@ const Stories = () => {
 
   return (
     <div>
+      <div>Главная<div className='arrow right'></div>История спасения</div>
       <div className={s.stories}>
         <div className={s.stories__main__container}>
           <div className={s.stories__img__container}><img className={s.stories__img} src={Sleepingcat} alt="Спящий кот"/></div>
