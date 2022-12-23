@@ -3,12 +3,15 @@ import style from './styles.module.scss'
 import { Dots } from '../dots'
 import ArrowleftIcon from '../../assets/icons/Arrowleft'
 import ArrowrightIcon from '../../assets/icons/Arrowright'
+import IncreaseIcon from '../../assets/icons/Increase'
+import { Popup } from '../popup'
 
-export const ImageSliderTwo = ({ slides }: any) => {
+export const ImageSliderTwo = (props: any) => {
+  const { slides, isOpen, togglePopup } = props
   const [ currentIndex, setCurrentIndex ] = useState(0)
 
   const goToSlide = (ind: any) => {
-    //Не работает
+    //Не работает dots
     setCurrentIndex(ind)
   }
 
@@ -28,8 +31,20 @@ export const ImageSliderTwo = ({ slides }: any) => {
 
   return (
     <div className = {style.card__img}>
-      <ArrowleftIcon className={style.arrow__left} onClick = {goToPrevious}/>
-      <ArrowrightIcon className={style.arrow__right} onClick = {goToNext}/>
+      {isOpen && <Popup
+        slides={slides}
+        currentIndex={currentIndex}
+        handleClose={togglePopup}
+        goToNext={goToNext}
+        goToPrevious={goToPrevious}
+      />}
+      <div className={style.hoverCont}>
+        <div onClick={goToPrevious}></div>
+        <div onClick={goToNext}></div>
+      </div>
+      <ArrowleftIcon className={style.arrow__left} onClick={goToPrevious}/>
+      <ArrowrightIcon className={style.arrow__right} onClick={goToNext}/>
+      <IncreaseIcon className={style.increase__arrow} onClick={togglePopup}/>
       <Dots slides={slides} currIndex={currentIndex} goToSlide={goToSlide} n={n}/>
     </div>
   )

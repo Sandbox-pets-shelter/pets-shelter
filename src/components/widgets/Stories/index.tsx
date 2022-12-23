@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { stories } from '../../../mocks/stories'
 import { ImageSliderTwo } from '../../sliderTwo'
@@ -17,10 +18,16 @@ const Stories = () => {
 
   const { t } = useTranslation()
 
+  const [ isOpen, setIsOpen ] = useState(false)
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen)
+  }
+
   let storiesCards = stories.map(item => {
     return (
       <div key={item.key} className={s.stories__subcontainer}>
-          <ImageSliderTwo slides={item.src}/>
+          <ImageSliderTwo isOpen={isOpen} togglePopup={togglePopup} slides={item.src}/>
           <div className={s.stories__subcontainer__info}>
             <div className={s.stories__subcontainer__views}>
               <div className={s.stories__subcontainer__views__date}>{item.date}</div>
@@ -34,15 +41,13 @@ const Stories = () => {
             <div className={s.stories__subcontainer__title}>{item.title}</div>
             <div className={s.stories__subcontainer__content}>{item.content}</div>
           </div>
-          <div className={s.stories__subcontainer__icon}>
-            <div className={s.stories__subcontainer__arrow}/>
-              <IncreaseIcon className={s.stories__subcontainer__arrow__increase}/></div>
         </div>
     )
   })
 
   return (
     <div>
+      {isOpen && <div className={s.popupBox}></div>}
       <div>Главная<div className='arrow right'></div>История спасения</div>
       <div className={s.stories}>
         <div className={s.stories__main__container}>
