@@ -44,19 +44,14 @@ const MainFirst = () => {
           <p className={s.mainfirst__urgenthelp__container__subtitle}>{t('mainfirst.urgenthelp.subtitle')}</p>
           <p className={s.mainfirst__urgenthelp__container__content}>{t('mainfirst.urgenthelp.content')}</p>
         </div>
-        <div className={s.mainfirst__urgenthelp__btn}>
-          <BaseButton
-            variant='filled'
-            color='accent'
-            click={reset}>
-            {t('mainfirst.urgenthelp.btn')}
-            <img className={s.mainfirst__urgenthelp__btn__plus__white} src={plus} alt="Плюсик белый"/>
-          </BaseButton>
-        </div>
-        <img className={s.mainfirst__urgenthelp__btn__plus__red} src={redplus} alt="Плюсик красный"/>
-        <div className={s.mainfirst__urgenthelp__img}>
-          <img className={s.mainfirst__urgenthelp__img} src={catheart} alt="Кот с сердцем"/>
-        </div>
+        <BaseButton
+          variant='filled'
+          color='accent'
+          endIcon={plus}
+          click={reset}>
+          {t('mainfirst.urgenthelp.btn')}
+        </BaseButton>
+        <img src={catheart} alt="Кот с сердцем"/>
       </div>
   </div>
   )

@@ -10,7 +10,11 @@ import { Link } from 'react-router-dom'
 export const Card = () => {
   const [ data, setData ] = useState(cats)
 
-  const handleClicked = ( { key } :any ) => {
+  const handleClicked = ( e:any, { key } :any ) => {
+    e.preventDefault()
+    console.log(key)
+    //Todo preventDefault
+
     const likedItem = data.map((item:any)=>{
       if(item.key === key){
         return { ...item, liked: !item.liked }
@@ -29,7 +33,7 @@ export const Card = () => {
               <div className={s.card__info}>
                 <div className={s.card__title}>{img.name}, {img.age}</div>
                 <div className={s.card__descr}>{img.descr}</div>
-                <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img}/>
+                <Like className={s.card__like} like={img.liked} onClick={(e:any) => handleClicked}/>
               </div>
               <div className={s.icon__share} onClick={handleShareButton}><ShareIcon className={s.card__share}/></div>
           </div>

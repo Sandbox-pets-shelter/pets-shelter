@@ -47,6 +47,7 @@
     &__urgenthelp {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         border: 1px solid $separator;
         backdrop-filter: blur(10px);
         background-color: $white;
@@ -56,7 +57,7 @@
         &__container {
             display: flex;
             flex-direction: column;
-            margin: 75px 28px 0 40px;
+            margin: 0 0 0 40px;
 
             &__subtitle {
                 width: 496px;
@@ -75,22 +76,6 @@
                 line-height: 145%;
                 width: 463px;
                 margin-top: 16px;
-            }
-        }
-        
-        &__btn {
-            margin: auto;
-            position: relative;
-
-            &__plus__red {
-                display: none;
-                right: 562px;
-                top: 134px;
-                position: absolute;
-            }
-
-            :hover ~ &__plus__red {
-                display: block;
             }
         }
 

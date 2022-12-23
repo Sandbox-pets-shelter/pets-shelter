@@ -1,0 +1,38 @@
+@import '../../../assets/scss/variables.scss';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &_filled-accent {
+    color: $accent;
+    transition: all $transition;
+
+    .icon {
+      color: $accent;
+    }
+
+    svg {
+      path {
+        stroke: $accent;
+      }
+    }
+  }
+
+  &_filled-primary {
+    color: $primary-dark;
+    transition: all $transition;
+
+    .icon {
+      color: $primary-dark;
+    }
+
+    svg {
+      path {
+        stroke: $primary-dark;
+      }
+    }
+  }
+}
