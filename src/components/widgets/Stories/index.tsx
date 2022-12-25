@@ -7,7 +7,7 @@ import { handleShareButton } from '../../sharebtn'
 import IncreaseIcon from '../../../assets/icons/Increase'
 import EyeIcon from '../../../assets/icons/Eye'
 import ShareIcon from '../../../assets/icons/Share'
-// import arrow from '../../../assets/icons/needhelp/arrow.svg'
+import { Popup } from '../../popup'
 
 import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg'
 
@@ -19,15 +19,50 @@ const Stories = () => {
   const { t } = useTranslation()
 
   const [ isOpen, setIsOpen ] = useState(false)
+  const [ currentIndex, setCurrentIndex ] = useState(0)
 
   const togglePopup = () => {
     setIsOpen(!isOpen)
   }
 
+
+  
+
   let storiesCards = stories.map(item => {
+    const goToPrevious = () => {
+      // console.log(key)
+      
+      const isFirstSlide = currentIndex === 0
+      // console.log(stories.filter(item => item.key === key).map(story => story.src).length)
+      const newIndex = isFirstSlide ? item.src.length - 1 : currentIndex - 1
+      setCurrentIndex(newIndex)
+    }
+  
+    const goToNext = (key: any) => {
+      const isLastSlide = currentIndex === item.src.length - 1
+      const newIndex = isLastSlide ? 0 : currentIndex + 1
+      setCurrentIndex(newIndex)
+    }
     return (
-      <div key={item.key} className={s.stories__subcontainer}>
-          <ImageSliderTwo isOpen={isOpen} togglePopup={togglePopup} slides={item.src}/>
+      <div key={item.key}>
+        {isOpen &&
+        <Popup
+          slides={item.src}
+          currentIndex={currentIndex}
+          handleClose={togglePopup}
+          goToNext={goToNext}
+          goToPrevious={goToPrevious}
+          togglePopup={togglePopup}
+        />}
+        <div className={s.stories__subcontainer}>
+          <ImageSliderTwo
+              isOpen={isOpen}
+              currentIndex={currentIndex}
+              togglePopup={togglePopup}
+              slides={item.src}
+              goToNext={goToNext}
+              goToPrevious={goToPrevious}
+          />
           <div className={s.stories__subcontainer__info}>
             <div className={s.stories__subcontainer__views}>
               <div className={s.stories__subcontainer__views__date}>{item.date}</div>
@@ -42,12 +77,12 @@ const Stories = () => {
             <div className={s.stories__subcontainer__content}>{item.content}</div>
           </div>
         </div>
+      </div>
     )
   })
 
   return (
-    <div>
-      {isOpen && <div className={s.popupBox}></div>}
+    <>
       <div>Главная<div className='arrow right'></div>История спасения</div>
       <div className={s.stories}>
         <div className={s.stories__main__container}>
@@ -58,7 +93,7 @@ const Stories = () => {
           </div>
         </div>
       </div>
-    {storiesCards}</div>
+    {storiesCards}</>
   )
 }
 export default Stories

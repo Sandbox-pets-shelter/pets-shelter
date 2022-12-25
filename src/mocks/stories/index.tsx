@@ -40,6 +40,9 @@ export let stories = [
         content: i18n.t('stories.two.content'),
         src: [
             {
+                image: require('../../assets/icons/happystories/alessandro-armignacco-lk7GKzKtWgk-unsplash 1.jpg')
+            },
+            {
                 image: require('../../assets/icons/happystories/catred.jpg')
             },
             {
