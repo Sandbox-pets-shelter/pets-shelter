@@ -5,6 +5,7 @@ import { About } from '../pages/About'
 import { History } from '../pages/History'
 import { Pets } from '../pages/Pets'
 import { Cat } from '../pages/Pets/Cat'
+import { NoMatch } from '../pages/NoMatch'
 
 export const routeElements = [
     {
@@ -35,5 +36,10 @@ export const routeElements = [
         id: 5,
         path: appRoutes.concreteCat,
         component: withLayout(Cat)
+    },
+    {
+        id: 6,
+        path: appRoutes.notFound,
+        component: withLayout(NoMatch)
     }
 ]
