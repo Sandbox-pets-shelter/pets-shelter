@@ -27,3 +27,5 @@ export const Popup = (props: any) => {
 }
 
 // TooglePopup onclick black background
+// Fix Dots and GotoPrev/GotoNext
+// Главная картинка we need to add fixed height object-fit: cover

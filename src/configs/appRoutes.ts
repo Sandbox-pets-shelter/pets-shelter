@@ -4,5 +4,6 @@ export const appRoutes = {
   pets: '/pets',
   concreteCat: '/pets/:id',
   history: '/history',
-  aboutProject: '/about'
+  aboutProject: '/about',
+  notFound: '*'
 }
