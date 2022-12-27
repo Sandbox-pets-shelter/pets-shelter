@@ -44,47 +44,22 @@ export const Cat = () => {
     const [ scrollX, setScrollX ] = useState({
         side: ''
     })
-    // const [ bottom, setBottom ] = useState(false)e: React.UIEvent<HTMLElement>
-    // const scrollEvent = () => {
-    //     console.log('scroll')
-        
-    //     if(ref.current) {
-            
-    //         const { scrollTop, scrollHeight, clientHeight } = ref.current
-    //         if(scrollTop + clientHeight === scrollHeight) {
-    //             console.log('Bottom')
-    //         }
-    //     }
-        // const bottom = e.currentTarget.scrollHeight - e.currentTarget.scrollTop === e.currentTarget.clientHeight
-        // if(bottomg) setBottom(true)
-        // else setBottom(false)
-        // console.log(bottom)
-    // }
-    const isBottom = (el: any) => {
-        return el.getBoundingClientRect().bottom <= el.scrollHeight
-    }
-
-    // useEffect(() => {
-    //     document.addEventListener('scroll', trackScrolling)
-    //     useEffect(() => {
-    //         document.removeEventListener('scroll', trackScrolling)
-    //     })
-    // })
-
-    const trackScrolling = () => {
-        const wrappedElement = document.querySelector(`.${styles.sliderLine}`)
-        if (isBottom(wrappedElement)) {
-            console.log('header bottom reached')
-            document.removeEventListener('scroll', trackScrolling)
-        }
-    }
 
     const handleScroll = (data: any) => {
         setScrollX(prev => ({ ...prev, side: data.side }))
     }
     const [ height, setHeight ] = useState({})
+    const indicator = useRef<HTMLDivElement | null>(null)
+    const [ isBottom, setIsBottom ] = useState(false)
 
     useEffect(() => {
+        const observer = new IntersectionObserver(([ { isIntersecting } ]) => {
+            if(isIntersecting) {
+                console.log('Bottom')
+            }
+            else console.log('not bottom')
+        })
+        if(indicator.current) observer.observe(indicator.current)
         if(slideImage.current) {
             setHeight({
                 height: 4 * slideImage.current.offsetHeight + 4 * 16 + 'px'
@@ -112,7 +87,7 @@ export const Cat = () => {
                             <div className={styles.sliderWrapper}>
                             <div onClick={() => handleScroll({ side: 'left' })} className={ref.current?.scrollTop === 0 ?'arrow arrow-disabled up':'arrow up'}></div>
                             <div>
-                            <div ref={ref} style={height} onScroll={trackScrolling} className={styles.sliderLine}>
+                            <div ref={ref} style={height} className={styles.sliderLine}>
                                 {cat.src.map((slide: any, ind: number) => (
                                     <div key={ind}>
                                     {currIndex === ind ?
@@ -120,9 +95,10 @@ export const Cat = () => {
                                     <img src={slide.image} onMouseEnter={() => goToSlide(ind)} className={styles.dot}></img>}
                                     </div>
                                 ))}
+                                <div ref={indicator}></div>
                             </div>
                             </div>
-                            <div onClick={() => handleScroll({ side: 'right' })} className={'arrow arrow-disabled down'}></div>
+                            <div onClick={() => handleScroll({ side: 'right' })} className={`arrow ${isBottom && 'arrow-disabled'} down`}></div>
                             </div>
                             <div>
                                 <img src={cat.src[currIndex].image} alt="cat" className={styles.main__img}></img>
