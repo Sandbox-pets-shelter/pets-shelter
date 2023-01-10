@@ -5,7 +5,6 @@ import mouse from '../../assets/images/404/Mouse.jpg'
 import s from './styles.module.scss'
 
 export const NoMatch = () => {
-  const text = 'каталоге'
 
   const { t } = useTranslation()
   const reset = () => {
@@ -18,7 +17,7 @@ return (
       <img className={s.noMatch__container__img} src={mouse} alt="Мышка в норке"/>
       <p className={s.noMatch__container__title}>{t('noMatch.title')}</p>
       <div className={s.noMatch__container__content}>
-        <div className={s.noMatch__container__content__content}>{t('noMatch.content')}<u>{ text }</u></div>
+        <div className={s.noMatch__container__content__content}>{t('noMatch.content')}<span className={s.noMatch__underline}>{ 'каталоге' }</span></div>
           <div className={s.noMatch__container__content__button}>
             <BaseButton
               variant='filled'
