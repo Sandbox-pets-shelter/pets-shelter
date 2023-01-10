@@ -29,7 +29,7 @@ const HappyStories = () => {
             >
               <div className={s.happystories__container__img}>
                   <a className={s.happystories__container__img}href="#">
-                  <img className={s.happystories__container__img__share} src={share_btn} alt="Настройки"/></a>
+                  <img className={s.happystories__container__img__share} src={share_btn} alt="Поделиться"/></a>
                   <img
                       src={item.src}
                       alt={item.alt}
