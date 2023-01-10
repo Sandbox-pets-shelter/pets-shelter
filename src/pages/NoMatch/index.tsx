@@ -1,13 +1,13 @@
+import { useTranslation } from 'react-i18next'
 import  BaseButton  from '../../components/ui/BaseButton/index'
-import mouse from '../../assets/images/404/MouseinHole.svg'
-import mistake404 from '../../assets/images/404/404.svg'
-import oh from '../../assets/images/404/oh.svg'
+import mouse from '../../assets/images/404/Mouse.jpg'
 
 import s from './styles.module.scss'
 
 export const NoMatch = () => {
-  const text = '<p>Страница не найдена, ее съела наглая мышка, так как все наши кошки находятся в <u>каталоге</u></p>'
+  const text = 'каталоге'
 
+  const { t } = useTranslation()
   const reset = () => {
     console.log('reset')
   }
@@ -15,21 +15,20 @@ export const NoMatch = () => {
 return (
   <div className={s.noMatch}>
     <div className={s.noMatch__container}>
-      <img className={s.noMatch__img} src={mouse} alt="Мышка в норке"/>
-      <img className={s.noMatch__img__404} src={mistake404} alt="Ошибка 404"/>
-      <img className={s.noMatch__img__oh} src={oh} alt="Ой!"/>
-    </div>
-    <div className={s.noMatch__content}>
-      <div dangerouslySetInnerHTML={{ __html: text }}></div>
-      <div className={s.noMatch__button}>
-        <BaseButton
-          variant='filled'
-          color='primary'
-          click={reset}>
-          {('Вернуться назад')}
-        </BaseButton>
+      <img className={s.noMatch__container__img} src={mouse} alt="Мышка в норке"/>
+      <p className={s.noMatch__container__title}>{t('noMatch.title')}</p>
+      <div className={s.noMatch__container__content}>
+        <div className={s.noMatch__container__content__content}>{t('noMatch.content')}<u>{ text }</u></div>
+          <div className={s.noMatch__container__content__button}>
+            <BaseButton
+              variant='filled'
+              color='primary'
+              click={reset}>
+              {t('noMatch.btn')}
+            </BaseButton>
+          </div>
       </div>
     </div>
   </div>
-)
-  }
+ )
+}
