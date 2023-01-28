@@ -7,11 +7,6 @@
     border: 1px solid rgba(153, 153, 153, 0.2);
     border-radius: 16px;
     background: $white;
-    &__section{
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
     &__info{
         display: grid;
         grid-template-areas:
@@ -39,6 +34,11 @@
     &__like{
         grid-area: b;
     }
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+    }
 }
 .icon {
     &__share {
@@ -57,4 +57,30 @@
     &__share:hover {
         background: $activeColor;
     }
+}
+.paginate {
+    &__button {
+        margin-top: 46px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+.pageDiv {
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigationActive {
+    border: 2px solid #A392FD;
+    border-radius: 8px;
+}
+.floatLeft {
+    order: -2;
+    margin-right: 34px;
+}
+.floatRight {
+    order: -1;
+    margin-right: 116px;
 }

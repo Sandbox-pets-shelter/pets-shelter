@@ -9,6 +9,37 @@
   justify-content: center;
   gap: 10px;
 
+  &_outlined-secondary {
+    background-color: $white;
+    color: $primary-dark;
+    border: 1px solid $primary;
+
+    .icon {
+      background-color: $primary;
+    }
+
+    &:hover {
+      background-color: $secondary-dark;
+
+      .icon {
+        background-color: $white;
+      }
+    }
+
+    &:active {
+      background-color: $secondary-dark;
+    }
+
+    &:disabled {
+      border-color: $accent;
+      background-color: $white;
+      color: $accent;
+
+      .icon {
+        background-color: $grey;
+      }
+    }
+  }
   &_filled-primary {
     background-color: $primary;
     color: $white;
