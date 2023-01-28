@@ -1,0 +1,64 @@
+@import '../../assets/scss/variables.scss';
+.hoverCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 608px;
+    width: 100%;
+    position: absolute;
+}
+.card__img {
+    height: 609px;
+    border-radius: 16px 16px 0px 0px;
+}
+.arrow {
+    &__left, &__right{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 280px;
+        &:hover {
+            background: $activeColor;
+        }
+    }
+
+    &__left {
+      left: 16px;
+    }
+    &__right {
+      right: 16px;
+    }
+  }
+.dotsContainer {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+.dots {
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+    background: rgba(101, 73, 251, 0.2);
+    border-radius: 50%;
+}
+.increase__arrow {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 435px;
+    right: 18px;
+}
+
+.increase__arrow:hover {
+    background: $activeColor;
+}

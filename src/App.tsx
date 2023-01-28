@@ -1,8 +1,7 @@
-import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { routeElements } from './configs/routeElements'
-import { Cat } from './pages/Pets/Cat'
+import { NoMatch } from './pages/NoMatch'
 
 function App () {
   return (
@@ -15,9 +14,10 @@ function App () {
             path={item.path}
             element={<item.component />}
           >
-            {item.id === 2 && <Route
+            {item.id === 2 && <><Route
               path={item.path}
-              element={<item.component />} />}
+              element={<item.component />} />
+              </>}
           </Route>
         ))}
       </Routes>

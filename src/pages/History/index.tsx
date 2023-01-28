@@ -1,5 +1,9 @@
+import { Stories } from '../../components/widgets'
+
 export const History = () => {
     return (
-        <div>History</div>
+        <div>
+        <Stories/>
+        </div>
     )
 }
