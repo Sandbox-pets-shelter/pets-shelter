@@ -28,6 +28,10 @@ html {
   padding: 3px;
   margin-left: 10px;
   margin-right: 10px;
+  cursor: pointer;
+}
+.arrow-disabled {
+  border-color: #D9D9D9;
 }
 .right {
   transform: rotate(-45deg);

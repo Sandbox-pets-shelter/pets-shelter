@@ -56,6 +56,7 @@ export let cats = [
         sterilized: true,
         passport: true,
         treated: true,
+        video: '<iframe src="https://www.youtube.com/embed/x_SeZiNadNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         src: [
             {
                 image: require('../assets/images/cat1.jpg')

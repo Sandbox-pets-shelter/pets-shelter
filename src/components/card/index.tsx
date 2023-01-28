@@ -15,7 +15,11 @@ import { Link } from 'react-router-dom'
 export const Card = () => {
   const [ data, setData ] = useState(cats)
 
-  const handleClicked = ( { key } :any ) => {
+  const handleClicked = ( e:any, { key } :any ) => {
+    e.preventDefault()
+    console.log(key)
+    //Todo preventDefault
+
     const likedItem = data.map((item:any)=>{
       if(item.key === key){
         return { ...item, liked: !item.liked }

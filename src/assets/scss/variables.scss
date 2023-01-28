@@ -24,3 +24,7 @@ $transition: 0.3s ease-out;
 // :root.light-mode {}
 
 // colors
+:export {
+    accent: $accent;
+    primaryDark: $primary-dark;
+}

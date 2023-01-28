@@ -2,10 +2,9 @@ import { useTranslation } from 'react-i18next'
 import { itemsHappyStories } from '../../../mocks/happystories'
 import { BaseButton } from '../../index'
 
-import arrow from '../../../assets/icons/needhelp/arrow.svg'
+import ArrowButton from '../../ui/ArrowButton'
 import share_btn from '../../../assets/icons/happystories/Share_btn.svg'
 import arrowred from '../../../assets/icons/happystories/arrowred.svg'
-
 
 import s from './styles.module.scss'
 
@@ -37,8 +36,7 @@ const HappyStories = () => {
                   <div className={s.happystories__container__img__title}>
                       <p className={s.happystories__container__img__subtitle}>{item.subtitle}</p>
                       <p className={s.happystories__container__img__content}>{item.content}</p>
-                      <a className={s.happystories__container__img__title__btn}href="#">{item.link}
-                      <img className={s.happystories__container__img__btn__arr}src={arrow} alt="Стрелка"/></a>
+                      <ArrowButton variant='filled' color='primary'>{item.link}</ArrowButton>
                       </div>
               </div>
             </div>

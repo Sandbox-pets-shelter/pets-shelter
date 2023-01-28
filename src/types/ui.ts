@@ -34,5 +34,11 @@ export interface IBaseButton {
   children?: any,
   click?: () => void,
   startIcon?: string,
-  endIcon?: string
+  endIcon?: string,
+  link?: string
+}
+
+export interface ISlider {
+  e: any,
+  data: any
 }
