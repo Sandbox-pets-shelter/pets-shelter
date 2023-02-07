@@ -32,11 +32,9 @@
 
   &__subtitle {
     width: 600px;
-    // text-align: left;
-    // height: 69px;
     font-weight: 400;
     font-size: 16px;
-    // line-height: 145%;
+    line-height: 145%;
     margin-bottom: 32px;
   }
 
@@ -73,7 +71,7 @@
 .right {
   margin-left: 15px;
   display: grid;
-  grid-template-columns: 158px 120px 187px;
+  grid-template-columns: 158px 120px 197px;
   grid-template-rows: 1fr 50px;
   gap: 155px 55px;
   grid-template-areas:
