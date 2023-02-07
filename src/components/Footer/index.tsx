@@ -19,6 +19,9 @@ const Footer = () => {
           <p className={s.left__title}>
             {t('title')}
           </p>
+          <p className={s.left__title_two}>
+            {t('footer.title_two')}
+          </p>
           <p className={s.left__subtitle}>
             {t('footer.subtitle')}
           </p>

@@ -22,11 +22,21 @@
     margin-bottom: 32px;
   }
 
-  &__subtitle {
-    max-width: 510px;
-    font-weight: 400;
+  &__title_two {
+    max-width: 370px;
+    font-weight: 500;
     font-size: 16px;
     line-height: 145%;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    width: 600px;
+    // text-align: left;
+    // height: 69px;
+    font-weight: 400;
+    font-size: 16px;
+    // line-height: 145%;
     margin-bottom: 32px;
   }
 
@@ -63,9 +73,9 @@
 .right {
   margin-left: 15px;
   display: grid;
-  grid-template-columns: 160px 120px 210px;
+  grid-template-columns: 158px 120px 187px;
   grid-template-rows: 1fr 50px;
-  gap: 170px 75px;
+  gap: 155px 55px;
   grid-template-areas:
     "main contacts collab"
     "main payment payment";
