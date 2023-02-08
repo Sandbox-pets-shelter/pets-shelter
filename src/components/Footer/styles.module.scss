@@ -22,8 +22,16 @@
     margin-bottom: 32px;
   }
 
+  &__title_two {
+    max-width: 370px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 145%;
+    margin-bottom: 16px;
+  }
+
   &__subtitle {
-    max-width: 510px;
+    width: 600px;
     font-weight: 400;
     font-size: 16px;
     line-height: 145%;
@@ -63,9 +71,9 @@
 .right {
   margin-left: 15px;
   display: grid;
-  grid-template-columns: 160px 120px 210px;
+  grid-template-columns: 158px 120px 197px;
   grid-template-rows: 1fr 50px;
-  gap: 170px 75px;
+  gap: 155px 55px;
   grid-template-areas:
     "main contacts collab"
     "main payment payment";
