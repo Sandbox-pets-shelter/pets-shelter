@@ -51,7 +51,7 @@ const MainFirst = () => {
           click={reset}>
           {t('mainfirst.urgenthelp.btn')}
         </BaseButton>
-        <img src={catheart} alt="Кот с сердцем"/>
+        <div className={s.mainfirst__urgenthelp__box}><img className={s.mainfirst__urgenthelp__box__img}src={catheart} alt="Кот с сердцем"/></div>
       </div>
   </div>
   )

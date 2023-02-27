@@ -19,7 +19,8 @@
     justify-content: space-between;
     font-family: 'Montserrat';
     font-style: normal;
-   
+    gap: 24px;
+
     &__item {
       border: 1px solid $separator;
       backdrop-filter: blur(10px);
@@ -64,11 +65,7 @@
       flex-direction: row;
       justify-content: center;
       margin: 24px auto 34px;
-     
-    }
 
-    &__img__title__btm__arr {
-      padding-left: 9px;
-    } 
-  }  
-} 
+    }
+  }
+}

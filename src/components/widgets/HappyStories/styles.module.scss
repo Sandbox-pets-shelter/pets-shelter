@@ -13,7 +13,6 @@
   }
 
   &__content {
-    display: flex;
     margin: 0 auto 33px;
     width: 533px;
     text-align: center;
@@ -31,14 +30,15 @@
   &__container {
     display: flex;
     justify-content: space-between;
-   
+    gap: 24px;
+
     &__item {
       border: 1px solid $separator;
       backdrop-filter: blur(10px);
       border-radius: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       height: 590px;
-      width: 634px;
+      width: 630px;
       background-color: $white;
     }
 
@@ -51,14 +51,14 @@
     &__img__share {
       position: absolute;
       text-decoration: none;
-      margin: 15px;
-      padding-left: 562px;
+      margin: 16px;
+      padding-left: 554px;
     }
 
     &__img__title {
       margin: 16px 206px 8px 32px;
     }
-    
+
     &__img__subtitle {
       font-family: 'Nunito';
       font-style: normal;
@@ -89,6 +89,6 @@
 
     &__img__btn__arr {
       padding-left: 9px;
-    } 
-  }  
-} 
+    }
+  }
+}

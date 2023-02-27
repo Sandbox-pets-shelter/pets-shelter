@@ -6,6 +6,7 @@ import { BaseDropdown } from '..'
 import { IBaseDropdown } from '../../types/ui'
 import SearchIcon from '../../assets/icons/footer/Search.svg'
 import HeartIcon from '../../assets/icons/footer/Heart.svg'
+import logo from '../../assets/icons/Logo.svg'
 
 import s from './styles.module.scss'
 
@@ -29,7 +30,7 @@ const Header = () => {
     <div className={s.wrapper}>
       <div className={s.header}>
         <p className={s.header__title}>
-          HelpPet
+          <img src={logo} alt="Логотип"/>
         </p>
         <ul className={s.header__list}>
           {

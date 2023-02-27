@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { footerTextRight, iconsFooter, rulesLinks } from '../../mocks/footer'
 import { IFooterText, ILink } from '../../types/ui'
+import logo from '../../assets/icons/Logo.svg'
 
 import s from './styles.module.scss'
 
@@ -17,7 +18,7 @@ const Footer = () => {
             {t('footer.under_title')}
           </p>
           <p className={s.left__title}>
-            {t('title')}
+          <img src={logo} alt="Логотип"/>
           </p>
           <p className={s.left__title_two}>
             {t('footer.title_two')}
