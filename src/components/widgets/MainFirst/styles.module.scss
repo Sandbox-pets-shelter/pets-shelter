@@ -16,7 +16,7 @@
                 font-weight: 600;
                 font-size: 48px;
                 line-height: 130%;
-                width: 727px;
+                width: 766px;
                 margin: 265px 0 20px 0;
             }
 
@@ -40,19 +40,19 @@
 
         &__img {
             width: 536px;
-            height: 808px;
+            max-height: 808px;
         }
     }
 
     &__urgenthelp {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         border: 1px solid $separator;
         backdrop-filter: blur(10px);
         background-color: $white;
         border-radius: 16px;
         margin-bottom: 112px;
+        margin-top: 0;
 
         &__container {
             display: flex;
@@ -73,14 +73,16 @@
                 font-style: normal;
                 font-weight: 400;
                 font-size: 16px;
-                line-height: 145%;
+                line-height: 23px;
                 width: 463px;
                 margin-top: 16px;
             }
         }
 
-        &__img {
-            border-radius: 20px;
+        &__box {
+            &__img{
+                border-radius: 16px;
+            }
         }
     }
 }
