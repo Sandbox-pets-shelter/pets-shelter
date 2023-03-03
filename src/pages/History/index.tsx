@@ -1,9 +1,9 @@
-import { Stories } from '../../components/widgets'
+import { Stories } from '../../components/widgets';
 
 export const History = () => {
-    return (
-        <div>
-        <Stories/>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Stories />
+    </div>
+  );
+};

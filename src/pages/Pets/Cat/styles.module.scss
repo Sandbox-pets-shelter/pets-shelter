@@ -1,96 +1,96 @@
 .backarrowcurr {
-    font-weight: 500;
-    display: inline;
+  font-weight: 500;
+  display: inline;
 }
 .share {
-    path {
-        fill: #846DFC;
-        stroke: #846DFC;
-    }
+  path {
+    fill: #846dfc;
+    stroke: #846dfc;
+  }
 }
 .box {
-    background: #FFFFFF;
-    border: 1px solid #EBEBEB;
-    border-radius: 16px;
-    margin-top: 18px;
-    padding-top: 76px;
-    padding-left: 112px;
-    padding-bottom: 78px;
-    padding-right: 160px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+  margin-top: 18px;
+  padding-top: 76px;
+  padding-left: 112px;
+  padding-bottom: 78px;
+  padding-right: 160px;
 }
 .box__title {
-    font-family: 'Nunito';
-    font-weight: 600;
-    font-size: 48px;
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 48px;
 }
 .box__subtitles {
-    font-family: 'Nunito';
-    font-weight: 600;
-    font-size: 24px;
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 24px;
 }
 .box__topInfo {
-    display: flex;
-    gap: 16px;
-    align-items: center;
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 .box__info {
-    display: grid;
-    gap: 40px;
+  display: grid;
+  gap: 40px;
 }
 .box__infogr {
-    display: grid;
-    gap: 24px;
+  display: grid;
+  gap: 24px;
 }
 .box__btns {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 .box__historyBtn {
-    margin-top: 3px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #6549FB;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6549fb;
 }
 .box__topInfoBtns {
-    display: flex;
-    align-items: center;
-    gap: 11px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
 }
 iframe {
-    margin-top: 112px;
-    border-radius: 16px;
-    width: 100%;
-    height: 720px;
+  margin-top: 112px;
+  border-radius: 16px;
+  width: 100%;
+  height: 720px;
 }
 .content {
-    display: grid;
-    grid-template-columns: 10% 1fr 30%;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: 10% 1fr 30%;
+  gap: 24px;
 }
 .sliderWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .dot {
-    border-radius: 16px;
+  border-radius: 16px;
 }
 .dot_active {
-    border: 2px solid #A392FD;
-    border-radius: 16px;
+  border: 2px solid #a392fd;
+  border-radius: 16px;
 }
 .sliderLine {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .main__img {
-    height: 600px;
-    object-fit: cover;
-    border-radius: 16px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 16px;
 }

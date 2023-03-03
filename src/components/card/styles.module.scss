@@ -1,86 +1,86 @@
 @import '../../assets/scss/variables.scss';
 .card {
-    cursor: pointer;
-    width: 312px;
-    height: 491px;
-    position: relative;
-    border: 1px solid rgba(153, 153, 153, 0.2);
-    border-radius: 16px;
-    background: $white;
-    &__info{
-        display: grid;
-        grid-template-areas:
-            "a b"
-            "a b";
-        padding-left: 16px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
-    &__title{
-        grid-area: a;
-        color: #333333;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 600;
-        font-size: 24px;
-    }
-    &__descr{
-        grid-area: a;
-        margin-top: 35px;
-        color: #606060;
-        width: 211px;
-        font-weight: 500;
-        font-size: 16px;
-    }
-    &__like{
-        grid-area: b;
-    }
-    &__content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-    }
+  cursor: pointer;
+  width: 312px;
+  height: 491px;
+  position: relative;
+  border: 1px solid rgba(153, 153, 153, 0.2);
+  border-radius: 16px;
+  background: $white;
+  &__info {
+    display: grid;
+    grid-template-areas:
+      'a b'
+      'a b';
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  &__title {
+    grid-area: a;
+    color: #333333;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  &__descr {
+    grid-area: a;
+    margin-top: 35px;
+    color: #606060;
+    width: 211px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  &__like {
+    grid-area: b;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
 }
 .icon {
-    &__share {
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(101, 73, 251, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 16px;
-        right: 16px;
-    }
-    &__share:hover {
-        background: $activeColor;
-    }
-}
-.paginate {
-    &__button {
-        margin-top: 46px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-}
-.pageDiv {
-    padding: 0px 10px 0px 10px;
+  &__share {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(101, 73, 251, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  &__share:hover {
+    background: $activeColor;
+  }
+}
+.paginate {
+  &__button {
+    margin-top: 46px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.pageDiv {
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navigationActive {
-    border: 2px solid #A392FD;
-    border-radius: 8px;
+  border: 2px solid #a392fd;
+  border-radius: 8px;
 }
 .floatLeft {
-    order: -2;
-    margin-right: 34px;
+  order: -2;
+  margin-right: 34px;
 }
 .floatRight {
-    order: -1;
-    margin-right: 116px;
+  order: -1;
+  margin-right: 116px;
 }

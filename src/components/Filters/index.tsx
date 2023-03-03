@@ -1,63 +1,58 @@
-import { Fragment, useState } from 'react'
-import { filtersData } from '../../mocks/filter'
-import { BaseCheckbox, BaseButton } from '..'
+import { Fragment, useState } from 'react';
 
-import s from './styles.module.scss'
+import s from './styles.module.scss';
+
+import { BaseCheckbox, BaseButton } from '..';
+import { filtersData } from '../../mocks/filter';
 
 const Filters = () => {
-  
-  const [ data, setData ] = useState(filtersData)
+  const [data, setData] = useState(filtersData);
 
   const reset = () => {
-    setData(data.map(item => {
-      item.data = item.data.map(el => {
-        return { ...el, isChecked: false }
+    setData(
+      data.map((item) => {
+        item.data = item.data.map((el) => {
+          return { ...el, isChecked: false };
+        });
+        return item;
       })
-      return item
-    }))
-  }
+    );
+  };
 
   const handleChange = (name: string, value: string) => {
-      setData(data.map(item => {
-        item.data = item.data.map(el => 
-          el.name === name && el.value === value 
-            ? { ...el, isChecked: !el.isChecked }
-            : el
-          )
-        return item
-      }))
-  }
-
+    setData(
+      data.map((item) => {
+        item.data = item.data.map((el) =>
+          el.name === name && el.value === value ? { ...el, isChecked: !el.isChecked } : el
+        );
+        return item;
+      })
+    );
+  };
 
   return (
     <div className={s.filters}>
-
-      {data.map(item => (
+      {data.map((item) => (
         <Fragment key={item.id}>
-          {item.title && <div className={s.filters__title}> {item.title} </div> }
+          {item.title && <div className={s.filters__title}> {item.title} </div>}
           {item.data.map((el, index) => (
-            <BaseCheckbox 
+            <BaseCheckbox
               key={`${el.name}-${index}`}
-              name={el.name} 
-              content={el.content} 
+              name={el.name}
+              content={el.content}
               isChecked={el.isChecked}
-              value={el.value} 
+              value={el.value}
               change={handleChange}
             />
           ))}
-        </Fragment>))
-      }
+        </Fragment>
+      ))}
 
-      <BaseButton 
-        variant='filled' 
-        color='primary' 
-        click={reset}
-      >
+      <BaseButton variant="filled" color="primary" click={reset}>
         Сбросить настройки
       </BaseButton>
-
     </div>
-  )
-}
+  );
+};
 
-export default Filters
+export default Filters;
