@@ -1,20 +1,18 @@
-import Instagram from '../../assets/icons/footer/Instagram.svg'
-import Youtube from '../../assets/icons/footer/Youtube.svg'
-import Twitter from '../../assets/icons/footer/Twitter.svg'
+import Facebook from '../../assets/icons/footer/Facebook.svg';
+import Instagram from '../../assets/icons/footer/Instagram.svg';
+import Mail from '../../assets/icons/footer/Mail.svg';
 
-import Mail from '../../assets/icons/footer/Mail.svg'
-import Telegram from '../../assets/icons/footer/Telegram.svg'
-import Facebook from '../../assets/icons/footer/Facebook.svg'
-import Vk from '../../assets/icons/footer/VK.svg'
+import Mastercard from '../../assets/icons/footer/Mastercard.svg';
+import Paypal from '../../assets/icons/footer/Paypal.svg';
+import Telegram from '../../assets/icons/footer/Telegram.svg';
+import Twitter from '../../assets/icons/footer/Twitter.svg';
+import Visa from '../../assets/icons/footer/Visa.svg';
+import Vk from '../../assets/icons/footer/VK.svg';
+import Webmoney from '../../assets/icons/footer/Webmoney.svg';
+import Yandex from '../../assets/icons/footer/Yandex.svg';
+import Youtube from '../../assets/icons/footer/Youtube.svg';
 
-import Mastercard from '../../assets/icons/footer/Mastercard.svg'
-import Visa from '../../assets/icons/footer/Visa.svg'
-import Paypal from '../../assets/icons/footer/Paypal.svg'
-import Webmoney from '../../assets/icons/footer/Webmoney.svg'
-import Yandex from '../../assets/icons/footer/Yandex.svg'
-
-import i18n from '../../i18n'
-
+import i18n from '../../i18n';
 
 export const iconsFooter = [
   {
@@ -32,7 +30,7 @@ export const iconsFooter = [
     src: Twitter,
     alt: i18n.t('alt.twitter')
   }
-]
+];
 
 export const footerTextRight = [
   {
@@ -145,7 +143,7 @@ export const footerTextRight = [
       }
     ]
   }
-]
+];
 
 export const rulesLinks = [
   {
@@ -160,4 +158,4 @@ export const rulesLinks = [
     id: 3,
     text: i18n.t('footer.links.agreement')
   }
-]
+];

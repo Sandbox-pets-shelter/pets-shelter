@@ -86,10 +86,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
-
 
 a:focus,
 button:focus,
@@ -102,10 +101,11 @@ button {
   cursor: pointer;
   padding: 0;
   background: transparent;
-
 }
 
-button:focus, button:active, button {
+button:focus,
+button:active,
+button {
   /*border: none;*/
   /*outline: none;*/
 }
@@ -120,6 +120,7 @@ a {
   color: inherit;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
