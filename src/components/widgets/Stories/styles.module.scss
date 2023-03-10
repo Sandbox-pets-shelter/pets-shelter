@@ -1,6 +1,5 @@
 @import '../../../assets/scss/variables';
 
-
 .stories {
   margin: 75px 0 72px 0;
 
@@ -20,7 +19,7 @@
 
   &__img {
     width: 100%;
-    position:absolute;
+    position: absolute;
     margin-left: 30px;
     margin-top: 33px;
   }
@@ -81,10 +80,9 @@
         margin-right: 10px;
       }
 
-      &__share__img
-        path {
-          fill: #846DFC;
-          stroke: #846DFC;
+      &__share__img path {
+        fill: #846dfc;
+        stroke: #846dfc;
       }
       &__share__img {
         position: relative;
@@ -98,10 +96,10 @@
       &__share:hover {
         cursor: pointer;
       }
-      &__share:hover &__share__img{
+      &__share:hover &__share__img {
         path {
-          fill: #6549FB;
-          stroke: #6549FB;
+          fill: #6549fb;
+          stroke: #6549fb;
         }
       }
     }
@@ -125,5 +123,5 @@
       font-size: 18px;
       line-height: 145%;
     }
-}
+  }
 }

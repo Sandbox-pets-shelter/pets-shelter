@@ -1,23 +1,26 @@
 @import '../../assets/scss/variables.scss';
 .dot_active {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: $activeColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $activeColor;
 }
 .dot {
-    cursor: pointer;
-    width: 8px;
-    height: 8px;
-    background: rgba(101, 73, 251, 0.2);
-    border-radius: 50%;
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: rgba(101, 73, 251, 0.2);
+  border-radius: 50%;
 }
 .container {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
 }
 .card__img {
-    background: red;
+    height: 608px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
 }

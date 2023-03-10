@@ -6,4 +6,4 @@ export const appRoutes = {
   history: '/history',
   aboutProject: '/about',
   notFound: '*'
-}
+};

@@ -1,52 +1,45 @@
-import { useState } from 'react'
-import { IBaseDropdown } from '../../../types/ui'
+import { useState } from 'react';
 
-import s from './styles.module.scss'
+import s from './styles.module.scss';
+
+import { IBaseDropdown } from '../../../types/ui';
 
 interface IProps {
-  languages: IBaseDropdown[]
-  selectedItem: IBaseDropdown | null
-  onChange: (item: IBaseDropdown) => void
+  languages: IBaseDropdown[];
+  selectedItem: IBaseDropdown | null;
+  onChange: (item: IBaseDropdown) => void;
 }
 
 const BaseDropdown = (props: IProps) => {
+  const { languages, selectedItem, onChange } = props;
 
-  const { languages, selectedItem, onChange } = props
-
-  const [ isOpen, setOpen ] = useState(false)
+  const [isOpen, setOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setOpen(!isOpen)
-  }
+    setOpen(!isOpen);
+  };
 
   const handleItemClick = (item: any): void => {
-    onChange(item)
-    toggleDropdown()
-  }
+    onChange(item);
+    toggleDropdown();
+  };
 
   return (
-    <div
-      className={s.dropdown}
-      onClick={toggleDropdown}
-    >
-      <p>
-        {selectedItem?.label || 'Ру'}
-      </p>
+    <div className={s.dropdown} onClick={toggleDropdown}>
+      <p>{selectedItem?.label || 'Ру'}</p>
       <ul className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
-        {
-          languages.map((item: IBaseDropdown) => (
-            <li
-              className={`${s.dropdown__item} ${item.label === selectedItem?.label ? s.dropdown__selected : ''}`}
-              key={item.value}
-              onClick={() => handleItemClick(item)}
-            >
-              {item.label}
-            </li>
-          ))
-        }
+        {languages.map((item: IBaseDropdown) => (
+          <li
+            className={`${s.dropdown__item} ${item.label === selectedItem?.label ? s.dropdown__selected : ''}`}
+            key={item.value}
+            onClick={() => handleItemClick(item)}
+          >
+            {item.label}
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default BaseDropdown
+export default BaseDropdown;

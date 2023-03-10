@@ -8,92 +8,39 @@ import IncreaseIcon from '../../../assets/icons/Increase'
 import EyeIcon from '../../../assets/icons/Eye'
 import ShareIcon from '../../../assets/icons/Share'
 import { Popup } from '../../popup'
-
-import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg'
-
-import s from './styles.module.scss'
-import styles from './styles.module.scss'
+import { createContext, useContext } from 'react'
+import { Story } from '../../story_comp'
+import s from './styles.module.scss';
+import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg';
 
 const Stories = () => {
+  const { t } = useTranslation();
 
-  const { t } = useTranslation()
+  let storiesCards = stories.map((story, i:number) => {
 
-  const [ isOpen, setIsOpen ] = useState(false)
-  const [ currentIndex, setCurrentIndex ] = useState(0)
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen)
-  }
-
-
-  
-
-  let storiesCards = stories.map(item => {
-    const goToPrevious = () => {
-      // console.log(key)
-      
-      const isFirstSlide = currentIndex === 0
-      // console.log(stories.filter(item => item.key === key).map(story => story.src).length)
-      const newIndex = isFirstSlide ? item.src.length - 1 : currentIndex - 1
-      setCurrentIndex(newIndex)
-    }
-  
-    const goToNext = (key: any) => {
-      const isLastSlide = currentIndex === item.src.length - 1
-      const newIndex = isLastSlide ? 0 : currentIndex + 1
-      setCurrentIndex(newIndex)
-    }
     return (
-      <div key={item.key}>
-        {isOpen &&
-        <Popup
-          slides={item.src}
-          currentIndex={currentIndex}
-          handleClose={togglePopup}
-          goToNext={goToNext}
-          goToPrevious={goToPrevious}
-          togglePopup={togglePopup}
-        />}
-        <div className={s.stories__subcontainer}>
-          <ImageSliderTwo
-              isOpen={isOpen}
-              currentIndex={currentIndex}
-              togglePopup={togglePopup}
-              slides={item.src}
-              goToNext={goToNext}
-              goToPrevious={goToPrevious}
-          />
-          <div className={s.stories__subcontainer__info}>
-            <div className={s.stories__subcontainer__views}>
-              <div className={s.stories__subcontainer__views__date}>{item.date}</div>
-              <div className={s.stories__subcontainer__views__look}>
-                <EyeIcon className={s.stories__subcontainer__views__look__img}/>{item.views}</div>
-              <div className={s.stories__subcontainer__views__share} onClick={handleShareButton}>
-                {item.share}
-                <ShareIcon className={s.stories__subcontainer__views__share__img}/>{styles.share}
-              </div>
-          </div>
-            <div className={s.stories__subcontainer__title}>{item.title}</div>
-            <div className={s.stories__subcontainer__content}>{item.content}</div>
-          </div>
-        </div>
-      </div>
+      <Story key={story.key} story={story}/>
     )
   })
 
   return (
     <>
-      <div>Главная<div className='arrow right'></div>История спасения</div>
+      <div>
+        Главная<div className="arrow right"></div>История спасения
+      </div>
       <div className={s.stories}>
         <div className={s.stories__main__container}>
-          <div className={s.stories__img__container}><img className={s.stories__img} src={Sleepingcat} alt="Спящий кот"/></div>
+          <div className={s.stories__img__container}>
+            <img className={s.stories__img} src={Sleepingcat} alt="Спящий кот" />
+          </div>
           <div className={s.stories__title__container}>
             <p className={s.stories__title}>{t('stories.main_title')}</p>
             <p className={s.stories__content}>{t('stories.main_content')}</p>
           </div>
         </div>
       </div>
-    {storiesCards}</>
-  )
-}
-export default Stories
+      {storiesCards}
+    </>
+  );
+};
+export default Stories;

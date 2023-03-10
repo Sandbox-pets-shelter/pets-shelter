@@ -1,0 +1,129 @@
+@import '../../assets/scss/variables';
+
+
+.stories {
+  margin: 75px 0 72px 0;
+
+  &__main__container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__img__container {
+    border: 1px solid $separator;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    background-color: $white;
+    height: 200px;
+    width: 200px;
+  }
+
+  &__img {
+    width: 100%;
+    position:absolute;
+    margin-left: 30px;
+    margin-top: 33px;
+  }
+
+  &__title__container {
+    display: flex;
+    flex-direction: column;
+    color: $text;
+    padding-left: 67px;
+    padding-top: 37px;
+  }
+
+  &__title {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 65px;
+    width: 950px;
+  }
+
+  &__content {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    margin-top: 8px;
+  }
+
+  &__subcontainer {
+    width: 1320px;
+    height: 1014px;
+    position: relative;
+    flex-direction: column;
+    border: 1px solid $separator;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    background-color: $white;
+    margin-bottom: 115px;
+    padding-bottom: 64px;
+
+    &__views {
+      margin: 40px 886px 24px 67px;
+      width: 500px;
+      display: inline-block;
+
+      &__date {
+        display: inline-block;
+      }
+      &__look {
+        display: inline-block;
+        margin-right: 24px;
+        margin: 0 10px 0 10px;
+      }
+      &__look__img {
+        margin-right: 10px;
+      }
+
+      &__share__img
+        path {
+          fill: #846DFC;
+          stroke: #846DFC;
+      }
+      &__share__img {
+        position: relative;
+        top: 5px;
+        margin-left: 14px;
+      }
+      &__share {
+        display: inline-block;
+        margin: 0 14px 0 14px;
+      }
+      &__share:hover {
+        cursor: pointer;
+      }
+      &__share:hover &__share__img{
+        path {
+          fill: #6549FB;
+          stroke: #6549FB;
+        }
+      }
+    }
+
+    &__title {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 44px;
+      width: 761px;
+      margin: 0 0 16px 64px;
+    }
+
+    &__content {
+      width: 800px;
+      margin-left: 64px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 145%;
+    }
+}
+}

@@ -57,7 +57,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #A392FD;
+    background: #a392fd;
   }
 
   &__icon {
@@ -74,8 +74,8 @@
   grid-template-rows: 1fr 50px;
   gap: 155px 55px;
   grid-template-areas:
-    "main contacts collab"
-    "main payment payment";
+    'main contacts collab'
+    'main payment payment';
 
   &__title {
     font-weight: 500;

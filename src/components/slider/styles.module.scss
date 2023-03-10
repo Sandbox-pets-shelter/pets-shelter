@@ -1,12 +1,12 @@
 @import '../../assets/scss/variables.scss';
 .hoverCont {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 364px;
-    width: 100%;
-    position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 364px;
+  width: 100%;
+  position: absolute;
 }
 .card__img {
-    height: 364px;
-    border-radius: 16px 16px 0px 0px;
+  height: 364px;
+  border-radius: 16px 16px 0px 0px;
 }
