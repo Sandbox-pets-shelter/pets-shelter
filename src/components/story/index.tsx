@@ -1,11 +1,18 @@
 import { useState } from 'react'
-import { handleShareButton } from '../sharebtn'
-import EyeIcon from '../../assets/icons/Eye'
-import ShareIcon from '../../assets/icons/Share'
-import { Popup } from '../popup'
-import { ImageSliderTwo } from '../sliderTwo'
+
 import s from './styles.module.scss'
+
+import EyeIcon from '../../assets/icons/Eye'
+
+import ShareIcon from '../../assets/icons/Share'
+
 import { IStory } from '../../types/IStory'
+
+import { Popup } from '../popup'
+
+import { handleShareButton } from '../sharebtn'
+
+import { ImageSliderTwo } from '../slidertwo'
 
 export const Story = ({ story }: {story: IStory}) => {
 

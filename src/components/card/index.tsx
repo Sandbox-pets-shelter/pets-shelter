@@ -1,18 +1,30 @@
-import s from './styles.module.scss'
-import ShareIcon from '../../assets/icons/Share'
-import arrowleft from '../../assets/icons/arrowleft.svg'
-import arrowright from '../../assets/icons/arrowright.svg'
 import { useState, useEffect } from 'react'
-import { ImageSlider } from '../slider'
-import { handleShareButton } from '../sharebtn'
+
+import { useTranslation } from 'react-i18next'
+
+import ReactPaginate from 'react-paginate'
+
+import { Link } from 'react-router-dom'
+
+import s from './styles.module.scss'
+
+import getCards from '../../api/cards'
+
+import arrowleft from '../../assets/icons/arrowleft.svg'
+
+import arrowright from '../../assets/icons/arrowright.svg'
+
+import ShareIcon from '../../assets/icons/Share'
+
+import { ICard } from '../../types/ICard'
+
+import { BaseButton } from '../index'
+
 import { Like } from '../like'
 // import { cats } from '../../mocks/cats'
-import { BaseButton } from '../index'
-import { useTranslation } from 'react-i18next'
-import ReactPaginate from 'react-paginate'
-import { Link } from 'react-router-dom'
-import getCards from '../../api/cards'
-import { ICard } from '../../types/ICard'
+import { handleShareButton } from '../sharebtn'
+
+import { ImageSlider } from '../slider'
 
 export const Card = () => {
   const [ pets, setPets ] = useState<ICard[]>()

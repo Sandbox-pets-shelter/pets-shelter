@@ -1,17 +1,12 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { stories } from '../../../mocks/stories'
-import { ImageSliderTwo } from '../../sliderTwo'
-import { Link } from 'react-router-dom'
-import { handleShareButton } from '../../sharebtn'
-import IncreaseIcon from '../../../assets/icons/Increase'
-import EyeIcon from '../../../assets/icons/Eye'
-import ShareIcon from '../../../assets/icons/Share'
-import { Popup } from '../../popup'
-import { createContext, useContext } from 'react'
-import { Story } from '../../story_comp'
+
 import s from './styles.module.scss';
+
 import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg';
+
+import { stories } from '../../../mocks/stories'
+
+import { Story } from '../../story'
 
 const Stories = () => {
   const { t } = useTranslation();

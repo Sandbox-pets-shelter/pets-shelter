@@ -4,8 +4,17 @@
   height: 8px;
   border-radius: 50%;
   background: $activeColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $activeColor;
 }
 .dot {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: rgba(101, 73, 251, 0.2);
+  border-radius: 50%;
   cursor: pointer;
   width: 8px;
   height: 8px;
@@ -17,6 +26,10 @@
   gap: 8px;
   justify-content: center;
   margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
 }
 .card__img {
     height: 608px;
@@ -24,3 +37,4 @@
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
+

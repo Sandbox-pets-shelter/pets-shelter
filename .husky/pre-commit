@@ -3,3 +3,8 @@
 
 npm run lint:es
 npm run prettier:check
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint:es
+npm run prettier:check

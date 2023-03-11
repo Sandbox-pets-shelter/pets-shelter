@@ -17,6 +17,7 @@ export const Popup = ({ currentIndex, slides, handleClose }: { currentIndex: num
   useEffect(() => {
     document.body.style.overflow = 'hidden';
   });
+
   useEffect(() => () => {
     document.body.style.overflow = 'auto';
   });

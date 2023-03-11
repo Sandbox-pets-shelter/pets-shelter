@@ -7,6 +7,7 @@ import ArrowrightIcon from '../../assets/icons/Arrowright';
 import IncreaseIcon from '../../assets/icons/Increase';
 import { Dots } from '../dots';
 
+
 export const ImageSliderTwo = (props: any) => {
   const { key, slides, currentIndex, goToNext, goToPrevious, togglePopup } = props
 
