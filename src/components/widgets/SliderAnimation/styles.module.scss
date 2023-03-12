@@ -8,6 +8,24 @@
   flex-direction: column;
   align-items: center;
 
+  @keyframes scale {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .active {
+    opacity: 1;
+    animation-name: scale;
+    animation-duration: 0.3s;
+  }
+
   &__title {
     font-family: 'Nunito', sans-serif;
     margin: 0 auto 15px;
@@ -16,7 +34,6 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 140%;
-    max-width: 700px;
   }
 
   &__desc {
@@ -29,46 +46,73 @@
   }
 
   &__img_container {
-    width: 530px;
-    height: 232px;
+    // position: absolute;
+    width: 725px;
+    height: 297px;
     position: relative;
-    margin: 0 auto 32px;
+    margin: 0 auto;
   }
 
   &__img {
+    transition: 0.3s ease;
     position: absolute;
+    opacity: 0;
+  }
+
+  &_leftestDog,
+  &_rightestDog {
+    top: 19%;
   }
 
   &_leftTopCat {
-    left: 2.6%;
+    left: 11%;
     top: 0;
+  }
+  &_leftBottomCat,
+  &_rightBottomCat {
+    bottom: 22%;
   }
 
   &_leftBottomCat {
-    left: 2.6%;
+    left: 12%;
+  }
+  &_leftBottomDownDog,
+  &_rightBottomDownCat {
     bottom: 0;
+  }
+
+  &_leftBottomDownDog {
+    left: 24%;
   }
 
   &_leftDog {
-    left: 14%;
-    top: 10%;
+    left: 20%;
   }
 
+  &_leftDog,
+  &_rightCat {
+    top: 9%;
+  }
   &_centerCat {
-    top: 10%;
+    top: 8%;
     left: 37%;
   }
   &_rightCat {
-    top: 12%;
-    right: 14%;
+    right: 27%;
   }
   &_rightTopCat {
     top: 0;
-    right: 0;
+    right: 16%;
   }
   &_rightBottomCat {
-    right: 0;
+    right: 16%;
+  }
+  &_rightBottomDownCat {
+    right: 30%;
     bottom: 0;
+  }
+  &_rightestDog {
+    right: 1.5%;
   }
 
   &__plates {
@@ -76,21 +120,23 @@
     font-size: 16px;
     line-height: 20px;
     color: #606060;
-    margin-bottom: 3px;
+    position: absolute;
+    bottom: 4%;
+    left: 40%;
   }
 
   &__donation {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 11px;
-    margin-right: 20px;
-    margin-bottom: 60px;
+    margin: -8px 73px 22px 0;
 
     input {
       border-color: transparent;
       background-color: transparent;
-      max-width: 100px;
+      max-width: 110px;
       text-align: right;
       height: 100%;
       padding: 10px 0;
@@ -119,74 +165,57 @@
     }
   }
 
-  &__bar {
-    height: 100px;
+  &__slider {
+    height: 43px;
     position: relative;
     max-width: 432px;
     margin: 0 auto;
     margin-bottom: 32px;
   }
 
-  // &__barInput {
-  //   border: none;
-  //   background: transparent;
-  //   // background: $iconHover;
-  //   min-width: 427px;
-  //   display: block;
-  //   margin-bottom: 20px;
+  &__price {
+    text-align: right;
+  }
 
-  //   &::-webkit-slider-runnable-track {
-  //     background: $primary;
-  //     border-radius: 25px;
-  //   }
-
-  // }
-
-  &__barInput {
+  &__barContainer {
+    position: relative;
     min-width: 427px;
-    -webkit-appearance: none;
-    // background-color: transparent;
     background-color: $iconHover;
-    display: block;
     margin-bottom: 20px;
     height: 8px;
     border-radius: 25px;
 
-    // &::-webkit-slider-runnable-track {
-    //   height: 10px;
-    //   -webkit-appearance: none;
-    //   color: #13bba4;
-    //   margin-top: 1px;
-    // }
+    & input {
+      cursor: pointer;
+      opacity: 0;
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0;
+      background-color: transparent;
+    }
+  }
+  &__barProgress {
+    position: relative;
+    background-color: $primary;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 25px;
+    cursor: pointer;
 
-    // &::-moz-range-progress {
-    //   background-color: $primary;
-    // }
-    // &::-moz-range-track {
-    //   background-color: $iconHover;
-    // }
-    // &::-ms-fill-lower {
-    //   background-color: $primary;
-    // }
-    // &::-ms-fill-upper {
-    //   background-color: $iconHover;
-    // }
-
-    &::-webkit-slider-thumb {
+    & img {
+      position: absolute;
       box-shadow: 0px 8px 20px rgba(153, 153, 153, 0.2);
+      width: 32px;
+      height: 32px;
+      top: -150%;
+      right: 0;
       border-radius: 100%;
       padding: 6.4px;
       background-color: #fff;
       z-index: 1;
-      background-image: url('../../../assets/icons/sliderAnimationCats/like.svg');
-      -webkit-appearance: none;
-      appearance: none;
-
-      background-position: center center;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
     }
   }
 
