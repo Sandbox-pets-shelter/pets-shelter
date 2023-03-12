@@ -5,3 +5,4 @@ export { default as HomelessPet } from './HomelessPet';
 export { default as HappyStories } from './HappyStories';
 export { default as MainFirst } from './MainFirst';
 export { default as Stories } from './Stories';
+export { default as SliderAnimation } from './SliderAnimation';
