@@ -60,8 +60,9 @@ const SliderAnimation = () => {
 
   const validateInput = (ev: React.ChangeEvent<HTMLInputElement>) => {
     const regex = /\D/g;
-    const value = Number(ev.target.value.replace(regex, ''));
-    setDonation(value);
+    console.log(ev.target.value);
+    ev.target.value = ev.target.value.replace(regex, '');
+    setDonation(Number(ev.target.value));
   };
 
   const onEditClick = (ev: React.MouseEvent<HTMLButtonElement>) => {
@@ -143,6 +144,7 @@ const SliderAnimation = () => {
         <input
           ref={inputRef}
           disabled={!isChange}
+          onBlur={() => setIsChange(false)}
           type="text"
           placeholder={donation.toString()}
           onChange={validateInput}
@@ -153,9 +155,6 @@ const SliderAnimation = () => {
         </button>
       </div>
       <div className={s.sliderAnimation__slider}>
-        <p className={s.sliderAnimation__price}>
-          {donation} {t('sliderAnimation.price')}
-        </p>
         <div className={s.sliderAnimation__barContainer}>
           <input
             type="range"
