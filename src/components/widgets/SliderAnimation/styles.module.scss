@@ -1,7 +1,7 @@
 @import '../../../assets/scss/variables';
 
 .sliderAnimation {
-  margin: 112px 0 72px 0;
+  margin: 76px 0 72px 0;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   display: flex;
@@ -28,7 +28,7 @@
 
   &__title {
     font-family: 'Nunito', sans-serif;
-    margin: 0 auto 15px;
+    margin: 0 auto 16px;
     text-align: center;
     color: $text;
     font-weight: 600;
@@ -46,7 +46,6 @@
   }
 
   &__img_container {
-    // position: absolute;
     width: 725px;
     height: 297px;
     position: relative;
@@ -65,7 +64,7 @@
   }
 
   &_leftTopCat {
-    left: 11%;
+    left: 15%;
     top: 0;
   }
   &_leftBottomCat,
@@ -74,7 +73,7 @@
   }
 
   &_leftBottomCat {
-    left: 12%;
+    left: 16%;
   }
   &_leftBottomDownDog,
   &_rightBottomDownCat {
@@ -82,11 +81,11 @@
   }
 
   &_leftBottomDownDog {
-    left: 24%;
+    left: 28%;
   }
 
   &_leftDog {
-    left: 20%;
+    left: 24%;
   }
 
   &_leftDog,
@@ -95,24 +94,28 @@
   }
   &_centerCat {
     top: 8%;
-    left: 37%;
+    left: 41%;
   }
   &_rightCat {
-    right: 27%;
+    right: 24%;
   }
   &_rightTopCat {
     top: 0;
-    right: 16%;
+    right: 13%;
   }
   &_rightBottomCat {
-    right: 16%;
+    right: 12%;
   }
   &_rightBottomDownCat {
-    right: 30%;
+    right: 26%;
     bottom: 0;
   }
+  &_leftestDog {
+    left: 1%;
+  }
+
   &_rightestDog {
-    right: 1.5%;
+    right: -3%;
   }
 
   &__plates {
@@ -122,7 +125,7 @@
     color: #606060;
     position: absolute;
     bottom: 4%;
-    left: 40%;
+    left: 43%;
   }
 
   &__donation {
@@ -131,7 +134,7 @@
     justify-content: center;
     align-items: center;
     gap: 11px;
-    margin: -8px 73px 22px 0;
+    margin: -8px 73px 22px 47px;
 
     input {
       border-color: transparent;
@@ -191,8 +194,8 @@
       z-index: 3;
       position: absolute;
       width: 100%;
-      height: 100%;
-      top: 0%;
+      height: 300%;
+      top: -100%;
       left: 0;
       background-color: transparent;
     }
@@ -204,24 +207,79 @@
     max-width: 100%;
     border-radius: 25px;
     cursor: pointer;
+  }
 
-    & img {
-      position: absolute;
-      box-shadow: 0px 8px 20px rgba(153, 153, 153, 0.2);
-      width: 32px;
-      height: 32px;
-      top: -150%;
-      right: 0;
-      border-radius: 100%;
-      padding: 6.4px;
-      background-color: #fff;
-      z-index: 1;
-    }
+  &__thumb {
+    position: absolute;
+    box-shadow: 0px 8px 20px rgba(153, 153, 153, 0.2);
+    width: 32px;
+    height: 32px;
+    top: -150%;
+    right: 0;
+    border-radius: 100%;
+    padding: 6.4px;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  &__heart {
+    position: absolute;
+
+    right: 0;
+  }
+
+  &__smallestHeart {
+    animation-delay: 0.3s;
+  }
+
+  &__middleHeart {
+    animation-delay: 0.5s;
   }
 
   &__label {
     display: block;
     margin-bottom: 4px;
     text-align: right;
+  }
+
+  .heart {
+    animation-name: heart;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  }
+
+  @keyframes heart {
+    0% {
+      top: -200%;
+      opacity: 0;
+      right: 0%;
+    }
+
+    20% {
+      top: -330%;
+      opacity: 1;
+      right: 0;
+    }
+
+    40% {
+      top: -427%;
+      right: -1px;
+    }
+    60% {
+      top: -513%;
+      right: 1px;
+      opacity: 0.9;
+    }
+
+    80% {
+      top: -600%;
+      right: 6px;
+      opacity: 0.5;
+    }
+
+    100% {
+      right: 6px;
+      opacity: 0;
+    }
   }
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
 
-// import biggestHeart from '../../../assets/icons/sliderAnimationCats/biggestHeart.svg';
+import biggestHeart from '../../../assets/icons/sliderAnimationCats/biggestHeart.svg';
 import centerCat from '../../../assets/icons/sliderAnimationCats/center-cat.svg';
 import editIcon from '../../../assets/icons/sliderAnimationCats/editIcon.svg';
 import leftBottomCat from '../../../assets/icons/sliderAnimationCats/left-bottom-cat.svg';
@@ -12,13 +12,13 @@ import leftDog from '../../../assets/icons/sliderAnimationCats/left-dog.svg';
 import leftTopCat from '../../../assets/icons/sliderAnimationCats/left-top-cat.svg';
 import leftestDog from '../../../assets/icons/sliderAnimationCats/leftest-dog.svg';
 import like from '../../../assets/icons/sliderAnimationCats/like.svg';
-// import middleHeart from '../../../assets/icons/sliderAnimationCats/middleHeart.svg';
+import middleHeart from '../../../assets/icons/sliderAnimationCats/middleHeart.svg';
 import rightBottomCat from '../../../assets/icons/sliderAnimationCats/right-bottom-cat.svg';
 import rightBottomdownCat from '../../../assets/icons/sliderAnimationCats/right-bottomdown-cat.svg';
 import rightCat from '../../../assets/icons/sliderAnimationCats/right-cat.svg';
 import rightTopCat from '../../../assets/icons/sliderAnimationCats/right-top-cat.svg';
 import rightestDog from '../../../assets/icons/sliderAnimationCats/rightest-dog.svg';
-// import smallestHeart from '../../../assets/icons/sliderAnimationCats/smallestHeart.svg';
+import smallestHeart from '../../../assets/icons/sliderAnimationCats/smallestHeart.svg';
 
 import { BaseButton } from '../../index';
 
@@ -28,6 +28,7 @@ const SliderAnimation = () => {
   const [count, setCount] = useState(25);
   const [donation, setDonation] = useState(3750);
   const [isChange, setIsChange] = useState(false);
+  const [isMouseUp, setIsMouseUp] = useState(false);
   const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -36,8 +37,6 @@ const SliderAnimation = () => {
   };
 
   const percentage = Math.round((donation * 100) / MAX_DONATION);
-
-  console.log(width);
 
   useEffect(() => {
     setCount(Math.floor(donation / ONE_PLATE_PRICE));
@@ -78,24 +77,26 @@ const SliderAnimation = () => {
       <p className={s.sliderAnimation__desc}>{t('sliderAnimation.content')}</p>
       <div className={s.sliderAnimation__img_container}>
         <img
-          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftestDog} ${count > 12 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomDownDog} ${
+            percentage > 80 ? s.active : ''
+          }`}
+          src={leftBottomDownDog}
+          alt="dog"
+        />
+        <img
+          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftestDog} ${percentage > 60 ? s.active : ''}`}
           src={leftestDog}
           alt="dog"
         />
         <img
-          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftTopCat} ${count > 30 ? s.active : ''}`}
-          src={leftTopCat}
-          alt="cat"
-        />
-        <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomCat} ${count > 50 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomCat} ${percentage > 40 ? s.active : ''}`}
           src={leftBottomCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomDownDog} ${count > 4 ? s.active : ''}`}
-          src={leftBottomDownDog}
-          alt="dog"
+          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftTopCat} ${percentage > 20 ? s.active : ''}`}
+          src={leftTopCat}
+          alt="cat"
         />
         <img
           className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftDog} ${count > 2 ? s.active : ''}`}
@@ -113,23 +114,25 @@ const SliderAnimation = () => {
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomDownCat} ${count > 50 ? s.active : ''}`}
-          src={rightBottomdownCat}
-          alt="cat"
-        />
-        <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightTopCat} ${count > 35 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightTopCat} ${percentage > 30 ? s.active : ''}`}
           src={rightTopCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomCat} ${count > 55 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomCat} ${percentage > 50 ? s.active : ''}`}
           src={rightBottomCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightestDog} ${count > 10 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightestDog} ${percentage > 70 ? s.active : ''}`}
           src={rightestDog}
+          alt="cat"
+        />
+        <img
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomDownCat} ${
+            percentage > 90 ? s.active : ''
+          }`}
+          src={rightBottomdownCat}
           alt="cat"
         />
         <p className={s.sliderAnimation__plates}>
@@ -161,9 +164,26 @@ const SliderAnimation = () => {
             value={donation}
             step={150}
             onChange={(ev) => setDonation(Number(ev.target.value))}
+            onMouseDown={() => setIsMouseUp(false)}
+            onMouseUp={() => setIsMouseUp(true)}
           />
           <div className={s.sliderAnimation__barProgress} style={width}>
-            <img src={like} alt="like icon" />
+            <img className={s.sliderAnimation__thumb} src={like} alt="like icon" />
+            <img
+              className={`${s.sliderAnimation__heart} ${s.sliderAnimation__biggestHeart} ${isMouseUp ? s.heart : ''}`}
+              src={biggestHeart}
+              alt="heart"
+            />
+            <img
+              className={`${s.sliderAnimation__heart} ${s.sliderAnimation__middleHeart} ${isMouseUp ? s.heart : ''}`}
+              src={middleHeart}
+              alt="heart"
+            />
+            <img
+              className={`${s.sliderAnimation__heart} ${s.sliderAnimation__smallestHeart} ${isMouseUp ? s.heart : ''}`}
+              src={smallestHeart}
+              alt="heart"
+            />
           </div>
         </div>
       </div>
