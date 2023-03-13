@@ -26,7 +26,7 @@ const SliderAnimation = () => {
   const MAX_DONATION = 9000;
   const ONE_PLATE_PRICE = 150;
   const [count, setCount] = useState(25);
-  const [donation, setDonation] = useState(3750);
+  const [donation, setDonation] = useState(4800);
   const [isChange, setIsChange] = useState(false);
   const [isMouseUp, setIsMouseUp] = useState(false);
   const { t } = useTranslation();
