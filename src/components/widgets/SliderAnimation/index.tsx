@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
 
+import { validateInputWithNumbers } from '../../../assets/helpers/validators';
 import biggestHeart from '../../../assets/icons/sliderAnimationCats/biggestHeart.svg';
 import centerCat from '../../../assets/icons/sliderAnimationCats/center-cat.svg';
 import editIcon from '../../../assets/icons/sliderAnimationCats/editIcon.svg';
@@ -56,13 +57,6 @@ const SliderAnimation = () => {
     else {
       return word + 'sMore';
     }
-  };
-
-  const validateInput = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    const regex = /\D/g;
-    console.log(ev.target.value);
-    ev.target.value = ev.target.value.replace(regex, '');
-    setDonation(Number(ev.target.value));
   };
 
   const onEditClick = (ev: React.MouseEvent<HTMLButtonElement>) => {
@@ -147,7 +141,8 @@ const SliderAnimation = () => {
           onBlur={() => setIsChange(false)}
           type="text"
           placeholder={donation.toString()}
-          onChange={validateInput}
+          value={donation}
+          onChange={(ev) => setDonation(validateInputWithNumbers(ev))}
         />
         <span>₸</span>
         <button className={s.sliderAnimation__edit} onClick={onEditClick}>
