@@ -96,6 +96,14 @@
     top: 8%;
     left: 41%;
   }
+  &_leftLittleCat {
+    top: 64%;
+    left: 42%;
+  }
+  &_rightLittleCat {
+    top: 64%;
+    left: 52%;
+  }
   &_rightCat {
     right: 24%;
   }
@@ -111,7 +119,7 @@
     bottom: 0;
   }
   &_leftestDog {
-    left: 1%;
+    left: 3%;
   }
 
   &_rightestDog {
@@ -134,7 +142,7 @@
     justify-content: center;
     align-items: center;
     gap: 11px;
-    margin: -8px 73px 22px 47px;
+    margin: -8px 73px 44px 47px;
 
     input {
       border-color: transparent;
@@ -145,13 +153,13 @@
       padding: 10px 0;
       font-family: 'Montserrat';
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 32px;
       line-height: 39px;
       color: $text;
 
       &:focus {
-        border-bottom-color: rgba(101, 73, 251, 1);
+        border-bottom-color: #000;
       }
       &::placeholder {
         color: $text;
@@ -173,7 +181,7 @@
     position: relative;
     max-width: 432px;
     margin: 0 auto;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
   }
 
   &__barContainer {

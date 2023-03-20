@@ -10,6 +10,7 @@ import editIcon from '../../../assets/icons/sliderAnimationCats/editIcon.svg';
 import leftBottomCat from '../../../assets/icons/sliderAnimationCats/left-bottom-cat.svg';
 import leftBottomDownDog from '../../../assets/icons/sliderAnimationCats/left-bottomdown-dog.svg';
 import leftDog from '../../../assets/icons/sliderAnimationCats/left-dog.svg';
+import leftLittleCat from '../../../assets/icons/sliderAnimationCats/left-little-cat.svg';
 import leftTopCat from '../../../assets/icons/sliderAnimationCats/left-top-cat.svg';
 import leftestDog from '../../../assets/icons/sliderAnimationCats/leftest-dog.svg';
 import like from '../../../assets/icons/sliderAnimationCats/like.svg';
@@ -17,6 +18,7 @@ import middleHeart from '../../../assets/icons/sliderAnimationCats/middleHeart.s
 import rightBottomCat from '../../../assets/icons/sliderAnimationCats/right-bottom-cat.svg';
 import rightBottomdownCat from '../../../assets/icons/sliderAnimationCats/right-bottomdown-cat.svg';
 import rightCat from '../../../assets/icons/sliderAnimationCats/right-cat.svg';
+import rightLittleCat from '../../../assets/icons/sliderAnimationCats/right-little-cat.svg';
 import rightTopCat from '../../../assets/icons/sliderAnimationCats/right-top-cat.svg';
 import rightestDog from '../../../assets/icons/sliderAnimationCats/rightest-dog.svg';
 import smallestHeart from '../../../assets/icons/sliderAnimationCats/smallestHeart.svg';
@@ -26,8 +28,8 @@ import { BaseButton } from '../../index';
 const SliderAnimation = () => {
   const MAX_DONATION = 9000;
   const ONE_PLATE_PRICE = 150;
-  const [count, setCount] = useState(25);
-  const [donation, setDonation] = useState(4800);
+  const [count, setCount] = useState(22);
+  const [donation, setDonation] = useState(3300);
   const [isChange, setIsChange] = useState(false);
   const [isMouseUp, setIsMouseUp] = useState(false);
   const { t } = useTranslation();
@@ -38,6 +40,11 @@ const SliderAnimation = () => {
   };
 
   const percentage = Math.round((donation * 100) / MAX_DONATION);
+  useEffect(() => {
+    if (percentage === 100) {
+      setIsChange(true);
+    }
+  }, [percentage]);
 
   useEffect(() => {
     setCount(Math.floor(donation / ONE_PLATE_PRICE));
@@ -73,23 +80,23 @@ const SliderAnimation = () => {
       <div className={s.sliderAnimation__img_container}>
         <img
           className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomDownDog} ${
-            percentage > 80 ? s.active : ''
+            percentage > 50 ? s.active : ''
           }`}
           src={leftBottomDownDog}
           alt="dog"
         />
         <img
-          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftestDog} ${percentage > 60 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftestDog} ${percentage > 40 ? s.active : ''}`}
           src={leftestDog}
           alt="dog"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomCat} ${percentage > 40 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftBottomCat} ${percentage > 30 ? s.active : ''}`}
           src={leftBottomCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftTopCat} ${percentage > 20 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img}  ${s.sliderAnimation_leftTopCat} ${percentage > 10 ? s.active : ''}`}
           src={leftTopCat}
           alt="cat"
         />
@@ -98,36 +105,48 @@ const SliderAnimation = () => {
           src={leftDog}
           alt="dog"
         />
+
         <img
           className={`${s.sliderAnimation__img} ${s.sliderAnimation_centerCat} ${s.active}`}
           src={centerCat}
           alt="cat"
         />
+
         <img
           className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightCat} ${count > 1 ? s.active : ''}`}
           src={rightCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightTopCat} ${percentage > 30 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightTopCat} ${percentage > 15 ? s.active : ''}`}
           src={rightTopCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomCat} ${percentage > 50 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomCat} ${percentage > 35 ? s.active : ''}`}
           src={rightBottomCat}
           alt="cat"
         />
         <img
-          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightestDog} ${percentage > 70 ? s.active : ''}`}
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightestDog} ${percentage > 45 ? s.active : ''}`}
           src={rightestDog}
           alt="cat"
         />
         <img
           className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightBottomDownCat} ${
-            percentage > 90 ? s.active : ''
+            percentage > 55 ? s.active : ''
           }`}
           src={rightBottomdownCat}
+          alt="cat"
+        />
+        <img
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_leftLittleCat}  ${percentage > 70 ? s.active : ''}`}
+          src={leftLittleCat}
+          alt="cat"
+        />
+        <img
+          className={`${s.sliderAnimation__img} ${s.sliderAnimation_rightLittleCat} ${percentage > 90 ? s.active : ''}`}
+          src={rightLittleCat}
           alt="cat"
         />
         <p className={s.sliderAnimation__plates}>
