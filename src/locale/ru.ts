@@ -123,6 +123,15 @@ export const ru = {
       title: 'ОЙ!',
       content: 'Страница не найдена, ее съела наглая мышка, так как все наши кошки находятся в ',
       btn: 'Вернуться назад'
+    },
+    share: {
+      title: 'Поделиться в соцсетях',
+      copy: 'Скопировать ссылку',
+      vk: 'ВКонтакте',
+      fb: 'Facebook',
+      telegram: 'Telegram',
+      instagram: 'Instagram',
+      result: 'Ссылка скопирована'
     }
   }
 };

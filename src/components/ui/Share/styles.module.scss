@@ -1,0 +1,81 @@
+@import '../../../assets/scss/variables';
+
+.share_block {
+  position: relative;
+}
+
+.share {
+  path {
+    fill: #846dfc;
+    stroke: #846dfc;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.links_list {
+  opacity: 0;
+  visibility: hidden;
+  min-width: 255px;
+  position: absolute;
+  top: 135%;
+  left: -12%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.copied {
+  position: absolute;
+  top: -300%;
+  animation-name: result;
+  animation-duration: 2s;
+  visibility: hidden;
+  padding: 1rem;
+  background-color: $secondary-dark;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.links_item {
+  padding: 16px 24px;
+  gap: 10px;
+
+  & a,
+  & button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+  }
+
+  &:hover a,
+  &:hover button {
+    color: $primary-dark;
+  }
+}
+
+@keyframes result {
+  0% {
+    visibility: visible;
+    opacity: 0%;
+  }
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

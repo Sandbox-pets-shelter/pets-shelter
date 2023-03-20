@@ -13,6 +13,7 @@ import ShareIcon from '../../../assets/icons/Share';
 import { BaseButton } from '../../../components';
 import { Like } from '../../../components/like';
 import ArrowButton from '../../../components/ui/ArrowButton';
+import Share from '../../../components/ui/Share';
 import Actions from '../../../components/widgets/Actions';
 import { cats } from '../../../mocks/cats';
 import { ISlider } from '../../../types/ui';
@@ -98,7 +99,8 @@ export const Cat = () => {
                   <LocationIcon /> В приюте «{cat.shelter}»
                 </div>{' '}
                 <div className={styles.box__topInfoBtns}>
-                  Поделиться в соцсетях <ShareIcon className={styles.share} />
+                  {/* Поделиться в соцсетях <ShareIcon className={styles.share} /> */}
+                  <Share />
                 </div>
               </div>
               <div className={styles.content}>
