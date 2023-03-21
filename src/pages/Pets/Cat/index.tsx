@@ -100,7 +100,7 @@ export const Cat = () => {
                 </div>{' '}
                 <div className={styles.box__topInfoBtns}>
                   {/* Поделиться в соцсетях <ShareIcon className={styles.share} /> */}
-                  <Share link={window.location.href} text={cat.name} />
+                  <Share link={window.location.href} />
                 </div>
               </div>
               <div className={styles.content}>

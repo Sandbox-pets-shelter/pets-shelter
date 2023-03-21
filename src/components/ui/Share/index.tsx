@@ -13,7 +13,7 @@ import instagram from '../../../assets/icons/socialIcons/Instagram.svg';
 import telegram from '../../../assets/icons/socialIcons/Telegram.svg';
 import vk from '../../../assets/icons/socialIcons/VK.svg';
 
-function Share(props: { link: string; text: string }) {
+function Share(props: { link: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const { t } = useTranslation();
@@ -53,7 +53,7 @@ function Share(props: { link: string; text: string }) {
           </Link>
         </li>
         <li className={s.links_item}>
-          <Link to={`https://t.me/share/url?url=${props.link}&text=${props.text}`} target="_blank">
+          <Link to={`https://t.me/share/url?url=${props.link}`} target="_blank">
             <img src={telegram} />
             <span>{t('share.telegram')}</span>
           </Link>
