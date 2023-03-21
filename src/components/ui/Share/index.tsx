@@ -13,13 +13,14 @@ import instagram from '../../../assets/icons/socialIcons/Instagram.svg';
 import telegram from '../../../assets/icons/socialIcons/Telegram.svg';
 import vk from '../../../assets/icons/socialIcons/VK.svg';
 
-function Share() {
+function Share(props: { link: string; text: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const { t } = useTranslation();
 
   async function copyLink() {
-    await navigator.clipboard.writeText(window.location.href);
+    // await navigator.clipboard.writeText(window.location.href);
+    await navigator.clipboard.writeText(props.link);
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
@@ -40,19 +41,19 @@ function Share() {
           </button>
         </li>
         <li className={s.links_item}>
-          <Link to="http://vk.com/" target="_blank">
+          <Link to={`https://vk.com/share.php?url=${props.link}`} target="_blank">
             <img src={vk} />
             <span>{t('share.vk')}</span>
           </Link>
         </li>
         <li className={s.links_item}>
-          <Link to="https://www.facebook.com/" target="_blank">
+          <Link to={`https://www.facebook.com/sharer/sharer.php?u=#${props.link}`} target="_blank">
             <img src={facebook} />
             <span>{t('share.fb')}</span>
           </Link>
         </li>
         <li className={s.links_item}>
-          <Link to="https://web.telegram.org/" target="_blank">
+          <Link to={`https://t.me/share/url?url=${props.link}&text=${props.text}`} target="_blank">
             <img src={telegram} />
             <span>{t('share.telegram')}</span>
           </Link>
