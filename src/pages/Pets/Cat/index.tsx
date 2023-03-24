@@ -99,7 +99,6 @@ export const Cat = () => {
                   <LocationIcon /> В приюте «{cat.shelter}»
                 </div>{' '}
                 <div className={styles.box__topInfoBtns}>
-                  {/* Поделиться в соцсетях <ShareIcon className={styles.share} /> */}
                   <Share link={window.location.href} />
                 </div>
               </div>

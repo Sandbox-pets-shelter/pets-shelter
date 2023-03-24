@@ -19,7 +19,6 @@ function Share(props: { link: string }) {
   const { t } = useTranslation();
 
   async function copyLink() {
-    // await navigator.clipboard.writeText(window.location.href);
     await navigator.clipboard.writeText(props.link);
     setIsCopied(true);
     setTimeout(() => {
@@ -37,6 +36,7 @@ function Share(props: { link: string }) {
         <li className={s.links_item}>
           <button onClick={copyLink}>
             <img src={copy} />
+            {/* дизайн уведомления о копировании в процессе */}
             <span>{t('share.copy')}</span>
           </button>
         </li>

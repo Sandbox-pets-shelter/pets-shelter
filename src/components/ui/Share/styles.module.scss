@@ -8,6 +8,13 @@
   path {
     fill: #846dfc;
     stroke: #846dfc;
+
+    transition: 0.3s ease;
+  }
+
+  &:hover path {
+    fill: $primary-dark;
+    stroke: $primary-dark;
   }
 }
 

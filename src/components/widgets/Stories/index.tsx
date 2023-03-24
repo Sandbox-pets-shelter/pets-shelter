@@ -9,12 +9,13 @@ import styles from './styles.module.scss';
 
 import EyeIcon from '../../../assets/icons/Eye';
 import IncreaseIcon from '../../../assets/icons/Increase';
-import ShareIcon from '../../../assets/icons/Share';
+// import ShareIcon from '../../../assets/icons/Share';
 import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg';
+import Share from '../../../components/ui/Share';
 import { stories } from '../../../mocks/stories';
 import { Popup } from '../../popup';
 
-import { handleShareButton } from '../../sharebtn';
+// import { handleShareButton } from '../../sharebtn';
 import { ImageSliderTwo } from '../../sliderTwo';
 
 const Stories = () => {
@@ -70,10 +71,9 @@ const Stories = () => {
                 <EyeIcon className={s.stories__subcontainer__views__look__img} />
                 {item.views}
               </div>
-              <div className={s.stories__subcontainer__views__share} onClick={handleShareButton}>
-                {item.share}
-                <ShareIcon className={s.stories__subcontainer__views__share__img} />
-                {styles.share}
+              <div className={s.stories__subcontainer__views__share}>
+                {/* ссылка на пост в процессе дизайна, пока что ссылка на текущую страницу */}
+                <Share link={window.location.href} />
               </div>
             </div>
             <div className={s.stories__subcontainer__title}>{item.title}</div>
