@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 import s from './styles.module.scss';
 
-import { BaseDropdown } from '..';
+import { LanguageDropdown } from '..';
 import HeartIcon from '../../assets/icons/footer/Heart.svg';
 import SearchIcon from '../../assets/icons/footer/Search.svg';
 import logo from '../../assets/icons/Logo.svg';
-import { routeElements } from '../../configs/routeElements';
-import { IBaseDropdown } from '../../types/ui';
+import { helpRoutes, petsRoutes, routeElements } from '../../configs/routeElements';
+import { ILanguageDropdown } from '../../types/ui';
+import BaseDropdown from '../ui/BaseDropdown';
 
 const languages = [
   { value: '0', label: 'Ру', code: 'ru-RU' },
@@ -18,9 +19,9 @@ const languages = [
 const Header = () => {
   const lang = languages.find((item) => item.code === navigator.language);
 
-  const [selectedItem, setSelectedItem] = useState<IBaseDropdown | null>(null);
+  const [selectedItem, setSelectedItem] = useState<ILanguageDropdown | null>(null);
 
-  const dropdown = useCallback((item: IBaseDropdown) => {
+  const dropdown = useCallback((item: ILanguageDropdown) => {
     setSelectedItem(item);
     console.log('dropdown', item);
   }, []);
@@ -32,7 +33,9 @@ const Header = () => {
           <img src={logo} alt="Логотип" />
         </p>
         <ul className={s.header__list}>
-          {routeElements.map((item) => (
+        <BaseDropdown items={helpRoutes} />
+        <BaseDropdown items={petsRoutes} />
+          {routeElements.slice(2).map((item) => (
             <li key={item.id}>
               <NavLink to={item.path} end className={({ isActive }) => (isActive ? `${s.active}` : undefined)}>
                 {item.name}
@@ -43,7 +46,7 @@ const Header = () => {
         <div className={s.header__panel}>
           <img src={SearchIcon} alt="search icon" style={{ cursor: 'pointer' }} />
           <img src={HeartIcon} alt="heart icon" style={{ cursor: 'pointer' }} />
-          <BaseDropdown onChange={dropdown} languages={languages} selectedItem={selectedItem} />
+          <LanguageDropdown onChange={dropdown} languages={languages} selectedItem={selectedItem} />
         </div>
       </div>
     </div>
