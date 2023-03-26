@@ -33,8 +33,8 @@ const Header = () => {
           <img src={logo} alt="Логотип" />
         </p>
         <ul className={s.header__list}>
-        <BaseDropdown items={helpRoutes} />
-        <BaseDropdown items={petsRoutes} />
+          <BaseDropdown items={helpRoutes} />
+          <BaseDropdown items={petsRoutes} />
           {routeElements.slice(2).map((item) => (
             <li key={item.id}>
               <NavLink to={item.path} end className={({ isActive }) => (isActive ? `${s.active}` : undefined)}>
