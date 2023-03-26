@@ -1,0 +1,289 @@
+@import '../../../assets/scss/variables';
+
+.sliderAnimation {
+  margin: 76px 0 72px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @keyframes scale {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .active {
+    opacity: 1;
+    animation-name: scale;
+    animation-duration: 0.3s;
+  }
+
+  &__title {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto 16px;
+    text-align: center;
+    color: $text;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
+  }
+
+  &__desc {
+    margin: 0 auto 32px;
+    max-width: 533px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__img_container {
+    width: 725px;
+    height: 297px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__img {
+    transition: 0.3s ease;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &_leftestDog,
+  &_rightestDog {
+    top: 19%;
+  }
+
+  &_leftTopCat {
+    left: 15%;
+    top: 0;
+  }
+  &_leftBottomCat,
+  &_rightBottomCat {
+    bottom: 22%;
+  }
+
+  &_leftBottomCat {
+    left: 16%;
+  }
+  &_leftBottomDownDog,
+  &_rightBottomDownCat {
+    bottom: 0;
+  }
+
+  &_leftBottomDownDog {
+    left: 28%;
+  }
+
+  &_leftDog {
+    left: 24%;
+  }
+
+  &_leftDog,
+  &_rightCat {
+    top: 9%;
+  }
+  &_centerCat {
+    top: 8%;
+    left: 41%;
+  }
+  &_leftLittleCat {
+    top: 64%;
+    left: 42%;
+  }
+  &_rightLittleCat {
+    top: 64%;
+    left: 52%;
+  }
+  &_rightCat {
+    right: 24%;
+  }
+  &_rightTopCat {
+    top: 0;
+    right: 13%;
+  }
+  &_rightBottomCat {
+    right: 12%;
+  }
+  &_rightBottomDownCat {
+    right: 26%;
+    bottom: 0;
+  }
+  &_leftestDog {
+    left: 3%;
+  }
+
+  &_rightestDog {
+    right: -3%;
+  }
+
+  &__plates {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #606060;
+    position: absolute;
+    bottom: 4%;
+    left: 43%;
+  }
+
+  &__donation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    margin: -8px 73px 44px 47px;
+
+    input {
+      border-color: transparent;
+      background-color: transparent;
+      max-width: 110px;
+      text-align: right;
+      height: 100%;
+      padding: 10px 0;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 39px;
+      color: $text;
+
+      &:focus {
+        border-bottom-color: #000;
+      }
+      &::placeholder {
+        color: $text;
+      }
+    }
+
+    span {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 39px;
+      color: $text;
+    }
+  }
+
+  &__slider {
+    height: 43px;
+    position: relative;
+    max-width: 432px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+
+  &__barContainer {
+    position: relative;
+    min-width: 427px;
+    background-color: $iconHover;
+    margin-bottom: 20px;
+    height: 8px;
+    border-radius: 25px;
+
+    & input {
+      cursor: pointer;
+      opacity: 0;
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 500%;
+      top: -100%;
+      left: 0;
+      background-color: transparent;
+    }
+  }
+  &__barProgress {
+    position: relative;
+    background-color: $primary;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  &__thumb {
+    position: absolute;
+    box-shadow: 0px 8px 20px rgba(153, 153, 153, 0.2);
+    width: 32px;
+    height: 32px;
+    top: -150%;
+    right: 0;
+    border-radius: 100%;
+    padding: 6.4px;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  &__heart {
+    position: absolute;
+
+    right: 0;
+  }
+
+  &__smallestHeart {
+    animation-delay: 0.3s;
+  }
+
+  &__middleHeart {
+    animation-delay: 0.5s;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    text-align: right;
+  }
+
+  .heart {
+    animation-name: heart;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  }
+
+  @keyframes heart {
+    0% {
+      top: -200%;
+      opacity: 0;
+      right: 0%;
+    }
+
+    20% {
+      top: -330%;
+      opacity: 1;
+      right: 0;
+    }
+
+    40% {
+      top: -427%;
+      right: -1px;
+    }
+    60% {
+      top: -513%;
+      right: 1px;
+      opacity: 0.9;
+    }
+
+    80% {
+      top: -600%;
+      right: 6px;
+      opacity: 0.5;
+    }
+
+    100% {
+      right: 6px;
+      opacity: 0;
+    }
+  }
+}
