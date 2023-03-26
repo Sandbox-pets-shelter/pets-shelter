@@ -1,21 +1,17 @@
+import EyeIcon from 'assets/icons/Eye';
+import IncreaseIcon from 'assets/icons/Increase';
+import ShareIcon from 'assets/icons/Share';
+import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
+import { Popup } from 'components/Popup';
+import { handleShareButton } from 'components/ShareBtn';
+import { ImageSliderTwo } from 'components/SliderTwo';
+import { stories } from 'mocks/stories';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Link } from 'react-router-dom';
 
-import s from './styles.module.scss';
-
 import styles from './styles.module.scss';
-
-import EyeIcon from '../../../assets/icons/Eye';
-import IncreaseIcon from '../../../assets/icons/Increase';
-import ShareIcon from '../../../assets/icons/Share';
-import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg';
-import { stories } from '../../../mocks/stories';
-import { Popup } from '../../popup';
-
-import { handleShareButton } from '../../sharebtn';
-import { ImageSliderTwo } from '../../sliderTwo';
+import s from './styles.module.scss';
 
 const Stories = () => {
   const { t } = useTranslation();

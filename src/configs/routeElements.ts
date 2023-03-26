@@ -1,14 +1,15 @@
+import { withLayout } from 'HOC/withLayout';
+import { About } from 'pages/About';
+import { History } from 'pages/History';
+import { Home } from 'pages/Home';
+import { NoMatch } from 'pages/NoMatch';
+import { Pets } from 'pages/Pets';
+import { Cat } from 'pages/Pets/Cat';
+import { RouteElement } from 'types/types';
+
 import { appRoutes } from './appRoutes';
 
-import { withLayout } from '../HOC/withLayout';
-import { About } from '../pages/About';
-import { History } from '../pages/History';
-import { Home } from '../pages/Home';
-import { NoMatch } from '../pages/NoMatch';
-import { Pets } from '../pages/Pets';
-import { Cat } from '../pages/Pets/Cat';
-
-export const routeElements = [
+export const routeElements: RouteElement[] = [
   {
     id: 1,
     name: 'Помочь нам',
@@ -42,5 +43,58 @@ export const routeElements = [
     id: 6,
     path: appRoutes.notFound,
     component: withLayout(NoMatch)
+  }
+];
+
+export const helpRoutes: RouteElement[] = [
+  {
+    id: 0,
+    name: 'Помочь нам',
+    path: appRoutes.home,
+    component: withLayout(Home)
+  },
+  {
+    id: 1,
+    name: 'Стать волонтером',
+    path: appRoutes.home,
+    component: withLayout(Home)
+  },
+  {
+    id: 2,
+    name: 'Приютить на время',
+    path: appRoutes.home,
+    component: withLayout(Home)
+  },
+  {
+    id: 3,
+    name: 'Поддержать финансово',
+    path: appRoutes.home,
+    component: withLayout(Home)
+  },
+  {
+    id: 4,
+    name: 'Купить подарок приюту',
+    path: appRoutes.home,
+    component: withLayout(Home)
+  }
+];
+export const petsRoutes: RouteElement[] = [
+  {
+    id: 0,
+    name: 'Питомцы',
+    path: appRoutes.pets,
+    component: withLayout(Pets)
+  },
+  {
+    id: 1,
+    name: 'Приютить',
+    path: appRoutes.pets,
+    component: withLayout(Pets)
+  },
+  {
+    id: 2,
+    name: 'Отдать',
+    path: appRoutes.pets,
+    component: withLayout(Pets)
   }
 ];

@@ -1,4 +1,4 @@
-import i18n from '../../i18n';
+import i18n from 'i18n';
 
 export let stories = [
   {
@@ -11,22 +11,22 @@ export let stories = [
     content: i18n.t('stories.one.content'),
     src: [
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       }
     ]
   },
@@ -40,19 +40,19 @@ export let stories = [
     content: i18n.t('stories.two.content'),
     src: [
       {
-        image: require('../../assets/icons/happystories/alessandro-armignacco-lk7GKzKtWgk-unsplash 1.jpg')
+        image: require('assets/icons/happystories/alessandro-armignacco-lk7GKzKtWgk-unsplash 1.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       }
     ]
   },
@@ -66,16 +66,16 @@ export let stories = [
     content: i18n.t('stories.three.content'),
     src: [
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catred.jpg')
+        image: require('assets/icons/happystories/catred.jpg')
       },
       {
-        image: require('../../assets/icons/happystories/catblackwhite.jpg')
+        image: require('assets/icons/happystories/catblackwhite.jpg')
       }
     ]
   }

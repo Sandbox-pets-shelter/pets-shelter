@@ -1,43 +1,38 @@
-import { useState } from 'react';
+import { FC, MouseEvent, useState } from 'react';
+
+import { NavLink } from 'react-router-dom';
+
+import { RouteElement } from 'types/types';
 
 import s from './styles.module.scss';
 
-import { IBaseDropdown } from '../../../types/ui';
-
-interface IProps {
-  languages: IBaseDropdown[];
-  selectedItem: IBaseDropdown | null;
-  onChange: (item: IBaseDropdown) => void;
+interface BaseDropdownProps {
+  items: RouteElement[];
 }
 
-const BaseDropdown = (props: IProps) => {
-  const { languages, selectedItem, onChange } = props;
-
+const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
   const [isOpen, setOpen] = useState(false);
+  const title = items[0];
+  const dropdownItems = items.slice(1);
 
-  const toggleDropdown = () => {
-    setOpen(!isOpen);
-  };
-
-  const handleItemClick = (item: any): void => {
-    onChange(item);
-    toggleDropdown();
+  const toggleDropdown = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
+    e.preventDefault();
+    setOpen((prev) => !prev);
   };
 
   return (
-    <div className={s.dropdown} onClick={toggleDropdown}>
-      <p>{selectedItem?.label || 'Ру'}</p>
-      <ul className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
-        {languages.map((item: IBaseDropdown) => (
-          <li
-            className={`${s.dropdown__item} ${item.label === selectedItem?.label ? s.dropdown__selected : ''}`}
-            key={item.value}
-            onClick={() => handleItemClick(item)}
-          >
-            {item.label}
-          </li>
+    <div className={s.dropdown}>
+      <span onClick={toggleDropdown}>
+        {title.name}
+        <span className={`arrow ${isOpen ? 'up' : 'down'}`} />
+      </span>
+      <div className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
+        {dropdownItems.map((item: RouteElement) => (
+          <NavLink to={item.path} className={s.dropdown__item} key={item.id}>
+            {item.name}
+          </NavLink>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

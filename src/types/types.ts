@@ -1,3 +1,12 @@
+import { FC } from 'react';
+
+export interface RouteElement {
+  id: number;
+  name?: string;
+  path: string;
+  component: FC;
+}
+
 // TODO: Всё что ниже примеры
 
 export interface ITokenInfo {

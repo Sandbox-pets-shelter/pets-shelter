@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { Dots } from 'components/Dots';
+import { useState } from 'react';
 
 import style from './styles.module.scss';
-
-import { Dots } from '../dots';
 
 export const ImageSlider = ({ slides }: any) => {
   const [currIndex, setCurrIndex] = useState(0);

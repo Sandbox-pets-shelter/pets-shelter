@@ -1,13 +1,12 @@
+import arrowdown from 'assets/icons/mainfirst/Arrowdown.svg';
+import blackcatgirl from 'assets/icons/mainfirst/BlackCatGirl.png';
+import catheart from 'assets/icons/mainfirst/catheart.png';
+import plus from 'assets/icons/mainfirst/plus.svg';
+import redplus from 'assets/icons/mainfirst/redplus.svg';
+import { BaseButton } from 'components';
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import arrowdown from '../../../assets/icons/mainfirst/Arrowdown.svg';
-import blackcatgirl from '../../../assets/icons/mainfirst/BlackCatGirl.png';
-import catheart from '../../../assets/icons/mainfirst/catheart.png';
-import plus from '../../../assets/icons/mainfirst/plus.svg';
-import redplus from '../../../assets/icons/mainfirst/redplus.svg';
-import { BaseButton } from '../../index';
 
 const MainFirst = () => {
   const { t } = useTranslation();
