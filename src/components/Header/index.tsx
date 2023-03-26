@@ -1,6 +1,7 @@
 import HeartIcon from 'assets/icons/footer/Heart.svg';
 import SearchIcon from 'assets/icons/footer/Search.svg';
 import logo from 'assets/icons/Logo.svg';
+import { LanguageDropdown } from 'components';
 import BaseDropdown from 'components/ui/BaseDropdown';
 import { helpRoutes, petsRoutes, routeElements } from 'configs/routeElements';
 import { useCallback, useState } from 'react';
@@ -8,8 +9,6 @@ import { NavLink } from 'react-router-dom';
 import { ILanguageDropdown } from 'types/ui';
 
 import s from './styles.module.scss';
-
-import { LanguageDropdown } from '..';
 
 const languages = [
   { value: '0', label: 'Ру', code: 'ru-RU' },
