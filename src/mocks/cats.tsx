@@ -20,22 +20,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -62,22 +62,22 @@ export let cats = [
       '<iframe src="https://www.youtube.com/embed/x_SeZiNadNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -102,22 +102,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -142,22 +142,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -182,22 +182,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -222,22 +222,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -262,22 +262,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -302,22 +302,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -342,22 +342,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -382,22 +382,22 @@ export let cats = [
     treated: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       },
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -409,13 +409,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -427,13 +427,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -445,13 +445,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -463,13 +463,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -481,13 +481,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -499,13 +499,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -517,13 +517,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   },
@@ -535,13 +535,13 @@ export let cats = [
     liked: true,
     src: [
       {
-        image: require('../assets/images/cat1.jpg')
+        image: require('assets/images/cat1.jpg')
       },
       {
-        image: require('../assets/images/cat2.jpg')
+        image: require('assets/images/cat2.jpg')
       },
       {
-        image: require('../assets/images/cat3.jpg')
+        image: require('assets/images/cat3.jpg')
       }
     ]
   }

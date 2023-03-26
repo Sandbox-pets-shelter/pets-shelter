@@ -1,9 +1,8 @@
+import mouse from 'assets/images/404/Mouse.jpg';
+import BaseButton from 'components/ui/BaseButton/index';
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import mouse from '../../assets/images/404/Mouse.jpg';
-import BaseButton from '../../components/ui/BaseButton/index';
 
 export const NoMatch = () => {
   const { t } = useTranslation();

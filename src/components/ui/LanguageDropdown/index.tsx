@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import s from './styles.module.scss';
+import { ILanguageDropdown } from 'types/ui';
 
-import { ILanguageDropdown } from '../../../types/ui';
+import s from './styles.module.scss';
 
 interface IProps {
   languages: ILanguageDropdown[];

@@ -1,11 +1,10 @@
+import ArrowleftIcon from 'assets/icons/Arrowleft';
+import ArrowrightIcon from 'assets/icons/Arrowright';
 import { useEffect } from 'react';
 
 import { url } from 'inspector';
 
 import style from './styles.module.scss';
-
-import ArrowleftIcon from '../../assets/icons/Arrowleft';
-import ArrowrightIcon from '../../assets/icons/Arrowright';
 
 export const Popup = (props: any) => {
   const { currentIndex, slides, handleClose, goToNext, goToPrevious, togglePopup } = props;

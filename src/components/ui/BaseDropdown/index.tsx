@@ -2,9 +2,9 @@ import { FC, MouseEvent, useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import s from './styles.module.scss';
+import { RouteElement } from 'types/types';
 
-import { RouteElement } from '../../../types/types';
+import s from './styles.module.scss';
 
 interface BaseDropdownProps {
   items: RouteElement[];

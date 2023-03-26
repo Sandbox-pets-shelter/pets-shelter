@@ -1,9 +1,9 @@
+import { filtersData } from 'mocks/filter';
 import { Fragment, useState } from 'react';
 
 import s from './styles.module.scss';
 
 import { BaseCheckbox, BaseButton } from '..';
-import { filtersData } from '../../mocks/filter';
 
 const Filters = () => {
   const [data, setData] = useState(filtersData);

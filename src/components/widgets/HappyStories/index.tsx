@@ -1,13 +1,12 @@
+import arrowred from 'assets/icons/happystories/arrowred.svg';
+import share_btn from 'assets/icons/happystories/Share_btn.svg';
+import { BaseButton } from 'components';
+import ArrowButton from 'components/ui/ArrowButton';
+import { itemsHappyStories } from 'mocks/happystories';
+
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import arrowred from '../../../assets/icons/happystories/arrowred.svg';
-import share_btn from '../../../assets/icons/happystories/Share_btn.svg';
-import { itemsHappyStories } from '../../../mocks/happystories';
-import { BaseButton } from '../../index';
-
-import ArrowButton from '../../ui/ArrowButton';
 
 const HappyStories = () => {
   const { t } = useTranslation();

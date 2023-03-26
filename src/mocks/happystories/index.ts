@@ -1,7 +1,7 @@
-import girlcat1 from '../../assets/icons/happystories/girlcat1.png';
-import girlcat2 from '../../assets/icons/happystories/girlcat2.png';
+import girlcat1 from 'assets/icons/happystories/girlcat1.png';
+import girlcat2 from 'assets/icons/happystories/girlcat2.png';
 
-import i18n from '../../i18n';
+import i18n from 'i18n';
 
 export const itemsHappyStories = [
   {

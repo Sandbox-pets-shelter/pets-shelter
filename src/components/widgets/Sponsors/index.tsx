@@ -1,8 +1,7 @@
+import { iconsSponsors } from 'mocks/sponsors';
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import { iconsSponsors } from '../../../mocks/sponsors';
 
 const Sponsors = () => {
   const { t } = useTranslation();

@@ -1,13 +1,13 @@
-import { appRoutes } from './appRoutes';
+import { withLayout } from 'HOC/withLayout';
+import { About } from 'pages/About';
+import { History } from 'pages/History';
+import { Home } from 'pages/Home';
+import { NoMatch } from 'pages/NoMatch';
+import { Pets } from 'pages/Pets';
+import { Cat } from 'pages/Pets/Cat';
+import { RouteElement } from 'types/types';
 
-import { withLayout } from '../HOC/withLayout';
-import { About } from '../pages/About';
-import { History } from '../pages/History';
-import { Home } from '../pages/Home';
-import { NoMatch } from '../pages/NoMatch';
-import { Pets } from '../pages/Pets';
-import { Cat } from '../pages/Pets/Cat';
-import { RouteElement } from '../types/types';
+import { appRoutes } from './appRoutes';
 
 export const routeElements: RouteElement[] = [
   {

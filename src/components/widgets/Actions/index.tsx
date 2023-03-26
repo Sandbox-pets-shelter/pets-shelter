@@ -1,10 +1,9 @@
+import Arrow from 'assets/icons/needhelp/arrow';
+import ArrowButton from 'components/ui/ArrowButton';
+import { itemsNeedHelp } from 'mocks/needhelp';
 import { useTranslation } from 'react-i18next';
 
 import styles from './styles.module.scss';
-
-import Arrow from '../../../assets/icons/needhelp/arrow';
-import { itemsNeedHelp } from '../../../mocks/needhelp';
-import ArrowButton from '../../ui/ArrowButton';
 
 const Actions = () => {
   const { t } = useTranslation();

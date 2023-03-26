@@ -1,8 +1,7 @@
+import { appRoutes } from 'configs/appRoutes';
+import DefaultLayout from 'layouts/defaultLayout';
 import { FC } from 'react';
 import { useLocation } from 'react-router';
-
-import { appRoutes } from '../configs/appRoutes';
-import DefaultLayout from '../layouts/defaultLayout';
 
 export function withLayout<Props>(WrappedComponent: FC<Props>) {
   return (props: JSX.IntrinsicAttributes & Props) => {
