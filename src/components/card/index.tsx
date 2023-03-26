@@ -1,27 +1,23 @@
-import { useState, useEffect } from 'react';
+import arrowleft from 'assets/icons/arrowleft.svg';
+import arrowright from 'assets/icons/arrowright.svg';
+import ShareIcon from 'assets/icons/Share';
+import { BaseButton } from 'components';
+import { Like } from 'components/Like';
+import { handleShareButton } from 'components/ShareBtn';
+import { ImageSlider } from 'components/Slider';
+import { cats } from 'mocks/cats';
+import { useState } from 'react';
 
-import { useTranslation } from 'react-i18next';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
 
 import s from './styles.module.scss';
-
-import arrowleft from '../../assets/icons/arrowleft.svg';
-import arrowright from '../../assets/icons/arrowright.svg';
-import ShareIcon from '../../assets/icons/Share';
-import { cats } from '../../mocks/cats';
-import { BaseButton } from '../index';
-import { Like } from '../like';
-import { handleShareButton } from '../sharebtn';
-import { ImageSlider } from '../slider';
 
 export const Card = () => {
   const [data, setData] = useState(cats);
 
   const handleClicked = (e: any, { key }: any) => {
     e.preventDefault();
-    console.log(key);
-    //Todo preventDefault
 
     const likedItem = data.map((item: any) => {
       if (item.key === key) {

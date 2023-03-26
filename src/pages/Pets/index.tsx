@@ -1,7 +1,7 @@
-import s from './styles.module.scss';
+import { Card } from 'components/Card';
+import { Filters } from 'components/index';
 
-import { Card } from '../../components/card';
-import { Filters } from '../../components/index';
+import s from './styles.module.scss';
 
 export const Pets = () => {
   return (

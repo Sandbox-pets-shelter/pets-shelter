@@ -1,6 +1,6 @@
-import s from './styles.module.scss';
+import { IBaseButton } from 'types/ui';
 
-import { IBaseButton } from '../../../types/ui';
+import s from './styles.module.scss';
 
 const BaseButton = (props: IBaseButton) => {
   const { variant, color, disabled, children, click, startIcon, endIcon } = props;

@@ -1,11 +1,11 @@
-import Forbes from '../../assets/icons/sponsors/Forbes.svg';
-import KazMunayGas from '../../assets/icons/sponsors/KazMunayGas.svg';
-import KazPravda from '../../assets/icons/sponsors/KazPravda.svg';
-import Khabar from '../../assets/icons/sponsors/Khabar.svg';
-import Qazaqstan from '../../assets/icons/sponsors/Qazaqstan.svg';
-import Siemens from '../../assets/icons/sponsors/Siemens.svg';
+import Forbes from 'assets/icons/sponsors/Forbes.svg';
+import KazMunayGas from 'assets/icons/sponsors/KazMunayGas.svg';
+import KazPravda from 'assets/icons/sponsors/KazPravda.svg';
+import Khabar from 'assets/icons/sponsors/Khabar.svg';
+import Qazaqstan from 'assets/icons/sponsors/Qazaqstan.svg';
+import Siemens from 'assets/icons/sponsors/Siemens.svg';
 
-import i18n from '../../i18n';
+import i18n from 'i18n';
 
 export const iconsSponsors = [
   {

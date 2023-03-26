@@ -1,8 +1,8 @@
-import Carring from '../../assets/icons/needhelp/carrying.svg';
-import Feed from '../../assets/icons/needhelp/feed.svg';
-import Volunteer from '../../assets/icons/needhelp/volunteer.svg';
+import Carring from 'assets/icons/needhelp/carrying.svg';
+import Feed from 'assets/icons/needhelp/feed.svg';
+import Volunteer from 'assets/icons/needhelp/volunteer.svg';
 
-import i18n from '../../i18n';
+import i18n from 'i18n';
 
 export const itemsNeedHelp = [
   {

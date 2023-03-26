@@ -1,4 +1,4 @@
-export interface IBaseDropdown {
+export interface ILanguageDropdown {
   value: string;
   label: string;
   code: string;

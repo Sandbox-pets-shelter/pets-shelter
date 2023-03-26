@@ -1,4 +1,4 @@
-import { Stories } from '../../components/widgets';
+import { Stories } from 'components/widgets';
 
 export const History = () => {
   return (

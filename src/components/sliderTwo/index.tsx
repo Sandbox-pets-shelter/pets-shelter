@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import ArrowleftIcon from 'assets/icons/Arrowleft';
+import ArrowrightIcon from 'assets/icons/Arrowright';
+import IncreaseIcon from 'assets/icons/Increase';
+import { Dots } from 'components/Dots';
 
 import style from './styles.module.scss';
-
-import ArrowleftIcon from '../../assets/icons/Arrowleft';
-import ArrowrightIcon from '../../assets/icons/Arrowright';
-import IncreaseIcon from '../../assets/icons/Increase';
-import { Dots } from '../dots';
 
 export const ImageSliderTwo = (props: any) => {
   const { slides, currentIndex, goToNext, goToPrevious, togglePopup } = props;

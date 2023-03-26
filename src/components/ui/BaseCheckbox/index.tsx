@@ -1,7 +1,7 @@
-import s from './styles.module.scss';
+import CheckMark from 'assets/icons/CheckMark.svg';
+import { ICheckbox } from 'types/ui';
 
-import CheckMark from '../../../assets/icons/CheckMark.svg';
-import { ICheckbox } from '../../../types/ui';
+import s from './styles.module.scss';
 
 const BaseCheckbox = (props: ICheckbox) => {
   const { name, content, isChecked, value, change } = props;
