@@ -5,7 +5,7 @@ import s from './styles.module.scss';
 
 import { BaseDropdown } from '..';
 import HeartIcon from '../../assets/icons/footer/Heart.svg';
-import SearchIcon from '../../assets/icons/footer/Search.svg';
+import SearchIcon from '../../assets/icons/footer/Search';
 import logo from '../../assets/icons/Logo.svg';
 import { routeElements } from '../../configs/routeElements';
 import { IBaseDropdown } from '../../types/ui';
@@ -41,7 +41,7 @@ const Header = () => {
           ))}
         </ul>
         <div className={s.header__panel}>
-          <img src={SearchIcon} alt="search icon" style={{ cursor: 'pointer' }} />
+          <SearchIcon/>
           <img src={HeartIcon} alt="heart icon" style={{ cursor: 'pointer' }} />
           <BaseDropdown onChange={dropdown} languages={languages} selectedItem={selectedItem} />
         </div>

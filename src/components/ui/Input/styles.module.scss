@@ -1,0 +1,37 @@
+@import '../../../assets/scss/variables.scss';
+
+.wrapper {
+    position: relative;
+    border: 1px solid #A392FD;
+    padding: 14px 19px 14px 16px;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.withIcon {
+    padding-right: 50px;
+}
+
+.active {
+    border: 1px solid #6549FB;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+}
+
+input {
+    pointer-events: auto;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    border: none;
+    background: inherit;
+    &::placeholder {
+        color: #E0DBFE;
+    }
+}
