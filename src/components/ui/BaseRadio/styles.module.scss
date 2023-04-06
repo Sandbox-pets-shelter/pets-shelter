@@ -14,6 +14,7 @@
       background-color: $primary-dark;
       border-radius: 50%;
       border: none;
+      transition: all ease 0.3s;
     }
 
     .checkbox__mark:hover {
@@ -40,6 +41,11 @@
     margin: 0 8px 0 16px;
     border-radius: 30px;
     border: 2px solid $primary;
+    transition: all ease 0.3s;
+
+    &:hover .checkbox__icon {
+      background-color: $primary;
+    }
   }
 
   &__icon {

@@ -1,20 +1,33 @@
 import { BaseRadio } from 'components';
+import { useState } from 'react';
 
 export const About = () => {
-  const el = {
-    name: 'checkbox',
-    content: 'content',
-    isChecked: true,
-    value: 'value'
-  };
+  const [topping, setTopping] = useState('man');
 
-  const handleChange = () => {
-    console.log('change');
+  const els = [
+    {
+      name: 'gender',
+      value: 'man'
+    },
+    {
+      name: 'gender',
+      value: 'women'
+    },
+    {
+      name: 'gender',
+      value: 'cat'
+    }
+  ];
+
+  const handleChange = (value: string) => {
+    setTopping(value);
   };
 
   return (
     <div>
-      <BaseRadio name={el.name} content={el.content} isChecked={el.isChecked} value={el.value} change={handleChange} />
+      {els.map((el: any) => (
+        <BaseRadio key={el.value} name={el.name} value={el.value} change={handleChange} topping={topping} />
+      ))}
     </div>
   );
 };

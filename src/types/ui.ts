@@ -14,9 +14,8 @@ export interface ICheckbox {
 
 export interface IRadio {
   name: string;
-  content: string;
-  isChecked: boolean;
-  change?: (name: string, value: string) => void;
+  topping: string;
+  change: (value: string) => void;
   value: string;
 }
 
