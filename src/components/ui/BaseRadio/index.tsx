@@ -1,15 +1,14 @@
-// import CheckMark from 'assets/icons/CheckMark.svg';
 import { IRadio } from 'types/ui';
 
 import s from './styles.module.scss';
 
 const BaseRadio = (props: IRadio) => {
-  const { name, content, isChecked, value, change } = props;
+  const { name, topping, value, change } = props;
 
-  const currentStyle = `${s.checkbox} ${isChecked && s.checkbox_checked}`;
+  const currentStyle = `${s.checkbox} ${topping === value && s.checkbox_checked}`;
 
-  const toggleChecked = (name: string, value: string) => {
-    if (change) change(name, value);
+  const toggleChecked = (value: string) => {
+    change(value);
   };
 
   return (
@@ -17,26 +16,13 @@ const BaseRadio = (props: IRadio) => {
       <div className={s.checkbox__mark}>
         <div className={s.checkbox__icon}></div>
       </div>
-      {content}
+      {value}
       <input
-        type="checkbox"
+        type="radio"
         name={name}
         value={value}
         className={s.checkbox__input}
-        onChange={() => toggleChecked(name, value)}
-        checked={isChecked}
-      />
-      <div className={s.checkbox__mark}>
-        <div className={s.checkbox__icon}></div>
-      </div>
-      {content}
-      <input
-        type="checkbox"
-        name={name}
-        value={value}
-        className={s.checkbox__input}
-        onChange={() => toggleChecked(name, value)}
-        checked={isChecked}
+        onChange={() => toggleChecked(value)}
       />
     </label>
   );
