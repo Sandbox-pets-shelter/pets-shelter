@@ -2,9 +2,9 @@ import arrowleft from 'assets/icons/arrowleft.svg';
 import arrowright from 'assets/icons/arrowright.svg';
 import ShareIcon from 'assets/icons/Share';
 import { BaseButton } from 'components';
-import { Like } from 'components/Like';
-import { handleShareButton } from 'components/ShareBtn';
-import { ImageSlider } from 'components/Slider';
+import { Like } from 'components/like';
+import { handleShareButton } from 'components/sharebtn';
+import { ImageSlider } from 'components/slider';
 import { cats } from 'mocks/cats';
 import { useState } from 'react';
 

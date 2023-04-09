@@ -1,7 +1,7 @@
 import ArrowleftIcon from 'assets/icons/Arrowleft';
 import ArrowrightIcon from 'assets/icons/Arrowright';
 import IncreaseIcon from 'assets/icons/Increase';
-import { Dots } from 'components/Dots';
+import { Dots } from 'components/dots';
 
 import style from './styles.module.scss';
 
