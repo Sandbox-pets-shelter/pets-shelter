@@ -1,4 +1,4 @@
-import { Card } from 'components/card';
+import { Card } from 'components/Card';
 import { Filters } from 'components/index';
 
 import s from './styles.module.scss';

@@ -1,4 +1,4 @@
-import { Dots } from 'components/dots';
+import { Dots } from 'components/Dots';
 import { useState } from 'react';
 
 import style from './styles.module.scss';

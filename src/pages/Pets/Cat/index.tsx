@@ -4,7 +4,7 @@ import redplus from 'assets/icons/mainfirst/redplus.svg';
 import Arrow from 'assets/icons/needhelp/arrow';
 import ShareIcon from 'assets/icons/Share';
 import { BaseButton } from 'components';
-import { Like } from 'components/like';
+import { Like } from 'components/Like';
 import ArrowButton from 'components/ui/ArrowButton';
 import Actions from 'components/widgets/Actions';
 import { cats } from 'mocks/cats';
