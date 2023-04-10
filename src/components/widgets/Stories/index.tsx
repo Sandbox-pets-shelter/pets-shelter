@@ -1,10 +1,11 @@
 import EyeIcon from 'assets/icons/Eye';
 import IncreaseIcon from 'assets/icons/Increase';
-import ShareIcon from 'assets/icons/Share';
+// import ShareIcon from 'assets/icons/Share';
 import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
 import { Popup } from 'components/popup';
-import { handleShareButton } from 'components/sharebtn';
+// import { handleShareButton } from 'components/sharebtn';
 import { ImageSliderTwo } from 'components/sliderTwo';
+import Share from 'components/ui/Share';
 import { stories } from 'mocks/stories';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -66,10 +67,10 @@ const Stories = () => {
                 <EyeIcon className={s.stories__subcontainer__views__look__img} />
                 {item.views}
               </div>
-              <div className={s.stories__subcontainer__views__share} onClick={handleShareButton}>
-                {item.share}
-                <ShareIcon className={s.stories__subcontainer__views__share__img} />
-                {styles.share}
+              <div className={s.stories__subcontainer__views__share}>
+                {/* {item.share} */}
+                <Share link={window.location.href} />
+                {/* {styles.share} */}
               </div>
             </div>
             <div className={s.stories__subcontainer__title}>{item.title}</div>
