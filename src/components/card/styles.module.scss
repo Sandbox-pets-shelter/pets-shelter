@@ -1,4 +1,8 @@
 @import 'assets/scss/variables.scss';
+
+.card__block {
+  position: relative;
+}
 .card {
   cursor: pointer;
   width: 312px;
@@ -40,24 +44,7 @@
     gap: 26px;
   }
 }
-.icon {
-  &__share {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(101, 73, 251, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-  &__share:hover {
-    background: $activeColor;
-  }
-}
+
 .paginate {
   &__button {
     margin-top: 46px;

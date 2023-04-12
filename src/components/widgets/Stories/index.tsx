@@ -1,9 +1,7 @@
 import EyeIcon from 'assets/icons/Eye';
 import IncreaseIcon from 'assets/icons/Increase';
-// import ShareIcon from 'assets/icons/Share';
 import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
 import { Popup } from 'components/popup';
-// import { handleShareButton } from 'components/sharebtn';
 import { ImageSliderTwo } from 'components/sliderTwo';
 import Share from 'components/ui/Share';
 import { stories } from 'mocks/stories';
@@ -26,10 +24,7 @@ const Stories = () => {
 
   let storiesCards = stories.map((item) => {
     const goToPrevious = () => {
-      // console.log(key)
-
       const isFirstSlide = currentIndex === 0;
-      // console.log(stories.filter(item => item.key === key).map(story => story.src).length)
       const newIndex = isFirstSlide ? item.src.length - 1 : currentIndex - 1;
       setCurrentIndex(newIndex);
     };
@@ -68,9 +63,7 @@ const Stories = () => {
                 {item.views}
               </div>
               <div className={s.stories__subcontainer__views__share}>
-                {/* {item.share} */}
-                <Share link={window.location.href} />
-                {/* {styles.share} */}
+                <Share link={window.location.href} btn="share" />
               </div>
             </div>
             <div className={s.stories__subcontainer__title}>{item.title}</div>

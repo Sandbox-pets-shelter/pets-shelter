@@ -4,17 +4,30 @@
   position: relative;
 }
 
-.share {
-  path {
-    fill: #846dfc;
-    stroke: #846dfc;
+.shareIcon {
+  z-index: 50;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
 
-    transition: 0.3s ease;
+.btnIcon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(101, 73, 251, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $activeColor;
   }
 
-  &:hover path {
-    fill: $primary-dark;
-    stroke: $primary-dark;
+  &.active {
+    background: $activeColor;
   }
 }
 
@@ -22,6 +35,29 @@
   display: flex;
   align-items: center;
   gap: 11px;
+
+  & .share path {
+    fill: #846dfc;
+    stroke: #846dfc;
+    transition: 0.3s ease;
+  }
+
+  &:hover {
+    color: $primary-dark;
+  }
+  &:hover .share path {
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
+
+  &.active {
+    color: $activeColor;
+  }
+  &.active .share path {
+    color: $activeColor;
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
 }
 
 .links_list {
@@ -37,26 +73,18 @@
   transition: 0.3s ease;
 }
 
+.linksIcon {
+  top: 100%;
+  left: -500%;
+}
+
 .open {
   opacity: 1;
   visibility: visible;
 }
 
-.copied {
-  position: absolute;
-  top: -80%;
-  right: -100%;
-  animation-name: result;
-  animation-duration: 2s;
-  visibility: hidden;
-  padding: 1rem;
-  background-color: $secondary-dark;
-  border-radius: 15px;
-  text-align: center;
-}
-
 .links_item {
-  padding: 16px 24px;
+  padding: 16px 16px 16px 16px;
   gap: 10px;
 
   & a,
@@ -71,19 +99,17 @@
   &:hover button {
     color: $primary-dark;
   }
+
+  & .socialIcon path {
+    transition: 0.3s ease;
+  }
+
+  &:hover .socialIcon path {
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
 }
 
-@keyframes result {
-  0% {
-    visibility: visible;
-    opacity: 0%;
-  }
-  25% {
-    opacity: 1;
-  }
-
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
+.copied {
+  color: #35c602;
 }
