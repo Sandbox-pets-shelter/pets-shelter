@@ -63,6 +63,7 @@ const Stories = () => {
                 {item.views}
               </div>
               <div className={s.stories__subcontainer__views__share}>
+                {/* кода будет страница, то указать нужную ссылку */}
                 <Share link={window.location.href} btn="share" />
               </div>
             </div>
