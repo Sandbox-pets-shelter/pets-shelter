@@ -25,7 +25,12 @@ const LanguageDropdown = (props: IProps) => {
   };
 
   return (
-    <div className={s.dropdown} onClick={toggleDropdown} onMouseEnter={() => setOpen(true)}>
+    <div
+      className={s.dropdown}
+      onClick={toggleDropdown}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <p>{selectedItem?.label || 'Ру'}</p>
       <ul className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`} onMouseLeave={() => setOpen(false)}>
         {languages.map((item: ILanguageDropdown) => (
