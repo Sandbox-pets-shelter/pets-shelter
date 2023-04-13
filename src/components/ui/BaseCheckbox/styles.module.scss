@@ -1,3 +1,5 @@
+@import 'assets/scss/variables';
+
 .checkbox {
   width: 100%;
   display: flex;
@@ -7,10 +9,17 @@
   &_checked {
     cursor: pointer;
     .checkbox__mark {
-      background-color: #6549fb;
+      background-color: $primary-dark;
+      border: none;
+      transition: all ease 0.3s;
       .checkbox__icon {
         opacity: 1;
       }
+    }
+
+    .checkbox__mark:hover {
+      background-color: $background;
+      border: 2px solid $primary;
     }
   }
 
@@ -28,10 +37,22 @@
     height: 24px;
     margin: 0 16px 0 0;
     border-radius: 8px;
-    border: 2px solid #6549fb;
+    border: 2px solid $primary;
+    transition: all ease 0.3s;
+
+    &:hover .checkbox__icon__hover {
+      display: block;
+    }
+
+    &:hover .checkbox__icon {
+      display: none;
+    }
   }
 
   &__icon {
     opacity: 0;
+  }
+  &__icon__hover {
+    display: none;
   }
 }
