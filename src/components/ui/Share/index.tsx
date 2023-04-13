@@ -6,7 +6,6 @@ import TelegramIcon from 'assets/icons/socialIcons/TelegramIcon';
 import VkIcon from 'assets/icons/socialIcons/VkIcon';
 import WhatsAppIcon from 'assets/icons/socialIcons/WhatsAppIcon';
 import { SVGProps, useState } from 'react';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -26,32 +25,6 @@ function Share(props: { link: string; btn: string }) {
     }, 2000);
   }
 
-  // function clickOutside(ev: MouseEvent) {
-  //   // console.log(ev);
-  //   const target = ev.target as HTMLElement;
-  //   // console.log(!target.offsetParent!.classList.contains(s.links_list));
-  //   if (target !== null) {
-  //     if (!target.offsetParent!.classList.contains(s.links_list)) {
-  //       setIsOpen(false);
-  //     } else {
-  //       return;
-  //     }
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   document.addEventListener('click', (ev) => clickOutside(ev));
-
-  //   return () => document.removeEventListener('click', (ev) => clickOutside(ev));
-  // }, []);
-
-  // function btnHandler(ev: React.MouseEvent<HTMLButtonElement>) {
-  //   ev.stopPropagation();
-  //   document.querySelectorAll(`.${s.active}`).forEach((el) => el.classList.remove(s.active));
-  //   document.querySelectorAll(`.${s.open}`).forEach((el) => el.classList.remove(s.open));
-  //   setIsOpen((prev) => !prev);
-  // }
-
   return (
     <div
       className={props.btn === 'share' ? s.share_block : s.shareIcon}
@@ -62,10 +35,7 @@ function Share(props: { link: string; btn: string }) {
         {props.btn === 'share' && t('share.title')}
         <ShareIcon className={`${s.share} ${isOpen ? s.active : ''}`} />
       </button>
-      <ul
-        className={`${s.links_list} ${props.btn === 'share' ? '' : s.linksIcon} ${isOpen ? s.open : ''}`}
-        // onMouseLeave={() => setIsOpen(false)}
-      >
+      <ul className={`${s.links_list} ${props.btn === 'share' ? '' : s.linksIcon} ${isOpen ? s.open : ''}`}>
         <li className={`${s.links_item} cop`}>
           <button onClick={copyLink}>
             <img src={isCopied ? copyCheck : copy} />

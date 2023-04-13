@@ -15,14 +15,9 @@ const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
   const title = items[0];
   const dropdownItems = items.slice(1);
 
-  const toggleDropdown = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
-    e.preventDefault();
-    setOpen((prev) => !prev);
-  };
-
   return (
-    <div className={s.dropdown}>
-      <span onClick={toggleDropdown}>
+    <div className={s.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <span>
         {title.name}
         <span className={`arrow ${isOpen ? 'up' : 'down'}`} />
       </span>
