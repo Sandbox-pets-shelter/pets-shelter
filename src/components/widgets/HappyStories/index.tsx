@@ -23,10 +23,8 @@ const HappyStories = () => {
         {itemsHappyStories.map((item) => (
           <div key={item.id} className={s.happystories__container__item}>
             <div className={s.happystories__container__img}>
-              <Share link="" btn="icon" />
-              {/* <a className={s.happystories__container__img} href="#">
-                <img className={s.happystories__container__img__share} src={share_btn} alt="Поделиться" />
-              </a> */}
+              {/* кода будет страница, то указать нужную ссылку */}
+              <Share link={window.location.href} btn="icon" />
               <img src={item.src} alt={item.alt} />
               <div className={s.happystories__container__img__title}>
                 <p className={s.happystories__container__img__subtitle}>{item.subtitle}</p>
