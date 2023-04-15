@@ -32,7 +32,12 @@
   }
 }
 
+.usual {
+  color: $text;
+}
+
 .btn {
+  color: $text;
   display: flex;
   align-items: center;
   gap: 11px;
@@ -72,6 +77,10 @@
   box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
   border-radius: 16px;
   transition: 0.3s ease;
+}
+
+.links_item {
+  color: var(--text);
 }
 
 .linksIcon {

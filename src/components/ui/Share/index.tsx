@@ -39,7 +39,7 @@ function Share(props: { link: string; btn: string }) {
         <li className={`${s.links_item} cop`}>
           <button onClick={copyLink}>
             <img src={isCopied ? copyCheck : copy} />
-            <span className={isCopied ? s.copied : ''}>{isCopied ? t('share.result') : t('share.copy')}</span>
+            <span className={isCopied ? s.copied : s.usual}>{isCopied ? t('share.result') : t('share.copy')}</span>
           </button>
         </li>
         <li className={s.links_item}>
