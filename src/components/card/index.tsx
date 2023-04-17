@@ -14,7 +14,6 @@ import { ICard } from 'types/ICard';
 
 import s from './styles.module.scss'
 
-
 export const Card = () => {
   const [ pets, setPets ] = useState<ICard[]>()
 

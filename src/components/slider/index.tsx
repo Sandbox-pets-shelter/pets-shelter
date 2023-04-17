@@ -1,17 +1,14 @@
-import { useState, useEffect } from 'react'
+import { Dots } from 'components/dots';
+import { useState } from 'react';
 
 import style from './styles.module.scss'
 
-import { Image } from '../../types/ICard'
-
-import { Dots } from '../dots'
-
-export const ImageSlider = ({ slides }: {slides: any}) => {
-    const [ currIndex, setCurrIndex ] = useState(0)
-    const goToSlide = (ind: any) => {
-      setCurrIndex(ind)
-    }
-    const n = 3
+export const ImageSlider = ({ slides }: any) => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const goToSlide = (ind: any) => {
+    setCurrIndex(ind);
+  };
+  const n = 3;
   return (
     <div>
       <div className={style.hoverCont}>
