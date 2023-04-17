@@ -1,0 +1,27 @@
+.dropdown {
+  width: 100%;
+  cursor: pointer;
+  border-left: 2px solid var(--separator);
+  border-right: 2px solid var(--separator);
+  padding: 0 24px;
+
+  &__body {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+
+    &_open {
+      display: block;
+    }
+  }
+
+  &__selected {
+    color: #6549fb;
+  }
+
+  &__item {
+    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}

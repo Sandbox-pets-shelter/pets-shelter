@@ -1,9 +1,8 @@
+import homelessPet from 'assets/icons/homelessPet/HomelessPet.svg';
+import { BaseButton } from 'components';
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import homelessPet from '../../../assets/icons/homelessPet/HomelessPet.svg';
-import { BaseButton } from '../../index';
 
 const HomelessPet = () => {
   const { t } = useTranslation();

@@ -1,30 +1,19 @@
-import { useState, useEffect } from 'react'
+import getCards from 'api/cards';
+import arrowleft from 'assets/icons/arrowleft.svg';
+import arrowright from 'assets/icons/arrowright.svg';
+import ShareIcon from 'assets/icons/Share';
+import { BaseButton } from 'components';
+import { Like } from 'components/like';
+import { handleShareButton } from 'components/sharebtn';
+import { ImageSlider } from 'components/slider';
+import { useState, useEffect } from 'react';
 
-import { useTranslation } from 'react-i18next'
-
-import ReactPaginate from 'react-paginate'
-
-import { Link } from 'react-router-dom'
+import ReactPaginate from 'react-paginate';
+import { Link } from 'react-router-dom';
+import { ICard } from 'types/ICard';
 
 import s from './styles.module.scss'
 
-import getCards from '../../api/cards'
-
-import arrowleft from '../../assets/icons/arrowleft.svg'
-
-import arrowright from '../../assets/icons/arrowright.svg'
-
-import ShareIcon from '../../assets/icons/Share'
-
-import { ICard } from '../../types/ICard'
-
-import { BaseButton } from '../index'
-
-import { Like } from '../like'
-// import { cats } from '../../mocks/cats'
-import { handleShareButton } from '../sharebtn'
-
-import { ImageSlider } from '../slider'
 
 export const Card = () => {
   const [ pets, setPets ] = useState<ICard[]>()
@@ -39,8 +28,6 @@ export const Card = () => {
 
   const handleClicked = (e: any, { key }: any) => {
     e.preventDefault();
-    console.log(key);
-    //Todo preventDefault
 
     const likedItem = pets?.map((item:any)=>{
       if(item.key === key){

@@ -1,9 +1,9 @@
+import Arrow from 'assets/icons/needhelp/arrow';
 import { Link } from 'react-router-dom';
 
-import s from './styles.module.scss';
+import { IBaseButton } from 'types/ui';
 
-import Arrow from '../../../assets/icons/needhelp/arrow';
-import { IBaseButton } from '../../../types/ui';
+import s from './styles.module.scss';
 
 const ArrowButton = (props: IBaseButton) => {
   const { variant, color, disabled, children, click, endIcon, link } = props;

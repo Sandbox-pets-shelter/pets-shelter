@@ -1,9 +1,8 @@
+import cooperation from 'assets/icons/cooperation/cooperation-image.svg';
+import { BaseButton } from 'components';
 import { useTranslation } from 'react-i18next';
 
 import s from './styles.module.scss';
-
-import cooperation from '../../../assets/icons/cooperation/cooperation-image.svg';
-import { BaseButton } from '../../index';
 
 const Cooperation = () => {
   const { t } = useTranslation();

@@ -1,9 +1,10 @@
-import { Cooperation } from '../../components/widgets';
-import { Sponsors } from '../../components/widgets';
-import { NeedHelp } from '../../components/widgets';
-import { HomelessPet } from '../../components/widgets';
-import { HappyStories } from '../../components/widgets';
-import { MainFirst } from '../../components/widgets';
+import { Cooperation } from 'components/widgets';
+import { Sponsors } from 'components/widgets';
+import { NeedHelp } from 'components/widgets';
+import { HomelessPet } from 'components/widgets';
+import { HappyStories } from 'components/widgets';
+import { MainFirst } from 'components/widgets';
+import { SliderAnimation } from 'components/widgets';
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <MainFirst />
       <HomelessPet />
       <HappyStories />
+      <SliderAnimation />
       <NeedHelp />
       <Cooperation />
       <Sponsors />

@@ -5,7 +5,7 @@
     border: 1px solid #A392FD;
     padding: 14px 19px 14px 16px;
     border-radius: 16px;
-    pointer-events: none;
+    display: flex;
 }
 
 .withIcon {
@@ -16,7 +16,13 @@
     border: 1px solid #6549FB;
 }
 
+.disabled {
+    border: 1px solid #d9d9d9;
+    color: #d9d9d9;
+}
+
 .icon {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     right: 19px;
@@ -34,4 +40,106 @@ input {
     &::placeholder {
         color: #E0DBFE;
     }
+}
+
+.input_num {
+    width: 99px;
+}
+
+.num_wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 14px 16px;
+    border: 1px solid #EBEBEB;
+}
+
+.button {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: calc(50% + 5px);
+    transform: translateY(-50%);
+    &_disabled {
+        pointer-events: none;
+    }
+}
+.plus {
+    top: calc(50% - 5px);
+}
+
+.flag {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 8px;
+    &_disabled {
+        filter: grayscale(1);
+    }
+}
+.flag_kz {
+    object-position: 57% 50%;
+}
+.menu {
+    position: absolute;
+    background-color: #fafafa;
+    border-radius: 16px;
+    top: 90%;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
+    padding: 16px 24px;
+    height: 200px;
+    overflow-y: scroll !important;
+}
+.menu_item:hover {
+    background-color: #d5d5d5;
+}
+.selected_item {
+    border: 1px solid #6549FB;
+}
+.tel_title {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    &_disabled {
+        color: #d9d9d9;
+    }
+}
+.divider {
+    border-right: 1px solid #6549FB;
+    margin: -14px 16px -14px 16px;
+}
+.divider_disabled {
+    border-right: 1px solid #d9d9d9;
+}
+.searchCountry {
+    border: 1px solid #6549FB;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.inputnum {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    &::placeholder {
+        color: #A392FD;
+    }
+}
+
+input[type=password] {
+    font-family: Verdana;
+    color: #A392FD;
+    &::placeholder {
+        font-family: Montserrat;
+    }
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none;
 }

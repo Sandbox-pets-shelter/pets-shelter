@@ -1,21 +1,19 @@
+import LocationIcon from 'assets/icons/location';
+import plus from 'assets/icons/mainfirst/plus.svg';
+import redplus from 'assets/icons/mainfirst/redplus.svg';
+import Arrow from 'assets/icons/needhelp/arrow';
+import ShareIcon from 'assets/icons/Share';
+import { BaseButton } from 'components';
+import { Like } from 'components/like';
+import ArrowButton from 'components/ui/ArrowButton';
+import Actions from 'components/widgets/Actions';
+import { cats } from 'mocks/cats';
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { useParams } from 'react-router-dom';
+import { ISlider } from 'types/ui';
 
 import styles from './styles.module.scss';
-
-import LocationIcon from '../../../assets/icons/location';
-import plus from '../../../assets/icons/mainfirst/plus.svg';
-import redplus from '../../../assets/icons/mainfirst/redplus.svg';
-import Arrow from '../../../assets/icons/needhelp/arrow';
-import ShareIcon from '../../../assets/icons/Share';
-import { BaseButton } from '../../../components';
-import { Like } from '../../../components/like';
-import ArrowButton from '../../../components/ui/ArrowButton';
-import Actions from '../../../components/widgets/Actions';
-import { cats } from '../../../mocks/cats';
-import { ISlider } from '../../../types/ui';
 
 export const Cat = () => {
   const [data, setData] = useState(cats);

@@ -1,10 +1,9 @@
+import { BaseCheckbox, BaseButton } from 'components';
+import InputField from 'components/ui/Input';
+import { filtersData } from 'mocks/filter';
 import { Fragment, useState } from 'react';
 
 import s from './styles.module.scss';
-
-import { BaseCheckbox, BaseButton } from '..';
-import { filtersData } from '../../mocks/filter';
-import InputField from '../ui/Input';
 
 const Filters = () => {
   const [data, setData] = useState(filtersData);
@@ -38,6 +37,7 @@ const Filters = () => {
 
   return (
     <form className={s.filters}>
+      <InputField type='search' placeholder='Поиск по кличке...' name='name' value={nameInput} onChange={onChange}/>
       {data.map((item) => (
         <Fragment key={item.id}>
           {item.title && <div className={s.filters__title}> {item.title} </div>}
@@ -53,16 +53,6 @@ const Filters = () => {
           ))}
         </Fragment>
       ))}
-      {/* // email
-      // num - tel, number,
-      // password
-      // text, search */}
-      <InputField type='search' placeholder='Поиск по кличке...' name='name' value={nameInput} onChange={onChange}/>
-      <InputField type='email' placeholder='Введите почту...' name='name' value={nameInput} onChange={onChange}/>
-      <InputField type='text' placeholder='Введите имя...' name='name' value={nameInput} onChange={onChange}/>
-      {/* <InputField type='number' placeholder='Введите почту...' name='name' value={nameInput} onChange={onChange}/> */}
-      <InputField type='tel' placeholder='Введите почту...' name='name' value={nameInput} onChange={onChange}/>
-      <InputField type='password' placeholder='Введите почту...' name='name' value={nameInput} onChange={onChange}/>
       <BaseButton variant="filled" color="primary" click={reset}>
         Сбросить настройки
       </BaseButton>

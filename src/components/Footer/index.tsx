@@ -1,10 +1,9 @@
+import logo from 'assets/icons/Logo.svg';
+import { footerTextRight, iconsFooter, rulesLinks } from 'mocks/footer';
 import { useTranslation } from 'react-i18next';
+import { IFooterText, ILink } from 'types/ui';
 
 import s from './styles.module.scss';
-
-import logo from '../../assets/icons/Logo.svg';
-import { footerTextRight, iconsFooter, rulesLinks } from '../../mocks/footer';
-import { IFooterText, ILink } from '../../types/ui';
 
 const Footer = () => {
   const { t } = useTranslation();
