@@ -12,7 +12,7 @@ import { Popup } from '../popup'
 
 import { handleShareButton } from '../sharebtn'
 
-import { ImageSliderTwo } from '../slidertwo'
+import { ImageSliderTwo } from '../sliderTwo'
 
 export const Story = ({ story }: {story: IStory}) => {
 
