@@ -1,6 +1,6 @@
 @import '../../../assets/scss/variables.scss';
 
-.toggle__switch {
+.switcher {
   display: flex;
   align-items: center;
   padding: 4px;
@@ -22,7 +22,7 @@
   background: $white;
   transition: all ease 0.5s;
 
-  &__checked {
+  &_active {
     transform: translateX(32px);
   }
 }

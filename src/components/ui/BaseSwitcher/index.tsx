@@ -5,8 +5,8 @@ import s from './styles.module.scss';
 const BaseSwitcher = (props: IBaseSwitcher) => {
   const { isSwitched, onChange } = props;
 
-  const currentStyleCircle = `${s.circle} ${isSwitched && s.circle__checked}`;
-  const currentStyleWrapper = `${s.toggle__switch} ${isSwitched && s.toggle__switch_active}`;
+  const currentStyleWrapper = `${s.switcher} ${isSwitched && s.switcher_active}`;
+  const currentStyleCircle = `${s.circle} ${isSwitched && s.circle_active}`;
 
   function toggleChecked() {
     onChange(!isSwitched);
