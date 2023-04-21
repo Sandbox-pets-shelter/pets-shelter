@@ -42,3 +42,8 @@ export interface ISlider {
   e: any;
   data: any;
 }
+
+export interface IBaseSwitcher {
+  isSwitched: boolean;
+  onChange: (isSwitched: boolean) => void;
+}
