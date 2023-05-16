@@ -1,9 +1,7 @@
 import ArrowDown from 'assets/icons/arrow-down.svg';
-import { FC, MouseEvent, useState } from 'react';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RouteElement } from 'types/types';
-
-import { transform } from 'typescript';
 
 import s from './styles.module.scss';
 
