@@ -1,7 +1,6 @@
-import { FC, MouseEvent, useState } from 'react';
-
+import ArrowDown from 'assets/icons/arrow-down.svg';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
 import { RouteElement } from 'types/types';
 
 import s from './styles.module.scss';
@@ -15,16 +14,23 @@ const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
   const title = items[0];
   const dropdownItems = items.slice(1);
 
-  const toggleDropdown = (e: MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
-    e.preventDefault();
+  const clickOutside = () => {
+    setOpen(false);
+    document.removeEventListener('click', clickOutside);
+  };
+
+  const toggleDropdown = async () => {
     setOpen((prev) => !prev);
+    setTimeout(() =>
+      isOpen ? document.removeEventListener('click', clickOutside) : document.addEventListener('click', clickOutside)
+    );
   };
 
   return (
     <div className={s.dropdown}>
       <span onClick={toggleDropdown}>
         {title.name}
-        <span className={`arrow ${isOpen ? 'up' : 'down'}`} />
+        <img src={ArrowDown} style={{ transform: isOpen ? 'rotateX(180deg)' : 'none' }} />
       </span>
       <div className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
         {dropdownItems.map((item: RouteElement) => (
