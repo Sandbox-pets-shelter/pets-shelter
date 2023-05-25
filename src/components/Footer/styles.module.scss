@@ -1,13 +1,22 @@
+@import 'assets/scss/variables.scss';
+
 .content {
   display: flex;
   margin: 0 auto;
   max-width: 1320px;
   padding: 76px 0 24px 0;
   width: 100%;
+  flex-direction: column;
+}
+
+.upblock {
+  display: flex;
   justify-content: space-between;
+  margin-bottom: 102px;
 }
 
 .left {
+  width: 50%;
   &__undertitle {
     font-weight: 400;
     font-size: 16px;
@@ -16,10 +25,7 @@
   }
 
   &__title {
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 44px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   &__title_two {
@@ -31,7 +37,7 @@
   }
 
   &__subtitle {
-    width: 600px;
+    width: 95%;
     font-weight: 400;
     font-size: 16px;
     line-height: 145%;
@@ -47,8 +53,7 @@
 
   &__icons {
     display: flex;
-    width: 152px;
-    justify-content: space-between;
+    gap: 16px;
   }
 
   &__social {
@@ -57,7 +62,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #a392fd;
+    background-color: $primary;
   }
 
   &__icon {
@@ -69,19 +74,23 @@
 }
 
 .right {
-  display: grid;
-  grid-template-columns: 158px 120px 212px;
-  grid-template-rows: 1fr 50px;
-  gap: 155px 55px;
-  grid-template-areas:
-    'main contacts collab'
-    'main payment payment';
+  display: flex;
+  position: relative;
+  width: 49%;
+  gap: 10px;
+
+  & div:first-child {
+    width: 34%;
+  }
+  & div:nth-child(2) {
+    width: 28%;
+  }
 
   &__title {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
   }
 
   &__links {
@@ -99,7 +108,7 @@
     &_row {
       flex-direction: row;
       align-items: center;
-      gap: 32px;
+      gap: 33px;
 
       &_custom {
         gap: 10px;
@@ -116,20 +125,10 @@
   gap: 0;
 }
 
-.main {
-  grid-area: main;
-}
-
-.contacts {
-  grid-area: contacts;
-}
-
-.collab {
-  grid-area: collab;
-}
-
 .payment {
-  grid-area: payment;
+  position: absolute;
+  bottom: -4%;
+  right: 0%;
 }
 
 .rules {
@@ -147,5 +146,86 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 80px 0 40px 0;
+  }
+
+  .upblock {
+    flex-direction: column;
+  }
+  .payment {
+    display: none;
+  }
+
+  .left {
+    width: 100%;
+
+    &__title_two {
+      width: 80%;
+    }
+
+    &__subtitle {
+      width: 85%;
+      margin-bottom: 17px;
+    }
+  }
+
+  .right {
+    width: 100%;
+    margin-top: 34px;
+    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 33% 30%;
+
+    & div:first-child {
+      width: 100%;
+      grid-row: 1/4;
+    }
+    & div:nth-child(2) {
+      grid-row: 1/2;
+      grid-column: 2;
+      width: 100%;
+    }
+    & div:nth-child(3) {
+      margin-top: 10px;
+      grid-row: 2/4;
+      grid-column: 2;
+      width: 100%;
+    }
+  }
+
+  .rules {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .left {
+    &__title {
+      margin-bottom: 17px;
+    }
+    &__subtitle {
+      width: 100%;
+    }
+  }
+  .right {
+    grid-template-columns: 100%;
+
+    & div:first-child {
+      grid-row: 1;
+    }
+    & div:nth-child(2) {
+      grid-row: 2;
+      grid-column: 1;
+    }
+    & div:nth-child(3) {
+      margin-top: 24px;
+      grid-row: 3;
+      grid-column: 1;
+    }
   }
 }
