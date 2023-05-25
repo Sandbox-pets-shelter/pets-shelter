@@ -19,7 +19,7 @@ const HappyStories = () => {
       <p className={s.happystories__title}>{t('happystories.title')}</p>
       <p className={s.happystories__content}>{t('happystories.content')}</p>
       <div className={s.happystories__container}>
-        {/* {itemsHappyStories.map((item) => (
+        {itemsHappyStories.map((item) => (
           <div key={item.id} className={s.happystories__container__item}>
             <div className={s.happystories__container__img}>
               <a className={s.happystories__container__img} href="#">
@@ -35,7 +35,7 @@ const HappyStories = () => {
               </div>
             </div>
           </div>
-        ))} */}
+        ))}
       </div>
       <div className={s.happystories__button}>
         <BaseButton variant="outlined" color="accent" click={reset}>
