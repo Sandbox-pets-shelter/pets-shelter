@@ -1,12 +1,9 @@
 import EyeIcon from 'assets/icons/Eye';
+import SearchIcon from 'assets/icons/footer/Search';
+import countrycodes from 'data/countrycodes.json'
 import { useState, useEffect, useRef, ChangeEvent, KeyboardEvent } from 'react'
 
 import s from './styles.module.scss'
-
-import SearchIcon from '../../../assets/icons/footer/Search';
-
-import countrycodes from '../../../data/countrycodes.json'
-
 
 type Props = {
   onChange: (str: string) => void
@@ -26,6 +23,7 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
   const [menuOpen, setMenuOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState<string>('KZ')
   const [searchCountry, setSearchCountry] = useState('')
+  const FLAG = `https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/${selectedOption.toLowerCase()}.svg`
 
   const [passwordShown, setPasswordShown] = useState(true)
 
@@ -98,12 +96,20 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
           <label htmlFor={name}>{label}<span style={{ color: 'red' }}> {required && '*'}</span></label>
         </div>
         <div className={`${s.wrapper} ${value !== '' && s.active} ${disabled && s.disabled}`}>
-          <div className={`${disabled && s.tel_title_disabled} ${s.tel_title}`}>{selectedOption && <img className={`${disabled && s.flag_disabled} ${s.flag} ${selectedOption === 'KZ' && s.flag_kz}`} src={`https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/${selectedOption.toLowerCase()}.svg`}/>} {countrycodes.filter(country => country.code === selectedOption)[0].dial_code}<span onClick={() => setMenuOpen(!menuOpen)} className={`arrow ${disabled && 'arrow-disabled'} ${menuOpen ? 'up' : 'down'}`}></span></div>
+          <div className={`${disabled && s.tel_title_disabled} ${s.tel_title}`}>
+            {selectedOption && <img className={`${disabled && s.flag_disabled} ${s.flag} ${selectedOption === 'KZ' && s.flag_kz}`} src={FLAG}/>}
+            {countrycodes.filter(country => country.code === selectedOption)[0].dial_code}
+            <span onClick={() => setMenuOpen(!menuOpen)} className={`arrow ${disabled && 'arrow-disabled'} ${menuOpen ? 'up' : 'down'}`}></span>
+          </div>
           {menuOpen &&
           <div className={s.menu}>
             <input className={s.searchCountry} value={searchCountry} placeholder='Поиск по странам' type="text" onChange={e => setSearchCountry(e.target.value)}/>
             {countrycodes.filter(cntry => cntry.name.toLocaleLowerCase().startsWith(searchCountry.toLowerCase())).map(country => (
-              <div className={`${selectedOption === country.code ? s.selected_item : s.menu_item}`} key={country.name} onClick={event => setSelectedOption(country.code)}>{country.name} {country.dial_code}</div>
+              <div
+                className={`${selectedOption === country.code ? s.selected_item : s.menu_item}`}
+                key={country.name}
+                onClick={event => setSelectedOption(country.code)}>{country.name} {country.dial_code}
+              </div>
             ))}
           </div>}
           <div className={`${s.divider} ${disabled && s.divider_disabled}`}></div>

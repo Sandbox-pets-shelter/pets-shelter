@@ -3,12 +3,11 @@ import { useState } from 'react';
 
 import style from './styles.module.scss'
 
-export const ImageSlider = ({ slides }: any) => {
-  const [currIndex, setCurrIndex] = useState(0);
-  const goToSlide = (ind: any) => {
+export const ImageSlider = ({ slides }: {slides: string[]}) => {
+  const [currentIndex, setCurrIndex] = useState(0);
+  const goToSlide = (ind: number) => {
     setCurrIndex(ind);
   };
-  const n = 3;
   return (
     <div>
       <div className={style.hoverCont}>
@@ -16,13 +15,8 @@ export const ImageSlider = ({ slides }: any) => {
         <div onMouseEnter={() => goToSlide(1)}></div>
         <div onMouseEnter={() => goToSlide(2)}></div>
       </div>
-      <Dots slides={slides} currIndex={currIndex} goToSlide={goToSlide} n={n} />
-      <div className={style.hoverCont}>
-        <div onMouseEnter={() => goToSlide(0)}></div>
-        <div onMouseEnter={() => goToSlide(1)}></div>
-        <div onMouseEnter={() => goToSlide(2)}></div>
-      </div>
-      <Dots slides={slides} currIndex={currIndex} goToSlide={goToSlide} n={n} />
+      <img src={slides[currentIndex]} alt="cat" className={style.card__img}></img>
+      <Dots slides={slides} currentIndex={currentIndex}/>
     </div>
   );
 };

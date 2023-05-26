@@ -6,9 +6,8 @@ import { Dots } from 'components/dots';
 import style from './styles.module.scss';
 
 export const ImageSliderTwo = (props: any) => {
-  const { key, slides, currentIndex, goToNext, goToPrevious, togglePopup } = props
+  const { slides, currentIndex, goToNext, goToPrevious, togglePopup, goToSlide } = props
 
-  const n = slides.length;
 
   return (
     <div className={style.card__img}>
@@ -19,7 +18,7 @@ export const ImageSliderTwo = (props: any) => {
       <ArrowleftIcon className={style.arrow__left} onClick={goToPrevious} />
       <ArrowrightIcon className={style.arrow__right} onClick={goToNext} />
       <IncreaseIcon className={style.increase__arrow} onClick={togglePopup} />
-      <Dots slides={slides} currIndex={currentIndex} n={n} />
+      <Dots slides={slides} currentIndex={currentIndex}/>
     </div>
   );
 };

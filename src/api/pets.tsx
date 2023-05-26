@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const getCards = async (url: string) => {
+const getPets = async (url: string) => {
     try {
         const { data } = await axios.get(url)
         return data
@@ -9,4 +9,4 @@ const getCards = async (url: string) => {
     }
 }
 
-export default getCards
+export default getPets

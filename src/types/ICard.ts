@@ -1,44 +1,51 @@
-export interface Image {
-    image: string
+export enum Category {
+    cats,
+    kitten,
+    dogs,
+    puppies,
+    other
+}
+
+export enum Gender {
+    male,
+    female
+}
+
+export enum Character {
+    calm,
+    active
+}
+
+export enum Size {
+    small,
+    average,
+    big
+}
+
+export enum Wool {
+    without,
+    short,
+    medium,
+    long
 }
 
 export interface ICard {
-    age: string
-    breed: string
-    chip: string
-    color: string
-    draft: string
-    gender: string
-    history: string
     id: number
-    kind: string
     name: string
-    parasite: string
-    reproduce: string
-    sterile: string
-    story: string
-    vaccine: string
-    liked?: boolean
-    images?: string[]
+    age: string
+    category: Category
+    found: boolean
+    liked: boolean
+    help: boolean
+    gender: Gender
+    character: Character
+    med: boolean
+    size: Size
+    wool: Wool
+    history: string
+    video: string
+    color: string
+    home: string
+    photos: string[]
+    shelter: number
 }
-
-// export interface ICard {
-//     key: number,
-//     name: string,
-//     age: string,
-//     descr: string,
-//     liked: boolean,
-//     shelter: string,
-//     gender: string,
-//     size: string,
-//     color: string,
-//     type: string,
-//     family: string,
-//     history: string,
-//     chipped: boolean,
-//     vaccinated: boolean,
-//     sterilized: boolean,
-//     passport: boolean,
-//     treated: boolean,
-//     src: Image[]
-// }

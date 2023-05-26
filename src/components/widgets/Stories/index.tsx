@@ -1,20 +1,32 @@
+import getPets from 'api/pets';
+import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
+import { stories } from 'mocks/stories'
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next'
 
+import { IStory } from 'types/IStory';
+
 import s from './styles.module.scss';
-
-import Sleepingcat from '../../../assets/icons/stories/Sleepingcat.svg';
-
-import { stories } from '../../../mocks/stories'
 
 import { Story } from '../../story'
 
 const Stories = () => {
+  const [stories, setStories] = useState<IStory[]>()
   const { t } = useTranslation();
 
-  let storiesCards = stories.map((story, i:number) => {
+  useEffect(() => {
+    const url = 'http://158.160.4.84:9000/v1/story?page=0&size=10'
+    getPets(url).then(response => {
+      setStories(response.content)
+    })
+}, [])
+
+  console.log(stories)
+
+  let storiesCards = stories?.map((story, i:number) => {
 
     return (
-      <Story key={story.key} story={story}/>
+      <Story key={story.name} story={story} />
     )
   })
 
