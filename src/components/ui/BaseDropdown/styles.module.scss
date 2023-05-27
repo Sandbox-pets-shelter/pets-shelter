@@ -5,7 +5,11 @@
   cursor: pointer;
   border-left: 2px solid var(--separator);
   border-right: 2px solid var(--separator);
-  padding: 0 24px;
+
+  span {
+    display: flex;
+    gap: 10px;
+  }
 
   a {
     display: flex;

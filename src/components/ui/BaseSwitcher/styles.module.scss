@@ -1,0 +1,28 @@
+@import '~assets/scss/variables.scss';
+
+.switcher {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  width: 100%;
+  max-width: 72px;
+  height: 40px;
+  background: $iconHover;
+  border-radius: 200px;
+
+  &_active {
+    background: $activeColor;
+  }
+}
+
+.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  background: $white;
+  transition: all ease 0.5s;
+
+  &_active {
+    transform: translateX(32px);
+  }
+}
