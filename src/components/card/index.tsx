@@ -1,4 +1,3 @@
-import getPets from 'api/pets';
 import arrowleft from 'assets/icons/arrowleft.svg';
 import arrowright from 'assets/icons/arrowright.svg';
 import LikeIcon from 'assets/icons/Heart';
@@ -8,31 +7,35 @@ import { BaseButton } from 'components';
 import { handleShareButton } from 'components/sharebtn';
 import { ImageSlider } from 'components/slider';
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ICard } from 'types/ICard';
+import { fetchData } from 'store/petsStore/actions';
+import { selectPets } from 'store/petsStore/selectors';
+import { IPet } from 'types/IPet';
 
 import s from './styles.module.scss'
 
 
 export const Card = () => {
-  const [ pets, setPets ] = useState<ICard[]>()
+  const [ pets, setPets ] = useState<IPet[]>()
+
+  const [ page, setPage ] = useState<number>(0)
+  const cardsPerPage = 9
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    const url = 'http://158.160.4.84:9000/v1/pet?page=0&size=10'
-    getPets(url).then(response => {
-      setPets(response.content)
-    })
-}, [])
+    dispatch(fetchData(page, cardsPerPage))
+    // setPets(useSelector(selectPets))
+  })
 
+  // const pets = useSelector(selectPets)
 
-  const [ page, setPage ] = useState(0)
-  const dataPerPage = 6
-  const numberOfdataVistited = page * dataPerPage
-  const totalPages = pets ? Math.ceil(pets.length / dataPerPage) : 0
-  const changePage = ({ selected }: { selected: number }) => {
-    setPage(selected)
-  }
-  const displayData = pets?.map((pet) => {
+  useEffect(() => {
+    dispatch(fetchData(page, cardsPerPage))
+  }, [dispatch, page])
+
+  const displayData = pets && pets.map((pet) => {
         return (
           <Link key={pet.id} to={`${pet.id}`} state={pet}>
             <div className={s.card}>

@@ -1,14 +1,14 @@
 import LikeIcon from 'assets/icons/Heart';
 import InputField from 'components/ui/Input'
 import { useState } from 'react'
-import { ICard } from 'types/ICard';
+import { IPet } from 'types/IPet';
 
 export const About = () => {
   const [nameInput, setNameInput] = useState('');
   const onChange = (str: string) => {
     setNameInput(str)
   }
-  const handleClicked = (pet?: ICard) => {
+  const handleClicked = (pet?: IPet) => {
 
   }
   return <div>

@@ -1,4 +1,3 @@
-import getPets from 'api/pets';
 import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
 import { stories } from 'mocks/stories'
 import { useEffect, useState } from 'react';
@@ -14,12 +13,12 @@ const Stories = () => {
   const [stories, setStories] = useState<IStory[]>()
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const url = 'http://158.160.4.84:9000/v1/story?page=0&size=10'
-    getPets(url).then(response => {
-      setStories(response.content)
-    })
-}, [])
+//   useEffect(() => {
+//     const url = 'http://158.160.4.84:9000/v1/story?page=0&size=10'
+//     getPets(url).then(response => {
+//       setStories(response.content)
+//     })
+// }, [])
 
   console.log(stories)
 

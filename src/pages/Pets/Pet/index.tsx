@@ -1,4 +1,3 @@
-import getPets from 'api/pets';
 import LikeIcon from 'assets/icons/Heart';
 import LocationIcon from 'assets/icons/location';
 import plus from 'assets/icons/mainfirst/plus.svg';
@@ -11,21 +10,21 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { ICard, Gender, Character, Wool, Size } from 'types/ICard';
+import { IPet, Gender, Character, Wool, Size } from 'types/IPet';
 
 import styles from './styles.module.scss';
 
 export const Pet = () => {
-  const [pet, setPet] = useState<ICard>()
+  const [pet, setPet] = useState<IPet>()
 
   const params = useParams()
 
-  useEffect(() => {
-    const url = `http://158.160.4.84:9000/v1/pet/${params.id}`
-    getPets(url).then(response => {
-      setPet(response)
-    })
-  }, [])
+  // useEffect(() => {
+  //   const url = `http://158.160.4.84:9000/v1/pet/${params.id}`
+  //   getPets(url).then(response => {
+  //     setPet(response)
+  //   })
+  // }, [])
 
   const { t } = useTranslation();
 

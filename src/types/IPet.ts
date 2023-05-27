@@ -29,7 +29,7 @@ export enum Wool {
     long
 }
 
-export interface ICard {
+export interface IPet {
     id: number
     name: string
     age: string
