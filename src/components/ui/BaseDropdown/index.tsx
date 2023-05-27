@@ -14,21 +14,9 @@ const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
   const title = items[0];
   const dropdownItems = items.slice(1);
 
-  const clickOutside = () => {
-    setOpen(false);
-    document.removeEventListener('click', clickOutside);
-  };
-
-  const toggleDropdown = async () => {
-    setOpen((prev) => !prev);
-    setTimeout(() =>
-      isOpen ? document.removeEventListener('click', clickOutside) : document.addEventListener('click', clickOutside)
-    );
-  };
-
   return (
-    <div className={s.dropdown}>
-      <span onClick={toggleDropdown}>
+    <div className={s.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <span>
         {title.name}
         <img src={ArrowDown} style={{ transform: isOpen ? 'rotateX(180deg)' : 'none' }} />
       </span>
