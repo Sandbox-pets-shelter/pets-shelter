@@ -12,6 +12,13 @@ export interface ICheckbox {
   value: string;
 }
 
+export interface IRadio {
+  name: string;
+  topping: string;
+  change: (value: string) => void;
+  value: string;
+}
+
 export interface ILink {
   id: number;
   text?: string;
