@@ -1,7 +1,6 @@
-import { FC, MouseEvent, useState } from 'react';
-
+import ArrowDown from 'assets/icons/arrow-down.svg';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
 import { RouteElement } from 'types/types';
 
 import s from './styles.module.scss';
@@ -19,7 +18,7 @@ const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
     <div className={s.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <span>
         {title.name}
-        <span className={`arrow ${isOpen ? 'up' : 'down'}`} />
+        <img src={ArrowDown} style={{ transform: isOpen ? 'rotateX(180deg)' : 'none' }} />
       </span>
       <div className={`${s.dropdown__body} ${isOpen ? s.dropdown__body_open : ''}`}>
         {dropdownItems.map((item: RouteElement) => (

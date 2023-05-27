@@ -5,21 +5,24 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding-top: 16px;
 
   &_checked {
     cursor: pointer;
+
     .checkbox__mark {
       background-color: $primary-dark;
+      border-radius: 50%;
       border: none;
       transition: all ease 0.3s;
-      .checkbox__icon {
-        opacity: 1;
-      }
     }
 
     .checkbox__mark:hover {
       background-color: $background;
       border: 2px solid $primary;
+      .checkbox__icon {
+        background-color: $primary;
+      }
     }
   }
 
@@ -35,24 +38,22 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-    margin: 0 16px 0 0;
-    border-radius: 8px;
+    margin: 0 8px 0 16px;
+    border-radius: 30px;
     border: 2px solid $primary;
     transition: all ease 0.3s;
 
-    &:hover .checkbox__icon__hover {
-      display: block;
-    }
-
     &:hover .checkbox__icon {
-      display: none;
+      background-color: $primary;
     }
   }
 
   &__icon {
-    opacity: 0;
-  }
-  &__icon__hover {
-    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $background;
   }
 }
