@@ -1,12 +1,16 @@
 .dropdown {
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-left: 2px solid var(--separator);
   border-right: 2px solid var(--separator);
-  padding: 0 24px;
   position: relative;
 
   &__body {
+    top: 70%;
     visibility: hidden;
     opacity: 0;
     position: absolute;
