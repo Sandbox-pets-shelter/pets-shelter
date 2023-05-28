@@ -135,6 +135,15 @@ export const ru = {
       platesMore: 'мисочек',
       price: '₸',
       btn: 'Помочь сейчас'
+    },
+    share: {
+      title: 'Поделиться в соцсетях',
+      copy: 'Скопировать ссылку',
+      vk: 'ВКонтакте',
+      fb: 'Facebook',
+      telegram: 'Telegram',
+      whatsapp: 'WhatsApp',
+      result: 'Ссылка скопирована'
     }
   }
 };

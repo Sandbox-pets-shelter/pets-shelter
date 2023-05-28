@@ -27,7 +27,7 @@ const BaseDropdown: FC<BaseDropdownProps> = ({ items }) => {
   };
 
   return (
-    <div className={s.dropdown}>
+    <div className={s.dropdown} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <span onClick={toggleDropdown}>
         {title.name}
         <img src={ArrowDown} style={{ transform: isOpen ? 'rotateX(180deg)' : 'none' }} />
