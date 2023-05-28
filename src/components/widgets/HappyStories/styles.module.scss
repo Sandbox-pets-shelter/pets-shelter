@@ -5,7 +5,7 @@
 
   &__title {
     font-family: 'Nunito', sans-serif;
-    margin: 0 auto 16px;
+    margin: 0 auto 10px;
     text-align: center;
     color: $text;
     font-weight: 600;
@@ -14,7 +14,7 @@
 
   &__content {
     margin: 0 auto 33px;
-    width: 533px;
+    width: 43%;
     text-align: center;
     font-style: normal;
     font-weight: 400;
@@ -37,26 +37,24 @@
       backdrop-filter: blur(10px);
       border-radius: 16px;
       margin-bottom: 32px;
-      height: 590px;
-      width: 630px;
+      width: 50%;
       background-color: $white;
     }
 
     &__img {
       display: flex;
       flex-direction: column;
-      height: 373px;
     }
 
     &__img__share {
       position: absolute;
       text-decoration: none;
       margin: 16px;
-      padding-left: 554px;
+      right: 0;
     }
 
     &__img__title {
-      margin: 16px 206px 8px 32px;
+      margin: 16px 32px 30px;
     }
 
     &__img__subtitle {
@@ -65,7 +63,7 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 33px;
-      width: 410px;
+      width: 75%;
     }
 
     &__img__content {
@@ -73,22 +71,22 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 145%;
-      width: 530px;
+      width: 100%;
       margin-top: 8px;
       margin-bottom: 26px;
     }
+  }
+}
 
-    &__img__title__btn {
-      color: $activeColor;
-      font-weight: 500;
-      font-size: 16px;
-      display: flex;
-      flex-direction: row;
-      margin: 20px 0 24px;
-    }
-
-    &__img__btn__arr {
-      padding-left: 9px;
+@media (max-width: 1024px) {
+  .happystories {
+    &__container {
+      &__item {
+        width: 90%;
+      }
     }
   }
+}
+
+@media (max-width: 767px) {
 }

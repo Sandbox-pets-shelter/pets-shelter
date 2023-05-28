@@ -16,18 +16,16 @@ const HappyStories = () => {
   };
   return (
     <div className={s.happystories}>
-      <p className={s.happystories__title}>{t('happystories.title')}</p>
+      <h2 className={s.happystories__title}>{t('happystories.title')}</h2>
       <p className={s.happystories__content}>{t('happystories.content')}</p>
       <div className={s.happystories__container}>
         {itemsHappyStories.map((item) => (
           <div key={item.id} className={s.happystories__container__item}>
             <div className={s.happystories__container__img}>
-              <a className={s.happystories__container__img} href="#">
-                <img className={s.happystories__container__img__share} src={share_btn} alt="Поделиться" />
-              </a>
+              <img className={s.happystories__container__img__share} src={share_btn} alt="Поделиться" />
               <img src={item.src} alt={item.alt} />
               <div className={s.happystories__container__img__title}>
-                <p className={s.happystories__container__img__subtitle}>{item.subtitle}</p>
+                <h3 className={s.happystories__container__img__subtitle}>{item.subtitle}</h3>
                 <p className={s.happystories__container__img__content}>{item.content}</p>
                 <ArrowButton variant="filled" color="primary">
                   {item.link}
