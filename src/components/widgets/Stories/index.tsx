@@ -1,9 +1,10 @@
 import EyeIcon from 'assets/icons/Eye';
 import IncreaseIcon from 'assets/icons/Increase';
+import ShareIcon from 'assets/icons/Share';
 import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
 import { Popup } from 'components/popup';
+import { handleShareButton } from 'components/sharebtn';
 import { ImageSliderTwo } from 'components/sliderTwo';
-import Share from 'components/ui/Share';
 import { stories } from 'mocks/stories';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,7 +25,10 @@ const Stories = () => {
 
   let storiesCards = stories.map((item) => {
     const goToPrevious = () => {
+      // console.log(key)
+
       const isFirstSlide = currentIndex === 0;
+      // console.log(stories.filter(item => item.key === key).map(story => story.src).length)
       const newIndex = isFirstSlide ? item.src.length - 1 : currentIndex - 1;
       setCurrentIndex(newIndex);
     };
@@ -62,9 +66,10 @@ const Stories = () => {
                 <EyeIcon className={s.stories__subcontainer__views__look__img} />
                 {item.views}
               </div>
-              <div className={s.stories__subcontainer__views__share}>
-                {/* кода будет страница, то указать нужную ссылку */}
-                <Share link={window.location.href} btn="share" />
+              <div className={s.stories__subcontainer__views__share} onClick={handleShareButton}>
+                {item.share}
+                <ShareIcon className={s.stories__subcontainer__views__share__img} />
+                {styles.share}
               </div>
             </div>
             <div className={s.stories__subcontainer__title}>{item.title}</div>

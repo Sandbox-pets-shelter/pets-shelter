@@ -2,7 +2,6 @@ import arrowred from 'assets/icons/happystories/arrowred.svg';
 import share_btn from 'assets/icons/happystories/Share_btn.svg';
 import { BaseButton } from 'components';
 import ArrowButton from 'components/ui/ArrowButton';
-import Share from 'components/ui/Share';
 import { itemsHappyStories } from 'mocks/happystories';
 
 import { useTranslation } from 'react-i18next';
@@ -23,8 +22,9 @@ const HappyStories = () => {
         {itemsHappyStories.map((item) => (
           <div key={item.id} className={s.happystories__container__item}>
             <div className={s.happystories__container__img}>
-              {/* кода будет страница, то указать нужную ссылку */}
-              <Share link={window.location.href} btn="icon" />
+              <a className={s.happystories__container__img} href="#">
+                <img className={s.happystories__container__img__share} src={share_btn} alt="Поделиться" />
+              </a>
               <img src={item.src} alt={item.alt} />
               <div className={s.happystories__container__img__title}>
                 <p className={s.happystories__container__img__subtitle}>{item.subtitle}</p>

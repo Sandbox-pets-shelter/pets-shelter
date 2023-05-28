@@ -1,9 +1,10 @@
 import arrowleft from 'assets/icons/arrowleft.svg';
 import arrowright from 'assets/icons/arrowright.svg';
+import ShareIcon from 'assets/icons/Share';
 import { BaseButton } from 'components';
 import { Like } from 'components/like';
+import { handleShareButton } from 'components/sharebtn';
 import { ImageSlider } from 'components/slider';
-import Share from 'components/ui/Share';
 import { cats } from 'mocks/cats';
 import { useState } from 'react';
 
@@ -34,24 +35,23 @@ export const Card = () => {
   const changePage = ({ selected }: any) => {
     setPage(selected);
   };
-
   const displayData = data.slice(numberOfdataVistited, numberOfdataVistited + dataPerPage).map((img) => {
     return (
-      <div key={img.key} className={s.card__block}>
-        <Link key={img.key} to={`${img.key}`}>
-          <div className={s.card}>
-            <ImageSlider slides={img.src} />
-            <div className={s.card__info}>
-              <div className={s.card__title}>
-                {img.name}, {img.age}
-              </div>
-              <div className={s.card__descr}>{img.descr}</div>
-              <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img} />
+      <Link key={img.key} to={`${img.key}`}>
+        <div className={s.card}>
+          <ImageSlider slides={img.src} />
+          <div className={s.card__info}>
+            <div className={s.card__title}>
+              {img.name}, {img.age}
             </div>
+            <div className={s.card__descr}>{img.descr}</div>
+            <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img} />
           </div>
-        </Link>
-        <Share link={`${window.location.href}/${img.key}`} btn="icon" />
-      </div>
+          <div className={s.icon__share} onClick={handleShareButton}>
+            <ShareIcon className={s.card__share} />
+          </div>
+        </div>
+      </Link>
     );
   });
 
