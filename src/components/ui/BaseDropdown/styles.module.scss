@@ -1,6 +1,9 @@
 @import 'assets/scss/variables.scss';
 
 .dropdown {
+  height: 100%;
+  display: flex;
+  align-content: center;
   position: relative;
   cursor: pointer;
   border-left: 2px solid var(--separator);
@@ -8,7 +11,13 @@
 
   span {
     display: flex;
+    align-items: center;
     gap: 10px;
+  }
+
+  img {
+    width: 12px;
+    height: 6px;
   }
 
   a {
@@ -28,6 +37,7 @@
     background-color: $background;
     padding: 16px 24px;
     white-space: nowrap;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, 0%);
     transition: 0.3s ease;
