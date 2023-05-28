@@ -80,9 +80,30 @@
 
 @media (max-width: 1024px) {
   .happystories {
+    position: relative;
+
+    &__content {
+      width: 80%;
+      margin-bottom: 655px;
+    }
+
     &__container {
+      gap: 26px;
+      overflow: hidden;
+      z-index: 200;
+      position: absolute;
+      top: 17%;
+
       &__item {
-        width: 90%;
+        width: 646px;
+      }
+
+      &__img__subtitle {
+        width: 70%;
+      }
+
+      &__img {
+        width: 645px;
       }
     }
   }

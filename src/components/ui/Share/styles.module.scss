@@ -106,7 +106,8 @@
   }
 
   &:hover a,
-  &:hover button {
+  &:hover button,
+  &:hover span {
     color: $primary-dark;
   }
 
