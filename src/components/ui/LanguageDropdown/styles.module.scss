@@ -4,14 +4,18 @@
   border-left: 2px solid var(--separator);
   border-right: 2px solid var(--separator);
   padding: 0 24px;
+  position: relative;
 
   &__body {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     margin-top: 10px;
+    transition: 0.3s ease;
 
     &_open {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
   }
 
