@@ -1,9 +1,11 @@
 import { Dots } from 'components/dots';
 import { useState } from 'react';
 
+import { PetPhoto } from 'types/IPetPhoto'
+
 import style from './styles.module.scss'
 
-export const ImageSlider = ({ slides }: {slides: string[]}) => {
+export const ImageSlider = ({ slides }: {slides: PetPhoto[]}) => {
   const [currentIndex, setCurrIndex] = useState(0);
   const goToSlide = (ind: number) => {
     setCurrIndex(ind);
@@ -15,7 +17,7 @@ export const ImageSlider = ({ slides }: {slides: string[]}) => {
         <div onMouseEnter={() => goToSlide(1)}></div>
         <div onMouseEnter={() => goToSlide(2)}></div>
       </div>
-      <img src={slides[currentIndex]} alt="cat" className={style.card__img}></img>
+      <img src={slides[currentIndex].link} alt="cat" className={style.card__img}></img>
       <Dots slides={slides} currentIndex={currentIndex}/>
     </div>
   );

@@ -3,37 +3,37 @@ import arrowright from 'assets/icons/arrowright.svg';
 import LikeIcon from 'assets/icons/Heart';
 import ShareIcon from 'assets/icons/Share';
 import { BaseButton } from 'components';
-
 import { handleShareButton } from 'components/sharebtn';
 import { ImageSlider } from 'components/slider';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchData } from 'store/petsStore/actions';
-import { selectPets } from 'store/petsStore/selectors';
+import { fetchData, setCurrentPage } from 'store/petsStore/actions';
+import { selectCurrentPage, selectPets, selectTotalPages } from 'store/petsStore/selectors';
 import { IPet } from 'types/IPet';
 
 import s from './styles.module.scss'
 
 
 export const Card = () => {
-  const [ pets, setPets ] = useState<IPet[]>()
-
-  const [ page, setPage ] = useState<number>(0)
-  const cardsPerPage = 9
-
   const dispatch = useDispatch()
+  const pets = useSelector(selectPets)
+  const currentPage = useSelector(selectCurrentPage)
+  const totalPage = useSelector(selectTotalPages)
 
   useEffect(() => {
-    dispatch(fetchData(page, cardsPerPage))
-    // setPets(useSelector(selectPets))
-  })
+    fetchData(currentPage)
+  }, [dispatch, currentPage])
 
-  // const pets = useSelector(selectPets)
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
-  useEffect(() => {
-    dispatch(fetchData(page, cardsPerPage))
-  }, [dispatch, page])
+  const handlePreviousPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  console.log(pets, currentPage)
 
   const displayData = pets && pets.map((pet) => {
         return (

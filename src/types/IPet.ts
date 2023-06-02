@@ -1,3 +1,6 @@
+import { PetPhoto } from './IPetPhoto'
+import { Shelter } from './IShelter'
+
 export enum Category {
     cats,
     kitten,
@@ -29,6 +32,14 @@ export enum Wool {
     long
 }
 
+export enum Med {
+    chipped,
+    vaccinated,
+    sterilized,
+    vet_passport,
+    treated_for_parasites
+}
+
 export interface IPet {
     id: number
     name: string
@@ -39,13 +50,13 @@ export interface IPet {
     help: boolean
     gender: Gender
     character: Character
-    med: boolean
+    med: Med
     size: Size
     wool: Wool
     history: string
     video: string
     color: string
     home: string
-    photos: string[]
-    shelter: number
+    photos: PetPhoto[]
+    shelter: Shelter
 }

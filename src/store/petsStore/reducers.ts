@@ -3,7 +3,8 @@ import { IPetStoreAction } from './types'
 const initialState = {
     currentPage: 1,
     totalPage: null,
-    pets: []
+    pets: [],
+    dataPerPage: 10
 }
 
 const petsReducer = (state = initialState, action: IPetStoreAction) => {
@@ -16,9 +17,13 @@ const petsReducer = (state = initialState, action: IPetStoreAction) => {
         case 'FETCH_DATA':
             return {
                 ...state,
-                currentPage: action.payload.currentPage,
                 pets: action.payload.pets,
                 totalPage: action.payload.totalPage
+            }
+        case 'SET_CURRENT_PAGE':
+            return {
+                ...state,
+                currentPage: action.payload
             }
         default:
             return state

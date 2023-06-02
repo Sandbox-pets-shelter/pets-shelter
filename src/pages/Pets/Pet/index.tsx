@@ -12,19 +12,15 @@ import { useParams } from 'react-router-dom';
 
 import { IPet, Gender, Character, Wool, Size } from 'types/IPet';
 
+import { PetPhoto } from 'types/IPetPhoto';
+
 import styles from './styles.module.scss';
+
 
 export const Pet = () => {
   const [pet, setPet] = useState<IPet>()
 
   const params = useParams()
-
-  // useEffect(() => {
-  //   const url = `http://158.160.4.84:9000/v1/pet/${params.id}`
-  //   getPets(url).then(response => {
-  //     setPet(response)
-  //   })
-  // }, [])
 
   const { t } = useTranslation();
 
@@ -60,7 +56,7 @@ export const Pet = () => {
       }
     }
   }, [scrollX]);
-
+  console.log(pet?.med)
   return (
     <div>
       <div key={pet?.id}>
@@ -76,7 +72,7 @@ export const Pet = () => {
               {pet?.name}, {pet?.age}
             </div>
             <div className={styles.box__topInfoBtns}>
-              <LocationIcon /> В приюте «{pet?.shelter}»
+              <LocationIcon /> В приюте «{pet?.shelter.name}»
             </div>
             <div className={styles.box__topInfoBtns}>
               Поделиться в соцсетях <ShareIcon className={styles.share} />
@@ -90,17 +86,17 @@ export const Pet = () => {
               ></div>
               <div>
                 <div ref={ref} style={height} className={styles.sliderLine}>
-                  {pet?.photos.map((slide: string, ind: number) => (
+                  {pet?.photos.map((slide: PetPhoto, ind: number) => (
                     <div key={ind}>
                       {currIndex === ind ? (
                         <img
                           ref={slideImage}
-                          src={slide}
+                          src={slide.link}
                           onMouseEnter={() => goToSlide(ind)}
                           className={`${styles.slide_active} ${styles.slide}`}
                         ></img>
                       ) : (
-                        <img src={slide} onMouseEnter={() => goToSlide(ind)} className={styles.slide}></img>
+                        <img src={slide.link} onMouseEnter={() => goToSlide(ind)} className={styles.slide}></img>
                       )}
                     </div>
                   ))}
@@ -112,7 +108,7 @@ export const Pet = () => {
               ></div>
             </div>
             <div>
-              <img src={pet?.photos[currIndex]} alt="cat" className={styles.main__img}></img>
+              <img src={pet?.photos[currIndex].link} alt="cat" className={styles.main__img}></img>
               <div className={styles.box__subtitles}>История</div>
               {pet?.history}
               <ArrowButton variant="filled" color="primary">
@@ -130,7 +126,7 @@ export const Pet = () => {
               </div>
               <div className={styles.box__infogr}>
                 <div className={styles.box__subtitles}>Ветеринарные данные</div>
-                {/* {pet?.med.map(med => (
+                {/* {pet?.med.map(med: string => (
                   {<div>Чипирован</div>}
                   {<div>Вакцинирован</div>}
                   {<div>Стерилизован</div>}
