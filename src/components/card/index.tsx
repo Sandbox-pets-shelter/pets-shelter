@@ -33,8 +33,6 @@ export const Card = () => {
     setCurrentPage(currentPage - 1);
   };
 
-  console.log(pets)
-
   const displayData = pets && pets.map((pet: IPet) => {
         return (
           <Link key={pet.id} to={`${pet.id}`} state={pet}>

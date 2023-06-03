@@ -8,18 +8,25 @@ import ArrowButton from 'components/ui/ArrowButton';
 import Actions from 'components/widgets/Actions';
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 
-import { IPet, Gender, Character, Wool, Size } from 'types/IPet';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchPetData } from 'store/petsStore/actions';
+import { selectPet } from 'store/petsStore/selectors';
+
+import { IPet, Gender, Med, Character, Wool, Size } from 'types/IPet';
 
 import styles from './styles.module.scss';
 
 
 export const Pet = () => {
-  const [pet, setPet] = useState<IPet>()
+  const dispatch = useDispatch()
+  const pet = useSelector(selectPet)
 
   const params = useParams()
-
+  useEffect(() => {
+    dispatch(fetchPetData(params.id))
+  }, [dispatch])
   const { t } = useTranslation();
 
   const ref = useRef<HTMLDivElement | null>(null);
@@ -54,7 +61,7 @@ export const Pet = () => {
       }
     }
   }, [scrollX]);
-  console.log(pet?.med)
+
   return (
     <div>
       <div key={pet?.id}>
@@ -124,13 +131,15 @@ export const Pet = () => {
               </div>
               <div className={styles.box__infogr}>
                 <div className={styles.box__subtitles}>Ветеринарные данные</div>
-                {/* {pet?.med.map(med: string => (
-                  {<div>Чипирован</div>}
-                  {<div>Вакцинирован</div>}
-                  {<div>Стерилизован</div>}
-                  {<div>Есть ветпаспорт</div>}
-                  {<div>Обработан от паразитов</div>}
-                )) TODO */}
+                {/* {Object.values(pet.med).map((med: Med, index: number) => (
+                  <div key={index}>
+                    {med === Med.vet_passport && 'Есть вет.паспорт'}
+                    {med === Med.chipped && 'Чипирован(а)'}
+                    {med === Med.sterilized && 'Стерилизован(а)'}
+                    {med === Med.treated_for_parasites && 'Обработан(а) от паразитов'}
+                    {med === Med.vaccinated && 'Вакцинирован(а)'}
+                  </div>
+                ))} */}
               </div>
               <BaseButton variant="filled" color="accent">
                 {t('mainfirst.urgenthelp.btn')}
