@@ -1,8 +1,13 @@
 import { IPet } from 'types/IPet'
 
-export interface IIncomeObj {
+export interface FetchedData {
     total: number,
-    content: [],
+    data: IPet[],
+    pageable: Pageable
+}
+
+export interface Pageable {
+    size: number,
     page: number
 }
 
@@ -13,7 +18,7 @@ export interface IPetStoreAction {
 
 export interface IPetReducer {
     currentPage: number,
-    pets: IPet[],
+    pets: FetchedData,
     totalPage: number
 }
 

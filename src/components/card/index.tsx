@@ -22,7 +22,7 @@ export const Card = () => {
   const totalPage = useSelector(selectTotalPages)
 
   useEffect(() => {
-    fetchData(currentPage)
+    dispatch(fetchData(currentPage))
   }, [dispatch, currentPage])
 
   const handleNextPage = () => {
@@ -33,9 +33,9 @@ export const Card = () => {
     setCurrentPage(currentPage - 1);
   };
 
-  console.log(pets, currentPage)
+  console.log(pets)
 
-  const displayData = pets && pets.map((pet) => {
+  const displayData = pets && pets.map((pet: IPet) => {
         return (
           <Link key={pet.id} to={`${pet.id}`} state={pet}>
             <div className={s.card}>

@@ -9,16 +9,10 @@ const initialState = {
 
 const petsReducer = (state = initialState, action: IPetStoreAction) => {
     switch (action.type) {
-        case 'SET_PAGE':
-            return {
-                ...state,
-                currentPage: action.payload
-            }
         case 'FETCH_DATA':
             return {
                 ...state,
-                pets: action.payload.pets,
-                totalPage: action.payload.totalPage
+                pets: action.payload
             }
         case 'SET_CURRENT_PAGE':
             return {
