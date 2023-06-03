@@ -8,11 +8,11 @@ const getPets = async (page: number, size: number, gender: Gender, category: Cat
         params: {
             page: page,
             size: size,
-            gender: gender ? gender : '',
-            category: category ? category : '',
-            character: character ? character : '',
-            med: med ? med : '',
-            wool: wool ? wool : ''
+            gender: gender,
+            category: category,
+            character: character,
+            med: med,
+            wool: wool
         }
     })
     console.log(response.data)

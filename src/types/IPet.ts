@@ -1,4 +1,3 @@
-import { PetPhoto } from './IPetPhoto'
 import { Shelter } from './IShelter'
 
 export enum Category {
@@ -57,6 +56,6 @@ export interface IPet {
     video: string
     color: string
     home: string
-    photos: PetPhoto[]
+    photos: string[]
     shelter: Shelter
 }

@@ -1,13 +1,11 @@
-import { PetPhoto } from 'types/IPetPhoto';
-
 import style from './styles.module.scss';
 
-export const Dots = ({ slides, currentIndex }: {slides: PetPhoto[], currentIndex: number}) => {
+export const Dots = ({ slides, currentIndex }: {slides: string[], currentIndex: number}) => {
 
   return (
     <div>
       <div className={style.container}>
-        {slides.map((slide: PetPhoto, ind: number) => (
+        {slides.map((slide: string, ind: number) => (
           <div key={ind}>
             {currentIndex === ind ? (
               <div className={style.dot_active}></div>

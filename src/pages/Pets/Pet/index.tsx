@@ -12,8 +12,6 @@ import { useParams } from 'react-router-dom';
 
 import { IPet, Gender, Character, Wool, Size } from 'types/IPet';
 
-import { PetPhoto } from 'types/IPetPhoto';
-
 import styles from './styles.module.scss';
 
 
@@ -86,17 +84,17 @@ export const Pet = () => {
               ></div>
               <div>
                 <div ref={ref} style={height} className={styles.sliderLine}>
-                  {pet?.photos.map((slide: PetPhoto, ind: number) => (
+                  {pet?.photos.map((slide: string, ind: number) => (
                     <div key={ind}>
                       {currIndex === ind ? (
                         <img
                           ref={slideImage}
-                          src={slide.link}
+                          src={slide}
                           onMouseEnter={() => goToSlide(ind)}
                           className={`${styles.slide_active} ${styles.slide}`}
                         ></img>
                       ) : (
-                        <img src={slide.link} onMouseEnter={() => goToSlide(ind)} className={styles.slide}></img>
+                        <img src={slide} onMouseEnter={() => goToSlide(ind)} className={styles.slide}></img>
                       )}
                     </div>
                   ))}
@@ -108,7 +106,7 @@ export const Pet = () => {
               ></div>
             </div>
             <div>
-              <img src={pet?.photos[currIndex].link} alt="cat" className={styles.main__img}></img>
+              <img src={pet?.photos[currIndex]} alt="cat" className={styles.main__img}></img>
               <div className={styles.box__subtitles}>История</div>
               {pet?.history}
               <ArrowButton variant="filled" color="primary">

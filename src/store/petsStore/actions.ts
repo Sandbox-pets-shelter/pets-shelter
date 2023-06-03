@@ -9,8 +9,8 @@ export const fetchData: any/* TODO */ = (pageNumber: number, size: number, gende
         dispatch({
           type: 'FETCH_DATA',
           payload: {
-            totalPages: total,
-            data: content
+            totalPage: total,
+            pets: content
           }
         })
       } catch (error) {
