@@ -18,7 +18,7 @@ export interface IPetStoreAction {
 
 export interface IPetReducer {
     currentPage: number,
-    pets: FetchedData,
+    pets: IPet[],
     totalPage: number
 }
 
