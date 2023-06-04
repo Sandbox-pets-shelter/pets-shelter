@@ -163,12 +163,10 @@
   width: 20px;
 }
 
-
 @media (max-width: 768px) {
   .btn {
     &_outlined-accent {
       width: 92%;
-
     }
   }
 }
