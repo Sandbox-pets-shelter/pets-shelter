@@ -39,10 +39,6 @@ export const footerTextRight = [
     title: i18n.t('footer.text_right.main'),
     subtitleLinks: [
       {
-        id: 1,
-        text: i18n.t('footer.text_right.help_us')
-      },
-      {
         id: 2,
         text: i18n.t('footer.text_right.pets')
       },
