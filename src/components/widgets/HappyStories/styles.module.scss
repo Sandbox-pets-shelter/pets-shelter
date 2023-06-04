@@ -29,7 +29,6 @@
 
   &__container {
     display: flex;
-    justify-content: space-between;
     gap: 24px;
 
     &__item {
@@ -42,6 +41,7 @@
     }
 
     &__img {
+      position: relative;
       display: flex;
       flex-direction: column;
     }
@@ -80,34 +80,76 @@
 
 @media (max-width: 1024px) {
   .happystories {
-    position: relative;
 
     &__content {
       width: 80%;
-      margin-bottom: 655px;
+      margin-bottom: 33px;
     }
 
     &__container {
       gap: 26px;
       overflow: hidden;
-      z-index: 200;
-      position: absolute;
-      top: 17%;
+      scroll-behavior: smooth;
 
       &__item {
+        scroll-snap-align: start;
+        flex-shrink: 0;
         width: 646px;
+        margin-bottom: 13px;
       }
 
       &__img__subtitle {
         width: 70%;
-      }
-
-      &__img {
-        width: 645px;
       }
     }
   }
 }
 
 @media (max-width: 767px) {
+  .happystories {
+
+    &__title {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &__container {
+      gap: 10px;
+      padding-left: 15px;
+      // justify-content: center;
+
+      &__item {
+        width: 278px;
+      }
+
+      &__image {
+        height: 192px;
+        object-fit: cover;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+      }
+
+      &__img__content {
+        font-size: 12px;
+        line-height: 140%;
+        margin-bottom: 18px;
+      }
+
+      &__img__title {
+        margin: 16px 18px 18px;
+      }
+
+      &__img__subtitle {
+        font-size: 16px;
+        line-height: 22px;
+        width: 90%;
+      }
+    }
+  }
 }

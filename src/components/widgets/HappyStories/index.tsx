@@ -32,7 +32,7 @@ const HappyStories = () => {
             <div className={s.happystories__container__img}>
               {/* кода будет страница, то указать нужную ссылку */}
               <Share link={window.location.href} btn="icon" />
-              <img src={item.src} alt={item.alt} />
+              <img src={item.src} alt={item.alt} className={s.happystories__container__image} />
               <div className={s.happystories__container__img__title}>
                 <h3 className={s.happystories__container__img__subtitle}>{item.subtitle}</h3>
                 <p className={s.happystories__container__img__content}>{item.content}</p>
