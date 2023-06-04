@@ -33,13 +33,13 @@
       &__arrow {
         position: absolute;
         text-decoration: none;
-        padding-left: 619px;
-        padding-top: 180px;
+        left: 619px;
+        top: 778px;
       }
     }
 
     &__img {
-      width: 536px;
+      max-width: 536px;
       max-height: 808px;
     }
   }
@@ -82,6 +82,131 @@
     &__box {
       &__img {
         border-radius: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainfirst {
+    &__first {
+      justify-content: flex-start;
+
+      &__container {
+        &__title {
+          font-size: 32px;
+          width: 324px;
+          height: 88px;
+          margin: 140px 0 24px 0;
+        }
+
+        &__content {
+          width: 311.68px;
+        }
+
+        &__arrow {
+          width: 48px;
+          left: 351px;
+          top: 541px;
+        }
+      }
+
+      &__img {
+        max-width: 296px;
+        max-height: 446px;
+        margin-left: 68px;
+      }
+    }
+
+    &__urgenthelp {
+      margin-top: 80px;
+      flex-direction: column;
+
+      &__container {
+        text-align: center;
+
+        &__subtitle {
+          margin: 44px 0 8px 0;
+        }
+
+        &__content {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mainfirst {
+    &__first {
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-start;
+
+      &__container {
+        flex-direction: column;
+
+        &__title {
+          width: 306px;
+          margin: 24px 0 16px 0;
+        }
+
+        &__content {
+          width: 292px;
+          margin-bottom: 16px;
+        }
+
+        &__btn {
+          position: absolute;
+          top: 663px;
+        }
+
+        &__arrow {
+          display: none;
+        }
+      }
+
+      &__img {
+        flex-direction: column;
+        max-width: 256px;
+        max-height: 353px;
+        margin: 0 50px 0 50px;
+      }
+    }
+
+    &__urgenthelp {
+      flex-direction: column;
+      text-align: center;
+      border: none;
+      backdrop-filter: none;
+      background-color: $background;
+      border-radius: 0px;
+      margin-bottom: 80px;
+
+      &__container {
+        text-align: center;
+        margin: 0;
+
+        &__subtitle {
+          margin: 0 0 0 42px;
+          width: 228px;
+          font-size: 24px;
+          line-height: 33px;
+        }
+
+        &__content {
+          line-height: 145%;
+          width: 319px;
+          margin-bottom: 24px;
+        }
+      }
+
+      &__box {
+        &__img {
+          display: none;
+          border-radius: none;
+        }
       }
     }
   }
