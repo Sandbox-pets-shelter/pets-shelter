@@ -1,3 +1,11 @@
+import InputField from 'components/ui/Input';
+
+
 export const About = () => {
-  return <div>About Page</div>;
+  const func = () => {
+
+  }
+  return <div>
+    <InputField type="password" onChange={func} name="password" placeholder="haha"/>
+  </div>;
 };

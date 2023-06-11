@@ -5,14 +5,24 @@ const url = 'http://158.160.4.84:9000/pet'
 
 const getPets = async (
     id: string,
-    page: number | undefined,
-    size: number | undefined,
-    gender: Gender | undefined,
-    category: Category | undefined,
-    character: Character | undefined,
-    med: Med | undefined,
-    wool: Wool | undefined) => {
-    const { data } = await axios(`${url}${id && '/'}${id}`, {
+    page?: number,
+    size?: number,
+    gender?: Gender,
+    category?: Category,
+    character?: Character,
+    med?: Med,
+    wool?: Wool) => {
+
+    const axiosInstance = axios.create();
+
+    axiosInstance.interceptors.request.use(config => {
+        if(id !== '') {
+            config.url = `${config.url}/${id}`;
+        }
+        return config;
+    })
+
+    const { data } = await axiosInstance(url, {
         params: {
             page: page,
             size: size,

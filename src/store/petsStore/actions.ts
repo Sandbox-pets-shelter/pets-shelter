@@ -36,7 +36,6 @@ export const fetchData = (
     return async (dispatch) => {
       try {
         const response = await getPets(id, pageNumber, size, gender, category, character, med, wool)
-
         if(id === '') {
           dispatch(fetchAllPets(response))}
         else if(id !== '') {

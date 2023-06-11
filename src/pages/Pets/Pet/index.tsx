@@ -1,6 +1,5 @@
 import LikeIcon from 'assets/icons/Heart';
 import LocationIcon from 'assets/icons/location';
-import plus from 'assets/icons/mainfirst/plus.svg';
 import ShareIcon from 'assets/icons/Share';
 import { BaseButton } from 'components';
 
@@ -130,7 +129,7 @@ export const Pet = () => {
                 <div>Характер {Character[pet?.character]}</div>
                 <div>{pet?.home}</div>
               </div>
-              {Object.values(pet?.med).length !== 0 && <div className={styles.box__infogr}>
+              {pet?.med && Object.values(pet?.med).length !== 0 && <div className={styles.box__infogr}>
                 <div className={styles.box__subtitles}>Ветеринарные данные</div>
                 {Object.values(pet?.med).map((med, index) => (
                   <div key={index}>{Med[med]}</div>
