@@ -3,8 +3,16 @@ import { Category, Character, Gender, Med, Wool } from 'types/IPet'
 
 const url = 'http://158.160.4.84:9000/pet'
 
-const getPets = async (page: number, size: number, gender: Gender, category: Category, character: Character, med: Med, wool: Wool) => {
-    const response = await axios(url, {
+const getPets = async (
+    id: string,
+    page: number | undefined,
+    size: number | undefined,
+    gender: Gender | undefined,
+    category: Category | undefined,
+    character: Character | undefined,
+    med: Med | undefined,
+    wool: Wool | undefined) => {
+    const { data } = await axios(`${url}${id && '/'}${id}`, {
         params: {
             page: page,
             size: size,
@@ -15,7 +23,6 @@ const getPets = async (page: number, size: number, gender: Gender, category: Cat
             wool: wool
         }
     })
-    console.log(response.data)
-    return response.data
+    return data
 }
 export default getPets

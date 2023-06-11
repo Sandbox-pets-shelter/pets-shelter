@@ -37,8 +37,8 @@ const Filters = () => {
       <InputField type='search' placeholder='Поиск по кличке...' name='name' value={nameInput} onChange={setNameInput}/>
       {filters.map((filter) => (
         <>
-          {filter.title && <div className={s.filters__title}> {filter.title} </div>}
-          {filter.data.map((el, index) => (
+          {filter.title && <h4 className={s.filters__title}> {filter.title} </h4>}
+          {filter.data?.map((el, index) => (
             <BaseCheckbox
               key={`${el.name}-${index}`}
               name={el.name}

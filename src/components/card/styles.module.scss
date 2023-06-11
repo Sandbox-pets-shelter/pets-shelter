@@ -46,20 +46,39 @@
 }
 
 .paginate {
+  margin-top: 46px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
   &__button {
-    margin-top: 46px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+  }
+  &__numbers {
+    display: grid;
+    grid-auto-flow: column;
     justify-content: flex-end;
     align-items: center;
   }
 }
 .pageDiv {
-  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.points {
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .navigationActive {
+  cursor: auto;
   border: 2px solid #a392fd;
   border-radius: 8px;
 }

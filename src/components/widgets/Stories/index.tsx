@@ -2,21 +2,32 @@ import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
 import { stories } from 'mocks/stories'
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next'
-
-import { IStory } from 'types/IStory';
+import { useSelector, useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { fetchStories } from 'store/petsStore/actions';
+import { selectStories } from 'store/petsStore/selectors';
+import { IPetStore } from 'store/petsStore/types';
+import { ActionsType } from 'store/petsStore/types';
 
 import s from './styles.module.scss';
 
 import { Story } from '../../story'
 
 const Stories = () => {
-  const [stories, setStories] = useState<IStory[]>()
+  const [currentPage, setCurrentPage] = useState(0)
+  const dispatch = useDispatch<ThunkDispatch<IPetStore, {}, ActionsType>>()
+  const stories = useSelector(selectStories)
+
+  useEffect(() => {
+    dispatch(fetchStories(currentPage))
+  }, [dispatch, currentPage])
+
   const { t } = useTranslation();
 
-  let storiesCards = stories?.map((story, i:number) => {
+  let storiesCards = stories?.map((story, i: number) => {
 
     return (
-      <Story key={story.name} story={story} />
+      <Story key={i} story={story} />
     )
   })
 

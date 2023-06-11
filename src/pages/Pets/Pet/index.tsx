@@ -11,21 +11,22 @@ import { useTranslation } from 'react-i18next';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchPetData } from 'store/petsStore/actions';
+import { ThunkDispatch } from 'redux-thunk';
+import { fetchData } from 'store/petsStore/actions';
 import { selectPet } from 'store/petsStore/selectors';
-
-import { IPet, Gender, Med, Character, Wool, Size } from 'types/IPet';
+import { ActionsType } from 'store/petsStore/types';
+import { IPetStore } from 'store/petsStore/types';
+import { Gender, Med, Character, Wool, Size } from 'types/IPet';
 
 import styles from './styles.module.scss';
 
-
 export const Pet = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<ThunkDispatch<IPetStore, {}, ActionsType>>()
   const pet = useSelector(selectPet)
 
   const params = useParams()
   useEffect(() => {
-    dispatch(fetchPetData(params.id))
+    dispatch(fetchData(`${params.id}`))
   }, [dispatch])
   const { t } = useTranslation();
 
@@ -61,7 +62,6 @@ export const Pet = () => {
       }
     }
   }, [scrollX]);
-
   return (
     <div>
       <div key={pet?.id}>
@@ -123,24 +123,19 @@ export const Pet = () => {
             <div className={styles.box__info}>
               <div className={styles.box__infogr}>
                 <div className={styles.box__subtitles}>Основная информация</div>
-                <div>{pet?.gender === Gender.male ? 'Мальчик' : 'Девочка'}</div>
-                <div>Размер {pet?.size === Size.average ? 'средний' : pet?.size === Size.big ? 'больщой' : 'маленький'}</div>
+                <div>{Gender[pet?.gender]}</div>
+                <div>Размер {Size[pet?.size]}</div>
                 <div>Окрас {pet?.color}</div>
-                <div>{pet?.character}</div>
+                <div>{Wool[pet?.wool]}</div>
+                <div>Характер {Character[pet?.character]}</div>
                 <div>{pet?.home}</div>
               </div>
-              <div className={styles.box__infogr}>
+              {Object.values(pet?.med).length !== 0 && <div className={styles.box__infogr}>
                 <div className={styles.box__subtitles}>Ветеринарные данные</div>
-                {/* {Object.values(pet.med).map((med: Med, index: number) => (
-                  <div key={index}>
-                    {med === Med.vet_passport && 'Есть вет.паспорт'}
-                    {med === Med.chipped && 'Чипирован(а)'}
-                    {med === Med.sterilized && 'Стерилизован(а)'}
-                    {med === Med.treated_for_parasites && 'Обработан(а) от паразитов'}
-                    {med === Med.vaccinated && 'Вакцинирован(а)'}
-                  </div>
-                ))} */}
-              </div>
+                {Object.values(pet?.med).map((med, index) => (
+                  <div key={index}>{Med[med]}</div>
+                  ))}
+              </div>}
               <BaseButton variant="filled" color="accent">
                 {t('mainfirst.urgenthelp.btn')}
               </BaseButton>

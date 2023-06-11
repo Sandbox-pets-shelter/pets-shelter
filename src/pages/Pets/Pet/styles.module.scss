@@ -34,7 +34,8 @@
   align-items: center;
 }
 .box__info {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 }
 .box__infogr {

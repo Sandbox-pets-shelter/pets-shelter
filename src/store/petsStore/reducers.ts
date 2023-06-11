@@ -4,6 +4,7 @@ const initialState = {
     currentPage: 0,
     totalPage: null,
     pets: [],
+    stories: [],
     pet: null,
     dataPerPage: 10
 }
@@ -13,7 +14,8 @@ const petsReducer = (state = initialState, action: IPetStoreAction) => {
         case 'FETCH_DATA':
             return {
                 ...state,
-                pets: action.payload.pets
+                pets: action.payload.pets,
+                totalPage: action.payload.totalPage
             }
         case 'FETCH_PET_DATA':
             return {
@@ -24,6 +26,11 @@ const petsReducer = (state = initialState, action: IPetStoreAction) => {
             return {
                 ...state,
                 currentPage: action.payload
+            }
+        case 'FETCH_STORIES':
+            return {
+                ...state,
+                stories: action.payload.stories
             }
         default:
             return state
