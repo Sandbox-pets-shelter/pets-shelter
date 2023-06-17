@@ -2,7 +2,7 @@ import getPets from 'services/getPets';
 import getStories from 'services/getStories';
 import { Category, Character, Gender, Med, Wool } from 'types/IPet';
 
-import { fetchAllPets, fetchOnePet, fetchStories } from './constants'
+import { fetchAllPets, fetchOnePet, fetchStories } from './constants';
 
 import { ThunkType } from './types';
 

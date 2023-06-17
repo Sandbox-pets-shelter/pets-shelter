@@ -8,7 +8,6 @@ import s from './styles.module.scss';
 import { Popup } from '../popup';
 import { ImageSliderTwo } from '../sliderStory';
 
-
 export const Story = ({ story }: { story: IStory }) => {
   const [toggled, setToggled] = useState(false);
 
