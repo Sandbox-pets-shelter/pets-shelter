@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { fetchStoriesData } from 'store/petsStore/actions';
-import { selectStories } from 'store/petsStore/selectors';
+import { selectStories, selectStoriesCurrentPage, selectStoriesTotalPages } from 'store/petsStore/selectors';
 import { IPetStore } from 'store/petsStore/types';
 import { ActionsType } from 'store/petsStore/types';
 
@@ -13,7 +13,8 @@ import s from './styles.module.scss';
 import { Story } from '../../story';
 
 const Stories = () => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const currentPage = useSelector(selectStoriesCurrentPage);
+  const totalPage = useSelector(selectStoriesTotalPages);
   const dispatch = useDispatch<ThunkDispatch<IPetStore, {}, ActionsType>>();
   const stories = useSelector(selectStories);
 

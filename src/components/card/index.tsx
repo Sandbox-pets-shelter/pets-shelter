@@ -71,13 +71,23 @@ export const Card = () => {
       <div className={s.card__content}>{displayData}</div>
       <div className={s.paginate}>
         <div className={s.paginate__button}>
-          <BaseButton click={handlePreviousPage} variant="outlined" color="secondary">
-            <img src={arrowleft} alt="Стрелка влево" />
+          <BaseButton
+            startIcon={arrowleft}
+            click={handlePreviousPage}
+            disabled={currentPage === 0 && true}
+            variant="outlined"
+            color="secondary"
+          >
             Предыдущая страница
           </BaseButton>
-          <BaseButton click={handleNextPage} variant="filled" color="primary">
+          <BaseButton
+            endIcon={arrowright}
+            click={handleNextPage}
+            disabled={currentPage + 1 === totalPage && true}
+            variant="filled"
+            color="primary"
+          >
             Следующая страница
-            <img src={arrowright} alt="Стрелка вправо" />
           </BaseButton>
         </div>
         <div className={s.paginate__numbers}>
