@@ -1,71 +1,60 @@
-import EyeIcon from 'assets/icons/Eye'
+import EyeIcon from 'assets/icons/Eye';
+import Share from 'components/ui/Share';
+import { useState } from 'react';
+import { IStory } from 'types/IStory';
 
-import ShareIcon from 'assets/icons/Share'
+import s from './styles.module.scss';
 
-import { useEffect, useState } from 'react'
+import { Popup } from '../popup';
+import { ImageSliderTwo } from '../sliderStory';
 
-import { useTranslation } from 'react-i18next'
-import { IStory } from 'types/IStory'
 
-import s from './styles.module.scss'
+export const Story = ({ story }: { story: IStory }) => {
+  const [toggled, setToggled] = useState(false);
 
-import { Popup } from '../popup'
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? story.photos.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
-import { handleShareButton } from '../sharebtn'
+  const goToNext = () => {
+    const isLastSlide = currentIndex === story.photos.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
-import { ImageSliderTwo } from '../sliderStory'
+  const goToSlide = (ind: number) => {
+    setCurrentIndex(ind);
+  };
 
-export const Story = ({ story }: {story: IStory}) => {
-    const t = useTranslation()
-    const [ toggled, setToggled ] = useState(false)
-
-    const [ currentIndex, setCurrentIndex ] = useState(0)
-    const goToPrevious = () => {
-        const isFirstSlide = currentIndex === 0
-        const newIndex = isFirstSlide ? story.link.length - 1 : currentIndex - 1
-        setCurrentIndex(newIndex)
-    }
-
-    const goToNext = () => {
-        const isLastSlide = currentIndex === story.link.length - 1
-        const newIndex = isLastSlide ? 0 : currentIndex + 1
-        setCurrentIndex(newIndex)
-    }
-
-    const goToSlide = (ind: number) => {
-      setCurrentIndex(ind);
-    };
-
-    return (
-        <div key={story.name}>
-        {toggled && <Popup
+  return (
+    <div key={story.name}>
+      {toggled && <Popup currentIndex={currentIndex} slides={story.photos} handleClose={() => setToggled(false)} />}
+      <div className={s.stories__subcontainer}>
+        <ImageSliderTwo
           currentIndex={currentIndex}
-          slides={story.link}
-          handleClose={() => setToggled(false)}
-        />}
-        <div className={s.stories__subcontainer}>
-          <ImageSliderTwo
-              currentIndex={currentIndex}
-              togglePopup={() => setToggled(true)}
-              slides={story.link}
-              goToNext={goToNext}
-              goToPrevious={goToPrevious}
-              goToSlide={goToSlide}
-          />
-          <div className={s.stories__subcontainer__info}>
-            <div className={s.stories__subcontainer__views}>
-              <div className={s.stories__subcontainer__views__date}>{story.date}</div>
-              <div className={s.stories__subcontainer__views__look}>
-                <EyeIcon className={s.stories__subcontainer__views__look__img}/>{story.view}</div>
-              <div className={s.stories__subcontainer__views__share} onClick={handleShareButton}>
-                t{'stories.one.share'}
-                <ShareIcon className={s.stories__subcontainer__views__share__img}/>{s.share}
-              </div>
-          </div>
-            <div className={s.stories__subcontainer__title}>{story.name}</div>
-            <div className={s.stories__subcontainer__content}>{story.text}</div>
-          </div>
+          togglePopup={() => setToggled(true)}
+          slides={story.photos}
+          goToNext={goToNext}
+          goToPrevious={goToPrevious}
+        />
+        <div className={s.stories__subcontainer__info}>
+          <nav className={s.stories__subcontainer__views}>
+            <div className={s.stories__subcontainer__views__date}>{story.date}</div>
+            <div className={s.stories__subcontainer__views__look}>
+              <EyeIcon className={s.stories__subcontainer__views__look__img} />
+              {story.view}
+            </div>
+            <button className={s.stories__subcontainer__views__share}>
+              <Share link={`${window.location.href}/${story.id}`} btn="share" />
+            </button>
+          </nav>
+          <h2 className={s.stories__subcontainer__title}>{story.name}</h2>
+          <p className={s.stories__subcontainer__content}>{story.text}</p>
         </div>
       </div>
-    )
-}
+    </div>
+  );
+};

@@ -1,5 +1,4 @@
-@import '../../assets/scss/variables';
-
+@import 'assets/scss/variables.scss';
 
 .stories {
   margin: 75px 0 72px 0;
@@ -20,7 +19,7 @@
 
   &__img {
     width: 100%;
-    position:absolute;
+    position: absolute;
     margin-left: 30px;
     margin-top: 33px;
   }
@@ -67,13 +66,10 @@
     &__views {
       margin: 40px 886px 24px 67px;
       width: 500px;
-      display: inline-block;
-
-      &__date {
-        display: inline-block;
-      }
+      display: flex;
+      align-items: center;
       &__look {
-        display: inline-block;
+        display: flex;
         margin-right: 24px;
         margin: 0 10px 0 10px;
       }
@@ -81,27 +77,27 @@
         margin-right: 10px;
       }
 
-      &__share__img
-        path {
-          fill: #846DFC;
-          stroke: #846DFC;
+      &__share__img path {
+        fill: #846dfc;
+        stroke: #846dfc;
       }
       &__share__img {
         position: relative;
-        top: 5px;
         margin-left: 14px;
       }
       &__share {
-        display: inline-block;
+        display: flex;
+        font-weight: 500;
+        color: $text;
         margin: 0 14px 0 14px;
       }
       &__share:hover {
         cursor: pointer;
       }
-      &__share:hover &__share__img{
+      &__share:hover &__share__img {
         path {
-          fill: #6549FB;
-          stroke: #6549FB;
+          fill: #6549fb;
+          stroke: #6549fb;
         }
       }
     }
@@ -125,5 +121,5 @@
       font-size: 18px;
       line-height: 145%;
     }
-}
+  }
 }

@@ -43,7 +43,7 @@ const Header = () => {
           ))}
         </ul>
         <div className={s.header__panel}>
-          <SearchIcon/>
+          <SearchIcon />
           <img src={HeartIcon} alt="heart icon" style={{ cursor: 'pointer' }} />
           <LanguageDropdown onChange={dropdown} languages={languages} selectedItem={selectedItem} />
         </div>

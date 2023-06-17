@@ -1,7 +1,10 @@
+import { IPetPhoto } from './IPet';
+
 export interface IStory {
-    name: string,
-    text: string,
-    date: string,
-    view: number,
-    link: string
+  id: number;
+  name: string;
+  text: string;
+  date: string;
+  view: number;
+  photos: IPetPhoto[];
 }

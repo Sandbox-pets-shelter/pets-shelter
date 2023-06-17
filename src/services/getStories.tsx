@@ -1,16 +1,12 @@
-import axios from 'axios'
+import api from './interceptors';
 
-const url = 'http://158.160.4.84:9000/story'
-
-const getStories = async (
-    page: number,
-    size: number | undefined) => {
-    const { data } = await axios(url, {
-        params: {
-            page: page,
-            size: size
-        }
-    })
-    return data
-}
-export default getStories
+const getStories = async (page: number, size: number | undefined) => {
+  const { data } = await api('story', {
+    params: {
+      page: page,
+      size: size
+    }
+  });
+  return data;
+};
+export default getStories;

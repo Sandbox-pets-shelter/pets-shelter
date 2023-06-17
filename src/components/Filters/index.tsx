@@ -34,7 +34,13 @@ const Filters = () => {
 
   return (
     <form className={s.filters}>
-      <InputField type='search' placeholder='Поиск по кличке...' name='name' value={nameInput} onChange={setNameInput}/>
+      <InputField
+        type="search"
+        placeholder="Поиск по кличке..."
+        name="name"
+        value={nameInput}
+        onChange={setNameInput}
+      />
       {filters.map((filter) => (
         <>
           {filter.title && <h4 className={s.filters__title}> {filter.title} </h4>}
