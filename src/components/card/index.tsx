@@ -95,21 +95,13 @@ export const Card = () => {
           {currentPage < totalPage - 1 && currentPage !== 1 && (
             <div className={`${s.navigationActive} ${s.pageDiv}`}>{currentPage + 1}</div>
           )}
-          {currentPage > -1 && currentPage === 0 && (
+          {currentPage > -1 && currentPage === 0 && totalPage !== 2 && (
             <div onClick={handleSecondPage} className={s.pageDiv}>
               2
             </div>
           )}
-          {totalPage > 4 ? (
-            <div className={s.points}>...</div>
-          ) : (
-            <div onClick={handleSecondPage} className={s.pageDiv}>
-              3
-            </div>
-          )}
-          {currentPage + 1 === totalPage ? (
-            <div className={`${s.navigationActive} ${s.pageDiv}`}>{totalPage}</div>
-          ) : (
+          {totalPage > 4 && <div className={s.points}>...</div>}
+          {currentPage + 1 !== totalPage && (
             <div onClick={handleLastPage} className={s.pageDiv}>
               {totalPage}
             </div>

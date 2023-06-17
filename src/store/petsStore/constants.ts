@@ -4,7 +4,7 @@ import { IIncomeObj, FetchAllPetsAction, FetchOnePetAction, FetchStoriesAction }
 
 export const fetchAllPets = (data: IIncomeObj): FetchAllPetsAction => {
   const uploadObj = {
-    totalPage: data.total,
+    totalPage: data.totalPages,
     pets: data.content
   };
 
@@ -23,12 +23,19 @@ export const fetchOnePet = (data: IPet): FetchOnePetAction => {
 
 export const fetchStories = (data: IIncomeObj): FetchStoriesAction => {
   const uploadObj = {
-    totalPage: data.total,
+    totalPage: data.totalPages,
     stories: data.content
   };
 
   return {
     type: 'FETCH_STORIES',
     payload: uploadObj
+  };
+};
+
+export const setPage = (page: number) => {
+  return {
+    type: 'SET_CURRENT_PAGE',
+    payload: page
   };
 };

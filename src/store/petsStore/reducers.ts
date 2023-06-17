@@ -1,4 +1,4 @@
-import { IPetStoreAction } from './types';
+import { ActionsType } from './types';
 
 const initialState = {
   currentPage: 0,
@@ -9,7 +9,7 @@ const initialState = {
   dataPerPage: 10
 };
 
-const petsReducer = (state = initialState, action: IPetStoreAction) => {
+const petsReducer = (state = initialState, action: ActionsType) => {
   switch (action.type) {
     case 'FETCH_DATA':
       return {

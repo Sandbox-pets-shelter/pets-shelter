@@ -20,7 +20,7 @@ export interface IPetStore {
 }
 
 export interface IIncomeObj {
-  total: number;
+  totalPages: number;
   content: [];
 }
 
@@ -49,6 +49,11 @@ export type FetchStoriesAction = {
   payload: FetchStoriesPayload;
 };
 
-export type ActionsType = FetchAllPetsAction | FetchOnePetAction | FetchStoriesAction;
+export type setCurrPageAction = {
+  type: 'SET_CURRENT_PAGE';
+  payload: number;
+};
+
+export type ActionsType = FetchAllPetsAction | FetchOnePetAction | FetchStoriesAction | setCurrPageAction;
 
 export type ThunkType = ThunkAction<Promise<void>, IPetStore, unknown, ActionsType>;

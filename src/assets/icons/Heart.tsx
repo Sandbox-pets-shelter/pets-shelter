@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { ReactComponent as HeartActive } from './Heart.svg';
 import { ReactComponent as Heart } from './HeartInactive.svg';
+import { ReactComponent as HeartActive } from './like.svg';
 
 interface likeProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   active?: boolean;

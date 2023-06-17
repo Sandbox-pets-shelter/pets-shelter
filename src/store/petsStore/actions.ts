@@ -2,7 +2,7 @@ import getPets from 'services/getPets';
 import getStories from 'services/getStories';
 import { Category, Character, Gender, Med, Wool } from 'types/IPet';
 
-import { fetchAllPets, fetchOnePet, fetchStories } from './constants';
+import { fetchAllPets, fetchOnePet, fetchStories, setPage } from './constants';
 
 import { ThunkType } from './types';
 
@@ -41,7 +41,4 @@ export const fetchStoriesData = (pageNumber: number, size?: number): ThunkType =
   };
 };
 
-export const setCurrentPage = (page: number) => ({
-  type: 'SET_CURRENT_PAGE',
-  payload: page
-});
+export const setCurrentPage = (page: number) => setPage(page);
