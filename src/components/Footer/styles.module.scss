@@ -17,6 +17,7 @@
 
 .left {
   width: 50%;
+
   &__undertitle {
     font-weight: 400;
     font-size: 16px;
@@ -82,6 +83,7 @@
   & div:first-child {
     width: 34%;
   }
+
   & div:nth-child(2) {
     width: 28%;
   }
@@ -157,6 +159,7 @@
   .upblock {
     flex-direction: column;
   }
+
   .payment {
     display: none;
   }
@@ -185,11 +188,13 @@
       width: 100%;
       grid-row: 1/4;
     }
+
     & div:nth-child(2) {
       grid-row: 1/2;
       grid-column: 2;
       width: 100%;
     }
+
     & div:nth-child(3) {
       margin-top: 10px;
       grid-row: 2/4;
@@ -204,24 +209,32 @@
 }
 
 @media (max-width: 767px) {
+  .content {
+    padding: 43px 0 40px 0;
+  }
+
   .left {
     &__title {
       margin-bottom: 17px;
     }
+
     &__subtitle {
       width: 100%;
     }
   }
+
   .right {
     grid-template-columns: 100%;
 
     & div:first-child {
       grid-row: 1;
     }
+
     & div:nth-child(2) {
       grid-row: 2;
       grid-column: 1;
     }
+
     & div:nth-child(3) {
       margin-top: 24px;
       grid-row: 3;
