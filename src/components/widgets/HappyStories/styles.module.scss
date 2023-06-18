@@ -86,15 +86,15 @@
     }
 
     &__container {
-      gap: 26px;
-      overflow: hidden;
-      scroll-behavior: smooth;
+      gap: 0px;
+      overflow-x: scroll;
+
 
       &__item {
-        scroll-snap-align: start;
+        margin-right: 15px;
         flex-shrink: 0;
         width: 646px;
-        margin-bottom: 13px;
+        margin-bottom: 26px;
       }
 
       &__img__subtitle {
@@ -118,9 +118,9 @@
     }
 
     &__container {
-      gap: 10px;
+      gap: 0;
       padding-left: 15px;
-      // justify-content: center;
+      justify-content: space-evenly;
 
       &__item {
         width: 278px;
@@ -148,6 +148,14 @@
         line-height: 22px;
         width: 90%;
       }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .happystories {
+    &__container {
+      justify-content: space-between;
     }
   }
 }
