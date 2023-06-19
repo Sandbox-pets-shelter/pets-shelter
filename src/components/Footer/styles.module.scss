@@ -2,9 +2,9 @@
 
 .content {
   display: flex;
-  margin: 0 auto;
+  margin: 22px auto 0;
   max-width: 1320px;
-  padding: 76px 0 24px 0;
+  padding: 76px 0 0 0;
   width: 100%;
   flex-direction: column;
 }
@@ -161,11 +161,12 @@
 
 @media (max-width: 1024px) {
   .content {
-    padding: 80px 0 40px 0;
+    padding: 22px 0 25px 0;
   }
 
   .upblock {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .payment {
@@ -181,7 +182,7 @@
 
     &__subtitle {
       width: 85%;
-      margin-bottom: 17px;
+      margin-bottom: 35px;
     }
   }
 
@@ -191,6 +192,11 @@
     flex-wrap: nowrap;
     display: grid;
     grid-template-columns: 33% 30%;
+
+    &__links:first-of-type {
+      row-gap: 20px;
+      column-gap: 7px;
+    }
 
     & div:first-child {
       width: 100%;
@@ -204,7 +210,6 @@
     }
 
     & div:nth-child(3) {
-      margin-top: 10px;
       grid-row: 2/4;
       grid-column: 2;
       width: 100%;
@@ -218,7 +223,7 @@
 
 @media (max-width: 767px) {
   .content {
-    padding: 43px 0 40px 0;
+    padding: 19px 0 10px 0;
   }
 
   .left {
@@ -227,6 +232,7 @@
     }
 
     &__subtitle {
+      margin-bottom: 16px;
       width: 100%;
     }
   }
@@ -234,8 +240,13 @@
   .right {
     grid-template-columns: 100%;
 
+    &__title {
+      margin-bottom: 25px;
+    }
+
     & div:first-child {
       grid-row: 1;
+      margin-bottom: 32px;
     }
 
     & div:nth-child(2) {
