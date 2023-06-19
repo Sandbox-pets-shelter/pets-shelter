@@ -5,6 +5,12 @@
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 16px;
+  @media (max-width: 1024px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 767px) {
+    padding: 0 16px;
+  }
 
   &__content {
     flex: 1 1 auto;

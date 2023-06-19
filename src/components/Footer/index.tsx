@@ -1,4 +1,4 @@
-import logo from 'assets/icons/Logo.svg';
+import logo from 'assets/icons/logoBig.svg';
 import { footerTextRight, iconsFooter, rulesLinks } from 'mocks/footer';
 import { useTranslation } from 'react-i18next';
 import { IFooterText, ILink } from 'types/ui';
@@ -9,13 +9,11 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <div className={s.content}>
+    <footer className={s.content}>
+      <div className={s.upblock}>
         <div className={s.left}>
           <p className={s.left__undertitle}>{t('footer.under_title')}</p>
-          <p className={s.left__title}>
-            <img src={logo} alt="Логотип" />
-          </p>
+          <img className={s.left__title} src={logo} alt="Логотип" />
           <p className={s.left__title_two}>{t('footer.title_two')}</p>
           <p className={s.left__subtitle}>{t('footer.subtitle')}</p>
           <p className={s.left__subscribe}>{t('footer.subscribe')}</p>
@@ -59,7 +57,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </footer>
   );
 };
 
