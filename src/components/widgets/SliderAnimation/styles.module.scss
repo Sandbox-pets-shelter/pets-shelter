@@ -1,20 +1,27 @@
 @import '../../../assets/scss/variables';
 
 .sliderAnimation {
-  margin: 76px 0 72px 0;
+  padding: 77px 0;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: $white;
+  border: 1px solid $separator;
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
 
   @keyframes scale {
     0% {
       transform: scale(0);
     }
+
     50% {
       transform: scale(1.4);
     }
+
     100% {
       transform: scale(1);
     }
@@ -60,6 +67,7 @@
 
   &_leftestDog,
   &_rightestDog {
+    z-index: 7;
     top: 19%;
   }
 
@@ -67,16 +75,20 @@
     left: 15%;
     top: 0;
   }
+
   &_leftBottomCat,
   &_rightBottomCat {
+    z-index: 7;
     bottom: 22%;
   }
 
   &_leftBottomCat {
     left: 16%;
   }
+
   &_leftBottomDownDog,
   &_rightBottomDownCat {
+    z-index: 9;
     bottom: 0;
   }
 
@@ -91,33 +103,45 @@
   &_leftDog,
   &_rightCat {
     top: 9%;
+    z-index: 6;
   }
+
   &_centerCat {
     top: 8%;
     left: 41%;
+    z-index: 8;
   }
+
   &_leftLittleCat {
     top: 64%;
     left: 42%;
+    z-index: 8;
   }
+
   &_rightLittleCat {
     top: 64%;
     left: 52%;
+    z-index: 8;
   }
+
   &_rightCat {
     right: 24%;
   }
+
   &_rightTopCat {
     top: 0;
     right: 13%;
   }
+
   &_rightBottomCat {
     right: 12%;
   }
+
   &_rightBottomDownCat {
     right: 26%;
     bottom: 0;
   }
+
   &_leftestDog {
     left: 3%;
   }
@@ -161,6 +185,7 @@
       &:focus {
         border-bottom-color: #000;
       }
+
       &::placeholder {
         color: $text;
       }
@@ -204,6 +229,7 @@
       background-color: transparent;
     }
   }
+
   &__barProgress {
     position: relative;
     background-color: $primary;
@@ -269,6 +295,7 @@
       top: -427%;
       right: -1px;
     }
+
     60% {
       top: -513%;
       right: 1px;
@@ -284,6 +311,130 @@
     100% {
       right: 6px;
       opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sliderAnimation {
+    padding: 40px 0;
+    width: 94%;
+    margin: 0 auto;
+
+    &__title {
+      font-family: 'Nunito', sans-serif;
+      margin: 0 auto 16px;
+      width: 90%;
+      font-size: 4vw;
+    }
+
+    &__img_container {
+      width: 600px;
+      height: 297px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    &_centerCat {
+      left: 38%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderAnimation {
+    padding: 30px 0;
+    width: 100%;
+
+    &__title {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    &__img_container {
+      width: 320px;
+      height: 243px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    &__barContainer {
+      min-width: unset;
+    }
+
+    &__donation {
+      margin-bottom: 44px;
+    }
+
+    &__plates {
+      bottom: 5%;
+      left: 35%;
+    }
+
+    &__slider {
+      padding: 0 15px;
+      width: 100%;
+      margin-bottom: 37px;
+    }
+
+    &_leftTopCat {
+      left: 0%;
+    }
+
+    &_leftBottomCat {
+      left: 7%;
+    }
+
+    &_leftBottomDownDog {
+      left: 0%;
+    }
+
+    &_leftDog {
+      left: 3%;
+    }
+
+    &_leftDog,
+    &_rightCat {
+      top: 0%;
+    }
+
+    &_centerCat {
+      left: 26%;
+    }
+
+    &_leftLittleCat {
+      left: 35%;
+    }
+
+    &_rightLittleCat {
+      left: 48%;
+    }
+
+    &_rightCat {
+      right: 6%;
+    }
+
+    &_rightTopCat {
+      right: 0%;
+    }
+
+    &_rightBottomCat {
+      right: 10%;
+    }
+
+    &_rightBottomDownCat {
+      right: 0%;
+    }
+
+    &_leftestDog {
+      left: 0%;
+      top: 20%;
+    }
+
+    &_rightestDog {
+      z-index: 6;
+      top: 20%;
+      right: -2%;
     }
   }
 }
