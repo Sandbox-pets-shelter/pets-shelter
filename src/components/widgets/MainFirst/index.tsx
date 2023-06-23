@@ -40,9 +40,7 @@ const MainFirst = () => {
           <p className={s.mainfirst__urgenthelp__container__subtitle}>
             {window.innerWidth > 767 ? t('mainfirst.urgenthelp.subtitle') : t('mainfirst.urgenthelp.subtitle_adaptive')}
           </p>
-          <p className={s.mainfirst__urgenthelp__container__content}>
-            {window.innerWidth > 767 ? t('mainfirst.urgenthelp.content') : t('mainfirst.urgenthelp.content_adaptive')}
-          </p>
+          <p className={s.mainfirst__urgenthelp__container__content}>{t('mainfirst.urgenthelp.content')}</p>
         </div>
         <BaseButton variant="filled" color="accent" endIcon={plus} click={reset}>
           {t('mainfirst.urgenthelp.btn')}
