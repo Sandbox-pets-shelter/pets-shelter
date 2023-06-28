@@ -57,7 +57,7 @@
     &__container {
       display: flex;
       flex-direction: column;
-      margin: 0 0 0 40px;
+      margin-left: 40px;
 
       &__subtitle {
         width: 496px;
@@ -93,15 +93,18 @@
       justify-content: flex-start;
 
       &__container {
+        margin-left: auto;
+        margin-right: auto;
+
         &__title {
           font-size: 32px;
-          width: 324px;
+          max-width: 324px;
           height: 88px;
           margin: 140px 0 24px 0;
         }
 
         &__content {
-          width: 302px;
+          max-width: 302px;
         }
 
         &__arrow {
@@ -124,6 +127,7 @@
 
       &__container {
         text-align: center;
+        margin-left: 0;
 
         &__subtitle {
           margin: 44px 0 8px 0;
@@ -148,18 +152,21 @@
         margin-right: auto;
 
         &__title {
-          width: 19rem;
+          font-size: 32px;
+          max-width: 19rem;
           margin: 24px 0 16px 0;
         }
 
         &__content {
-          width: 18rem;
+          max-width: 18rem;
           margin-bottom: 16px;
         }
 
         &__btn {
           position: absolute;
           top: 41.5rem;
+          max-width: 18rem;
+          width: 100%;
         }
 
         &__arrow {
@@ -191,7 +198,7 @@
         margin: 0;
 
         &__subtitle {
-          margin: 0 0 0 42px;
+          margin: auto;
           width: 228px;
           font-size: 24px;
           line-height: 33px;
@@ -199,7 +206,8 @@
 
         &__content {
           line-height: 145%;
-          width: 318px;
+          max-width: 19.1rem;
+          width: 100%;
           margin-bottom: 24px;
         }
       }
