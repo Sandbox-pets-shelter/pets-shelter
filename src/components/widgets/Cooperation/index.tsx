@@ -15,11 +15,9 @@ const Cooperation = () => {
       <img className={s.cooperation__img} src={cooperation} alt="Сотрудничество" />
       <p className={s.cooperation__title}>{t('cooperation.title')}</p>
       <p className={s.cooperation__subtitle}>{t('cooperation.subtitle')}</p>
-      <div className={s.cooperation__button}>
-        <BaseButton variant="filled" color="primary" click={reset}>
-          {t('cooperation.btn')}
-        </BaseButton>
-      </div>
+      <BaseButton variant="filled" color="primary" click={reset}>
+        {t('cooperation.btn')}
+      </BaseButton>
     </div>
   );
 };
