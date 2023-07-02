@@ -40,6 +40,7 @@
       }
     }
   }
+
   &_filled-primary {
     background-color: $primary;
     color: $white;
@@ -166,5 +167,9 @@
   .btn {
     max-width: 18rem;
     width: 100%;
+
+    &_outlined-accent {
+      width: 92%;
+    }
   }
 }
