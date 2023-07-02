@@ -2,6 +2,7 @@
 
 .happystories {
   margin: 112px 0 72px 0;
+  overflow: hidden;
 
   &__title {
     font-family: 'Nunito', sans-serif;
@@ -85,9 +86,15 @@
       margin-bottom: 33px;
     }
 
+    &__slider_wrapper {
+      overflow-x: scroll;
+      width: 100%;
+    }
+
     &__container {
       gap: 0px;
-      overflow-x: scroll;
+
+
 
       &__item {
         margin-right: 15px;
