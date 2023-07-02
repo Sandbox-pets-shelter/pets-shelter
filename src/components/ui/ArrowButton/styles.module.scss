@@ -32,6 +32,17 @@
     svg {
       path {
         stroke: $primary-dark;
+        transition: all $transition;
+      }
+    }
+
+    &:hover {
+      color: $orange;
+
+      svg {
+        path {
+          stroke: $orange;
+        }
       }
     }
   }

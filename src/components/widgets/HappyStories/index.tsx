@@ -1,5 +1,4 @@
 import arrowred from 'assets/icons/happystories/arrowred.svg';
-import share_btn from 'assets/icons/happystories/Share_btn.svg';
 import { BaseButton } from 'components';
 import ArrowButton from 'components/ui/ArrowButton';
 import Share from 'components/ui/Share';
@@ -15,27 +14,37 @@ const HappyStories = () => {
   const reset = () => {
     console.log('reset');
   };
+
+  function moveSlider(ev: React.MouseEvent<HTMLDivElement>) {}
   return (
     <div className={s.happystories}>
-      <p className={s.happystories__title}>{t('happystories.title')}</p>
+      <h2 className={s.happystories__title}>{t('happystories.title')}</h2>
       <p className={s.happystories__content}>{t('happystories.content')}</p>
+        <div className={s.happystories__slider_wrapper}>
       <div className={s.happystories__container}>
-        {itemsHappyStories.map((item) => (
-          <div key={item.id} className={s.happystories__container__item}>
-            <div className={s.happystories__container__img}>
-              {/* кода будет страница, то указать нужную ссылку */}
-              <Share link={window.location.href} btn="icon" />
-              <img src={item.src} alt={item.alt} />
-              <div className={s.happystories__container__img__title}>
-                <p className={s.happystories__container__img__subtitle}>{item.subtitle}</p>
-                <p className={s.happystories__container__img__content}>{item.content}</p>
-                <ArrowButton variant="filled" color="primary">
-                  {item.link}
-                </ArrowButton>
+          {itemsHappyStories.map((item) => (
+            <div
+              key={item.id}
+              className={s.happystories__container__item}
+              onClick={(ev) => {
+                moveSlider(ev);
+              }}
+            >
+              <div className={s.happystories__container__img}>
+                {/* кода будет страница, то указать нужную ссылку */}
+                <Share link={window.location.href} btn="icon" />
+                <img src={item.src} alt={item.alt} className={s.happystories__container__image} />
+                <div className={s.happystories__container__img__title}>
+                  <h3 className={s.happystories__container__img__subtitle}>{item.subtitle}</h3>
+                  <p className={s.happystories__container__img__content}>{item.content}</p>
+                  <ArrowButton variant="filled" color="primary">
+                    {item.link}
+                  </ArrowButton>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className={s.happystories__button}>
         <BaseButton variant="outlined" color="accent" click={reset}>

@@ -5,7 +5,7 @@
 }
 
 .shareIcon {
-  z-index: 1;
+  z-index: 5;
   position: absolute;
   top: 16px;
   right: 16px;
@@ -51,6 +51,7 @@
   &:hover {
     color: $primary-dark;
   }
+
   &:hover .share path {
     fill: $primary-dark;
     stroke: $primary-dark;
@@ -59,6 +60,7 @@
   &.active {
     color: $activeColor;
   }
+
   &.active .share path {
     color: $activeColor;
     fill: $primary-dark;
@@ -106,7 +108,8 @@
   }
 
   &:hover a,
-  &:hover button {
+  &:hover button,
+  &:hover span {
     color: $primary-dark;
   }
 
