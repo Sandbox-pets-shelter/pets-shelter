@@ -1,14 +1,13 @@
-name: CI-frontend
+name: CI
 
 on: 
   push:
     branches: [develop]
 env:
-  #место на сервере, куда деплоим проект
-  DEPLOY_PATH: /home/user/work
-  #место на вирт машине Git, откуда отправляем
-  BUILD_SCRIPT_OUTPUT: '/home/runner/work/pets-shelter/pets-shelter/'
-  DIR_NAME: frontend-helppet
+  DEPLOY_PATH: /var/www/app
+  # В теории можно собрать не только Vue-приложение, так как принцип сборки мало где отличаетс6я
+  BUILD_SCRIPT: npx create-react-app opa && npx run build
+  BUILD_SCRIPT_OUTPUT: '/home/runner/work/testgit/testgit/'
   ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
 jobs:
@@ -21,6 +20,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      # Записываем в переменные окружения имя текущей ветки
       # Устанавливаем зависимости для сборки
       - name: Install Dependencies
         run: |
@@ -33,12 +33,12 @@ jobs:
       - name: Deploy to Server
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.DEPLOY_SERVER_HOST }}
-          port: ${{ secrets.DEPLOY_SERVER_PORT }}
-          username: ${{ secrets.DEPLOY_SERVER_USERNAME }}
+          host: 51.250.98.41
+          port: 22
+          username: user
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           strip_components: 1
       - name: Print Info
-        run: echo "Success"
+        run: echo "Deployed at https://${BRANCH_NAME}.app.example.ru/"
