@@ -5,7 +5,7 @@ on:
     branches: [develop]
 env:
   #место на сервере, куда деплоим проект
-  DEPLOY_PATH: /home/user/1
+  DEPLOY_PATH: /home/user/work
   #место на вирт машине Git, откуда отправляем
   BUILD_SCRIPT_OUTPUT: '/home/runner/work/pets-shelter/pets-shelter/'
   DIR_NAME: frontend-helppet
@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.DEPLOY_SERVER_USERNAME }}
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
-          target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
+          target: ${{ env.DEPLOY_PATH }}
           strip_components: 1
       - name: Print Info
         run: echo "Success"
