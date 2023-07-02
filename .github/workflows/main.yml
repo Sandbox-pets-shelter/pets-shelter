@@ -5,7 +5,7 @@ on:
     branches: [develop]
 env:
   #место на сервере, куда деплоим проект
-  DEPLOY_PATH: /home/user/work
+  DEPLOY_PATH: /home/user/1
   #место на вирт машине Git, откуда отправляем
   BUILD_SCRIPT_OUTPUT: '/home/runner/work/pets-shelter/pets-shelter/'
   DIR_NAME: frontend-helppet
