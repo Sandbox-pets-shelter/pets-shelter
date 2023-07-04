@@ -20,8 +20,8 @@ const HappyStories = () => {
     <div className={s.happystories}>
       <h2 className={s.happystories__title}>{t('happystories.title')}</h2>
       <p className={s.happystories__content}>{t('happystories.content')}</p>
-        <div className={s.happystories__slider_wrapper}>
-      <div className={s.happystories__container}>
+      <div className={s.happystories__slider_wrapper}>
+        <div className={s.happystories__container}>
           {itemsHappyStories.map((item) => (
             <div
               key={item.id}
