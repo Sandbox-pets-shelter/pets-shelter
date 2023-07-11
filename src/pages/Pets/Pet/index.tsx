@@ -48,9 +48,7 @@ export const Pet = () => {
   useEffect(() => {
     if (slideImage.current) {
       const calculateHeight = 4 * slideImage.current.offsetHeight + 4 * 16 + 'px';
-      setHeight({
-        height: calculateHeight
-      });
+      setHeight({ height: calculateHeight });
     }
     if (scrollX.side === 'right') {
       if (ref.current) {

@@ -11,23 +11,22 @@ const Filters = () => {
   const [nameInput, setNameInput] = useState('');
 
   const reset = () => {
-    setFilters(
-      filters.map((item) => {
-        item.data = item.data.map((el) => ({ ...el, isChecked: false }));
-        return item;
-      })
-    );
+    const clearFilters = filters.map((filter) => {
+      filter.data = filter.data.map((el) => ({ ...el, isChecked: false }));
+      return filter;
+    });
+
+    setFilters(clearFilters);
   };
 
   const handleChange = (name: string, value: string) => {
-    setFilters(
-      filters.map((filter) => {
-        filter.data = filter.data.map((el) =>
-          el.name === name && el.value === value ? { ...el, isChecked: !el.isChecked } : el
-        );
-        return filter;
-      })
-    );
+    const changedFilters = filters.map((filter) => {
+      filter.data = filter.data.map((el) =>
+        el.name === name && el.value === value ? { ...el, isChecked: !el.isChecked } : el
+      );
+      return filter;
+    });
+    setFilters(changedFilters);
   };
 
   return (
