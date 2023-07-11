@@ -13,9 +13,7 @@ const Filters = () => {
   const reset = () => {
     setFilters(
       filters.map((item) => {
-        item.data = item.data.map((el) => {
-          return { ...el, isChecked: false };
-        });
+        item.data = item.data.map((el) => ({ ...el, isChecked: false }));
         return item;
       })
     );
@@ -44,13 +42,13 @@ const Filters = () => {
       {filters.map((filter) => (
         <>
           {filter.title && <h4 className={s.filters__title}> {filter.title} </h4>}
-          {filter.data?.map((el, index) => (
+          {filter.data?.map(({ name, content, isChecked, value }, index) => (
             <BaseCheckbox
-              key={`${el.name}-${index}`}
-              name={el.name}
-              content={el.content}
-              isChecked={el.isChecked}
-              value={el.value}
+              key={`${name}-${index}`}
+              name={name}
+              content={content}
+              isChecked={isChecked}
+              value={value}
               change={handleChange}
             />
           ))}
