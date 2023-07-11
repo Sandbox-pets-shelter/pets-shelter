@@ -1,5 +1,5 @@
 import HeartIcon from 'assets/icons/footer/Heart.svg';
-import SearchIcon from 'assets/icons/footer/Search.svg';
+import SearchIcon from 'assets/icons/footer/Search';
 import logo from 'assets/icons/Logo.svg';
 import { LanguageDropdown } from 'components';
 import BaseDropdown from 'components/ui/BaseDropdown';
@@ -43,7 +43,7 @@ const Header = () => {
           ))}
         </ul>
         <div className={s.header__panel}>
-          <img src={SearchIcon} alt="search icon" style={{ cursor: 'pointer' }} />
+          <SearchIcon />
           <img src={HeartIcon} alt="heart icon" style={{ cursor: 'pointer' }} />
           <LanguageDropdown onChange={dropdown} languages={languages} selectedItem={selectedItem} />
         </div>

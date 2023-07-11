@@ -1,13 +1,28 @@
-import { SVGProps } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, useState } from 'react';
 
-const EyeIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={20} height={14} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path
-      d="M19.13 4.853a3.085 3.085 0 0 1 0 4.294C17.174 11.205 13.816 14 10 14 6.184 14 2.825 11.205.87 9.147a3.085 3.085 0 0 1 0-4.294C2.825 2.795 6.184 0 10 0c3.816 0 7.174 2.795 9.13 4.853Z"
-      fill="#A392FD"
-    />
-    <path d="M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" fill="#fff" />
-  </svg>
-);
+import { ReactComponent as EyeDark } from './eye-dark.svg';
+import { ReactComponent as EyeDisDark } from './eye-disable-dark.svg';
+import { ReactComponent as EyeDis } from './eye-disable-light.svg';
+import { ReactComponent as Eye } from './eye-light.svg';
+
+const EyeIcon = (
+  props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
+    active?: boolean;
+    passwordShown?: boolean;
+  }
+) => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{ overflow: 'visible', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      {...props}
+    >
+      {props.passwordShown ? hover ? <EyeDisDark /> : <EyeDis /> : hover ? <EyeDark /> : <Eye />}
+    </div>
+  );
+};
 
 export default EyeIcon;

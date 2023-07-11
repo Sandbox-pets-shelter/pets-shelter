@@ -2,7 +2,7 @@ export const appRoutes = {
   home: '/',
   auth: '/auth',
   pets: '/pets',
-  concreteCat: '/pets/:id',
+  singlePet: '/pets/:id',
   history: '/history',
   aboutProject: '/about',
   notFound: '*'

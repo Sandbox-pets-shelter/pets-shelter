@@ -4,12 +4,21 @@
   height: 8px;
   border-radius: 50%;
   background: $activeColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $activeColor;
 }
 .dot {
   cursor: pointer;
   width: 8px;
   height: 8px;
-  background: rgba(101, 73, 251, 0.2);
+  background: $secondary-dark;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: $secondary-dark;
   border-radius: 50%;
 }
 .container {
@@ -17,7 +26,8 @@
   gap: 8px;
   justify-content: center;
   margin-top: 8px;
-}
-.card__img {
-  background: red;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
 }
