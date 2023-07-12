@@ -1,8 +1,8 @@
 import HeartIcon from 'assets/icons/footer/Heart.svg';
-import SearchIcon from 'assets/icons/footer/Search.svg';
 import logo from 'assets/icons/Logo.svg';
 import mobileLogo from 'assets/icons/mobileMenu.svg';
 import roundClose from 'assets/icons/roundClose.svg';
+import SearchIcon from 'assets/icons/Search.svg';
 import { LanguageDropdown } from 'components';
 import BaseDropdown from 'components/ui/BaseDropdown';
 import { appRoutes } from 'configs/appRoutes';

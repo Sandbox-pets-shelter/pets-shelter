@@ -1,80 +1,32 @@
-import EyeIcon from 'assets/icons/Eye';
-import IncreaseIcon from 'assets/icons/Increase';
 import Sleepingcat from 'assets/icons/stories/Sleepingcat.svg';
-import { Popup } from 'components/popup';
-import { ImageSliderTwo } from 'components/sliderTwo';
-import Share from 'components/ui/Share';
-import { stories } from 'mocks/stories';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { fetchStoriesData } from 'store/petsStore/actions';
+import { selectStories, selectStoriesCurrentPage, selectStoriesTotalPages } from 'store/petsStore/selectors';
+import { IPetStore } from 'store/petsStore/types';
+import { ActionsType } from 'store/petsStore/types';
 
-import styles from './styles.module.scss';
 import s from './styles.module.scss';
 
+import { Story } from '../../story';
+
 const Stories = () => {
+  const currentPage = useSelector(selectStoriesCurrentPage);
+  const totalPage = useSelector(selectStoriesTotalPages);
+  const dispatch = useDispatch<ThunkDispatch<IPetStore, {}, ActionsType>>();
+  const stories = useSelector(selectStories);
+
+  useEffect(() => {
+    dispatch(fetchStoriesData(currentPage));
+  }, [currentPage]);
+
   const { t } = useTranslation();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-
-  let storiesCards = stories.map((item) => {
-    const goToPrevious = () => {
-      const isFirstSlide = currentIndex === 0;
-      const newIndex = isFirstSlide ? item.src.length - 1 : currentIndex - 1;
-      setCurrentIndex(newIndex);
-    };
-
-    const goToNext = (key: any) => {
-      const isLastSlide = currentIndex === item.src.length - 1;
-      const newIndex = isLastSlide ? 0 : currentIndex + 1;
-      setCurrentIndex(newIndex);
-    };
-    return (
-      <div key={item.key}>
-        {isOpen && (
-          <Popup
-            slides={item.src}
-            currentIndex={currentIndex}
-            handleClose={togglePopup}
-            goToNext={goToNext}
-            goToPrevious={goToPrevious}
-            togglePopup={togglePopup}
-          />
-        )}
-        <div className={s.stories__subcontainer}>
-          <ImageSliderTwo
-            isOpen={isOpen}
-            currentIndex={currentIndex}
-            togglePopup={togglePopup}
-            slides={item.src}
-            goToNext={goToNext}
-            goToPrevious={goToPrevious}
-          />
-          <div className={s.stories__subcontainer__info}>
-            <div className={s.stories__subcontainer__views}>
-              <div className={s.stories__subcontainer__views__date}>{item.date}</div>
-              <div className={s.stories__subcontainer__views__look}>
-                <EyeIcon className={s.stories__subcontainer__views__look__img} />
-                {item.views}
-              </div>
-              <div className={s.stories__subcontainer__views__share}>
-                {/* кода будет страница, то указать нужную ссылку */}
-                <Share link={window.location.href} btn="share" />
-              </div>
-            </div>
-            <div className={s.stories__subcontainer__title}>{item.title}</div>
-            <div className={s.stories__subcontainer__content}>{item.content}</div>
-          </div>
-        </div>
-      </div>
-    );
+  let storiesCards = stories?.map((story, i: number) => {
+    return <Story key={i} story={story} />;
   });
-
   return (
     <>
       <div>

@@ -1,91 +1,123 @@
 import arrowleft from 'assets/icons/arrowleft.svg';
 import arrowright from 'assets/icons/arrowright.svg';
+import LikeIcon from 'assets/icons/Heart';
 import { BaseButton } from 'components';
-import { Like } from 'components/like';
 import { ImageSlider } from 'components/slider';
 import Share from 'components/ui/Share';
-import { cats } from 'mocks/cats';
-import { useState } from 'react';
-
-import ReactPaginate from 'react-paginate';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ThunkDispatch } from 'redux-thunk';
+import { fetchPetsData, setCurrentPage } from 'store/petsStore/actions';
+import { selectPetsCurrentPage, selectPets, selectPetsTotalPages } from 'store/petsStore/selectors';
+import { ActionsType, IPetStore } from 'store/petsStore/types';
+import { IPet } from 'types/IPet';
 
 import s from './styles.module.scss';
 
 export const Card = () => {
-  const [data, setData] = useState(cats);
+  const dispatch = useDispatch<ThunkDispatch<IPetStore, {}, ActionsType>>();
+  const dispatchPage = useDispatch();
+  const pets = useSelector(selectPets);
+  const currentPage = useSelector(selectPetsCurrentPage);
+  const totalPage = useSelector(selectPetsTotalPages);
 
-  const handleClicked = (e: any, { key }: any) => {
-    e.preventDefault();
+  useEffect(() => {
+    dispatch(fetchPetsData('', currentPage));
+  }, [currentPage]);
 
-    const likedItem = data.map((item: any) => {
-      if (item.key === key) {
-        return { ...item, liked: !item.liked };
-      } else return item;
-    });
-
-    setData(likedItem);
+  const handleNextPage = () => {
+    currentPage !== totalPage - 1 && dispatchPage(setCurrentPage(currentPage + 1));
   };
 
-  const [page, setPage] = useState(0);
-  const dataPerPage = 6;
-  const numberOfdataVistited = page * dataPerPage;
-  const totalPages = Math.ceil(data.length / dataPerPage);
-  const changePage = ({ selected }: any) => {
-    setPage(selected);
+  const handlePreviousPage = () => {
+    currentPage !== 0 && dispatchPage(setCurrentPage(currentPage - 1));
   };
 
-  const displayData = data.slice(numberOfdataVistited, numberOfdataVistited + dataPerPage).map((img) => {
-    return (
-      <div key={img.key} className={s.card__block}>
-        <Link key={img.key} to={`${img.key}`}>
+  const handleFirstPage = () => {
+    dispatchPage(setCurrentPage(0));
+  };
+
+  const handleSecondPage = () => {
+    dispatchPage(setCurrentPage(1));
+  };
+
+  const handleLastPage = () => {
+    dispatchPage(setCurrentPage(totalPage - 1));
+  };
+
+  const displayData =
+    pets &&
+    pets.map((pet: IPet) => {
+      return (
+        <Link key={pet.id} to={`${pet.id}`} state={pet}>
           <div className={s.card}>
-            <ImageSlider slides={img.src} />
+            <ImageSlider slides={pet.photos.slice(0, 3)} />
             <div className={s.card__info}>
-              <div className={s.card__title}>
-                {img.name}, {img.age}
-              </div>
-              <div className={s.card__descr}>{img.descr}</div>
-              <Like className={s.card__like} like={img.liked} handleClicked={handleClicked} elem={img} />
+              <h1 className={s.card__title}>
+                {pet.name}, {pet.age}
+              </h1>
+              <p className={s.card__descr}>{pet.history}</p>
+              <LikeIcon className={s.card__like} active={false} />
             </div>
+            <Share link={`${window.location.href}/${pet.id}`} btn="icon" />
           </div>
         </Link>
-        <Share link={`${window.location.href}/${img.key}`} btn="icon" />
-      </div>
-    );
-  });
+      );
+    });
 
   return (
     <div>
       <div className={s.card__content}>{displayData}</div>
-      <ReactPaginate
-        previousLabel={
-          page !== 0 && (
-            <BaseButton variant="outlined" color="secondary">
-              <img src={arrowleft} alt="Стрелка влево" />
-              {'Предыдущая страница'}
-            </BaseButton>
-          )
-        }
-        nextLabel={
-          page !== totalPages - 1 && (
-            <BaseButton variant="filled" color="primary">
-              {'Следующая страница'}
-              <img src={arrowright} alt="Стрелка вправо" />
-            </BaseButton>
-          )
-        }
-        pageCount={totalPages}
-        onPageChange={changePage}
-        containerClassName={s.paginate__button}
-        disabledClassName={'navigationDisabled'}
-        activeClassName={s.navigationActive}
-        nextClassName={s.floatRight}
-        previousClassName={s.floatLeft}
-        pageClassName={s.pageDiv}
-      />
+      <div className={s.paginate}>
+        <div className={s.paginate__button}>
+          <BaseButton
+            startIcon={arrowleft}
+            click={handlePreviousPage}
+            disabled={currentPage === 0 && true}
+            variant="outlined"
+            color="secondary"
+          >
+            Предыдущая страница
+          </BaseButton>
+          <BaseButton
+            endIcon={arrowright}
+            click={handleNextPage}
+            disabled={currentPage + 1 === totalPage && true}
+            variant="filled"
+            color="primary"
+          >
+            Следующая страница
+          </BaseButton>
+        </div>
+        <div className={s.paginate__numbers}>
+          {currentPage !== 0 && (
+            <div onClick={handleFirstPage} className={s.pageDiv}>
+              1
+            </div>
+          )}
+          {currentPage === 1 && <div className={`${s.navigationActive} ${s.pageDiv}`}>2</div>}
+          {currentPage > 1 && (
+            <div onClick={handleSecondPage} className={s.pageDiv}>
+              2
+            </div>
+          )}
+          {currentPage < totalPage - 1 && currentPage !== 1 && (
+            <div className={`${s.navigationActive} ${s.pageDiv}`}>{currentPage + 1}</div>
+          )}
+          {currentPage > -1 && currentPage === 0 && totalPage !== 2 && (
+            <div onClick={handleSecondPage} className={s.pageDiv}>
+              2
+            </div>
+          )}
+          {totalPage > 4 && <div className={s.points}>...</div>}
+          {currentPage + 1 !== totalPage && (
+            <div onClick={handleLastPage} className={s.pageDiv}>
+              {totalPage}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
-
-//Todo поменять количество карточек в одной странице

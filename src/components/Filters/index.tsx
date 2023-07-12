@@ -1,56 +1,62 @@
 import { BaseCheckbox, BaseButton } from 'components';
+import InputField from 'components/ui/Input';
 import { filtersData } from 'mocks/filter';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import s from './styles.module.scss';
 
 const Filters = () => {
-  const [data, setData] = useState(filtersData);
+  const [filters, setFilters] = useState(filtersData);
+
+  const [nameInput, setNameInput] = useState('');
 
   const reset = () => {
-    setData(
-      data.map((item) => {
-        item.data = item.data.map((el) => {
-          return { ...el, isChecked: false };
-        });
-        return item;
-      })
-    );
+    const clearFilters = filters.map((filter) => {
+      filter.data = filter.data.map((el) => ({ ...el, isChecked: false }));
+      return filter;
+    });
+
+    setFilters(clearFilters);
   };
 
   const handleChange = (name: string, value: string) => {
-    setData(
-      data.map((item) => {
-        item.data = item.data.map((el) =>
-          el.name === name && el.value === value ? { ...el, isChecked: !el.isChecked } : el
-        );
-        return item;
-      })
-    );
+    const changedFilters = filters.map((filter) => {
+      filter.data = filter.data.map((el) =>
+        el.name === name && el.value === value ? { ...el, isChecked: !el.isChecked } : el
+      );
+      return filter;
+    });
+    setFilters(changedFilters);
   };
 
   return (
-    <div className={s.filters}>
-      {data.map((item) => (
-        <Fragment key={item.id}>
-          {item.title && <div className={s.filters__title}> {item.title} </div>}
-          {item.data.map((el, index) => (
+    <form className={s.filters}>
+      <InputField
+        type="search"
+        placeholder="Поиск по кличке..."
+        name="name"
+        value={nameInput}
+        onChange={setNameInput}
+      />
+      {filters.map((filter) => (
+        <>
+          {filter.title && <h4 className={s.filters__title}> {filter.title} </h4>}
+          {filter.data?.map(({ name, content, isChecked, value }, index) => (
             <BaseCheckbox
-              key={`${el.name}-${index}`}
-              name={el.name}
-              content={el.content}
-              isChecked={el.isChecked}
-              value={el.value}
+              key={`${name}-${index}`}
+              name={name}
+              content={content}
+              isChecked={isChecked}
+              value={value}
               change={handleChange}
             />
           ))}
-        </Fragment>
+        </>
       ))}
-
       <BaseButton variant="filled" color="primary" click={reset}>
         Сбросить настройки
       </BaseButton>
-    </div>
+    </form>
   );
 };
 
