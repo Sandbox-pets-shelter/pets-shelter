@@ -34,7 +34,7 @@ const MobileMenuItem: FC<MobileMenuItemProps> = ({ routes, enableSubMenu }) => {
               {name}
             </NavLink>
             {!id && (
-              <span onClick={toogleOpen}>
+              <span onClick={toogleOpen} style={{ cursor: 'pointer' }}>
                 <object
                   ref={toogleButtonRef}
                   onClick={toogleOpen}
@@ -69,7 +69,6 @@ type MobileMenuProps = {
 };
 
 export const MobileMenu: FC<MobileMenuProps> = ({ isOpen }) => {
-  const mobileMenuRef = createRef<HTMLElement>();
   const { smBreakpoint, lgBreakpoint } = useBreakpoints();
   const mobileMenuHeight = smBreakpoint ? 'fit-content' : '100vh';
 
