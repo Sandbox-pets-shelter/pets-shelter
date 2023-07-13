@@ -88,13 +88,13 @@ export const petsRoutes: RouteElement[] = [
   {
     id: 1,
     name: 'Приютить',
-    path: 'have-to-add',
+    path: appRoutes.pets,
     component: withLayout(Pets)
   },
   {
     id: 2,
     name: 'Отдать',
-    path: 'have-to-add',
+    path: appRoutes.pets,
     component: withLayout(Pets)
   }
 ];
