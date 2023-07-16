@@ -13,12 +13,12 @@ const ArrowButton = (props: IBaseButton) => {
   const currentStyle = `${s.btn} ${s[btnType]}`;
 
   return (
-    <Link to={`${link}`}>
+    // <Link to={`${link}`}>
       <button className={currentStyle} disabled={disabled} onClick={click}>
         {children}
         <Arrow className={currentStyle}></Arrow>
       </button>
-    </Link>
+    // </Link>
   );
 };
 
