@@ -9,16 +9,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  &__img {
-    margin: 78px auto 48px;
-  }
+  padding: 76px 16px;
+  width: 100%;
 
   &__title {
+    margin-top: 48px;
     font-family: 'Nunito';
     font-weight: 600;
     font-size: 32px;
-    line-height: 44px;
+    line-height: normal;
     color: $text;
   }
 
@@ -31,10 +30,29 @@
     max-width: 570px;
     color: $text;
   }
+}
 
-  &__button {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 76px;
+@media (max-width: 1024px) {
+  .homelessPet {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .homelesspet {
+    padding: 32px 16px;
+
+    &__title {
+      margin-top: 32px;
+      font-size: 24px;
+      max-width: 311px;
+      text-align: center;
+    }
+
+    &__subtitle {
+      margin: 16px auto 24px;
+      max-width: 311px;
+      width: 102%;
+    }
   }
 }

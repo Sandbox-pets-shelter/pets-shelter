@@ -9,6 +9,7 @@
 
     &__container {
       flex-direction: column;
+      position: relative;
 
       &__title {
         font-family: 'Nunito';
@@ -16,8 +17,9 @@
         font-weight: 600;
         font-size: 48px;
         line-height: 130%;
-        width: 766px;
-        margin: 265px 0 20px 0;
+        max-width: 765px;
+        width: 104%;
+        margin: 265px 8px 20px 0;
       }
 
       &__content {
@@ -30,17 +32,20 @@
         margin-bottom: 32px;
       }
 
+      &__btn {
+        margin-bottom: 100px;
+      }
+
       &__arrow {
         position: absolute;
         text-decoration: none;
-        left: 619px;
-        top: 778px;
+        left: 81%;
+        top: 89%;
       }
     }
 
     &__img {
       max-width: 536px;
-      max-height: 808px;
     }
   }
 
@@ -107,10 +112,13 @@
           max-width: 302px;
         }
 
+        &__btn {
+          margin-bottom: 0;
+        }
+
         &__arrow {
           width: 48px;
-          left: 370px;
-          top: 541px;
+          left: 100%;
         }
       }
 
@@ -128,7 +136,6 @@
       &__container {
         text-align: center;
         margin-left: 0;
-
 
         &__subtitle {
           margin: 44px 0 8px 0;
@@ -149,25 +156,25 @@
       text-align: center;
 
       &__container {
-        margin-left: auto;
-        margin-right: auto;
-
         &__title {
           font-size: 32px;
           max-width: 19rem;
+          width: 106%;
           margin: 24px 0 16px 0;
         }
 
         &__content {
           max-width: 18rem;
+          width: 102%;
           margin-bottom: 16px;
         }
 
         &__btn {
           position: absolute;
-          top: 41.5rem;
-          max-width: 18rem;
+          top: 33rem;
+          max-width: 20.5rem;
           width: 100%;
+          margin-bottom: 0;
         }
 
         &__arrow {
@@ -196,7 +203,6 @@
 
       &__container {
         text-align: center;
-        margin: 0;
 
         &__subtitle {
           margin: auto;
@@ -207,9 +213,8 @@
 
         &__content {
           line-height: 145%;
-          max-width: 19.1rem;
-          width: 100%;
-
+          max-width: 20rem;
+          width: 105%;
           margin-bottom: 24px;
         }
       }

@@ -3,7 +3,7 @@ import { IBaseButton } from 'types/ui';
 import s from './styles.module.scss';
 
 const BaseButton = (props: IBaseButton) => {
-  const { variant, color, disabled, children, click, startIcon, endIcon } = props;
+  const { variant, color, disabled, children, startIcon, endIcon, click } = props;
 
   const btnType = `btn_${variant}-${color}`;
 

@@ -3,7 +3,7 @@
 .btn {
   border-radius: 16px;
   outline: none;
-  padding: 16px 24px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,18 +12,14 @@
   &_outlined-secondary {
     background-color: $white;
     color: $primary-dark;
-    border: 1px solid $primary;
+    border: 1px solid $primary-dark;
 
     .icon {
-      background-color: $primary;
+      background-color: $primary-dark;
     }
 
     &:hover {
       background-color: $secondary-dark;
-
-      .icon {
-        background-color: $white;
-      }
     }
 
     &:active {
@@ -31,9 +27,9 @@
     }
 
     &:disabled {
-      border-color: $accent;
-      background-color: $white;
-      color: $accent;
+      border-color: $grey;
+      background-color: $grey-light;
+      color: $grey;
 
       .icon {
         background-color: $grey;
@@ -165,7 +161,7 @@
 
 @media (max-width: 767px) {
   .btn {
-    max-width: 18rem;
+    max-width: 20.5rem;
     width: 100%;
 
     &_outlined-accent {

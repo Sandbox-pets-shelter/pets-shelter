@@ -42,7 +42,6 @@ const MainFirst = () => {
           </p>
 
           <p className={s.mainfirst__urgenthelp__container__content}>{t('mainfirst.urgenthelp.content')}</p>
-
         </div>
         <BaseButton variant="filled" color="accent" endIcon={plus} click={reset}>
           {t('mainfirst.urgenthelp.btn')}

@@ -10,20 +10,20 @@ body {
 
 html {
   ::-webkit-scrollbar {
-    width: 2px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--activeColor);
+    background: $activeColor;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--activeColor);
+    background: $activeColor;
   }
 }
 
 .arrow {
-  border: solid #333333;
+  border: 1px solid #333333;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -31,9 +31,12 @@ html {
   margin-right: 10px;
   cursor: pointer;
 }
-
+.arrow-active {
+  border-color: $activeColor;
+}
 .arrow-disabled {
   border-color: #d9d9d9;
+  pointer-events: none;
 }
 
 .right {

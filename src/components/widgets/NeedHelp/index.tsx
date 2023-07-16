@@ -7,12 +7,20 @@ import s from './styles.module.scss';
 const NeedHelp = () => {
   const { t } = useTranslation();
 
+  function moveSlider(ev: React.MouseEvent<HTMLDivElement>) {}
+
   return (
     <div className={s.needhelp}>
       <p className={s.needhelp__title}>{t('needhelp.main_title')}</p>
       <div className={s.needhelp__container}>
         {itemsNeedHelp.map((item) => (
-          <div key={item.id} className={s.needhelp__container__item}>
+          <div
+            key={item.id}
+            className={s.needhelp__container__item}
+            onClick={(ev) => {
+              moveSlider(ev);
+            }}
+          >
             <div className={s.needhelp__container__img}>
               <img src={item.src} alt={item.alt} />
               <div className={s.needhelp__container__img__title}>

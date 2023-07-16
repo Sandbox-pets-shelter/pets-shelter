@@ -15,11 +15,9 @@ const HomelessPet = () => {
       <img className={s.homelesspet__img} src={homelessPet} alt="Бездомный питомец" />
       <p className={s.homelesspet__title}>{t('homelesspet.title')}</p>
       <p className={s.homelesspet__subtitle}>{t('homelesspet.subtitle')}</p>
-      <div className={s.homelesspet__button}>
-        <BaseButton variant="filled" color="primary" click={reset}>
-          {t('homelesspet.btn')}
-        </BaseButton>
-      </div>
+      <BaseButton variant="filled" color="primary" click={reset}>
+        {t('homelesspet.btn')}
+      </BaseButton>
     </div>
   );
 };

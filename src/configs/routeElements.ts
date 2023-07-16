@@ -4,7 +4,7 @@ import { History } from 'pages/History';
 import { Home } from 'pages/Home';
 import { NoMatch } from 'pages/NoMatch';
 import { Pets } from 'pages/Pets';
-import { Cat } from 'pages/Pets/Cat';
+import { Pet } from 'pages/Pets/Pet';
 import { RouteElement } from 'types/types';
 
 import { appRoutes } from './appRoutes';
@@ -36,8 +36,8 @@ export const routeElements: RouteElement[] = [
   },
   {
     id: 5,
-    path: appRoutes.concreteCat,
-    component: withLayout(Cat)
+    path: appRoutes.singlePet,
+    component: withLayout(Pet)
   },
   {
     id: 6,
@@ -56,25 +56,25 @@ export const helpRoutes: RouteElement[] = [
   {
     id: 1,
     name: 'Стать волонтером',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 2,
     name: 'Приютить на время',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 3,
     name: 'Поддержать финансово',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 4,
     name: 'Купить подарок приюту',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   }
 ];

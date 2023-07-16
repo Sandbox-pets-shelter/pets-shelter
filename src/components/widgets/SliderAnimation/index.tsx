@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import s from './styles.module.scss';
 
 import { validateInputWithNumbers } from '../../../assets/helpers/validators';
+import like from '../../../assets/icons/like.svg';
 import biggestHeart from '../../../assets/icons/sliderAnimationCats/biggestHeart.svg';
 import centerCat from '../../../assets/icons/sliderAnimationCats/center-cat.svg';
 import editIcon from '../../../assets/icons/sliderAnimationCats/editIcon.svg';
@@ -13,7 +14,6 @@ import leftDog from '../../../assets/icons/sliderAnimationCats/left-dog.svg';
 import leftLittleCat from '../../../assets/icons/sliderAnimationCats/left-little-cat.svg';
 import leftTopCat from '../../../assets/icons/sliderAnimationCats/left-top-cat.svg';
 import leftestDog from '../../../assets/icons/sliderAnimationCats/leftest-dog.svg';
-import like from '../../../assets/icons/sliderAnimationCats/like.svg';
 import middleHeart from '../../../assets/icons/sliderAnimationCats/middleHeart.svg';
 import rightBottomCat from '../../../assets/icons/sliderAnimationCats/right-bottom-cat.svg';
 import rightBottomdownCat from '../../../assets/icons/sliderAnimationCats/right-bottomdown-cat.svg';
@@ -173,7 +173,7 @@ const SliderAnimation = () => {
           <input
             type="range"
             max={MAX_DONATION}
-            min="0"
+            min="150"
             value={donation}
             step={150}
             onChange={(ev) => setDonation(Number(ev.target.value))}
