@@ -36,6 +36,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+
+      &:hover button {
+        color: $orange;
+
+        svg {
+          path {
+            stroke: $orange;
+          }
+        }
+      }
     }
 
     &__img__title {
@@ -79,6 +90,10 @@
       overflow-x: scroll;
       width: 100%;
 
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
       &__item {
         flex-shrink: 0;
         margin-right: 15px;
@@ -92,8 +107,7 @@
     padding: 0;
 
     &__title {
-      max-width: 14rem;
-      max-height: 8.5rem;
+      max-width: 85%;
       width: 100%;
       font-size: 24px;
       margin: 0 auto 16px;
