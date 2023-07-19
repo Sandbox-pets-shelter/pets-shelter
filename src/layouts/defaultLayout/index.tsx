@@ -12,7 +12,7 @@ const DefaultLayout = (props: IProps): JSX.Element => {
   return (
     <div className={s.primary}>
       <Header />
-      <div className={s.primary__content}>{props.children}</div>
+      <main className={s.primary__content}>{props.children}</main>
       <Footer />
       {/*<Loader/>*/}
     </div>

@@ -4,12 +4,14 @@
 @import 'container';
 
 body {
+  background-color: $background;
   font-family: 'Montserrat', sans-serif;
 }
 
 html {
   ::-webkit-scrollbar {
     width: 4px;
+    height: 0px;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -37,12 +39,15 @@ html {
   border-color: #d9d9d9;
   pointer-events: none;
 }
+
 .right {
   transform: rotate(-45deg);
 }
+
 .up {
   transform: rotate(-135deg);
 }
+
 .down {
   transform: rotate(45deg);
 }

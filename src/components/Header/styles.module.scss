@@ -5,12 +5,88 @@
   border-bottom: 1px solid $separator;
 }
 
+.mobile_menu {
+  &__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-left: 1rem;
+    width: 100%;
+    height: 100vh;
+    background-color: $background;
+    z-index: 10;
+    box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.2);
+
+    a:last-child {
+      margin-bottom: 0.5rem;
+    }
+
+    :not(ul, li > a) {
+      height: 2.625rem;
+    }
+
+    a:not(li > a) {
+      font-weight: 500;
+    }
+
+    ul {
+      overflow: hidden;
+      transition: 0.2s;
+      &__open {
+        max-height: auto;
+      }
+    }
+
+    a,
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    li {
+      object {
+        height: 6px;
+        pointer-events: none;
+      }
+      span {
+        display: flex;
+        align-items: center;
+      }
+      &:first-child {
+        // color: $primary-dark;
+        font-weight: 500;
+      }
+
+      &:not(:first-child) {
+        font-weight: 400;
+        margin-left: 0.625rem;
+      }
+      // a {
+      //   font-weight: 400;
+      // }
+    }
+  }
+}
+
 .header {
   max-width: 1320px;
   margin: 38px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__mobile_menu_icon {
+    display: none;
+  }
 
   &__title {
     color: #6549fb;
@@ -35,8 +111,55 @@
     gap: 29px;
     height: 50px;
   }
+
+  img {
+    cursor: pointer;
+  }
 }
 
 .active {
   color: $activeColor;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin: 18px auto;
+    &__list {
+      display: none;
+    }
+    &__mobile_menu_icon {
+      display: block;
+      width: 2.5rem;
+    }
+
+    &__panel {
+      &__searchIcon {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile_menu__content {
+    height: fit-content;
+    border-radius: 10px 0px 0px 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile_menu__content {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__mobile_menu_icon {
+      width: 2rem;
+    }
+    &__title {
+      width: 100px;
+    }
+  }
 }

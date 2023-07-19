@@ -56,25 +56,25 @@ export const helpRoutes: RouteElement[] = [
   {
     id: 1,
     name: 'Стать волонтером',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 2,
     name: 'Приютить на время',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 3,
     name: 'Поддержать финансово',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   },
   {
     id: 4,
     name: 'Купить подарок приюту',
-    path: appRoutes.home,
+    path: 'have-to-add',
     component: withLayout(Home)
   }
 ];
