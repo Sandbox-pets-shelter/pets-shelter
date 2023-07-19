@@ -2,7 +2,6 @@
 
 .needhelp {
   margin: 112px 0 112px 0;
-  overflow: hidden;
 
   &__title {
     font-family: 'Nunito', sans-serif;
@@ -78,7 +77,6 @@
 
     &__container {
       overflow-x: scroll;
-      overflow-x: hidden;
       overflow-y: hidden;
       width: 100%;
 
