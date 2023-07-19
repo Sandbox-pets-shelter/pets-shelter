@@ -89,6 +89,10 @@
     &__slider_wrapper {
       overflow-x: scroll;
       width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     &__container {

@@ -21,7 +21,7 @@ const NeedHelp = () => {
               moveSlider(ev);
             }}
           >
-            <div className={s.needhelp__container__img}>
+            <a className={s.needhelp__container__img} href="#">
               <img src={item.src} alt={item.alt} />
               <div className={s.needhelp__container__img__title}>
                 <p className={s.needhelp__container__img__subtitle}>{item.subtitle}</p>
@@ -32,7 +32,7 @@ const NeedHelp = () => {
                   </ArrowButton>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         ))}
       </div>
