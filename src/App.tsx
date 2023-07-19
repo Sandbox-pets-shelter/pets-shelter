@@ -1,4 +1,5 @@
 import './App.css';
+import FindPetForm from 'components/popups/forms/FindPetForm';
 import { Route, Routes } from 'react-router-dom';
 
 import { routeElements } from './configs/routeElements';
@@ -18,6 +19,7 @@ function App() {
           </Route>
         ))}
       </Routes>
+      <FindPetForm />
     </div>
   );
 }
