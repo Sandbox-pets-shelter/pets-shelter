@@ -6,7 +6,7 @@
   background-color: $white;
   margin: auto;
   width: 100vw;
-  max-width: 600px;
+  max-width: 648px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -37,5 +37,12 @@
       flex-direction: column;
       gap: 1.5rem;
     }
+  }
+
+  .choose {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 536px;
   }
 }

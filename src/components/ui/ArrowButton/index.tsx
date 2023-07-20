@@ -14,10 +14,10 @@ const ArrowButton = (props: IBaseButton) => {
 
   return (
     // <Link to={`${link}`}>
-      <button className={currentStyle} disabled={disabled} onClick={click}>
-        {children}
-        <Arrow className={currentStyle}></Arrow>
-      </button>
+    <button className={currentStyle} disabled={disabled} onClick={click}>
+      {children}
+      <Arrow className={currentStyle}></Arrow>
+    </button>
     // </Link>
   );
 };
