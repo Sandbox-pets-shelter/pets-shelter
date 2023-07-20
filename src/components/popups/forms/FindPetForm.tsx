@@ -44,25 +44,24 @@ const FindPetForm = () => {
           <img src={savePet} alt="save-pet" />
         </div>
         <div className={s.description}>
-          <InputField
-            onChange={onInputChange}
+          <Textarea
+            onChangeTextarea={onInputChange}
             placeholder="Введите текст..."
             label="Опишите ситуацию"
-            type="text"
-            name="Имя"
+            name="description"
+            smilePickerEnable
           />
-          <Textarea onFileUpload={Function} onChangeTextarea={Function} />
         </div>
         <div className={s.choose}>
           <BaseCheckbox
-            content="Подписаться на рассылку"
+            content="Подписаться на рассылку"
             name="имя"
             isChecked={true}
             value="имя"
             change={handleChange}
           />
           <BaseCheckbox
-            content="Нажимая на кнопку я подтверждаю, что ознакомлен с условиями передачи персональных данных *"
+            content="Нажимая на кнопку я подтверждаю, что ознакомлен с условиями передачи персональных данных *"
             name="имя"
             isChecked={false}
             value="имя"
