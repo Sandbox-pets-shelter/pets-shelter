@@ -14,6 +14,7 @@ type Props = {
   value?: string;
   disabled?: boolean;
   required?: boolean;
+  width?: string;
 };
 
 const InputField = ({ onChange, type, name, label, placeholder, value = '', disabled, required }: Props) => {

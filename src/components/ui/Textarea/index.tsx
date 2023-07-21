@@ -39,7 +39,7 @@ const Textarea: FC<TextareaProps> = (props) => {
     label,
     required,
     smilePickerEnable,
-    height = '16rem',
+    height = '4,75rem',
     width
   } = props;
   const [isEmojiShow, setEmojiShow] = useState(false);
