@@ -2,10 +2,11 @@ import { applyMiddleware, combineReducers, legacy_createStore as createStore } f
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
+import modalsReducer from './modalStore/reducers';
 import petsReducer from './petsStore/reducers';
 
-const rootReducer = combineReducers({ petsReducer });
+modalsReducer;
 
-export type AppStateType = ReturnType<typeof rootReducer>;
+export const rootReducer = combineReducers({ petsReducer, modalsReducer });
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
