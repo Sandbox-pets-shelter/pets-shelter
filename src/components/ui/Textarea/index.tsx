@@ -82,7 +82,8 @@ const Textarea: FC<TextareaProps> = (props) => {
   const wrapperStyle = {
     filter: `grayscale(${disabled ? '1' : '0'})`,
     height: height,
-    width: width
+    width: width,
+    zIndex: isEmojiShow ? 1 : -1
   };
 
   return (
@@ -107,12 +108,12 @@ const Textarea: FC<TextareaProps> = (props) => {
         <div className={s.iconWrapper}>
           <span>{filesAmount !== 0 && `(${filesAmount})`}</span>
           {onFileUpload && (
-            <form>
+            <div>
               <label className="custom-file-upload">
                 <img src={clip} />
                 <input type="file" multiple onChange={changeInputHandler} disabled={disabled} />
               </label>
-            </form>
+            </div>
           )}
           {smilePickerEnable && (
             <div onClick={openEmojiPanel}>
