@@ -5,8 +5,6 @@ import thunk from 'redux-thunk';
 import modalsReducer from './modalStore/reducers';
 import petsReducer from './petsStore/reducers';
 
-modalsReducer;
-
 export const rootReducer = combineReducers({ petsReducer, modalsReducer });
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
