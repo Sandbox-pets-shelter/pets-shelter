@@ -82,8 +82,7 @@ const Textarea: FC<TextareaProps> = (props) => {
   const wrapperStyle = {
     filter: `grayscale(${disabled ? '1' : '0'})`,
     height: height,
-    width: width,
-    zIndex: isEmojiShow ? 1 : -1
+    width: width
   };
 
   return (

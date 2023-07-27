@@ -3,6 +3,7 @@ import DidntFindPetSite from 'components/popups/forms/DidntFindPetSite';
 import FindPetForm from 'components/popups/forms/FindPetForm';
 import GiveAwayPet from 'components/popups/forms/GiveAwayPet';
 import KeepPet from 'components/popups/forms/KeepPet';
+import TakePetHome from 'components/popups/forms/TakePetHome';
 import { useSelector } from 'react-redux';
 import { RemoveScroll } from 'react-remove-scroll';
 import { selectIsModalWindowOpen, selectModals } from 'store/modalStore/selectors';
@@ -24,8 +25,8 @@ const PopupsContainer = () => {
           {modalsVisiblity.didntFindPetsForm && <DidntFindPetSite />}
           {modalsVisiblity.findPetForm && <FindPetForm />}
           {modalsVisiblity.giveAwayPetForm && <GiveAwayPet />}
-          {modalsVisiblity.findPetForm && <FindPetForm />}
           {modalsVisiblity.keepPetForm && <KeepPet />}
+          {modalsVisiblity.takePetHomeForm && <TakePetHome />}
         </div>
       </RemoveScroll>
     );

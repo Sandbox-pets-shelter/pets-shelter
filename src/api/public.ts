@@ -8,5 +8,11 @@ export const forms = {
   },
   homelessAnimals: (data: API.Public.Forms.HomelessAnimals.Request) => {
     return postRequest('forms/homelessAnimals', { data });
+  },
+  petOwnerProfiles: (data: API.Public.Forms.PetOwnerProfiles.Request) => {
+    return postRequest('forms/petOwnerProfileForm', { data });
+  },
+  collaborationProposals: (data: API.Public.Forms.CollaborationProposals.Request) => {
+    return postRequest('forms/collaborationProposals', { data });
   }
 };

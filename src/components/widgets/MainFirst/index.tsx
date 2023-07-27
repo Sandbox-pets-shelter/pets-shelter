@@ -16,7 +16,7 @@ const MainFirst = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const showKeepPetForm = () => dispatch(showModalAction(ModalWindows.KEEP_PET_FORM));
+  const showTakePetHomeForm = () => dispatch(showModalAction(ModalWindows.TAKE_PET_HOME_FORM));
 
   const reset = () => {
     console.log('reset');
@@ -28,7 +28,7 @@ const MainFirst = () => {
           <p className={s.mainfirst__first__container__title}>{t('mainfirst.first.title')}</p>
           <p className={s.mainfirst__first__container__content}>{t('mainfirst.first.content')}</p>
           <div className={s.mainfirst__first__container__btn}>
-            <BaseButton variant="filled" color="primary" click={showKeepPetForm}>
+            <BaseButton variant="filled" color="primary" click={showTakePetHomeForm}>
               {t('mainfirst.first.btn')}
             </BaseButton>
           </div>
