@@ -2,7 +2,8 @@ import { AppStateType } from 'store/types';
 
 export const selectModals = (state: AppStateType) => state.modalsReducer;
 
-export const isModalWindowOpen = (state: AppStateType) => Object.values(state.modalsReducer).find((status) => !!status);
+export const selectIsModalWindowOpen = (state: AppStateType) =>
+  Object.values(state.modalsReducer).find((status) => !!status);
 
 export const selectModalCooperationForm = (state: AppStateType) => state.modalsReducer.cooperationForm;
 export const selectModalDidntFindPetForm = (state: AppStateType) => state.modalsReducer.didntFindPetsForm;

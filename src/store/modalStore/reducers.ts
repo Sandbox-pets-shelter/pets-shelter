@@ -6,7 +6,8 @@ export enum ModalWindows {
   FIND_PET_FORM = 'findPetForm',
   GIVE_AWAY_PET_FORM = 'giveAwayPetForm',
   KEEP_PET_FORM = 'keepPetForm',
-  TAKE_PET_HOME_FORM = 'takePetHomeForm'
+  TAKE_PET_HOME_FORM = 'takePetHomeForm',
+  SUCCESS_SEND_FORM = 'successSendForm'
 }
 
 export type ModalReducer = {
