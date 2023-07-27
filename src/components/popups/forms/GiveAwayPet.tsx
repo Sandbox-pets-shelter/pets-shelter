@@ -3,8 +3,6 @@ import { BaseButton, BaseRadio } from 'components';
 import BaseCheckbox from 'components/ui/BaseCheckbox';
 import InputField from 'components/ui/Input';
 
-import { RemoveScroll } from 'react-remove-scroll';
-
 import s from './styles.module.scss';
 
 const GiveAwayPet = () => {
@@ -74,15 +72,15 @@ const GiveAwayPet = () => {
       <div className={s.questions}>
         <p>Животное, которое вы хотите отдать, является домашним?*</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Да" />
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Нет" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
         <p>Готовы ли вы самостоятельно привезти питомца в приют?*</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Да" />
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Нет" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
         </div>
       </div>
       <div className={s.choose}>

@@ -65,8 +65,8 @@ const TakePetHome = () => {
       <div className={s.questions}>
         <p>Есть ли у вас домашние животные? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Да" />
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Нет" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
@@ -89,15 +89,15 @@ const TakePetHome = () => {
       <div className={s.questions}>
         <p>Есть ли у вас или у ваших близких аллергия на шерсть? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Да" />
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Нет" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
         <p>Есть ли у вас дома дети до 10 лет? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Да" />
-          <BaseRadio change={handleChange} name="radio" isChecked={false} value="Нет" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
+          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
         </div>
       </div>
       <div className={s.description}>

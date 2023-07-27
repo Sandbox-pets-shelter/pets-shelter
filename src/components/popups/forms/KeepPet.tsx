@@ -26,10 +26,10 @@ const KeepPet = () => {
   const [amountCats, setCatsAmount] = useState('');
   const [amountDogs, setDogsAmount] = useState('');
 
-  const [petInHome, setPetInHome] = useState(false);
-  const [healthCare, setHealthCare] = useState(false);
-  const [buyPetFood, setBuyPetFood] = useState(false);
-  const [buyEssentials, setBuyEssentials] = useState(false);
+  const [petInHome, setPetInHome] = useState('');
+  const [healthCare, setHealthCare] = useState('');
+  const [buyPetFood, setBuyPetFood] = useState('');
+  const [buyEssentials, setBuyEssentials] = useState('');
 
   const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
   const [personalDataAgreement, setPersonalDataAgreement] = useState(false);
@@ -46,10 +46,10 @@ const KeepPet = () => {
       phoneNumber: '+71111111111',
       amountCats: Number(amountCats),
       amountDogs: Number(amountDogs),
-      petInHome,
-      healthCare,
-      buyPetFood,
-      buyEssentials,
+      petInHome: petInHome === 'Да',
+      healthCare: healthCare === 'Да',
+      buyPetFood: buyPetFood === 'Да',
+      buyEssentials: buyEssentials === 'Да',
       subscribeToNewsletter,
       personalDataAgreement
     };
@@ -144,22 +144,22 @@ const KeepPet = () => {
       <div className={s.questions}>
         <p>Есть ли у вас домашние животные? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={setPetInHome} name="radio" isChecked={petInHome} value="Да" />
-          <BaseRadio change={setPetInHome} name="radio" isChecked={!petInHome} value="Нет" />
+          <BaseRadio change={setPetInHome} name="radio" topping={petInHome} value="Да" />
+          <BaseRadio change={setPetInHome} name="radio" topping={petInHome} value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
         <p>Готовы ли вы, при необходимости, оказывать медицинскую помощь? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={setHealthCare} name="radio" isChecked={healthCare} value="Да" />
-          <BaseRadio change={setHealthCare} name="radio" isChecked={!healthCare} value="Нет" />
+          <BaseRadio change={setHealthCare} name="radio" topping={healthCare} value="Да" />
+          <BaseRadio change={setHealthCare} name="radio" topping={healthCare} value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
         <p>Готовы ли вы самостоятельно приобретать корм для животного? *</p>
         <div className={s.questions__button}>
-          <BaseRadio change={setBuyPetFood} name="radio" isChecked={buyPetFood} value="Да" />
-          <BaseRadio change={setBuyPetFood} name="radio" isChecked={!buyPetFood} value="Нет" />
+          <BaseRadio change={setBuyPetFood} name="radio" topping={buyPetFood} value="Да" />
+          <BaseRadio change={setBuyPetFood} name="radio" topping={buyPetFood} value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
@@ -168,8 +168,8 @@ const KeepPet = () => {
           *
         </p>
         <div className={s.questions__button}>
-          <BaseRadio change={setBuyEssentials} name="radio" isChecked={buyEssentials} value="Да" />
-          <BaseRadio change={setBuyEssentials} name="radio" isChecked={!buyEssentials} value="Нет" />
+          <BaseRadio change={setBuyEssentials} name="radio" topping={buyEssentials} value="Да" />
+          <BaseRadio change={setBuyEssentials} name="radio" topping={buyEssentials} value="Нет" />
         </div>
       </div>
       <div className={s.choose}>

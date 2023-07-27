@@ -17,7 +17,9 @@ const SuccessSendForm = () => {
   return (
     <div className={s.formСontainer} style={{ maxWidth: '426px' }}>
       <CloseIcon variant={'onlyIcon'} onClick={closeForm} />
-      <img className={s.successSendFormImg} src={successSendFormImg} alt="sucess-send" />
+      <div className={s.successSendFormImg}>
+        <img src={successSendFormImg} alt="sucess-send" />
+      </div>
       <p className={s.successSendFormTitle}>{t('forms.successSendForm')}</p>
     </div>
   );

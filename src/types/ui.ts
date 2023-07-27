@@ -17,8 +17,8 @@ export interface ICheckbox {
 
 export interface IRadio {
   name: string;
-  isChecked: boolean;
-  change: Dispatch<SetStateAction<boolean>>;
+  topping: string;
+  change: (value: string) => void;
   value: string;
 }
 

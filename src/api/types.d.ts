@@ -36,6 +36,25 @@ export namespace API {
           personalDataAgreement: boolean;
         };
       }
+      export namespace HomelessAnimals {
+        export type Request = {
+          firstName: string;
+          email: string;
+          phoneNumber: string;
+          description: string;
+          subscribeToNewsletter: boolean;
+          personalDataAgreement: boolean;
+        };
+        export type Response = {
+          id: number;
+          firstName: string;
+          email: string;
+          phoneNumber: string;
+          description: string;
+          subscribeToNewsletter: boolean;
+          personalDataAgreement: boolean;
+        };
+      }
     }
   }
 }
