@@ -60,6 +60,7 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
 
     setTelValue(formattedInputValue);
+    onChange(formattedInputValue);
   };
 
   if (type !== 'search' && type !== 'number' && type !== 'tel') {

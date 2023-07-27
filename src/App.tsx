@@ -1,10 +1,16 @@
 import './App.css';
-import ModalsContainer from 'components/ModalsContainer';
+import { getRequest } from 'api';
+import PopupsContainer from 'components/popups/PopupsContainer';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { routeElements } from './configs/routeElements';
 
 function App() {
+  useEffect(() => {
+    getRequest('/pet');
+  }, []);
+
   return (
     <div className="container">
       <Routes>
@@ -15,7 +21,7 @@ function App() {
           </Route>
         ))}
       </Routes>
-      <ModalsContainer />
+      <PopupsContainer />
     </div>
   );
 }

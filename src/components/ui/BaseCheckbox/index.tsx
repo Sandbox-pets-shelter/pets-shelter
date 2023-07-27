@@ -5,12 +5,17 @@ import { ICheckbox } from 'types/ui';
 import s from './styles.module.scss';
 
 const BaseCheckbox = (props: ICheckbox) => {
-  const { name, content, isChecked, value, change } = props;
+  const { name, content, isChecked, value, change, onChange } = props;
 
   const currentStyle = `${s.checkbox} ${isChecked && s.checkbox_checked}`;
 
-  const toggleChecked = (name: string, value: string) => {
-    if (change) change(name, value);
+  const toggleChecked = () => {
+    if (change && name && value) {
+      change(name, value);
+    }
+    if (onChange) {
+      onChange(!isChecked);
+    }
   };
 
   return (
@@ -25,7 +30,7 @@ const BaseCheckbox = (props: ICheckbox) => {
         name={name}
         value={value}
         className={s.checkbox__input}
-        onChange={() => toggleChecked(name, value)}
+        onChange={toggleChecked}
         checked={isChecked}
       />
     </label>

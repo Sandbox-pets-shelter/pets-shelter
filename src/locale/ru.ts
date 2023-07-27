@@ -145,6 +145,9 @@ export const ru = {
       telegram: 'Telegram',
       whatsapp: 'WhatsApp',
       result: 'Ссылка скопирована'
+    },
+    forms: {
+      successSendForm: 'Отправлено! С вами свяжутся :)'
     }
   }
 };
