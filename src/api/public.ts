@@ -10,9 +10,15 @@ export const forms = {
     return postRequest('forms/homelessAnimals', { data });
   },
   petOwnerProfiles: (data: API.Public.Forms.PetOwnerProfiles.Request) => {
-    return postRequest('forms/petOwnerProfileForm', { data });
+    return postRequest('forms/petOwnerProfilesForm', { data });
   },
   collaborationProposals: (data: API.Public.Forms.CollaborationProposals.Request) => {
     return postRequest('forms/collaborationProposals', { data });
+  },
+  petRequests: (data: API.Public.Forms.PetRequests.Request) => {
+    return postRequest('forms/petRequests', { data });
+  },
+  petShelters: (data: API.Public.Forms.PetShelters.Request) => {
+    return postRequest('forms/PetShelters', { data });
   }
 };

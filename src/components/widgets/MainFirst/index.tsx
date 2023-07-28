@@ -16,11 +16,9 @@ const MainFirst = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
+  const showGiveAwayPetForm = () => dispatch(showModalAction(ModalWindows.GIVE_AWAY_PET_FORM));
   const showTakePetHomeForm = () => dispatch(showModalAction(ModalWindows.TAKE_PET_HOME_FORM));
 
-  const reset = () => {
-    console.log('reset');
-  };
   return (
     <div className={s.mainfirst}>
       <div className={s.mainfirst__first}>
@@ -28,7 +26,7 @@ const MainFirst = () => {
           <p className={s.mainfirst__first__container__title}>{t('mainfirst.first.title')}</p>
           <p className={s.mainfirst__first__container__content}>{t('mainfirst.first.content')}</p>
           <div className={s.mainfirst__first__container__btn}>
-            <BaseButton variant="filled" color="primary" click={showTakePetHomeForm}>
+            <BaseButton variant="filled" color="primary" click={showGiveAwayPetForm}>
               {t('mainfirst.first.btn')}
             </BaseButton>
           </div>
@@ -50,7 +48,7 @@ const MainFirst = () => {
 
           <p className={s.mainfirst__urgenthelp__container__content}>{t('mainfirst.urgenthelp.content')}</p>
         </div>
-        <BaseButton variant="filled" color="accent" endIcon={plus} click={reset}>
+        <BaseButton variant="filled" color="accent" endIcon={plus} click={showTakePetHomeForm}>
           {t('mainfirst.urgenthelp.btn')}
         </BaseButton>
         <div className={s.mainfirst__urgenthelp__box}>

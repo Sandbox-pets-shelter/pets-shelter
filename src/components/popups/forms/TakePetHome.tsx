@@ -146,6 +146,7 @@ const TakePetHome = () => {
       <div className={s.descriptionTwo}>
         <Textarea
           onChangeTextarea={setQuestionnaires}
+          onFileUpload={setQuestionnaires}
           placeholder="Введите текст..."
           label="Есть ли у вас опыт содержания животных? Если да, то каких?"
           name="description"
@@ -169,6 +170,7 @@ const TakePetHome = () => {
       <div className={s.description}>
         <Textarea
           onChangeTextarea={setQuestionnaires}
+          onFileUpload={setQuestionnaires}
           placeholder="Введите текст..."
           label="Дополнительная информация"
           name="description"

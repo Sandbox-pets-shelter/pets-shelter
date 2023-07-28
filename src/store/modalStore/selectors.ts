@@ -10,4 +10,4 @@ export const selectModalDidntFindPetForm = (state: AppStateType) => state.modals
 export const selectModalFindPetForm = (state: AppStateType) => state.modalsReducer.findPetForm;
 export const selectModalGiveAwayPetForm = (state: AppStateType) => state.modalsReducer.giveAwayPetForm;
 export const selectModalKeepPetForm = (state: AppStateType) => state.modalsReducer.keepPetForm;
-export const selectModalTakePetHomeFormForm = (state: AppStateType) => state.modalsReducer.takePetHomeForm;
+export const selectModalTakePetHomeForm = (state: AppStateType) => state.modalsReducer.takePetHomeForm;

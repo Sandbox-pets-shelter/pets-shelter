@@ -1,19 +1,68 @@
+import { forms } from 'api/public';
+import { API } from 'api/types';
 import home from 'assets/images/forms/home.svg';
 import { BaseButton, BaseRadio } from 'components';
 import BaseCheckbox from 'components/ui/BaseCheckbox';
+import CloseIcon from 'components/ui/CloseIcon';
 import InputField from 'components/ui/Input';
+import { useState } from 'react';
+import { ColorRing } from 'react-loader-spinner';
+import { useDispatch } from 'react-redux';
+import { hideModalAction, showModalAction } from 'store/modalStore/actions';
+import { ModalWindows } from 'store/modalStore/reducers';
 
 import s from './styles.module.scss';
 
 const GiveAwayPet = () => {
-  const onInputChange = (str: string) => console.log(str);
-  const handleChange = () => console.log('change');
-  const reset = () => {
-    console.log('reset');
+  const dispatch = useDispatch();
+
+  const [isPending, setIsPending] = useState(false);
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [amountCats, setCatsAmount] = useState('');
+  const [amountDogs, setDogsAmount] = useState('');
+
+  const [petDomestic, setpetDomestic] = useState('');
+  const [readyToBringPet, setReadyToBringPet] = useState('');
+
+  const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
+  const [personalDataAgreement, setPersonalDataAgreement] = useState(false);
+
+  const closeForm = () => dispatch(hideModalAction(ModalWindows.GIVE_AWAY_PET_FORM));
+  const openSuccessSendFormModal = () => dispatch(showModalAction(ModalWindows.SUCCESS_SEND_FORM));
+
+  const sendForm = async () => {
+    const data: API.Public.Forms.PetShelters.Request = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber: '+71111111111',
+      amountCats: Number(amountCats),
+      amountDogs: Number(amountDogs),
+      petDomestic: petDomestic === 'Да',
+      readyToBringPet: readyToBringPet === 'Да',
+      subscribeToNewsletter,
+      personalDataAgreement
+    };
+
+    try {
+      setIsPending(true);
+      await forms.petShelters(data);
+      closeForm();
+      openSuccessSendFormModal();
+    } catch (e) {
+      throw e;
+    } finally {
+      setIsPending(false);
+    }
   };
 
   return (
     <div className={s.formСontainer}>
+      <CloseIcon variant={'onlyIcon'} onClick={closeForm} />
       <div className={s.formСontainer__titleWithPicture}>
         <h1>Отдать питомца</h1>
         <img src={home} alt="home" />
@@ -27,9 +76,17 @@ const GiveAwayPet = () => {
       </p>
       <div className={s.contactsWithFio}>
         <div className={s.contactsWithFio__contacts}>
-          <InputField onChange={onInputChange} placeholder="Введите имя..." label="Имя *" type="text" name="Имя" />
           <InputField
-            onChange={onInputChange}
+            onChange={setFirstName}
+            value={firstName}
+            placeholder="Введите имя..."
+            label="Имя *"
+            type="text"
+            name="Имя"
+          />
+          <InputField
+            onChange={setPhoneNumber}
+            value={phoneNumber}
             placeholder="(___) - ___ - ____"
             label="Телефон *"
             type="tel"
@@ -38,14 +95,16 @@ const GiveAwayPet = () => {
         </div>
         <div className={s.contactsWithFio__contacts}>
           <InputField
-            onChange={onInputChange}
+            onChange={setLastName}
+            value={lastName}
             placeholder="Введите фамилию..."
             label="Фамилия *"
             type="text"
             name="Фамилия"
           />
           <InputField
-            onChange={onInputChange}
+            onChange={setEmail}
+            value={email}
             placeholder="Введите почту..."
             label="Электронная почта *"
             type="text"
@@ -55,14 +114,16 @@ const GiveAwayPet = () => {
       </div>
       <div className={s.number}>
         <InputField
-          onChange={onInputChange}
+          onChange={setCatsAmount}
+          value={amountCats}
           placeholder="100"
           label="Сколько котиков вы хотите отдать?*"
           type="number"
           name="Имя"
         />
         <InputField
-          onChange={onInputChange}
+          onChange={setDogsAmount}
+          value={amountDogs}
           placeholder="100"
           label="Сколько собачек вы хотите отдать?*"
           type="number"
@@ -72,30 +133,32 @@ const GiveAwayPet = () => {
       <div className={s.questions}>
         <p>Животное, которое вы хотите отдать, является домашним?*</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
-          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
+          <BaseRadio change={setpetDomestic} name="radio" topping={petDomestic} value="Да" />
+          <BaseRadio change={setpetDomestic} name="radio" topping={petDomestic} value="Нет" />
         </div>
       </div>
       <div className={s.questions}>
         <p>Готовы ли вы самостоятельно привезти питомца в приют?*</p>
         <div className={s.questions__button}>
-          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Да" />
-          <BaseRadio change={handleChange} name="radio" topping="Нет" value="Нет" />
+          <BaseRadio change={setReadyToBringPet} name="radio" topping={readyToBringPet} value="Да" />
+          <BaseRadio change={setReadyToBringPet} name="radio" topping={readyToBringPet} value="Нет" />
         </div>
       </div>
       <div className={s.choose}>
-        <BaseCheckbox content="Подписаться на рассылку" name="имя" isChecked={true} value="имя" change={handleChange} />
+        <BaseCheckbox
+          content="Подписаться на рассылку"
+          isChecked={subscribeToNewsletter}
+          onChange={setSubscribeToNewsletter}
+        />
         <BaseCheckbox
           content="Нажимая на кнопку я подтверждаю, что ознакомлен с условиями передачи персональных данных *"
-          name="имя"
-          isChecked={false}
-          value="имя"
-          change={handleChange}
+          isChecked={personalDataAgreement}
+          onChange={setPersonalDataAgreement}
         />
       </div>
       <div className={s.button}>
-        <BaseButton variant="filled" color="primary" click={reset}>
-          Отправить анкету
+        <BaseButton variant="filled" color="primary" click={sendForm}>
+          {isPending ? <ColorRing height="24px" width="148px" /> : 'Отправить анкету'}
         </BaseButton>
       </div>
     </div>

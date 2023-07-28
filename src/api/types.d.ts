@@ -94,20 +94,14 @@ export namespace API {
           age: number;
           email: string;
           phoneNumber: string;
-          city: {
-            id: number;
-            name: string;
-          };
+          city: string;
           category: string;
           gender: string;
           woolColor: string;
           woolLength: string;
           healthStatus: string;
           allergy: boolean;
-          questionnaires: {
-            answer: string;
-            type: string;
-          };
+          questionnaires: string;
           subscribeToNewsletter: boolean;
           personalDataAgreement: boolean;
         }
