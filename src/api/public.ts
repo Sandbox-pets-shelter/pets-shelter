@@ -10,7 +10,7 @@ export const forms = {
     return postRequest('forms/homelessAnimals', { data });
   },
   petOwnerProfiles: (data: API.Public.Forms.PetOwnerProfiles.Request) => {
-    return postRequest('forms/petOwnerProfilesForm', { data });
+    return postRequest('forms/petOwnerProfiles', { data });
   },
   collaborationProposals: (data: API.Public.Forms.CollaborationProposals.Request) => {
     return postRequest('forms/collaborationProposals', { data });

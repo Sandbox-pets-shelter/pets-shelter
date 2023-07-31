@@ -6,6 +6,7 @@ import BaseCheckbox from 'components/ui/BaseCheckbox';
 import CloseIcon from 'components/ui/CloseIcon';
 import InputField from 'components/ui/Input';
 import Textarea from 'components/ui/Textarea';
+import { PetOwnerProfileQuestionsTypes } from 'data/constants';
 import { useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { useDispatch } from 'react-redux';
@@ -32,7 +33,8 @@ const TakePetHome = () => {
 
   const [allergy, setAllergy] = useState('');
   const [children, setChildren] = useState('');
-  const [questionnaires, setQuestionnaires] = useState('');
+  const [questionnairesOne, setQuestionnairesOne] = useState('');
+  const [questionnairesTwo, setQuestionnairesTwo] = useState('');
 
   const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(false);
   const [personalDataAgreement, setPersonalDataAgreement] = useState(false);
@@ -51,7 +53,10 @@ const TakePetHome = () => {
       petDomestic: petDomestic === 'Да',
       allergy: allergy === 'Да',
       children: children === 'Да',
-      questionnaires,
+      questionnaires: [
+        { type: PetOwnerProfileQuestionsTypes.EXPERIENCE, answer: questionnairesOne },
+        { type: PetOwnerProfileQuestionsTypes.ADD_INFO, answer: questionnairesTwo }
+      ],
       subscribeToNewsletter,
       personalDataAgreement
     };
@@ -145,8 +150,8 @@ const TakePetHome = () => {
       </div>
       <div className={s.descriptionTwo}>
         <Textarea
-          onChangeTextarea={setQuestionnaires}
-          onFileUpload={setQuestionnaires}
+          onChangeTextarea={setQuestionnairesOne}
+          //onFileUpload={setQuestionnaires}
           placeholder="Введите текст..."
           label="Есть ли у вас опыт содержания животных? Если да, то каких?"
           name="description"
@@ -168,8 +173,8 @@ const TakePetHome = () => {
       </div>
       <div className={s.description}>
         <Textarea
-          onChangeTextarea={setQuestionnaires}
-          onFileUpload={setQuestionnaires}
+          onChangeTextarea={setQuestionnairesTwo}
+          // onFileUpload={setQuestionnaires}
           placeholder="Введите текст..."
           label="Дополнительная информация"
           name="description"

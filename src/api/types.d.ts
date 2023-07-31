@@ -1,3 +1,5 @@
+import { PetOwnerProfileQuestionsTypes } from 'constants';
+
 export namespace API {
   export namespace Public {
     export namespace Forms {
@@ -47,7 +49,10 @@ export namespace API {
           category: string;
           allergy: boolean;
           children: boolean;
-          questionnaires: string;
+          questionnaires: {
+            answer: string;
+            type: PetOwnerProfileQuestionsTypes;
+          }[];
           subscribeToNewsletter: boolean;
           personalDataAgreement: boolean;
         }

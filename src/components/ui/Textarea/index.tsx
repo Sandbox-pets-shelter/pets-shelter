@@ -55,7 +55,7 @@ const Textarea: FC<TextareaProps> = (props) => {
   };
 
   const changeTextareaHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    onChangeTextarea(e);
+    onChangeTextarea(e.target.value);
   };
 
   const handleWindowClick = (e: Event) => {
