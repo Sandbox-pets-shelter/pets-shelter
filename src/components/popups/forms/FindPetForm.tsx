@@ -97,7 +97,6 @@ const FindPetForm = () => {
           placeholder="Введите текст..."
           label="Опишите ситуацию"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.choose}>

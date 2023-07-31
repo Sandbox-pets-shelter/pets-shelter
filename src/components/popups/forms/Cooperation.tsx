@@ -93,7 +93,6 @@ const Cooperation = () => {
           placeholder="Введите текст..."
           label="Ваши предложения по сотрудничеству:"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.choose}>

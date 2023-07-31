@@ -233,7 +233,6 @@ const DidntFindPetSite = () => {
           placeholder="Введите текст..."
           label="Пожалуйста, опишите место где выживете (квартира, дом, аредуемая жилпрощадь и т.д.?"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.description}>
@@ -243,7 +242,6 @@ const DidntFindPetSite = () => {
           placeholder="Введите текст..."
           label="Есть ли у вас опыт содержания животных Если да, то каких?"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.description}>
@@ -253,7 +251,6 @@ const DidntFindPetSite = () => {
           placeholder="Введите текст..."
           label="Есть ли у вас другие животные? Если да, то какие? Как относятся к другим животным?"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.description}>
@@ -263,7 +260,6 @@ const DidntFindPetSite = () => {
           placeholder="Введите текст..."
           label="Дополнительная информация"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.choose}>

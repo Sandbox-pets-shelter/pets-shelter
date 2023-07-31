@@ -150,7 +150,6 @@ const TakePetHome = () => {
           placeholder="Введите текст..."
           label="Есть ли у вас опыт содержания животных? Если да, то каких?"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.questions}>
@@ -174,7 +173,6 @@ const TakePetHome = () => {
           placeholder="Введите текст..."
           label="Дополнительная информация"
           name="description"
-          smilePickerEnable
         />
       </div>
       <div className={s.choose}>
