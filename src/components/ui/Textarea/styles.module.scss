@@ -2,9 +2,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: fit-content;
   position: relative;
-  gap: 1rem;
+  label {
+    margin-bottom: 4px;
+  }
 
   .emojiPickerWrapper {
     position: relative;
@@ -22,8 +23,8 @@
   border: 1px solid $primary-dark;
   padding: 1rem;
   gap: 10px;
-  width: 30rem;
-  height: 16rem;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
 
   textarea {

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface ILanguageDropdown {
   value: string;
   label: string;
@@ -5,11 +7,12 @@ export interface ILanguageDropdown {
 }
 
 export interface ICheckbox {
-  name: string;
+  name?: string;
   content: string;
   isChecked: boolean;
   change?: (name: string, value: string) => void;
-  value: string;
+  value?: string;
+  onChange?: (arg: any) => void;
 }
 
 export interface IRadio {

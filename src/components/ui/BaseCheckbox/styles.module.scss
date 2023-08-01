@@ -39,6 +39,7 @@
     border-radius: 8px;
     border: 2px solid $primary;
     transition: all ease 0.3s;
+    flex-shrink: 0;
 
     &:hover .checkbox__icon__hover {
       display: block;

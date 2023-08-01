@@ -1,11 +1,17 @@
 import ArrowButton from 'components/ui/ArrowButton';
 import { itemsNeedHelp } from 'mocks/needhelp';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { showModalAction } from 'store/modalStore/actions';
+import { ModalWindows } from 'store/modalStore/reducers';
 
 import s from './styles.module.scss';
 
 const NeedHelp = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const showKeepPetForm = () => dispatch(showModalAction(ModalWindows.KEEP_PET_FORM));
 
   function moveSlider(ev: React.MouseEvent<HTMLDivElement>) {}
 
@@ -27,7 +33,7 @@ const NeedHelp = () => {
                 <p className={s.needhelp__container__img__subtitle}>{item.subtitle}</p>
                 <p className={s.needhelp__container__img__content}>{item.content}</p>
                 <div className={s.needhelp__container__img__title__btm}>
-                  <ArrowButton variant="filled" color="primary">
+                  <ArrowButton variant="filled" color="primary" click={showKeepPetForm}>
                     {item.link}
                   </ArrowButton>
                 </div>

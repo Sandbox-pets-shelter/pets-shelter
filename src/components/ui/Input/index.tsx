@@ -14,6 +14,7 @@ type Props = {
   value?: string;
   disabled?: boolean;
   required?: boolean;
+  width?: string;
 };
 
 const InputField = ({ onChange, type, name, label, placeholder, value = '', disabled, required }: Props) => {
@@ -59,6 +60,7 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
 
     setTelValue(formattedInputValue);
+    onChange(formattedInputValue);
   };
 
   if (type !== 'search' && type !== 'number' && type !== 'tel') {

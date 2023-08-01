@@ -7,7 +7,7 @@ const BaseRadio = (props: IRadio) => {
 
   const currentStyle = `${s.checkbox} ${topping === value && s.checkbox_checked}`;
 
-  const toggleChecked = (value: string) => {
+  const toggleChecked = () => {
     change(value);
   };
 
@@ -17,13 +17,7 @@ const BaseRadio = (props: IRadio) => {
         <div className={s.checkbox__icon}></div>
       </div>
       {value}
-      <input
-        type="radio"
-        name={name}
-        value={value}
-        className={s.checkbox__input}
-        onChange={() => toggleChecked(value)}
-      />
+      <input type="radio" name={name} value={value} className={s.checkbox__input} onChange={toggleChecked} />
     </label>
   );
 };
