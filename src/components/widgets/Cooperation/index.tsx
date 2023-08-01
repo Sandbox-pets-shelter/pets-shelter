@@ -14,9 +14,6 @@ const Cooperation = () => {
 
   const showCooperationForm = () => dispatch(showModalAction(ModalWindows.COOPERATION_FORM));
 
-  const reset = () => {
-    console.log('reset');
-  };
   return (
     <div className={s.cooperation}>
       <img className={s.cooperation__img} src={cooperation} alt="Сотрудничество" />
