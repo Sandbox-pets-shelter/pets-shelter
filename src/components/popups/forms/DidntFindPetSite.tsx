@@ -58,7 +58,7 @@ const DidntFindPetSite = () => {
       lastName,
       age: Number(age),
       email,
-      phoneNumber: '+71111111111',
+      phoneNumber,
       city: String(city),
       category: 'cat',
       gender,

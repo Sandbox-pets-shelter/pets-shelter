@@ -39,13 +39,15 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
   };
 
   const handleSetSelectedCountry = (code: string, dial_code: string) => {
-    onChange(dial_code + telValue)
+    const newValue = value.replace(countrycodes.filter(country => country.code === selectedOption)[0].dial_code, '')
+    onChange(dial_code + newValue)
     setSelectedOption(code)
   }
 
   const handlePhoneInput = (event: ChangeEvent<HTMLInputElement>) => {
     let input = event.target.value;
     const inputNumbersValue = getNumbersInputValue(input);
+    onChange(countrycodes.filter(country => country.code === selectedOption)[0].dial_code + inputNumbersValue.substring(0, 10));
     let formattedInputValue = '';
 
     if (!inputNumbersValue) {
@@ -65,7 +67,6 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
 
     setTelValue(formattedInputValue);
-    onChange(countrycodes.filter(country => country.code === selectedOption)[0].dial_code + formattedInputValue);
   };
 
   if (type !== 'search' && type !== 'number' && type !== 'tel') {
