@@ -38,16 +38,23 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
   };
 
+  const countryMatch = countrycodes.find(country => country.code === selectedOption);
+
   const handleSetSelectedCountry = (code: string, dial_code: string) => {
-    const newValue = value.replace(countrycodes.filter(country => country.code === selectedOption)[0].dial_code, '')
-    onChange(dial_code + newValue)
+    if(countryMatch) {
+      const newValue = value.replace(countryMatch.dial_code, '')
+      onChange(dial_code + newValue)
+    }
     setSelectedOption(code)
   }
 
   const handlePhoneInput = (event: ChangeEvent<HTMLInputElement>) => {
     let input = event.target.value;
     const inputNumbersValue = getNumbersInputValue(input);
-    onChange(countrycodes.filter(country => country.code === selectedOption)[0].dial_code + inputNumbersValue.substring(0, 10));
+    if(countryMatch) {
+      onChange(countryMatch.dial_code + inputNumbersValue.substring(0, 10));
+    }
+
     let formattedInputValue = '';
 
     if (!inputNumbersValue) {
