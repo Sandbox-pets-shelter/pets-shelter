@@ -43,7 +43,7 @@ const KeepPet = () => {
       lastName,
       age: Number(age),
       email,
-      phoneNumber: '+71111111111',
+      phoneNumber,
       amountCats: Number(amountCats),
       amountDogs: Number(amountDogs),
       petInHome: petInHome === 'Да',

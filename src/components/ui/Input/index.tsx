@@ -38,6 +38,11 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
   };
 
+  const handleSetSelectedCountry = (code: string, dial_code: string) => {
+    onChange(dial_code + telValue)
+    setSelectedOption(code)
+  }
+
   const handlePhoneInput = (event: ChangeEvent<HTMLInputElement>) => {
     let input = event.target.value;
     const inputNumbersValue = getNumbersInputValue(input);
@@ -60,7 +65,7 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
 
     setTelValue(formattedInputValue);
-    onChange(formattedInputValue);
+    onChange(countrycodes.filter(country => country.code === selectedOption)[0].dial_code + formattedInputValue);
   };
 
   if (type !== 'search' && type !== 'number' && type !== 'tel') {
@@ -132,7 +137,7 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
                   <div
                     className={`${selectedOption === country.code ? s.selected_item : s.menu_item}`}
                     key={country.name}
-                    onClick={(event) => setSelectedOption(country.code)}
+                    onClick={() => handleSetSelectedCountry(country.code, country.dial_code)}
                   >
                     {country.name} {country.dial_code}
                   </div>
@@ -141,7 +146,6 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
           )}
           <div className={`${s.divider} ${disabled && s.divider_disabled}`}></div>
           <input
-            // onChange={event => onChange(event.target.value)}
             className={`${!disabled && s.inputnum}`}
             onChange={handlePhoneInput}
             onKeyDown={handlePhoneKeyDown}

@@ -48,7 +48,7 @@ const TakePetHome = () => {
       lastName,
       age: Number(age),
       email,
-      phoneNumber: '+71111111111',
+      phoneNumber,
       category: 'cats',
       petDomestic: petDomestic === 'Да',
       allergy: allergy === 'Да',
