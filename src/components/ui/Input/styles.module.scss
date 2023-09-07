@@ -93,11 +93,18 @@ input {
   height: 200px;
   overflow-y: scroll !important;
 }
+.menu__countries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
 .menu_item:hover {
-  background-color: #d5d5d5;
+  color: #6549fb;
+  cursor: pointer;
 }
 .selected_item {
-  border: 1px solid #6549fb;
+  color: #6549fb;
 }
 .tel_title {
   display: flex;

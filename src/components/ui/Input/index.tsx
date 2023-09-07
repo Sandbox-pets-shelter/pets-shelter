@@ -38,20 +38,20 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
     }
   };
 
-  const countryMatch = countrycodes.find(country => country.code === selectedOption);
+  const countryMatch = countrycodes.find((country) => country.code === selectedOption);
 
   const handleSetSelectedCountry = (code: string, dial_code: string) => {
-    if(countryMatch) {
-      const newValue = value.replace(countryMatch.dial_code, '')
-      onChange(dial_code + newValue)
+    if (countryMatch) {
+      const newValue = value.replace(countryMatch.dial_code, '');
+      onChange(dial_code + newValue);
     }
-    setSelectedOption(code)
-  }
+    setSelectedOption(code);
+  };
 
   const handlePhoneInput = (event: ChangeEvent<HTMLInputElement>) => {
     let input = event.target.value;
     const inputNumbersValue = getNumbersInputValue(input);
-    if(countryMatch) {
+    if (countryMatch) {
       onChange(countryMatch.dial_code + inputNumbersValue.substring(0, 10));
     }
 
@@ -132,24 +132,28 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
           </div>
           {menuOpen && (
             <div className={s.menu}>
-              <input
-                className={s.searchCountry}
-                value={searchCountry}
-                placeholder="Поиск по странам"
-                type="text"
-                onChange={(e) => setSearchCountry(e.target.value)}
-              />
-              {countrycodes
-                .filter((cntry) => cntry.name.toLocaleLowerCase().startsWith(searchCountry.toLowerCase()))
-                .map((country) => (
-                  <div
-                    className={`${selectedOption === country.code ? s.selected_item : s.menu_item}`}
-                    key={country.name}
-                    onClick={() => handleSetSelectedCountry(country.code, country.dial_code)}
-                  >
-                    {country.name} {country.dial_code}
-                  </div>
-                ))}
+              <div className={`${s.wrapper} ${s.withIcon} ${value !== '' && s.active}`}>
+                <input
+                  onChange={(event) => setSearchCountry(event.target.value)}
+                  type="text"
+                  placeholder="Поиск по странам"
+                  value={searchCountry}
+                />
+                <SearchIcon className={s.icon} active={searchCountry !== '' && true} />
+              </div>
+              <div className={s.menu__countries}>
+                {countrycodes
+                  .filter((cntry) => cntry.name.toLocaleLowerCase().startsWith(searchCountry.toLowerCase()))
+                  .map((country) => (
+                    <div
+                      className={`${selectedOption === country.code ? s.selected_item : s.menu_item}`}
+                      key={country.name}
+                      onClick={() => handleSetSelectedCountry(country.code, country.dial_code)}
+                    >
+                      {country.name} {country.dial_code}
+                    </div>
+                  ))}
+              </div>
             </div>
           )}
           <div className={`${s.divider} ${disabled && s.divider_disabled}`}></div>
