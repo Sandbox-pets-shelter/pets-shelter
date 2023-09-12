@@ -3,10 +3,10 @@
 .card__block {
   position: relative;
 }
+
 .card {
   cursor: pointer;
-  width: 312px;
-  height: 491px;
+  max-height: 491px;
   position: relative;
   border: 1px solid rgba(153, 153, 153, 0.2);
   border-radius: 16px;
@@ -16,9 +16,8 @@
     grid-template-areas:
       'a b'
       'a b';
-    padding-left: 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    justify-content: space-between;
+    padding: 16px;
   }
   &__title {
     grid-area: a;
@@ -31,7 +30,7 @@
     grid-area: a;
     margin-top: 35px;
     color: #606060;
-    width: 211px;
+    width: 100%;
     font-weight: 500;
     font-size: 16px;
   }
@@ -41,27 +40,25 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
+    justify-content: center;
+    gap: 25px;
   }
 }
 
 .paginate {
   margin-top: 46px;
   display: grid;
-  grid-template-columns: 1fr max-content;
-  &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 34px;
-  }
+  grid-template-columns: repeat(3, 1fr);
   &__numbers {
     display: grid;
+    grid-column: 3/4;
+    grid-row: 1/1;
     grid-auto-flow: column;
     justify-content: flex-end;
     align-items: center;
   }
 }
+
 .pageDiv {
   cursor: pointer;
   width: 32px;
@@ -70,6 +67,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .points {
   width: 32px;
   height: 32px;
@@ -77,15 +75,18 @@
   align-items: center;
   justify-content: center;
 }
+
 .navigationActive {
   cursor: auto;
   border: 2px solid #a392fd;
   border-radius: 8px;
 }
+
 .floatLeft {
   order: -2;
   margin-right: 34px;
 }
+
 .floatRight {
   order: -1;
   margin-right: 116px;
@@ -93,4 +94,63 @@
 
 .icon__share {
   z-index: 200;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 312px;
+  }
+  .paginate {
+    display: flex;
+    gap: 34px;
+    justify-content: flex-end;
+    &__numbers {
+      margin-left: 15%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .card {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .paginate {
+    &__numbers {
+      grid-column: 2/3;
+      grid-row: 1/1;
+      justify-content: center;
+    }
+    &__button_left {
+      grid-column: 1/2;
+      grid-row: 1/1;
+    }
+    &__button_right {
+      grid-column: 3/4;
+      grid-row: 1/1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-height: 304px;
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    &__like {
+      z-index: 5;
+      position: absolute;
+      top: 60px;
+      right: 6px;
+    }
+    &__title {
+      font-size: 16px;
+    }
+    &__descr {
+      font-size: 12px;
+    }
+  }
 }

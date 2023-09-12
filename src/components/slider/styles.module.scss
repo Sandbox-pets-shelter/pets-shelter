@@ -12,3 +12,9 @@
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
+
+@media (max-width: 767px) {
+  .card__img {
+    height: 210px;
+  }
+}

@@ -5,3 +5,15 @@
     width: 100%;
   }
 }
+
+@media (max-width: 767px) {
+  .main {
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+  }
+}
