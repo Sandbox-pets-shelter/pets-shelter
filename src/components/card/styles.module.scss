@@ -6,7 +6,8 @@
 
 .card {
   cursor: pointer;
-  max-height: 491px;
+  height: 495px;
+  max-width: 312px;
   position: relative;
   border: 1px solid rgba(153, 153, 153, 0.2);
   border-radius: 16px;
@@ -42,6 +43,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     gap: 25px;
+    justify-items: center;
   }
 }
 
@@ -49,6 +51,7 @@
   margin-top: 46px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
   &__numbers {
     display: grid;
     grid-column: 3/4;
@@ -96,20 +99,6 @@
   z-index: 200;
 }
 
-@media (min-width: 1024px) {
-  .card {
-    max-width: 312px;
-  }
-  .paginate {
-    display: flex;
-    gap: 34px;
-    justify-content: flex-end;
-    &__numbers {
-      margin-left: 15%;
-    }
-  }
-}
-
 @media (max-width: 1023px) {
   .card {
     &__content {
@@ -135,7 +124,8 @@
 
 @media (max-width: 767px) {
   .card {
-    max-height: 304px;
+    height: 304px;
+    max-width: 160px;
     &__content {
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
