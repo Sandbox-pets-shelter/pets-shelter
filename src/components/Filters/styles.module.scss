@@ -15,18 +15,18 @@
     padding-top: 16px;
     padding-bottom: 24px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: end;
   }
   &__wrapper_title {
-    margin-right: 5%;
+    justify-self: center;
     font-family: Nunito;
     font-size: 24px;
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
   &__btn {
     position: relative;
-    grid-column: 2/3;
+    grid-column: 3/4;
   }
   &__btn_reset {
     position: fixed;
@@ -71,9 +71,6 @@
 
 @media (min-width: 768px) {
   .filters {
-    &__wrapper_title {
-      margin-right: 15%;
-    }
     &__input {
       max-width: 248px;
     }

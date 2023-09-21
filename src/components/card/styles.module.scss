@@ -1,13 +1,14 @@
 @import 'assets/scss/variables.scss';
+@import 'assets/scss/mixins.scss';
 
 .card__block {
   position: relative;
 }
 
 .card {
+  @include responsive-property(width, 160, 312, 360, 768);
+  @include responsive-property(height, 304, 495, 360, 768);
   cursor: pointer;
-  height: 495px;
-  max-width: 312px;
   position: relative;
   border: 1px solid rgba(153, 153, 153, 0.2);
   border-radius: 16px;
@@ -22,10 +23,10 @@
   }
   &__title {
     grid-area: a;
-    color: #333333;
+    color: $text;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 16px;
   }
   &__descr {
     grid-area: a;
@@ -33,17 +34,20 @@
     color: #606060;
     width: 100%;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
   }
   &__like {
-    grid-area: b;
+    z-index: 5;
+    position: absolute;
+    top: 60px;
+    right: 6px;
   }
   &__content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 25px;
     justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
 
@@ -81,7 +85,7 @@
 
 .navigationActive {
   cursor: auto;
-  border: 2px solid #a392fd;
+  border: 2px solid $primary;
   border-radius: 8px;
 }
 
@@ -99,10 +103,25 @@
   z-index: 200;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 768px) {
   .card {
+    height: 495px;
+    width: 40.63vw;
     &__content {
       grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    &__title {
+      grid-area: a;
+      font-size: 24px;
+    }
+    &__descr {
+      font-size: 16px;
+      grid-area: a;
+    }
+    &__like {
+      grid-area: b;
+      position: static;
     }
   }
   .paginate {
@@ -122,25 +141,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
   .card {
-    height: 304px;
-    max-width: 160px;
+    height: 48.34vw;
+    max-height: 495px;
+    width: 20vw;
+    max-width: 312px;
     &__content {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
-    &__like {
-      z-index: 5;
-      position: absolute;
-      top: 60px;
-      right: 6px;
-    }
-    &__title {
-      font-size: 16px;
-    }
-    &__descr {
-      font-size: 12px;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

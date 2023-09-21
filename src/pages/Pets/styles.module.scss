@@ -1,6 +1,7 @@
 .main {
   display: flex;
   gap: 24px;
+  flex-direction: column;
   &__content {
     width: 100%;
   }
@@ -12,8 +13,8 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
   .main {
-    flex-direction: column;
+    flex-direction: row;
   }
 }

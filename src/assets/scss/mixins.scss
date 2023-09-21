@@ -1,0 +1,12 @@
+/*
+ mixin responsive-property will calculate the property based on the viewport width,
+ ensuring a smooth transition between e.g 12px and 20px as the viewport width changes from 320px to 1200px. 
+$property: This is the CSS property you want to apply the responsive calculation.
+$from: The min value for your property.
+$to: The max value for your property.
+$min-view: The min viewport width where the transition starts.
+$max-view: The max viewport width where the transition ends.
+*/
+@mixin responsive-property($property, $from, $to, $min-view, $max-view) {
+  #{$property}: calc(#{$from}px + #{$to - $from} * (100vw - #{$min-view}px) / #{$max-view - $min-view});
+}
