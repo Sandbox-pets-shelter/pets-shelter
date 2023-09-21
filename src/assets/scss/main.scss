@@ -15,7 +15,8 @@ html {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: $activeColor;
+    background: $primary;
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {

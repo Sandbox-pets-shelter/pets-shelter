@@ -5,6 +5,7 @@ import InputField from 'components/ui/Input';
 import useBreakpoints from 'hooks/useBreakpoints';
 import { filtersData } from 'mocks/filter';
 import { useState, useEffect } from 'react';
+import { RemoveScroll } from 'react-remove-scroll';
 
 import s from './styles.module.scss';
 
@@ -49,9 +50,9 @@ const Filters = () => {
   }, [lgBreakpoint]);
 
   return (
-    <div className={s.filters}>
+    <RemoveScroll enabled={isOpen && !lgBreakpoint} className={s.filters}>
       {!lgBreakpoint && (
-        <div className={s.filters__wrapper}>
+        <div className={isOpen ? s.filters__wrapper_open : s.filters__wrapper}>
           <h3 className={s.filters__wrapper_title}>Фильтр</h3>
           <button className={s.filters__btn} onClick={toggleFilters}>
             <img
@@ -101,7 +102,7 @@ const Filters = () => {
           </div>
         </form>
       )}
-    </div>
+    </RemoveScroll>
   );
 };
 export default Filters;
