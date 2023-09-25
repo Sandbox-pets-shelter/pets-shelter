@@ -4,12 +4,13 @@
   max-width: 1320px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 16px;
-  @media (max-width: 1024px) {
-    padding: 0 40px;
-  }
-  @media (max-width: 767px) {
-    padding: 0 16px;
+  overflow-x: hidden;
+  // padding: 0 16px;
+  // @media (max-width: 1024px) {
+  //   padding: 0 40px;
+  // }
+  @media (min-width: 480px) {
+    padding: 0 42px;
   }
 
   &__content {

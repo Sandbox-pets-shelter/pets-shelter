@@ -24,7 +24,7 @@ export const routeElements: RouteElement[] = [
   },
   {
     id: 3,
-    name: 'История спасения',
+    name: 'Счастливые истории',
     path: appRoutes.history,
     component: withLayout(History)
   },

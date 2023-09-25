@@ -3,19 +3,22 @@ import { BaseButton } from 'components';
 import ArrowButton from 'components/ui/ArrowButton';
 import Share from 'components/ui/Share';
 import { itemsHappyStories } from 'mocks/happystories';
-
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useNavigate } from 'react-router-dom';
 
 import s from './styles.module.scss';
 
 const HappyStories = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const reset = () => {
-    console.log('reset');
+    navigate('/history');
   };
 
   function moveSlider(ev: React.MouseEvent<HTMLDivElement>) {}
+
   return (
     <div className={s.happystories}>
       <h2 className={s.happystories__title}>{t('happystories.title')}</h2>
@@ -31,7 +34,7 @@ const HappyStories = () => {
               }}
             >
               <div className={s.happystories__container__img}>
-                {/* кода будет страница, то указать нужную ссылку */}
+                {/* когда будет страница, то указать нужную ссылку */}
                 <Share link={window.location.href} btn="icon" />
                 <img src={item.src} alt={item.alt} className={s.happystories__container__image} />
                 <div className={s.happystories__container__img__title}>
