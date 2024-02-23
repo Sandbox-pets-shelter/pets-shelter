@@ -1,7 +1,7 @@
 @import 'assets/scss/variables';
 
 .stories {
-  margin: 75px 0 72px 0;
+  margin: 1.5rem 0 1.44rem 0;
 
   &__main__container {
     display: flex;
@@ -10,62 +10,63 @@
 
   &__img__container {
     border: 1px solid $separator;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    backdrop-filter: blur(0.625rem);
+    border-radius: 1rem;
     background-color: $white;
-    height: 200px;
-    width: 200px;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 
   &__img {
     width: 100%;
     position: absolute;
-    margin-left: 30px;
-    margin-top: 33px;
+    margin-left: 1.875rem;
+    margin-top: 2.0625rem;
   }
 
   &__title__container {
     display: flex;
     flex-direction: column;
     color: $text;
-    padding-left: 67px;
-    padding-top: 37px;
+    padding-left: 4.1875rem;
+    padding-top: 2.3125rem;
+    margin-bottom: 2.5rem;
   }
 
   &__title {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 65px;
-    width: 950px;
+    font-size: 3rem;
+    line-height: 1.354;
+    width: 59.375rem;
   }
 
   &__content {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
     text-align: right;
-    margin-top: 8px;
+    margin-top: 0.625rem;
   }
 
   &__subcontainer {
-    width: 1320px;
-    height: 1014px;
+    width: 82.5rem;
+    height: 63.375rem;
     position: relative;
     flex-direction: column;
     border: 1px solid $separator;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    backdrop-filter: blur(0.625rem);
+    border-radius: 1rem;
     background-color: $white;
-    margin-bottom: 115px;
-    padding-bottom: 64px;
+    margin-bottom: 7.1875rem;
+    padding-bottom: 4rem;
 
     &__views {
-      margin: 58px 886px 24px 67px;
-      width: 500px;
+      margin: 3.625rem 57.875rem 1.5rem 4.1875rem;
+      width: 31.25rem;
       display: inline-block;
 
       &__date {
@@ -73,11 +74,11 @@
       }
       &__look {
         display: inline-block;
-        margin-right: 24px;
-        margin: 0 10px 0 10px;
+        margin-right: 1.5rem;
+        margin: 0 0.625rem 0 0.625rem;
       }
       &__look__img {
-        margin-right: 10px;
+        margin-right: 0.625rem;
       }
 
       &__share__img path {
@@ -86,12 +87,13 @@
       }
       &__share__img {
         position: relative;
-        top: 5px;
-        margin-left: 14px;
+        top: 0.3125rem;
+        margin-left: 0.875rem;
       }
       &__share {
         display: inline-block;
-        margin: 0 14px 0 14px;
+        position: absolute;
+        margin: 0 0.875rem 0 0.875rem;
       }
       &__share:hover {
         cursor: pointer;
@@ -108,20 +110,119 @@
       font-family: 'Nunito';
       font-style: normal;
       font-weight: 600;
-      font-size: 32px;
-      line-height: 44px;
-      width: 761px;
-      margin: 0 0 16px 64px;
+      font-size: 2rem;
+      line-height: 2.75rem;
+      width: 47.625rem;
+      margin: 0 0 1rem 4rem;
     }
 
     &__content {
-      width: 800px;
-      margin-left: 64px;
+      width: 50rem;
+      margin-left: 4rem;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 145%;
+      font-size: 1.125rem;
+      line-height: 1.45rem;
+    }
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  .navigation {
+    margin-left: 16px;
+  }
+  .stories {
+    width: 100%;
+    margin: 0;
+    &__main__container {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      padding-left: 1rem;
+    }
+    &__img__container {
+      position: absolute;
+      top: 2.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    &__img {
+      width: 100%;
+      width: 3rem;
+      height: 3rem;
+      bottom: -0.75rem;
+      left: -1.5rem; //исправить минусовые
+    }
+    &__title__container {
+      width: 100%;
+      display: block;
+      margin-left: 0.8rem;
+    }
+    &__title {
+      max-width: 100%;
+      font-size: 0.8rem;
+      width: 16.5rem;
+      font-weight: 600;
+      margin-left: -1rem;
+    }
+    &__content {
+      max-width: 100%;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+      margin-left: -1rem;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  .navigation {
+    margin: 16px 0 0 24px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .stories {
+    margin-top: 2.5rem;
+    &__main__container {
+      width: 100%;
+      max-width: 1024px;
+      position: relative;
+      padding-left: 1rem;
+    }
+    &__img__container {
+      position: relative;
+      max-width: 9.375rem;
+      height: 9.375rem;
+    }
+    &__img {
+      position: absolute;
+      width: 9.375rem;
+      height: 9.375rem;
+    }
+    &__title__container {
+      width: 100%;
+      max-width: 1024px;
+    }
+    &__title {
+      font-size: 1.5rem;
+      width: 100%;
+    }
+    &__content {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+  .stories {
+    &__img__container {
+      width: 10.5rem;
+      height: 10.5rem;
+    }
+    &__img {
+      width: 10.5rem;
+      height: 10.5rem;
     }
   }
 }

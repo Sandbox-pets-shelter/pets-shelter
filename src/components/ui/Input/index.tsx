@@ -41,10 +41,12 @@ const InputField = ({ onChange, type, name, label, placeholder, value = '', disa
   const countryMatch = countrycodes.find((country) => country.code === selectedOption);
 
   const handleSetSelectedCountry = (code: string, dial_code: string) => {
+
     if (countryMatch) {
       const newValue = value.replace(countryMatch.dial_code, '');
       onChange(dial_code + newValue);
     }
+
     setSelectedOption(code);
   };
 
