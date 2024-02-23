@@ -35,7 +35,7 @@ const FindPetForm = () => {
     const data: API.Public.Forms.HomelessAnimals.Request = {
       firstName,
       email,
-      phoneNumber: '+71111111111',
+      phoneNumber,
       description,
       subscribeToNewsletter,
       personalDataAgreement

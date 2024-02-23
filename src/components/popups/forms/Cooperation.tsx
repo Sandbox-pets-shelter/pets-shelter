@@ -35,7 +35,7 @@ const Cooperation = () => {
     const data: API.Public.Forms.CollaborationProposals.Request = {
       firstName,
       email,
-      phoneNumber: '+71111111111',
+      phoneNumber,
       description,
       subscribeToNewsletter,
       personalDataAgreement

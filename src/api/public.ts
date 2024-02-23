@@ -19,6 +19,6 @@ export const forms = {
     return postRequest('forms/petRequests', { data });
   },
   petShelters: (data: API.Public.Forms.PetShelters.Request) => {
-    return postRequest('forms/PetShelters', { data });
+    return postRequest('forms/petShelters', { data });
   }
 };
