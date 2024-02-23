@@ -1,7 +1,7 @@
 @import 'assets/scss/variables.scss';
 
 .stories {
-  margin: 75px 0 72px 0;
+  margin: 1.5rem 0 1.44rem 0;
 
   &__main__container {
     display: flex;
@@ -10,71 +10,76 @@
 
   &__img__container {
     border: 1px solid $separator;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    backdrop-filter: blur(0.625rem);
+    border-radius: 1rem;
     background-color: $white;
-    height: 200px;
-    width: 200px;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 
   &__img {
     width: 100%;
     position: absolute;
-    margin-left: 30px;
-    margin-top: 33px;
+    margin-left: 1.875rem;
+    margin-top: 2.0625rem;
   }
 
   &__title__container {
     display: flex;
     flex-direction: column;
     color: $text;
-    padding-left: 67px;
-    padding-top: 37px;
+    padding-left: 4.1875rem;
+    padding-top: 2.3125rem;
+    margin-bottom: 2.5rem;
   }
 
   &__title {
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 65px;
-    width: 950px;
+    font-size: 3rem;
+    line-height: 1.354;
+    width: 59.375rem;
   }
 
   &__content {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
     text-align: right;
-    margin-top: 8px;
+    margin-top: 0.625rem;
   }
 
   &__subcontainer {
-    width: 1320px;
-    height: 1014px;
+    width: 82.5rem;
+    height: 63.375rem;
     position: relative;
     flex-direction: column;
     border: 1px solid $separator;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    backdrop-filter: blur(0.625rem);
+    border-radius: 1rem;
     background-color: $white;
-    margin-bottom: 115px;
-    padding-bottom: 64px;
+    margin-bottom: 7.1875rem;
+    padding-bottom: 4rem;
 
     &__views {
-      margin: 40px 886px 24px 67px;
-      width: 500px;
-      display: flex;
-      align-items: center;
+      margin: 3.625rem 57.875rem 1.5rem 4.1875rem;
+      width: 31.25rem;
+      display: inline-block;
+      position: relative;
+
+      &__date {
+        display: inline-block;
+      }
       &__look {
-        display: flex;
-        margin-right: 24px;
-        margin: 0 10px 0 10px;
+        display: inline-block;
+        margin-right: 1.5rem;
+        margin: 0 0.625rem 0 0.625rem;
       }
       &__look__img {
-        margin-right: 10px;
+        margin-right: 0.625rem;
       }
 
       &__share__img path {
@@ -83,13 +88,12 @@
       }
       &__share__img {
         position: relative;
-        margin-left: 14px;
+        top: 0.3125rem;
+        margin-left: 0.875rem;
       }
       &__share {
-        display: flex;
-        font-weight: 500;
-        color: $text;
-        margin: 0 14px 0 14px;
+        display: inline-block;
+        margin: 0 0.875rem 0 0.875rem;
       }
       &__share:hover {
         cursor: pointer;
@@ -106,20 +110,88 @@
       font-family: 'Nunito';
       font-style: normal;
       font-weight: 600;
-      font-size: 32px;
-      line-height: 44px;
-      width: 761px;
-      margin: 0 0 16px 64px;
+      font-size: 2rem;
+      line-height: 2.75rem;
+      width: 47.625rem;
+      margin: 0 0 1rem 4rem;
     }
 
     &__content {
-      width: 800px;
-      margin-left: 64px;
+      width: 50rem;
+      margin-left: 4rem;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 145%;
+      font-size: 1.125rem;
+      line-height: 1.45rem;
+    }
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  .stories {
+    &__subcontainer {
+      width: 100%;
+      max-width: 480px;
+      max-height: 750px;
+      margin-bottom: 3rem;
+      position: relative;
+      &__views {
+        position: relative;
+        height: 1rem;
+        &__look {
+          position: absolute;
+          display: flex-start;
+          bottom: 1rem;
+          left: 2rem;
+        }
+      }
+      &__title {
+        position: absolute;
+        margin-left: 1rem;
+        font-size: 24px;
+      }
+      &__content {
+        position: absolute;
+        font-size: 18px;
+        margin-top: 3rem;
+        margin-left: 1rem;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .stories {
+    &__subcontainer {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 5rem;
+      &__title {
+        font-size: 2rem;
+      }
+      &__content {
+        width: 90%;
+      }
+      &__views {
+        margin: 1.5rem 16.2rem 1.5rem 5rem;
+        width: 20rem;
+        display: inline-block;
+        position: relative;
+        &__look {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .stories {
+    &__subcontainer {
+      width: 100%;
+      height: 100%;
     }
   }
 }

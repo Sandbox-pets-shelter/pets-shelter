@@ -29,8 +29,9 @@ const Stories = () => {
   });
   return (
     <>
-      <div>
-        Главная<div className="arrow right"></div>История спасения
+      <div className={s.navigation}>
+        Главная<div className="arrow right"></div>
+        <b>Счастливые истории</b>
       </div>
       <div className={s.stories}>
         <div className={s.stories__main__container}>

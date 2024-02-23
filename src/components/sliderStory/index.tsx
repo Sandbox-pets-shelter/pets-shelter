@@ -2,6 +2,7 @@ import ArrowleftIcon from 'assets/icons/Arrowleft';
 import ArrowrightIcon from 'assets/icons/Arrowright';
 import IncreaseIcon from 'assets/icons/Increase';
 import { Dots } from 'components/dots';
+import Share from 'components/ui/Share';
 import { IPetPhoto } from 'types/IPet';
 
 import style from './styles.module.scss';
@@ -24,6 +25,7 @@ export const ImageSliderTwo = (props: SliderProps) => {
         <div onClick={goToNext}></div>
       </div>
       <ArrowleftIcon className={style.arrow__left} onClick={goToPrevious} />
+      <Share className={style.share_block} link={`${window.location.href}/${slides[currentIndex].id}`} btn="share" />
       <ArrowrightIcon className={style.arrow__right} onClick={goToNext} />
       <IncreaseIcon className={style.increase__arrow} onClick={togglePopup} />
       <img src={slides[currentIndex].link} alt="cat" className={style.card__img} />

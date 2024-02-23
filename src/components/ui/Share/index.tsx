@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import s from './styles.module.scss';
-function Share(props: { link: string; btn: string }) {
+function Share(props: { link: string; btn: string; className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ function Share(props: { link: string; btn: string }) {
 
   return (
     <div
-      className={props.btn === 'share' ? s.share_block : s.shareIcon}
+      className={`${props.className} ${props.btn === 'share' ? s.share_block : s.shareIcon}`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
