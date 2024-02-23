@@ -79,6 +79,7 @@
   box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
   border-radius: 16px;
   transition: 0.3s ease;
+  z-index: 2;
 }
 
 .links_item {
@@ -131,5 +132,16 @@
   .shareIcon {
     top: 8px;
     right: 6px;
+}
+@media (min-width: 321px) and (max-width: 480px) {
+  .share_block:nth-last-child(1) {
+    visibility: hidden;
+  }
+  .btn {
+    & .share path {
+      fill: rgba(255, 255, 255, 0.6);
+      stroke: rgba(255, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
   }
 }

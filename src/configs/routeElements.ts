@@ -1,4 +1,5 @@
 import { withLayout } from 'HOC/withLayout';
+import { withoutLayout } from 'HOC/withoutMainContainerLayout';
 import { About } from 'pages/About';
 import { History } from 'pages/History';
 import { Home } from 'pages/Home';
@@ -24,7 +25,7 @@ export const routeElements: RouteElement[] = [
   },
   {
     id: 3,
-    name: 'История спасения',
+    name: 'Счастливые истории',
     path: appRoutes.history,
     component: withLayout(History)
   },
@@ -42,7 +43,7 @@ export const routeElements: RouteElement[] = [
   {
     id: 6,
     path: appRoutes.notFound,
-    component: withLayout(NoMatch)
+    component: withoutLayout(NoMatch)
   }
 ];
 

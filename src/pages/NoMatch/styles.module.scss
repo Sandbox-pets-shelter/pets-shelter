@@ -1,45 +1,105 @@
 @import 'assets/scss/variables';
 
-.noMatch {
-  &__container {
-    position: relative;
-    height: 100%;
-    background-color: $white !important;
-    padding-bottom: 1px;
+body:has(.noMatch) {
 
-    &__img {
-      width: 100%;
+  @media (max-width: 1024px) {
+    background-color: $white;
+  }
+}
+
+.noMatch {
+  position: relative;
+  padding-bottom: 135px;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 0;
+  }
+
+  &__img {
+    width: 100%;
+    max-height: 815px;
+    object-fit: cover;
+
+    @media (max-width: 1024px) {
+      max-height: 550px;
     }
 
+    @media (max-width: 450px) {
+      max-height: 470px;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    bottom: 45px;
+    left: 22%;
+    width: 410px;
+
+    @media (max-width: 1024px) {
+      left: 5%;
+      bottom: -9%;
+    }
+
+    @media (max-width: 450px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      bottom: -12%;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+
     &__title {
-      font-size: 7rem;
+      font-size: 8vw;
       font-family: 'Nunito';
-      position: absolute;
-      bottom: 165px;
-      left: 257px;
       font-weight: 600;
-      text-align: $text;
+      color: $text;
+      line-height: 100%;
+
+      @media (max-width: 1024px) {
+        font-size: 13vw;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 102px;
+      }
     }
 
     &__content {
-      margin: 0 0 61px 257px;
+
+      @media (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       &__content {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
-        width: 402px;
-        height: 46px;
       }
 
       &__button {
         margin-top: 24px;
+
+        @media (max-width: 450px) {
+
+          width: 100%;
+          & button {
+            max-width: unset;
+          }
+        }
       }
     }
   }
 
   &__underline {
-    text-decoration: underline;
+    color: $activeColor;
   }
 }
