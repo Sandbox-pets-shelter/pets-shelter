@@ -1,0 +1,33 @@
+@import 'assets/scss/variables.scss';
+.dot_active {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $activeColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $activeColor;
+}
+.dot {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: $secondary-dark;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: $secondary-dark;
+  border-radius: 50%;
+}
+.container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}

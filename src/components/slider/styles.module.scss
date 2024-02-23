@@ -1,0 +1,35 @@
+@import 'assets/scss/variables.scss';
+@import 'assets/scss/mixins.scss';
+
+.hoverCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 48.34vw;
+  width: 100%;
+  position: absolute;
+}
+.card__img {
+  height: 35.45vw;
+  max-height: 363px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+@media (max-width: 1023px) {
+  .card__img {
+    height: 363px;
+  }
+  .hoverCont {
+    height: 495px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card__img {
+    @include responsive-property(height, 210, 363, 360, 768);
+  }
+  .hoverCont {
+    height: 84.44vw;
+  }
+}

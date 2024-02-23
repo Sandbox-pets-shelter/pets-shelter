@@ -1,0 +1,170 @@
+@import 'assets/scss/variables';
+
+.happystories {
+  margin: 112px 0 72px 0;
+  overflow: hidden;
+
+  &__title {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto 10px;
+    text-align: center;
+    color: $text;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  &__content {
+    margin: 0 auto 33px;
+    width: 43%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23.2px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    gap: 24px;
+
+    &__item {
+      border: 1px solid $separator;
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      margin-bottom: 32px;
+      width: 50%;
+      background-color: $white;
+    }
+
+    &__img {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__img__share {
+      position: absolute;
+      text-decoration: none;
+      margin: 16px;
+      right: 0;
+    }
+
+    &__img__title {
+      margin: 16px 32px 30px;
+    }
+
+    &__img__subtitle {
+      font-family: 'Nunito';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      width: 75%;
+    }
+
+    &__img__content {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 145%;
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 26px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .happystories {
+    &__content {
+      width: 80%;
+      margin-bottom: 33px;
+    }
+
+    &__slider_wrapper {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__container {
+      gap: 0px;
+
+      &__item {
+        margin-right: 15px;
+        flex-shrink: 0;
+        width: 646px;
+        margin-bottom: 26px;
+      }
+
+      &__img__subtitle {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .happystories {
+    &__title {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &__container {
+      gap: 0;
+      padding-left: 15px;
+      justify-content: space-evenly;
+
+      &__item {
+        width: 278px;
+      }
+
+      &__image {
+        height: 192px;
+        object-fit: cover;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+      }
+
+      &__img__content {
+        font-size: 12px;
+        line-height: 140%;
+        margin-bottom: 18px;
+      }
+
+      &__img__title {
+        margin: 16px 18px 18px;
+      }
+
+      &__img__subtitle {
+        font-size: 16px;
+        line-height: 22px;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .happystories {
+    &__container {
+      justify-content: space-between;
+    }
+  }
+}

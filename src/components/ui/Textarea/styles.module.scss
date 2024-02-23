@@ -1,0 +1,53 @@
+@import '~assets/scss/variables.scss';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  label {
+    margin-bottom: 4px;
+  }
+
+  .emojiPickerWrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    aside {
+      position: absolute !important;
+    }
+  }
+}
+
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $primary-dark;
+  padding: 1rem;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+
+  textarea {
+    resize: none;
+    border: none;
+    background: none;
+    flex-grow: 1;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  line-height: 1rem;
+}

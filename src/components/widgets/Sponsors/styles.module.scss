@@ -1,0 +1,79 @@
+@import 'assets/scss/variables';
+
+.sponsors {
+  margin: 112px 0 20px 0;
+
+  &__title {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto 24px;
+    text-align: center;
+    color: $text;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 3%;
+    row-gap: 32px;
+    align-items: center;
+
+    &__item {
+      cursor: pointer;
+      width: 31%;
+      background-color: $white;
+      padding: 35px;
+      border: 1px solid $separator;
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      height: 200px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .sponsors {
+    &__container {
+      row-gap: 17px;
+
+      &__item {
+        padding: 19px 13px;
+        height: 104px;
+
+        & img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sponsors {
+    margin: 80px 0 0px 0;
+
+    &__title {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 24px;
+      color: #333333;
+    }
+
+    &__container {
+      row-gap: 17px;
+
+      &__item {
+        cursor: pointer;
+        width: 100%;
+        height: 199px;
+      }
+    }
+  }
+}

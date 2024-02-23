@@ -1,0 +1,230 @@
+@import 'assets/scss/variables';
+
+.mainfirst {
+  color: $text;
+
+  &__first {
+    display: flex;
+    justify-content: space-between;
+
+    &__container {
+      flex-direction: column;
+      position: relative;
+
+      &__title {
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 130%;
+        max-width: 765px;
+        width: 104%;
+        margin: 265px 8px 20px 0;
+      }
+
+      &__content {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 145%;
+        width: 536px;
+        margin-bottom: 32px;
+      }
+
+      &__btn {
+        margin-bottom: 100px;
+      }
+
+      &__arrow {
+        position: absolute;
+        text-decoration: none;
+        left: 81%;
+        top: 89%;
+      }
+    }
+
+    &__img {
+      max-width: 536px;
+    }
+  }
+
+  &__urgenthelp {
+    display: flex;
+    align-items: center;
+    border: 1px solid $separator;
+    backdrop-filter: blur(10px);
+    background-color: $white;
+    border-radius: 16px;
+    margin-bottom: 112px;
+    margin-top: 0;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 40px;
+
+      &__subtitle {
+        width: 496px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 44px;
+      }
+
+      &__content {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        width: 463px;
+        margin-top: 16px;
+      }
+    }
+
+    &__box {
+      &__img {
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainfirst {
+    &__first {
+      justify-content: flex-start;
+
+      &__container {
+        margin-left: auto;
+        margin-right: auto;
+
+        &__title {
+          font-size: 32px;
+          max-width: 324px;
+          height: 88px;
+          margin: 140px 0 24px 0;
+        }
+
+        &__content {
+          max-width: 302px;
+        }
+
+        &__btn {
+          margin-bottom: 0;
+        }
+
+        &__arrow {
+          width: 48px;
+          left: 100%;
+        }
+      }
+
+      &__img {
+        max-width: 296px;
+        max-height: 446px;
+        margin-left: 68px;
+      }
+    }
+
+    &__urgenthelp {
+      margin-top: 80px;
+      flex-direction: column;
+
+      &__container {
+        text-align: center;
+        margin-left: 0;
+
+        &__subtitle {
+          margin: 44px 0 8px 0;
+        }
+
+        &__content {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mainfirst {
+    &__first {
+      flex-direction: column;
+      text-align: center;
+
+      &__container {
+        &__title {
+          font-size: 32px;
+          max-width: 19rem;
+          width: 106%;
+          margin: 24px 0 16px 0;
+        }
+
+        &__content {
+          max-width: 18rem;
+          width: 102%;
+          margin-bottom: 16px;
+        }
+
+        &__btn {
+          position: absolute;
+          top: 33rem;
+          max-width: 20.5rem;
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        &__arrow {
+          display: none;
+        }
+      }
+
+      &__img {
+        flex-direction: column;
+        max-width: 16rem;
+        max-height: 22rem;
+        margin: 0 50px 0 50px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &__urgenthelp {
+      flex-direction: column;
+      text-align: center;
+      border: none;
+      backdrop-filter: none;
+      background-color: $background;
+      border-radius: 0px;
+      margin-bottom: 80px;
+
+      &__container {
+        text-align: center;
+
+        &__subtitle {
+          margin: auto;
+          width: 228px;
+          font-size: 24px;
+          line-height: 33px;
+        }
+
+        &__content {
+          line-height: 145%;
+          max-width: 20rem;
+          width: 105%;
+          margin-bottom: 24px;
+        }
+      }
+
+      &__box {
+        &__img {
+          display: none;
+          border-radius: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+@import 'assets/scss/variables';
+
+.share_block {
+  position: relative;
+}
+
+.shareIcon {
+  z-index: 5;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.btnIcon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(101, 73, 251, 0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 9px;
+  // justify-content: center;
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $activeColor;
+  }
+
+  &.active {
+    background: $activeColor;
+  }
+}
+
+.usual {
+  color: $text;
+}
+
+.btn {
+  color: $text;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  & .share path {
+    fill: #846dfc;
+    stroke: #846dfc;
+    transition: 0.3s ease;
+  }
+
+  &:hover {
+    color: $primary-dark;
+  }
+
+  &:hover .share path {
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
+
+  &.active {
+    color: $activeColor;
+  }
+
+  &.active .share path {
+    color: $activeColor;
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
+}
+
+.links_list {
+  opacity: 0;
+  visibility: hidden;
+  min-width: 255px;
+  position: absolute;
+  top: 135%;
+  left: -12%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
+  border-radius: 16px;
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.links_item {
+  color: var(--text);
+}
+
+.linksIcon {
+  top: 100%;
+  left: -500%;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.links_item {
+  padding: 16px 16px 16px 16px;
+  gap: 10px;
+
+  & a,
+  & button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+  }
+
+  &:hover a,
+  &:hover button,
+  &:hover span {
+    color: $primary-dark;
+  }
+
+  & .socialIcon path {
+    transition: 0.3s ease;
+  }
+
+  &:hover .socialIcon path {
+    fill: $primary-dark;
+    stroke: $primary-dark;
+  }
+}
+
+.copied {
+  color: #35c602;
+}
+
+@media (max-width: 768px) {
+  .shareIcon {
+    top: 8px;
+    right: 6px;
+  }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+  .share_block:nth-last-child(1) {
+    visibility: hidden;
+  }
+  .btn {
+    & .share path {
+      fill: rgba(255, 255, 255, 0.6);
+      stroke: rgba(255, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
+  }
+}

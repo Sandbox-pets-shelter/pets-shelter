@@ -1,0 +1,121 @@
+@import 'assets/scss/variables.scss';
+
+.hoverCont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 608px;
+  width: 100%;
+  position: absolute;
+}
+.card__img {
+  height: 609px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0px 0px;
+  position: relative;
+  z-index: 0;
+}
+.arrow {
+  &__left,
+  &__right {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 280px;
+    z-index: 1;
+    &:hover {
+      background: $activeColor;
+    }
+  }
+
+  &__left {
+    left: 16px;
+  }
+  &__right {
+    right: 16px;
+  }
+}
+.dotsContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.dots {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: rgba(101, 73, 251, 0.2);
+  border-radius: 50%;
+}
+.increase__arrow {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  z-index: 1;
+}
+
+.share_block {
+  visibility: hidden;
+  height: 0;
+}
+
+.increase__arrow:hover {
+  background: $activeColor;
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  .card__img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 400px;
+    border-radius: 15px 15px 0px 0px;
+    position: relative;
+    z-index: 0;
+  }
+  .share_block {
+    visibility: visible;
+    position: absolute;
+    right: 16px;
+    top: 24px;
+    font-size: 0;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(101, 73, 251, 0.2);
+    display: flex;
+    align-items: flex;
+  }
+  .arrow {
+    &__left,
+    &__right {
+      visibility: hidden;
+    }
+  }
+  .increase__arrow {
+    z-index: 1;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .card__img {
+    width: 768px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 608px;
+  }
+}

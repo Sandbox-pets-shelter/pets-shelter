@@ -1,0 +1,31 @@
+// colors
+$background: #fafafa;
+$orange: #e54949;
+$orange-shadow: rgba(229, 73, 73, 0.3);
+
+$primary: #a392fd;
+$primary-dark: #6549fb;
+$secondary-dark: rgba(101, 73, 251, 0.2);
+$accent: #e54949;
+$accent-light: rgba(229, 73, 73, 0.1);
+$grey: #d9d9d9;
+$grey-light: #f7f7f7;
+
+$iconHover: #e0dbfe;
+$activeColor: #6549fb;
+$white: #ffffff;
+$separator: #ebebeb;
+$text: #333333;
+
+// animation
+$transition: 0.3s ease-out;
+
+// shadow screen
+$shadowScreen: rgba(0, 0, 0, 0.4);
+// :root.light-mode {}
+
+// colors
+:export {
+  accent: $accent;
+  primaryDark: $primary-dark;
+}

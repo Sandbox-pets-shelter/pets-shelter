@@ -1,0 +1,152 @@
+@import '../../../assets/scss/variables.scss';
+
+.wrapper {
+  position: relative;
+  height: 48px;
+  border: 1px solid #a392fd;
+  padding: 14px 19px 14px 16px;
+  border-radius: 16px;
+  display: flex;
+}
+
+.withIcon {
+  padding-right: 50px;
+}
+
+.active {
+  border: 1px solid #6549fb;
+}
+
+.disabled {
+  border: 1px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+.icon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 19px;
+  transform: translateY(-50%);
+}
+
+input {
+  pointer-events: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  background: inherit;
+  &::placeholder {
+    color: #e0dbfe;
+  }
+}
+
+.input_num {
+  width: 99px;
+}
+
+.num_wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding: 14px 16px;
+  border: 1px solid #ebebeb;
+}
+
+.button {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(-50%);
+  &_disabled {
+    pointer-events: none;
+  }
+}
+.plus {
+  top: calc(50% - 5px);
+}
+
+.flag {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 8px;
+  &_disabled {
+    filter: grayscale(1);
+  }
+}
+.flag_kz {
+  object-position: 57% 50%;
+}
+.menu {
+  position: absolute;
+  background-color: #fafafa;
+  border-radius: 16px;
+  top: 90%;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0px 4px 10px rgba(153, 153, 153, 0.2);
+  padding: 16px 24px;
+  height: 200px;
+  overflow-y: scroll !important;
+}
+.menu__countries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.menu_item:hover {
+  color: #6549fb;
+  cursor: pointer;
+}
+.selected_item {
+  color: #6549fb;
+}
+.tel_title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  &_disabled {
+    color: #d9d9d9;
+  }
+}
+.divider {
+  border-right: 1px solid #6549fb;
+  margin: -14px 16px -14px 16px;
+}
+.divider_disabled {
+  border-right: 1px solid #d9d9d9;
+}
+.searchCountry {
+  border: 1px solid #6549fb;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.inputnum {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  &::placeholder {
+    color: #a392fd;
+  }
+}
+
+input[type='password'] {
+  font-family: Verdana;
+  color: #a392fd;
+  &::placeholder {
+    font-family: Montserrat;
+  }
+}
+
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}

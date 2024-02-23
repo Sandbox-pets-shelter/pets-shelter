@@ -1,0 +1,54 @@
+@import 'reset';
+@import 'variables';
+@import 'font';
+@import 'container';
+
+body {
+  background-color: $background;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $activeColor;
+  }
+}
+
+.arrow {
+  border: 1px solid #333333;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.arrow-active {
+  border-color: $activeColor;
+}
+.arrow-disabled {
+  border-color: #d9d9d9;
+  pointer-events: none;
+}
+
+.right {
+  transform: rotate(-45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+}

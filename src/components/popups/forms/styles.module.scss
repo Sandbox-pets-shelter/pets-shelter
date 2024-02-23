@@ -1,0 +1,117 @@
+@import 'assets/scss/variables';
+
+.formСontainer {
+  position: relative;
+  background-color: $white;
+  margin: auto;
+  width: 100vw;
+  max-width: 648px;
+  padding: 2.5rem;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 16px;
+
+  h1 {
+    font-family: Nunito;
+    font-weight: 500;
+  }
+
+  &__titleWithPicture {
+    display: inline-flex;
+    gap: 1rem;
+    min-width: 100%;
+    img {
+      height: 3rem;
+    }
+  }
+
+  &__contacts {
+    font-weight: 400;
+    max-width: 550px;
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .contactsWithPicture {
+    display: flex;
+    gap: 3rem;
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  .contactsWithFio {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+  }
+
+  .number {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .questions {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    border: 1px solid $primary;
+    padding: 14px 19px 14px 16px;
+    border-radius: 16px;
+    gap: 1rem;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    &__button {
+      display: flex;
+      width: 100%;
+
+      &__row {
+        flex-direction: row;
+      }
+      &__column {
+        flex-direction: column;
+      }
+    }
+  }
+  .choose {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.successSendFormImg {
+  margin-top: 20px;
+  width: 88px;
+  height: 74px;
+  align-self: center;
+}
+
+.successSendFormTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+}

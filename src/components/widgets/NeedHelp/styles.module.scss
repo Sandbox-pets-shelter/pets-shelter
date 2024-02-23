@@ -1,0 +1,146 @@
+@import 'assets/scss/variables';
+
+.needhelp {
+  margin: 112px 0 112px 0;
+
+  &__title {
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto 24px;
+    text-align: center;
+    color: $text;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
+    max-width: 700px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    font-style: normal;
+    gap: 24px;
+
+    &__item {
+      border: 1px solid $separator;
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      height: 435px;
+      width: 424px;
+      background-color: $white;
+    }
+
+    &__img {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover button {
+        color: $orange;
+
+        svg {
+          path {
+            stroke: $orange;
+          }
+        }
+      }
+    }
+
+    &__img__title {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    &__img__subtitle {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &__img__content {
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      max-width: 327px;
+      text-indent: 15px;
+    }
+
+    &__img__title__btm {
+      color: $activeColor;
+      font-weight: 500;
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 24px auto 32px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .needhelp {
+    &__title {
+      max-width: 685px;
+    }
+
+    &__container {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: 100%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__item {
+        flex-shrink: 0;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .needhelp {
+    padding: 0;
+
+    &__title {
+      max-width: 85%;
+      width: 100%;
+      font-size: 24px;
+      margin: 0 auto 16px;
+    }
+
+    &__container {
+      gap: 8px;
+
+      &__item {
+        margin: 0;
+        height: 410px;
+        width: 278px;
+      }
+
+      &__img {
+        width: 160px;
+        margin: 32px 59px;
+      }
+
+      &__img__subtitle {
+        width: 252px;
+      }
+
+      &__img__content {
+        max-width: 202px;
+        max-height: 69px;
+        text-indent: 3px;
+        margin: 16px auto 0;
+      }
+
+      &__img__title__btm {
+        margin: 24px auto;
+      }
+    }
+  }
+}

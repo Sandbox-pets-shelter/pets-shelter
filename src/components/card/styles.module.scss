@@ -1,0 +1,154 @@
+@import 'assets/scss/variables.scss';
+@import 'assets/scss/mixins.scss';
+
+.card__block {
+  position: relative;
+}
+
+.card {
+  @include responsive-property(width, 160, 312, 360, 768);
+  @include responsive-property(height, 304, 495, 360, 768);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(153, 153, 153, 0.2);
+  border-radius: 16px;
+  background: $white;
+  &__info {
+    display: grid;
+    grid-template-areas:
+      'a b'
+      'a b';
+    justify-content: space-between;
+    padding: 16px;
+  }
+  &__title {
+    grid-area: a;
+    color: $text;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__descr {
+    grid-area: a;
+    margin-top: 35px;
+    color: #606060;
+    width: 100%;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  &__like {
+    z-index: 5;
+    position: absolute;
+    top: 60px;
+    right: 6px;
+  }
+  &__content {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+.paginate {
+  margin-top: 46px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  &__numbers {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1/1;
+    grid-auto-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.pageDiv {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigationActive {
+  cursor: auto;
+  border: 2px solid $primary;
+  border-radius: 8px;
+}
+
+.floatLeft {
+  order: -2;
+  margin-right: 34px;
+}
+
+.floatRight {
+  order: -1;
+  margin-right: 116px;
+}
+
+.icon__share {
+  z-index: 200;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 495px;
+    width: 40.63vw;
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    &__title {
+      grid-area: a;
+      font-size: 24px;
+    }
+    &__descr {
+      font-size: 16px;
+      grid-area: a;
+    }
+    &__like {
+      grid-area: b;
+      position: static;
+    }
+  }
+  .paginate {
+    &__numbers {
+      grid-column: 2/3;
+      grid-row: 1/1;
+      justify-content: center;
+    }
+    &__button_left {
+      grid-column: 1/2;
+      grid-row: 1/1;
+    }
+    &__button_right {
+      grid-column: 3/4;
+      grid-row: 1/1;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    height: 48.34vw;
+    max-height: 495px;
+    width: 20vw;
+    max-width: 312px;
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

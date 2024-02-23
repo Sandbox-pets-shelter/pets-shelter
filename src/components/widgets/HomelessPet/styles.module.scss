@@ -1,0 +1,58 @@
+@import 'assets/scss/variables';
+
+.homelesspet {
+  border: 1px solid $separator;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 76px 16px;
+  width: 100%;
+
+  &__title {
+    margin-top: 48px;
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: normal;
+    color: $text;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 145%;
+    margin: 16px auto 32px;
+    text-align: center;
+    max-width: 570px;
+    color: $text;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homelessPet {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .homelesspet {
+    padding: 32px 16px;
+
+    &__title {
+      margin-top: 32px;
+      font-size: 24px;
+      max-width: 311px;
+      text-align: center;
+    }
+
+    &__subtitle {
+      margin: 16px auto 24px;
+      max-width: 311px;
+      width: 102%;
+    }
+  }
+}
