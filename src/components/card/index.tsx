@@ -4,6 +4,8 @@ import LikeIcon from 'assets/icons/Heart';
 import { BaseButton } from 'components';
 import { ImageSlider } from 'components/slider';
 import Share from 'components/ui/Share';
+import useBreakpoints from 'hooks/useBreakpoints';
+import { cats } from 'mocks/cats';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -46,9 +48,14 @@ export const Card = () => {
     dispatchPage(setCurrentPage(totalPage - 1));
   };
 
+  const { mdBreakpoint } = useBreakpoints();
+  const picSize = mdBreakpoint ? '48px' : '40px';
+  const btnFillLeft = mdBreakpoint ? 'Предыдущая страница' : '';
+  const btnFillRight = mdBreakpoint ? 'Следующая страница' : '';
+
   const displayData =
-    pets &&
-    pets.map((pet: IPet) => {
+    cats &&
+    cats.map((pet: any) => {
       return (
         <Link key={pet.id} to={`${pet.id}`} state={pet}>
           <div className={s.card}>
@@ -58,7 +65,7 @@ export const Card = () => {
                 {pet.name}, {pet.age}
               </h1>
               <p className={s.card__descr}>{pet.history}</p>
-              <LikeIcon className={s.card__like} active={false} />
+              <LikeIcon className={s.card__like} active={false} customHeight={picSize} customWidth={picSize} />
             </div>
             <Share link={`${window.location.href}/${pet.id}`} btn="icon" />
           </div>
@@ -70,7 +77,7 @@ export const Card = () => {
     <div>
       <div className={s.card__content}>{displayData}</div>
       <div className={s.paginate}>
-        <div className={s.paginate__button}>
+        <div className={s.paginate__button_left}>
           <BaseButton
             startIcon={arrowleft}
             click={handlePreviousPage}
@@ -78,8 +85,10 @@ export const Card = () => {
             variant="outlined"
             color="secondary"
           >
-            Предыдущая страница
+            {btnFillLeft}
           </BaseButton>
+        </div>
+        <div className={s.paginate__button_right}>
           <BaseButton
             endIcon={arrowright}
             click={handleNextPage}
@@ -87,7 +96,7 @@ export const Card = () => {
             variant="filled"
             color="primary"
           >
-            Следующая страница
+            {btnFillRight}
           </BaseButton>
         </div>
         <div className={s.paginate__numbers}>

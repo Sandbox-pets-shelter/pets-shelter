@@ -128,6 +128,12 @@
   color: #35c602;
 }
 
+@media (max-width: 768px) {
+  .shareIcon {
+    top: 8px;
+    right: 6px;
+  }
+}
 @media (min-width: 321px) and (max-width: 480px) {
   .share_block:nth-last-child(1) {
     visibility: hidden;

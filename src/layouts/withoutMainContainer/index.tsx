@@ -14,8 +14,7 @@ const WithoutMainContainerLayout = (props: IProps): JSX.Element => {
         <Header />
       </div>
       {props.children}
-      <div className={s.primary}>
-      </div>
+      <div className={s.primary}></div>
     </div>
   );
 };

@@ -20,13 +20,19 @@ export const NoMatch = () => {
 
   return (
     <div className={s.noMatch}>
-      <img className={s.noMatch__img} src={width > desktop ? mouse : width > tablet ? mouseTablet : mouseMobile} alt="Мышка в норке" />
+      <img
+        className={s.noMatch__img}
+        src={width > desktop ? mouse : width > tablet ? mouseTablet : mouseMobile}
+        alt="Мышка в норке"
+      />
       <div className={s.noMatch__container}>
         <p className={s.noMatch__container__title}>{t('noMatch.title')}</p>
         <div className={s.noMatch__container__content}>
           <div className={s.noMatch__container__content__content}>
             {t('noMatch.content')}
-            <a href="/pets" className={s.noMatch__underline}>{'каталоге'}</a>
+            <a href="/pets" className={s.noMatch__underline}>
+              {'каталоге'}
+            </a>
           </div>
           <div className={s.noMatch__container__content__button}>
             <BaseButton variant="filled" color="primary" click={reset}>
